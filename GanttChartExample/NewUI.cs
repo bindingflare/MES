@@ -1,5 +1,4 @@
-﻿using BrightIdeasSoftware;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,9 +63,9 @@ namespace Edcore.GanttChart
             _GenerateListView(m_TaskList, m_Manager.HeaderList);
 
             // Perform some task operations
-            _registerCustomField("Greeting", typeof(string), 80);
-            _registerCustomField("Cancelled", typeof(string), 80);
-            _registerCustomField("Important", typeof(bool), 80);
+            _registerCustomField("Greeting", "string", 80);
+            _registerCustomField("Cancelled", "string", 80);
+            _registerCustomField("Important", "checkbox", 80);
 
             var work = new MyTask(m_Manager) { Name = "Prepare for Work" };
             var wake = new MyTask(m_Manager) { Name = "Wake Up" };
@@ -1361,7 +1360,7 @@ namespace Edcore.GanttChart
             m_Chart.Invalidate();
         }
 
-        private void _registerCustomField(string fieldName, object type, int fieldSize)
+        private void _registerCustomField(string fieldName, string type, int fieldSize)
         {
             // Add field to projectmanager
             m_Manager.AddCustomField(fieldName, type, fieldSize);

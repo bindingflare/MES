@@ -11,43 +11,60 @@ namespace Edcore.GanttChart
         private ProjectManager m_Manager;
         private Task m_Task;
 
-        string ID { get; set; }
+        public object ID { get; internal set; }
 
-        Task Parent { get; set; }
+        public object ParentID { get; set; }
 
-        IEnumerable<Task> Children { get; set; }
+        public string Text { get; set; }
 
-        DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; }
 
-        DateTime FinishDate { get; set; }
+        public DateTime FinishDate { get; set; }
 
-        TimeSpan Duration { get; set; }
+        public DateTime BaselineStartDate { get; set; }
 
-        string Text { get; set; }
+        public DateTime BaselineFinishDate { get; set; }
 
-        Single Progress { get; set; }
+        public TimeSpan TimeDuration { get; set; }
+
+        public Single Progress { get; set; }
+
+        public TimeSpan Delay { get; set; }
+
+        public Task Parent { get; internal set; }
+
+        public IEnumerable<Task> Children { get; set; }
+
+        public string Tooltip { get; set; }
 
         public ModelledTask(Task task, ProjectManager manager)
         {
             this.m_Manager = manager;
             this.m_Task = task;
 
-            ID = task.ID;
-            Children = task.Children;
-            StartDate = manager.Start + task.Start;
-            FinishDate = manager.Start + task.End;
-            Duration = task.Duration;
-            Text = task.Complete.ToString("p");
-            Progress = task.Complete;
+            Update();
         }
 
         public void Update()
         {
+            ID = m_Task.ID;
+            // Parent
+            if (m_Manager.IsMember(m_Task))
+            {
+                Parent = m_Manager.DirectGroupOf(m_Task);
+                ParentID = Parent.ID;
+            }
             Children = m_Task.Children;
             StartDate = m_Manager.Start + m_Task.Start;
             FinishDate = m_Manager.Start + m_Task.End;
-            Duration = m_Task.Duration;
-            Text = m_Task.Complete.ToString("p");
+            TimeDuration = m_Task.Duration;
+            // Delay
+            Delay = m_Task.Delay;
+            BaselineStartDate = StartDate;
+            BaselineFinishDate = FinishDate + Delay;
+
+            Text = m_Task.Name;
+            Tooltip = m_Task.Complete.ToString("p");
             Progress = m_Task.Complete;
         }
     }

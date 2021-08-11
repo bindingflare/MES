@@ -53,15 +53,22 @@ namespace Edcore.GanttChart
 
             // Add default headers
             HeaderList = new List<DataColumn>();
+            HeaderList.Add(new DataColumn("ID", typeof(int)));
+            HeaderList.Add(new DataColumn("ParentID", typeof(int)));
+
             HeaderList.Add(new DataColumn("Text", typeof(string)));
-            HeaderList.Add(new DataColumn("ID", typeof(string)));
-            HeaderList.Add(new DataColumn("ParentID", typeof(string)));
+            HeaderList.Add(new DataColumn("Tooltip", typeof(string)));
+
             HeaderList.Add(new DataColumn("StartDate", typeof(DateTime)));
             HeaderList.Add(new DataColumn("FinishDate", typeof(DateTime)));
             HeaderList.Add(new DataColumn("Duration", typeof(TimeSpan)));
-            HeaderList.Add(new DataColumn("Progress", typeof(Single)));
+
+            HeaderList.Add(new DataColumn("BaselineStartDate", typeof(DateTime)));
+            HeaderList.Add(new DataColumn("BaselineFinishDate", typeof(DateTime)));
             HeaderList.Add(new DataColumn("Delay", typeof(TimeSpan)));
-            HeaderList.Add(new DataColumn("Tooltip", typeof(string)));
+
+            HeaderList.Add(new DataColumn("Progress", typeof(Single)));
+            HeaderList.Add(new DataColumn("Predecessors", typeof(string)));
 
             FieldCount = 7;
             MainFieldCount = 7;
