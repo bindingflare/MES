@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
 using DevExpress.XtraTreeList.Columns;
+using DevExpress.XtraEditors;
 
 namespace ERP
 {
@@ -160,6 +161,20 @@ namespace ERP
             //m_Manager.Relate(job6, job7);
             m_Manager.Relate(job5, job7);
 
+            // Add some events to event manager
+            for(int i = 0; i < 3; i++)
+            {
+                PanelControl panel = new PanelControl();
+                panel.Size = new Size(300, 70);
+
+                LabelControl label = new LabelControl();
+                label.Text = string.Format("Event #{0}: Hello world", i);
+                panel.Controls.Add(label);
+
+                eventStackPanel.Controls.Add(panel);
+            }
+            
+
             // Build tree for Overview
             IEnumerable<Task> tasks = m_Manager.RootTasks;
             foreach (Task task in tasks)
@@ -187,8 +202,7 @@ namespace ERP
             ganttControl1.ChartStartDate = m_Manager.Start;
             ganttControl1.OptionsView.ShowBaselines = true;
             ganttControl1.DataSource = GetTasks();
-
-            ganttControl1.OptionsSplitter.PanelVisibility = DevExpress.XtraGantt.GanttPanelVisibility.Chart;
+            
             ganttControl1.ExpandAll();
 
             // Build tree for GanttChart
@@ -204,6 +218,7 @@ namespace ERP
             _FormatTreeList();
 
             gChartTreeList.RowHeight = ganttChart.BarSpacing;
+            gChartTreeList.Columns.ElementAt(0).Width = 200;
             gChartTreeList.ExpandAll();
 
             // GanttChart event listeners
@@ -251,10 +266,7 @@ namespace ERP
                     column.Visible = false;
                 }
             }
-
-            
         }
-
         private object GetTasks()
         {
             //DataTable table = new DataTable();
@@ -416,7 +428,7 @@ namespace ERP
 
         private void _mChart_Scroll(object sender, ScrollEventArgs e)
         {
-            if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
+            if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
             {
                 //float ratio = (float) dataTreeListView1.GetItemCount() * m_Chart.BarSpacing / m_Chart.Viewport.WorldHeight;
                 int nodes = (e.NewValue - ganttChart.HeaderOneHeight - ganttChart.HeaderTwoHeight) / ganttChart.BarSpacing;
@@ -478,6 +490,18 @@ namespace ERP
             }
         }
         #endregion
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'eRPDB_Inventory.INVENTORY' table. You can move, or remove it, as needed.
+            this.iNVENTORYTableAdapter.Fill(this.eRPDB_Inventory.INVENTORY);
+
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+            accountMenu.ShowPopup(Cursor.Position);
+        }
     }
 
     #region overlay painter
