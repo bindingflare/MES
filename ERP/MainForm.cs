@@ -200,8 +200,11 @@ namespace ERP
             splitContainerControl1.SplitterPosition = 400;
 
             gChartTreeList.DataSource = GetTasks();
+
             _FormatTreeList();
+
             gChartTreeList.RowHeight = ganttChart.BarSpacing;
+            gChartTreeList.ExpandAll();
 
             // GanttChart event listeners
             //ganttChart.TaskMouseOver += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseOver);
@@ -288,6 +291,7 @@ namespace ERP
         void m_Chart_TaskSelected(object sender, TaskMouseEventArgs e)
         {
             m_TaskGrid.SelectedObjects = ganttChart.SelectedTasks.Select(x => m_Manager.IsPart(x) ? m_Manager.SplitTaskOf(x) : x).ToArray();
+            m_TaskGrid.ExpandAllGridItems();
 
             // Change visibility
             optionsPanel.Visible = true;
