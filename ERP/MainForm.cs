@@ -16,8 +16,10 @@ namespace ERP
 {
     public partial class MainForm : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
-        ProjectManager m_Manager = null;
-        OverlayPainter m_Overlay = new OverlayPainter();
+        private ProjectManager m_Manager = null;
+        private OverlayPainter m_Overlay = new OverlayPainter();
+
+        private XtraForm dummyForm;
 
         private int _SplitterX;
         private int _ScrollFix = 0;
@@ -171,7 +173,7 @@ namespace ERP
                 label.Text = string.Format("Event #{0}: Hello world", i);
                 panel.Controls.Add(label);
 
-                eventStackPanel.Controls.Add(panel);
+                eventManagerEventStackPanel.Controls.Add(panel);
             }
             
 
@@ -188,67 +190,78 @@ namespace ERP
 
             //ganttControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
 
-            ganttControl1.ChartMappings.TextFieldName = "Text";
-            ganttControl1.ChartMappings.InteractionTooltipTextFieldName = "Tooltip";
+            overviewGanttControl.ChartMappings.TextFieldName = "Text";
+            overviewGanttControl.ChartMappings.InteractionTooltipTextFieldName = "Tooltip";
 
             foreach (DataColumn column in m_Manager.HeaderList)
             {
-                ganttControl1.Columns.AddField(column.ColumnName);
+                overviewGanttControl.Columns.AddField(column.ColumnName);
             }
-            ganttControl1.OptionsBehavior.PopulateServiceColumns = true;
-            ganttControl1.OptionsBehavior.AllowSplitTasks = DevExpress.Utils.DefaultBoolean.True;
-            ganttControl1.OptionsCustomization.AllowModifyProgress = DevExpress.Utils.DefaultBoolean.True;
+            overviewGanttControl.OptionsBehavior.PopulateServiceColumns = true;
+            overviewGanttControl.OptionsBehavior.AllowSplitTasks = DevExpress.Utils.DefaultBoolean.True;
+            overviewGanttControl.OptionsCustomization.AllowModifyProgress = DevExpress.Utils.DefaultBoolean.True;
 
-            ganttControl1.ChartStartDate = m_Manager.Start;
-            ganttControl1.OptionsView.ShowBaselines = true;
-            ganttControl1.DataSource = GetTasks();
+            overviewGanttControl.ChartStartDate = m_Manager.Start;
+            overviewGanttControl.OptionsView.ShowBaselines = true;
+            overviewGanttControl.DataSource = GetTasks();
             
-            ganttControl1.ExpandAll();
+            overviewGanttControl.ExpandAll();
 
             // Build tree for GanttChart
-            ganttChart.Init(m_Manager);
-            ganttChart.CreateTaskDelegate = delegate () { return new MyTask(m_Manager); };
+            ganttChartChart.Init(m_Manager);
+            ganttChartChart.CreateTaskDelegate = delegate () { return new MyTask(m_Manager); };
 
-            gChartProjectLabel.Text = m_Manager.Name;
+            ganttChartChartProjectLabel.Text = m_Manager.Name;
 
-            splitContainerControl1.SplitterPosition = 400;
+            ganttChartChartSplitContainer.SplitterPosition = 400;
 
-            gChartTreeList.DataSource = GetTasks();
+            ganttChartChartTreeList.DataSource = GetTasks();
 
             _FormatTreeList();
 
-            gChartTreeList.RowHeight = ganttChart.BarSpacing;
-            gChartTreeList.Columns.ElementAt(0).Width = 200;
-            gChartTreeList.ExpandAll();
+            ganttChartChartTreeList.RowHeight = ganttChartChart.BarSpacing;
+            ganttChartChartTreeList.Columns.ElementAt(0).Width = 200;
+            ganttChartChartTreeList.ExpandAll();
 
             // GanttChart event listeners
             //ganttChart.TaskMouseOver += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseOver);
             //ganttChart.TaskMouseOut += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseOut);
-            ganttChart.TaskSelected += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskSelected);
-            ganttChart.TaskDeselecting += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskDeselecting);
-            ganttChart.TaskMouseDoubleClick += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseDoubleClick);
+            ganttChartChart.TaskSelected += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskSelected);
+            ganttChartChart.TaskDeselecting += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskDeselecting);
+            ganttChartChart.TaskMouseDoubleClick += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseDoubleClick);
             m_Overlay.PrintMode = true;
-            ganttChart.PaintOverlay += m_Overlay.ChartOverlayPainter;
-            ganttChart.AllowTaskDragDrop = true;
+            ganttChartChart.PaintOverlay += m_Overlay.ChartOverlayPainter;
+            ganttChartChart.AllowTaskDragDrop = true;
             //m_Chart.Scroll += new ScrollEventHandler(m_Chart_Scroll);
-            ganttChart.MouseWheel += new MouseEventHandler(m_Chart_MouseWheel);
-            ganttChart.MousePan += new EventHandler<MousePanEventArgs>(m_Chart_MousePan);
+            ganttChartChart.MouseWheel += new MouseEventHandler(m_Chart_MouseWheel);
+            ganttChartChart.MousePan += new EventHandler<MousePanEventArgs>(m_Chart_MousePan);
 
             // Tasklist event listeners
-            gChartTreeList.AfterExpand += new NodeEventHandler(m_TaskList_Expanded);
-            gChartTreeList.AfterCollapse += new NodeEventHandler(m_TaskList_Collapsed);
-            gChartTreeList.TopVisibleNodeIndexChanged += new EventHandler(gChartTreeList_TopVisibleIndexChanged);
+            ganttChartChartTreeList.AfterExpand += new NodeEventHandler(m_TaskList_Expanded);
+            ganttChartChartTreeList.AfterCollapse += new NodeEventHandler(m_TaskList_Collapsed);
+            ganttChartChartTreeList.TopVisibleNodeIndexChanged += new EventHandler(gChartTreeList_TopVisibleIndexChanged);
             //gChartTreeList.BeforeExpand += new NodeEventHandler(m_TaskList_Expanding);
             //gChartTreeList.BeforeCollapse += new NodeEventHandler(m_TaskList_Collapsing);
 
             // Set Time information
             var span = DateTime.Today - m_Manager.Start;
             m_Manager.Now = span; // set the "Now" marker at the correct date
+
+            // Initialize other elements
+            AfterInitialization();
+        }
+
+        private void AfterInitialization()
+        {
+            // Create dummy secondary form
+            dummyForm = new XtraForm();
+            dummyForm.Size = new Size(852, 480);
+            dummyForm.Name = "Dummy form";
         }
 
         private void _FormatTreeList()
         {
-            foreach(TreeListColumn column in gChartTreeList.Columns)
+            foreach(TreeListColumn column in ganttChartChartTreeList.Columns)
             {
                 int hits = 0;
 
@@ -302,17 +315,17 @@ namespace ERP
         #region ganttChart Events
         void m_Chart_TaskSelected(object sender, TaskMouseEventArgs e)
         {
-            m_TaskGrid.SelectedObjects = ganttChart.SelectedTasks.Select(x => m_Manager.IsPart(x) ? m_Manager.SplitTaskOf(x) : x).ToArray();
+            m_TaskGrid.SelectedObjects = ganttChartChart.SelectedTasks.Select(x => m_Manager.IsPart(x) ? m_Manager.SplitTaskOf(x) : x).ToArray();
             m_TaskGrid.ExpandAllGridItems();
 
             // Change visibility
-            optionsPanel.Visible = true;
+            ganttChartChartOptionsPanel.Visible = true;
         }
 
         void m_Chart_TaskDeselecting(object sender, TaskMouseEventArgs e)
         {
             // Change visibility
-            optionsPanel.Visible = false;
+            ganttChartChartOptionsPanel.Visible = false;
         }
 
         //void m_Chart_TaskMouseOut(object sender, TaskMouseEventArgs e)
@@ -373,7 +386,7 @@ namespace ERP
                 }
             }
 
-            ganttChart.Invalidate();
+            ganttChartChart.Invalidate();
         }
 
         private void m_TaskList_Expanded(object sender, NodeEventArgs e)
@@ -387,7 +400,7 @@ namespace ERP
                 }
             }
 
-            ganttChart.Invalidate();
+            ganttChartChart.Invalidate();
 
         }
 
@@ -395,7 +408,7 @@ namespace ERP
         {
             if (e.Button == MouseButtons.Left && !_SearchMode)
             {
-                TreeListNode node = gChartTreeList.FindNodeByID(int.Parse(e.Task.ID));
+                TreeListNode node = ganttChartChartTreeList.FindNodeByID(int.Parse(e.Task.ID));
                 // this check happens BEFORE IsCollapsed is toggled by double click
                 if (!e.Task.IsCollapsed)
                 {
@@ -413,17 +426,17 @@ namespace ERP
             int delta;
             if (e.Delta > 0)
             {
-                delta = -ganttChart.Viewport.WheelDelta;
+                delta = -ganttChartChart.Viewport.WheelDelta;
                 _ScrollFix = -1;
             }
             else
             {
-                delta = ganttChart.Viewport.WheelDelta;
+                delta = ganttChartChart.Viewport.WheelDelta;
                 _ScrollFix = 1;
             }
 
-            int index = (int)(ganttChart.Viewport.Y - ganttChart.HeaderOneHeight + ganttChart.HeaderTwoHeight + delta) / ganttChart.BarSpacing;
-            gChartTreeList.TopVisibleNodeIndex = index;
+            int index = (int)(ganttChartChart.Viewport.Y - ganttChartChart.HeaderOneHeight + ganttChartChart.HeaderTwoHeight + delta) / ganttChartChart.BarSpacing;
+            ganttChartChartTreeList.TopVisibleNodeIndex = index;
         }
 
         private void _mChart_Scroll(object sender, ScrollEventArgs e)
@@ -431,10 +444,10 @@ namespace ERP
             if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
             {
                 //float ratio = (float) dataTreeListView1.GetItemCount() * m_Chart.BarSpacing / m_Chart.Viewport.WorldHeight;
-                int nodes = (e.NewValue - ganttChart.HeaderOneHeight - ganttChart.HeaderTwoHeight) / ganttChart.BarSpacing;
+                int nodes = (e.NewValue - ganttChartChart.HeaderOneHeight - ganttChartChart.HeaderTwoHeight) / ganttChartChart.BarSpacing;
                 //int rem = e.NewValue % ganttChart.BarSpacing;
 
-                gChartTreeList.TopVisibleNodeIndex = nodes;
+                ganttChartChartTreeList.TopVisibleNodeIndex = nodes;
             }
 
             //int h1 = dataTreeListView1.Height * dataTreeListView1.RowHeight;
@@ -469,7 +482,7 @@ namespace ERP
         #region gChartTreeList Events
         private void gChartTreeList_TopVisibleIndexChanged(object sender, EventArgs e)
         {
-            ganttChart.Viewport.Y = ganttChart.HeaderOneHeight + ganttChart.HeaderTwoHeight + gChartTreeList.TopVisibleNodeIndex * ganttChart.BarSpacing;
+            ganttChartChart.Viewport.Y = ganttChartChart.HeaderOneHeight + ganttChartChart.HeaderTwoHeight + ganttChartChartTreeList.TopVisibleNodeIndex * ganttChartChart.BarSpacing;
 
             _ScrollFix = 0;
         }
@@ -501,6 +514,18 @@ namespace ERP
         private void labelControl2_Click(object sender, EventArgs e)
         {
             accountMenu.ShowPopup(Cursor.Position);
+        }
+
+        private void hyperlinkLabelControl2_Click(object sender, EventArgs e)
+        {
+            dummyForm.Text = "Group editor dummy form";
+            dummyForm.Show();
+        }
+
+        private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
+        {
+            dummyForm.Text = "Task editor dummy form";
+            dummyForm.Show();
         }
     }
 
