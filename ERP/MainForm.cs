@@ -529,6 +529,11 @@ namespace ERP
             dummyForm.Text = "Task editor dummy form";
             dummyForm.Show();
         }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     #region overlay painter

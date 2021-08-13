@@ -44,6 +44,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.hyperlinkLabelControl2 = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -80,7 +81,8 @@
             this.tileItem3 = new DevExpress.XtraEditors.TileItem();
             this.tileItem5 = new DevExpress.XtraEditors.TileItem();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.ganttChartSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.ganttChartChartSplitContainer = new DevExpress.XtraEditors.SplitContainerControl();
             this.ganttChartChartTreeListTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ganttChartChartProjectLabel = new DevExpress.XtraEditors.LabelControl();
@@ -88,11 +90,17 @@
             this.ganttChartChartOptionsPanel = new System.Windows.Forms.Panel();
             this.m_TaskGrid = new System.Windows.Forms.PropertyGrid();
             this.ganttChartChart = new Edcore.GanttChart.GanttChart();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.hyperlinkLabelControl2 = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup7 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.inventoryManagerDataGridView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,11 +147,11 @@
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.accountPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -154,10 +162,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.overviewGanttControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ganttChartSplitContainer)).BeginInit();
-            this.ganttChartSplitContainer.Panel1.SuspendLayout();
-            this.ganttChartSplitContainer.Panel2.SuspendLayout();
-            this.ganttChartSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ganttChartChartSplitContainer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ganttChartChartSplitContainer.Panel1)).BeginInit();
             this.ganttChartChartSplitContainer.Panel1.SuspendLayout();
@@ -167,9 +175,14 @@
             this.ganttChartChartTreeListTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ganttChartChartTreeList)).BeginInit();
             this.ganttChartChartOptionsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryManagerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVENTORYBindingSource)).BeginInit();
@@ -185,17 +198,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.hyperlinkLabelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 30);
             this.panelControl1.Name = "panelControl1";
@@ -227,6 +240,16 @@
             this.labelControl1.Size = new System.Drawing.Size(225, 39);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "SigneS MES";
+            // 
+            // hyperlinkLabelControl2
+            // 
+            this.hyperlinkLabelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.hyperlinkLabelControl2.Location = new System.Drawing.Point(12, 57);
+            this.hyperlinkLabelControl2.Name = "hyperlinkLabelControl2";
+            this.hyperlinkLabelControl2.Size = new System.Drawing.Size(110, 14);
+            this.hyperlinkLabelControl2.TabIndex = 2;
+            this.hyperlinkLabelControl2.Text = "Open group editor..";
+            this.hyperlinkLabelControl2.Click += new System.EventHandler(this.hyperlinkLabelControl2_Click);
             // 
             // panelControl2
             // 
@@ -265,6 +288,7 @@
             // 
             this.tabNavigationPage1.AutoScroll = true;
             this.tabNavigationPage1.Caption = "Overview";
+            this.tabNavigationPage1.Controls.Add(this.flowLayoutPanel1);
             this.tabNavigationPage1.Controls.Add(this.overviewGanttControl);
             this.tabNavigationPage1.Controls.Add(this.overviewTileControl);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
@@ -292,7 +316,7 @@
             this.overviewGanttControl.OptionsSplitter.PanelVisibility = DevExpress.XtraGantt.GanttPanelVisibility.Chart;
             this.overviewGanttControl.OptionsView.EnableAppearanceEvenRow = true;
             this.overviewGanttControl.OptionsView.ShowBaselines = true;
-            this.overviewGanttControl.Size = new System.Drawing.Size(493, 440);
+            this.overviewGanttControl.Size = new System.Drawing.Size(510, 440);
             this.overviewGanttControl.SplitterPosition = 87;
             this.overviewGanttControl.TabIndex = 0;
             // 
@@ -448,10 +472,11 @@
             this.overviewTileControl.Groups.Add(this.groupInventory);
             this.overviewTileControl.Groups.Add(this.tileGroup2);
             this.overviewTileControl.IndentBetweenGroups = 50;
-            this.overviewTileControl.Location = new System.Drawing.Point(505, 3);
+            this.overviewTileControl.Location = new System.Drawing.Point(522, 3);
             this.overviewTileControl.MaxId = 16;
             this.overviewTileControl.Name = "overviewTileControl";
             this.overviewTileControl.Padding = new System.Windows.Forms.Padding(12);
+            this.overviewTileControl.Position = 1;
             this.overviewTileControl.RowCount = 3;
             this.overviewTileControl.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.overviewTileControl.SelectionColor = System.Drawing.Color.Empty;
@@ -587,32 +612,38 @@
             this.tabNavigationPage2.Appearance.Options.UseBorderColor = true;
             this.tabNavigationPage2.AutoScroll = true;
             this.tabNavigationPage2.Caption = "Gantt Chart";
-            this.tabNavigationPage2.Controls.Add(this.ganttChartSplitContainer);
+            this.tabNavigationPage2.Controls.Add(this.panelControl3);
+            this.tabNavigationPage2.Controls.Add(this.xtraScrollableControl1);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(1232, 539);
             // 
-            // ganttChartSplitContainer
+            // panelControl3
             // 
-            this.ganttChartSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.ganttChartSplitContainer.Location = new System.Drawing.Point(0, 0);
-            this.ganttChartSplitContainer.Name = "ganttChartSplitContainer";
-            this.ganttChartSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.panelControl3.Controls.Add(this.layoutControl1);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(0, 0);
+            this.panelControl3.MinimumSize = new System.Drawing.Size(0, 1000);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1215, 1000);
+            this.panelControl3.TabIndex = 1;
             // 
-            // ganttChartSplitContainer.Panel1
+            // layoutControl1
             // 
-            this.ganttChartSplitContainer.Panel1.Controls.Add(this.ganttChartChartSplitContainer);
-            // 
-            // ganttChartSplitContainer.Panel2
-            // 
-            this.ganttChartSplitContainer.Panel2.Controls.Add(this.layoutControl1);
-            this.ganttChartSplitContainer.Size = new System.Drawing.Size(1215, 1200);
-            this.ganttChartSplitContainer.SplitterDistance = 450;
-            this.ganttChartSplitContainer.TabIndex = 2;
+            this.layoutControl1.Controls.Add(this.ganttChartChartSplitContainer);
+            this.layoutControl1.Controls.Add(this.hyperlinkLabelControl1);
+            this.layoutControl1.Controls.Add(this.labelControl3);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(2, 2);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(658, 209, 650, 718);
+            this.layoutControl1.Root = this.Root;
+            this.layoutControl1.Size = new System.Drawing.Size(1211, 996);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
             // 
             // ganttChartChartSplitContainer
             // 
-            this.ganttChartChartSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ganttChartChartSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.ganttChartChartSplitContainer.Location = new System.Drawing.Point(13, 38);
             this.ganttChartChartSplitContainer.Name = "ganttChartChartSplitContainer";
             // 
             // ganttChartChartSplitContainer.Panel1
@@ -628,7 +659,7 @@
             this.ganttChartChartSplitContainer.Panel2.Controls.Add(this.ganttChartChart);
             this.ganttChartChartSplitContainer.Panel2.MinSize = 200;
             this.ganttChartChartSplitContainer.Panel2.Text = "Panel2";
-            this.ganttChartChartSplitContainer.Size = new System.Drawing.Size(1215, 450);
+            this.ganttChartChartSplitContainer.Size = new System.Drawing.Size(1185, 368);
             this.ganttChartChartSplitContainer.SplitterPosition = 375;
             this.ganttChartChartSplitContainer.TabIndex = 4;
             // 
@@ -644,7 +675,7 @@
             this.ganttChartChartTreeListTableLayoutPanel.RowCount = 2;
             this.ganttChartChartTreeListTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.366071F));
             this.ganttChartChartTreeListTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.63393F));
-            this.ganttChartChartTreeListTableLayoutPanel.Size = new System.Drawing.Size(375, 450);
+            this.ganttChartChartTreeListTableLayoutPanel.Size = new System.Drawing.Size(375, 368);
             this.ganttChartChartTreeListTableLayoutPanel.TabIndex = 2;
             // 
             // ganttChartChartProjectLabel
@@ -654,18 +685,18 @@
             this.ganttChartChartProjectLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ganttChartChartProjectLabel.Location = new System.Drawing.Point(3, 3);
             this.ganttChartChartProjectLabel.Name = "ganttChartChartProjectLabel";
-            this.ganttChartChartProjectLabel.Size = new System.Drawing.Size(369, 27);
+            this.ganttChartChartProjectLabel.Size = new System.Drawing.Size(369, 21);
             this.ganttChartChartProjectLabel.TabIndex = 1;
             this.ganttChartChartProjectLabel.Text = "{project_title}";
             // 
             // ganttChartChartTreeList
             // 
             this.ganttChartChartTreeList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ganttChartChartTreeList.Location = new System.Drawing.Point(3, 36);
+            this.ganttChartChartTreeList.Location = new System.Drawing.Point(3, 30);
             this.ganttChartChartTreeList.MenuManager = this.toolbarFormManager1;
             this.ganttChartChartTreeList.Name = "ganttChartChartTreeList";
             this.ganttChartChartTreeList.OptionsView.AutoWidth = false;
-            this.ganttChartChartTreeList.Size = new System.Drawing.Size(369, 411);
+            this.ganttChartChartTreeList.Size = new System.Drawing.Size(369, 335);
             this.ganttChartChartTreeList.TabIndex = 0;
             // 
             // ganttChartChartOptionsPanel
@@ -673,11 +704,11 @@
             this.ganttChartChartOptionsPanel.AutoSize = true;
             this.ganttChartChartOptionsPanel.Controls.Add(this.m_TaskGrid);
             this.ganttChartChartOptionsPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ganttChartChartOptionsPanel.Location = new System.Drawing.Point(630, 0);
+            this.ganttChartChartOptionsPanel.Location = new System.Drawing.Point(600, 0);
             this.ganttChartChartOptionsPanel.MaximumSize = new System.Drawing.Size(350, 1280);
             this.ganttChartChartOptionsPanel.MinimumSize = new System.Drawing.Size(200, 0);
             this.ganttChartChartOptionsPanel.Name = "ganttChartChartOptionsPanel";
-            this.ganttChartChartOptionsPanel.Size = new System.Drawing.Size(200, 450);
+            this.ganttChartChartOptionsPanel.Size = new System.Drawing.Size(200, 368);
             this.ganttChartChartOptionsPanel.TabIndex = 1;
             this.ganttChartChartOptionsPanel.Visible = false;
             // 
@@ -687,7 +718,7 @@
             this.m_TaskGrid.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_TaskGrid.Location = new System.Drawing.Point(0, 0);
             this.m_TaskGrid.Name = "m_TaskGrid";
-            this.m_TaskGrid.Size = new System.Drawing.Size(200, 450);
+            this.m_TaskGrid.Size = new System.Drawing.Size(200, 368);
             this.m_TaskGrid.TabIndex = 0;
             // 
             // ganttChartChart
@@ -699,69 +730,121 @@
             this.ganttChartChart.Location = new System.Drawing.Point(0, 0);
             this.ganttChartChart.Margin = new System.Windows.Forms.Padding(0);
             this.ganttChartChart.Name = "ganttChartChart";
-            this.ganttChartChart.Size = new System.Drawing.Size(830, 450);
+            this.ganttChartChart.Size = new System.Drawing.Size(800, 368);
             this.ganttChartChart.TabIndex = 0;
-            // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.hyperlinkLabelControl2);
-            this.layoutControl1.Controls.Add(this.hyperlinkLabelControl1);
-            this.layoutControl1.Controls.Add(this.labelControl3);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(933, 407, 650, 400);
-            this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1215, 746);
-            this.layoutControl1.TabIndex = 4;
-            this.layoutControl1.Text = "layoutControl1";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelControl3.Location = new System.Drawing.Point(12, 12);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(93, 23);
-            this.labelControl3.StyleController = this.layoutControl1;
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "Quick Links";
             // 
             // hyperlinkLabelControl1
             // 
             this.hyperlinkLabelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(12, 39);
+            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(22, 477);
             this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
             this.hyperlinkLabelControl1.Size = new System.Drawing.Size(100, 14);
             this.hyperlinkLabelControl1.StyleController = this.layoutControl1;
             this.hyperlinkLabelControl1.TabIndex = 3;
             this.hyperlinkLabelControl1.Text = "Open task editor..";
             // 
-            // hyperlinkLabelControl2
+            // labelControl3
             // 
-            this.hyperlinkLabelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.hyperlinkLabelControl2.Location = new System.Drawing.Point(12, 57);
-            this.hyperlinkLabelControl2.Name = "hyperlinkLabelControl2";
-            this.hyperlinkLabelControl2.Size = new System.Drawing.Size(110, 14);
-            this.hyperlinkLabelControl2.StyleController = this.layoutControl1;
-            this.hyperlinkLabelControl2.TabIndex = 2;
-            this.hyperlinkLabelControl2.Text = "Open group editor..";
-            this.hyperlinkLabelControl2.Click += new System.EventHandler(this.hyperlinkLabelControl2_Click);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labelControl3.Location = new System.Drawing.Point(22, 450);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(93, 23);
+            this.labelControl3.StyleController = this.layoutControl1;
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "Quick Links";
+            this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.emptySpaceItem1,
-            this.layoutControlGroup3});
+            this.layoutControlGroup7,
+            this.layoutControlGroup5,
+            this.layoutControlGroup6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1215, 746);
+            this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
+            this.Root.Size = new System.Drawing.Size(1211, 996);
             this.Root.TextVisible = false;
+            // 
+            // layoutControlGroup7
+            // 
+            this.layoutControlGroup7.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.emptySpaceItem1});
+            this.layoutControlGroup7.Location = new System.Drawing.Point(0, 497);
+            this.layoutControlGroup7.Name = "layoutControlGroup7";
+            this.layoutControlGroup7.Size = new System.Drawing.Size(1195, 483);
+            this.layoutControlGroup7.Text = "Cards";
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1171, 434);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlGroup5
+            // 
+            this.layoutControlGroup5.CustomizationFormText = "Gantt Chart";
+            this.layoutControlGroup5.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem4});
+            this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup5.Name = "layoutControlGroup5";
+            this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(1195, 403);
+            this.layoutControlGroup5.Text = "Gantt Chart";
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.ganttChartChartSplitContainer;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(1189, 372);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // layoutControlGroup6
+            // 
+            this.layoutControlGroup6.CustomizationFormText = "Quick Links";
+            this.layoutControlGroup6.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup6.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem3});
+            this.layoutControlGroup6.Location = new System.Drawing.Point(0, 403);
+            this.layoutControlGroup6.Name = "layoutControlGroup6";
+            this.layoutControlGroup6.Size = new System.Drawing.Size(1195, 94);
+            this.layoutControlGroup6.Text = "Quick Links";
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.labelControl3;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(1171, 27);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.hyperlinkLabelControl1;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 27);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(1171, 18);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // xtraScrollableControl1
+            // 
+            this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1215, 1000);
+            this.xtraScrollableControl1.TabIndex = 0;
             // 
             // tabNavigationPage3
             // 
@@ -1139,51 +1222,39 @@
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(1195, 726);
             // 
-            // layoutControlItem2
+            // layoutControlGroup1
             // 
-            this.layoutControlItem2.Control = this.labelControl3;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1195, 27);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.hyperlinkLabelControl1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 27);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1195, 18);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.hyperlinkLabelControl2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 45);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1195, 18);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 63);
-            this.emptySpaceItem1.MaxSize = new System.Drawing.Size(0, 100);
-            this.emptySpaceItem1.MinSize = new System.Drawing.Size(10, 100);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1195, 100);
-            this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1212, 54);
             // 
             // layoutControlGroup3
             // 
-            this.layoutControlGroup3.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Flow;
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 163);
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 54);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(1195, 563);
-            this.layoutControlGroup3.Text = "Cards";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1212, 112);
+            // 
+            // layoutControlGroup4
+            // 
+            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 166);
+            this.layoutControlGroup4.Name = "layoutControlGroup4";
+            this.layoutControlGroup4.Size = new System.Drawing.Size(1212, 353);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.hyperlinkLabelControl1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 27);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(160, 1);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(830, 8);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -1223,10 +1294,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.overviewGanttControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
-            this.ganttChartSplitContainer.Panel1.ResumeLayout(false);
-            this.ganttChartSplitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ganttChartSplitContainer)).EndInit();
-            this.ganttChartSplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ganttChartChartSplitContainer.Panel1)).EndInit();
             this.ganttChartChartSplitContainer.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ganttChartChartSplitContainer.Panel2)).EndInit();
@@ -1238,9 +1309,14 @@
             this.ganttChartChartTreeListTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ganttChartChartTreeList)).EndInit();
             this.ganttChartChartOptionsPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventoryManagerDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVENTORYBindingSource)).EndInit();
@@ -1256,11 +1332,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1303,12 +1378,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn ParentID;
         private DevExpress.XtraTreeList.Columns.TreeListColumn BaselineStartDate;
         private DevExpress.XtraTreeList.Columns.TreeListColumn BaselineEndDate;
-        private DevExpress.XtraEditors.SplitContainerControl ganttChartChartSplitContainer;
-        private DevExpress.XtraTreeList.TreeList ganttChartChartTreeList;
-        private Edcore.GanttChart.GanttChart ganttChartChart;
-        private DevExpress.XtraEditors.LabelControl ganttChartChartProjectLabel;
-        private System.Windows.Forms.Panel ganttChartChartOptionsPanel;
-        private System.Windows.Forms.PropertyGrid m_TaskGrid;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
@@ -1352,25 +1421,39 @@
         private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private System.Windows.Forms.SplitContainer ganttChartSplitContainer;
-        private System.Windows.Forms.TableLayoutPanel ganttChartChartTreeListTableLayoutPanel;
-        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraBars.PopupMenu accountPopupMenu;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.Utils.Layout.StackPanel stackPanel2;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
+        private DevExpress.XtraEditors.SplitContainerControl ganttChartChartSplitContainer;
+        private System.Windows.Forms.TableLayoutPanel ganttChartChartTreeListTableLayoutPanel;
+        private DevExpress.XtraEditors.LabelControl ganttChartChartProjectLabel;
+        private DevExpress.XtraTreeList.TreeList ganttChartChartTreeList;
+        private System.Windows.Forms.Panel ganttChartChartOptionsPanel;
+        private System.Windows.Forms.PropertyGrid m_TaskGrid;
+        private Edcore.GanttChart.GanttChart ganttChartChart;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup7;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
