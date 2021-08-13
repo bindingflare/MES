@@ -513,7 +513,9 @@ namespace ERP
 
         private void labelControl2_Click(object sender, EventArgs e)
         {
-            accountMenu.ShowPopup(Cursor.Position);
+            //Point loc = 
+            Point bottomleft = panelControl1.PointToScreen(new Point(labelControl2.Left, labelControl2.Bottom));
+            accountPopupMenu.ShowPopup(bottomleft, labelControl2);
         }
 
         private void hyperlinkLabelControl2_Click(object sender, EventArgs e)
