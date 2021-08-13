@@ -173,7 +173,7 @@ namespace ERP
                 label.Text = string.Format("Event #{0}: Hello world", i);
                 panel.Controls.Add(label);
 
-                eventManagerEventStackPanel.Controls.Add(panel);
+                eventManagerEventStackPanel1.Controls.Add(panel);
             }
             
 
@@ -210,8 +210,6 @@ namespace ERP
             // Build tree for GanttChart
             ganttChartChart.Init(m_Manager);
             ganttChartChart.CreateTaskDelegate = delegate () { return new MyTask(m_Manager); };
-
-            ganttChartChartProjectLabel.Text = m_Manager.Name;
 
             ganttChartChartSplitContainer.SplitterPosition = 400;
 
@@ -253,10 +251,24 @@ namespace ERP
 
         private void AfterInitialization()
         {
+            ganttChartChartProjectLabel.Text = m_Manager.Name;
+            layoutControlGroup9.Text = m_Manager.Name;
+
             // Create dummy secondary form
+            _CreateDummyForm();
+        }
+
+        private void dummyForm_Disposed(object sender, EventArgs e)
+        {
+            _CreateDummyForm();
+        }
+
+        private void _CreateDummyForm()
+        {
             dummyForm = new XtraForm();
             dummyForm.Size = new Size(852, 480);
             dummyForm.Name = "Dummy form";
+            dummyForm.Disposed += new EventHandler(dummyForm_Disposed);
         }
 
         private void _FormatTreeList()
@@ -514,25 +526,48 @@ namespace ERP
         private void labelControl2_Click(object sender, EventArgs e)
         {
             //Point loc = 
-            Point bottomleft = panelControl1.PointToScreen(new Point(labelControl2.Left, labelControl2.Bottom));
+            Point bottomleft = panelControlMain.PointToScreen(new Point(labelControl2.Left, labelControl2.Bottom));
             accountPopupMenu.ShowPopup(bottomleft, labelControl2);
         }
 
         private void hyperlinkLabelControl2_Click(object sender, EventArgs e)
         {
             dummyForm.Text = "Group editor dummy form";
-            dummyForm.Show();
+            dummyForm.ShowDialog();
         }
 
         private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
         {
             dummyForm.Text = "Task editor dummy form";
-            dummyForm.Show();
+            dummyForm.ShowDialog();
         }
 
-        private void labelControl3_Click(object sender, EventArgs e)
+        private void accordionControlElementTaskEditor_Click(object sender, EventArgs e)
         {
+            hyperlinkLabelControl1_Click(sender, e);
+        }
 
+        private void accordionControlElementGroupEditor_Click(object sender, EventArgs e)
+        {
+            hyperlinkLabelControl2_Click(sender, e);
+        }
+
+        private void accordionControlElementSetting_Click(object sender, EventArgs e)
+        {
+            dummyForm.Text = "Settings dummy form";
+            dummyForm.ShowDialog();
+        }
+
+        private void BarButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dummyForm.Text = "Login dummy form";
+            dummyForm.ShowDialog();
+        }
+
+        private void BarButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dummyForm.Text = "Account settings dummy form";
+            dummyForm.ShowDialog();
         }
     }
 
