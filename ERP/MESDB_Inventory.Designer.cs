@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ERP {
+namespace MES {
     
     
     /// <summary>
@@ -22,7 +22,7 @@ namespace ERP {
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
     [global::System.Xml.Serialization.XmlRootAttribute("ERPDB_Inventory")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ERPDB_Inventory : global::System.Data.DataSet {
+    public partial class MESDB_Inventory : global::System.Data.DataSet {
         
         private INVENTORYDataTable tableINVENTORY;
         
@@ -30,7 +30,7 @@ namespace ERP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ERPDB_Inventory() {
+        public MESDB_Inventory() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ERP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected ERPDB_Inventory(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected MESDB_Inventory(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace ERP {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ERPDB_Inventory cln = ((ERPDB_Inventory)(base.Clone()));
+            MESDB_Inventory cln = ((MESDB_Inventory)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -225,7 +225,7 @@ namespace ERP {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ERPDB_Inventory ds = new ERPDB_Inventory();
+            MESDB_Inventory ds = new MESDB_Inventory();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -516,7 +516,7 @@ namespace ERP {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ERPDB_Inventory ds = new ERPDB_Inventory();
+                MESDB_Inventory ds = new MESDB_Inventory();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -720,7 +720,7 @@ namespace ERP {
         }
     }
 }
-namespace ERP.ERPDB_InventoryTableAdapters {
+namespace MES.ERPDB_InventoryTableAdapters {
     
     
     /// <summary>
@@ -1008,7 +1008,7 @@ namespace ERP.ERPDB_InventoryTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SQLite.SQLiteConnection();
-            this._connection.ConnectionString = global::ERP.Properties.Settings.Default.ERPDBConnectionString;
+            this._connection.ConnectionString = global::MES.Properties.Settings.Default.ERPDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1025,7 +1025,7 @@ namespace ERP.ERPDB_InventoryTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ERPDB_Inventory.INVENTORYDataTable dataTable) {
+        public virtual int Fill(MESDB_Inventory.INVENTORYDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1038,9 +1038,9 @@ namespace ERP.ERPDB_InventoryTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ERPDB_Inventory.INVENTORYDataTable GetData() {
+        public virtual MESDB_Inventory.INVENTORYDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ERPDB_Inventory.INVENTORYDataTable dataTable = new ERPDB_Inventory.INVENTORYDataTable();
+            MESDB_Inventory.INVENTORYDataTable dataTable = new MESDB_Inventory.INVENTORYDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1048,14 +1048,14 @@ namespace ERP.ERPDB_InventoryTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ERPDB_Inventory.INVENTORYDataTable dataTable) {
+        public virtual int Update(MESDB_Inventory.INVENTORYDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ERPDB_Inventory dataSet) {
+        public virtual int Update(MESDB_Inventory dataSet) {
             return this.Adapter.Update(dataSet, "INVENTORY");
         }
         
@@ -1345,7 +1345,7 @@ namespace ERP.ERPDB_InventoryTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(ERPDB_Inventory dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(MESDB_Inventory dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._iNVENTORYTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.INVENTORY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1364,7 +1364,7 @@ namespace ERP.ERPDB_InventoryTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(ERPDB_Inventory dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(MESDB_Inventory dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._iNVENTORYTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.INVENTORY.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1382,7 +1382,7 @@ namespace ERP.ERPDB_InventoryTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(ERPDB_Inventory dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(MESDB_Inventory dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._iNVENTORYTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.INVENTORY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1424,7 +1424,7 @@ namespace ERP.ERPDB_InventoryTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(ERPDB_Inventory dataSet) {
+        public virtual int UpdateAll(MESDB_Inventory dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

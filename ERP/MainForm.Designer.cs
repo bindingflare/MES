@@ -1,4 +1,4 @@
-﻿namespace ERP
+﻿namespace MES
 {
     partial class MainForm
     {
@@ -117,12 +117,28 @@
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.inventoryManagerDataGridView = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rESTOCKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iNVENTORYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eRPDB_Inventory = new ERP.ERPDB_Inventory();
+            this.dUIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sITEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mATERIALIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mATERIALNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODNMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODMODELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODTYPEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODCLASSCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODGRADEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODGROUPIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pROCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pROCVERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dELYNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rEASONCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dESCRDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREATEUSERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREATEDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uPDATEUSERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uPDATEDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mATERIALMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.signes_MESDataSetMaterial_MST = new MES.Signes_MESDataSetMaterial_MST();
             this.layoutControlGroup11 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup16 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -158,24 +174,50 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlManufacturingOrder = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.mMPROCMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.signes_MESDataSet = new MES.Signes_MESDataSet();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDUID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSITE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROC_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROC_VER = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROC_NM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROC_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDEL_YN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colREASON_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDESCR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCREATE_USER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCREATE_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUPDATE_USER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUPDATE_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlBOM = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
+            this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
+            this.mMPRODMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup21 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabNavigationPage7 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlFinishedGoodsInventory = new DevExpress.XtraEditors.PanelControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElementMain = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementGanttChart = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementTaskEditor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementGroupEditor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementEventManager = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementExportLogs = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementInventory = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementMaterialEditor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementViewRestocks = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementEventManager = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementExportLogs = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementGanttChart = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementTaskEditor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementGroupEditor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementSetting = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.toolbarFormControl1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormControl();
             this.toolbarFormManager2 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
@@ -185,7 +227,6 @@
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItemLicense = new DevExpress.XtraBars.BarButtonItem();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
-            this.iNVENTORYTableAdapter = new ERP.ERPDB_InventoryTableAdapters.INVENTORYTableAdapter();
             this.accountPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -193,6 +234,13 @@
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.viewDataSource1 = new DevExpress.Persistent.Base.ReportsV2.ViewDataSource();
+            this.mESDB_Inventory = new MES.MESDB_Inventory();
+            this.mESDBInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mATERIAL_MSTTableAdapter = new MES.Signes_MESDataSetMaterial_MSTTableAdapters.MATERIAL_MSTTableAdapter();
+            this.mMEQPMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mM_EQP_MSTTableAdapter = new MES.Signes_MESDataSetTableAdapters.MM_EQP_MSTTableAdapter();
+            this.mM_PROD_MSTTableAdapter = new MES.Signes_MESDataSetTableAdapters.MM_PROD_MSTTableAdapter();
+            this.mM_PROC_MSTTableAdapter = new MES.Signes_MESDataSetTableAdapters.MM_PROC_MSTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
             this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -245,8 +293,8 @@
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryManagerDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVENTORYBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eRPDB_Inventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mATERIALMSTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signes_MESDataSetMaterial_MST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
@@ -281,11 +329,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlManufacturingOrder)).BeginInit();
+            this.panelControlManufacturingOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMPROCMSTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signes_MESDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBOM)).BeginInit();
             this.panelControlBOM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
+            this.layoutControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mMPRODMSTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             this.tabNavigationPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlFinishedGoodsInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
@@ -298,6 +355,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDB_Inventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDBInventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMEQPMSTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlMain
@@ -359,7 +419,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(658, 209, 650, 718);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1211, 996);
+            this.layoutControl1.Size = new System.Drawing.Size(1228, 996);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -381,7 +441,7 @@
             this.ganttChartChartSplitContainer.Panel2.Controls.Add(this.ganttChartChart);
             this.ganttChartChartSplitContainer.Panel2.MinSize = 200;
             this.ganttChartChartSplitContainer.Panel2.Text = "Panel2";
-            this.ganttChartChartSplitContainer.Size = new System.Drawing.Size(1185, 381);
+            this.ganttChartChartSplitContainer.Size = new System.Drawing.Size(1202, 381);
             this.ganttChartChartSplitContainer.SplitterPosition = 375;
             this.ganttChartChartSplitContainer.TabIndex = 4;
             // 
@@ -497,7 +557,7 @@
             this.ganttChartChartOptionsPanel.AutoSize = true;
             this.ganttChartChartOptionsPanel.Controls.Add(this.m_TaskGrid);
             this.ganttChartChartOptionsPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ganttChartChartOptionsPanel.Location = new System.Drawing.Point(600, 0);
+            this.ganttChartChartOptionsPanel.Location = new System.Drawing.Point(617, 0);
             this.ganttChartChartOptionsPanel.MaximumSize = new System.Drawing.Size(350, 1280);
             this.ganttChartChartOptionsPanel.MinimumSize = new System.Drawing.Size(200, 0);
             this.ganttChartChartOptionsPanel.Name = "ganttChartChartOptionsPanel";
@@ -523,7 +583,7 @@
             this.ganttChartChart.Location = new System.Drawing.Point(0, 0);
             this.ganttChartChart.Margin = new System.Windows.Forms.Padding(0);
             this.ganttChartChart.Name = "ganttChartChart";
-            this.ganttChartChart.Size = new System.Drawing.Size(800, 381);
+            this.ganttChartChart.Size = new System.Drawing.Size(817, 381);
             this.ganttChartChart.TabIndex = 0;
             // 
             // ganttChartHyperLinkLabelControl1
@@ -560,7 +620,7 @@
             this.splitterItem5});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.Root.Size = new System.Drawing.Size(1211, 996);
+            this.Root.Size = new System.Drawing.Size(1228, 996);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup7
@@ -570,7 +630,7 @@
             this.emptySpaceItem1});
             this.layoutControlGroup7.Location = new System.Drawing.Point(0, 538);
             this.layoutControlGroup7.Name = "layoutControlGroup7";
-            this.layoutControlGroup7.Size = new System.Drawing.Size(1195, 442);
+            this.layoutControlGroup7.Size = new System.Drawing.Size(1212, 442);
             this.layoutControlGroup7.Text = "Cards";
             // 
             // emptySpaceItem1
@@ -578,7 +638,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1171, 393);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1188, 393);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup5
@@ -590,7 +650,7 @@
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(1195, 416);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(1212, 416);
             this.layoutControlGroup5.Text = "Gantt Chart";
             // 
             // layoutControlItem4
@@ -598,7 +658,7 @@
             this.layoutControlItem4.Control = this.ganttChartChartSplitContainer;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1189, 385);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1206, 385);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -612,7 +672,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 426);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            this.layoutControlGroup6.Size = new System.Drawing.Size(1195, 112);
+            this.layoutControlGroup6.Size = new System.Drawing.Size(1212, 112);
             this.layoutControlGroup6.Text = "Quick Links";
             // 
             // layoutControlItem1
@@ -620,7 +680,7 @@
             this.layoutControlItem1.Control = this.ganttChartLabelControlQuickLinks;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1171, 27);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1188, 27);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -629,7 +689,7 @@
             this.layoutControlItem9.Control = this.ganttChartHyperLinkLabelControl2;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 45);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(1171, 18);
+            this.layoutControlItem9.Size = new System.Drawing.Size(1188, 18);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -638,7 +698,7 @@
             this.layoutControlItem3.Control = this.ganttChartHyperLinkLabelControl1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 27);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1171, 18);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1188, 18);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -647,7 +707,7 @@
             this.splitterItem5.AllowHotTrack = true;
             this.splitterItem5.Location = new System.Drawing.Point(0, 416);
             this.splitterItem5.Name = "splitterItem5";
-            this.splitterItem5.Size = new System.Drawing.Size(1195, 10);
+            this.splitterItem5.Size = new System.Drawing.Size(1212, 10);
             // 
             // panelControlGanttChart
             // 
@@ -817,7 +877,7 @@
             this.tileEventM.AppearanceItem.Normal.Options.UseBorderColor = true;
             tileItemElement5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
             tileItemElement5.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
-            tileItemElement5.Text = "Event Manager";
+            tileItemElement5.Text = "Jobs";
             this.tileEventM.Elements.Add(tileItemElement5);
             this.tileEventM.Id = 7;
             this.tileEventM.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1052,7 +1112,7 @@
             this.panelControlProductionMonitor.Location = new System.Drawing.Point(0, 0);
             this.panelControlProductionMonitor.MinimumSize = new System.Drawing.Size(0, 1000);
             this.panelControlProductionMonitor.Name = "panelControlProductionMonitor";
-            this.panelControlProductionMonitor.Size = new System.Drawing.Size(1215, 1000);
+            this.panelControlProductionMonitor.Size = new System.Drawing.Size(1232, 1000);
             this.panelControlProductionMonitor.TabIndex = 1;
             // 
             // xtraScrollableControl1
@@ -1060,7 +1120,7 @@
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(1215, 1000);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1232, 539);
             this.xtraScrollableControl1.TabIndex = 0;
             // 
             // tabNavigationPage5
@@ -1078,7 +1138,7 @@
             this.panelControlMaterialInventory.Location = new System.Drawing.Point(0, 0);
             this.panelControlMaterialInventory.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlMaterialInventory.Name = "panelControlMaterialInventory";
-            this.panelControlMaterialInventory.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlMaterialInventory.Size = new System.Drawing.Size(1232, 1200);
             this.panelControlMaterialInventory.TabIndex = 5;
             // 
             // layoutControl3
@@ -1090,7 +1150,7 @@
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(746, 332, 650, 400);
             this.layoutControl3.Root = this.layoutControlGroup11;
-            this.layoutControl3.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControl3.Size = new System.Drawing.Size(1228, 1196);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -1099,7 +1159,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(137, 1163);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1061, 20);
+            this.dataGridView1.Size = new System.Drawing.Size(1078, 20);
             this.dataGridView1.TabIndex = 5;
             // 
             // inventoryManagerDataGridView
@@ -1107,49 +1167,161 @@
             this.inventoryManagerDataGridView.AutoGenerateColumns = false;
             this.inventoryManagerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inventoryManagerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nAMEDataGridViewTextBoxColumn,
-            this.qTYDataGridViewTextBoxColumn,
-            this.rESTOCKDataGridViewTextBoxColumn});
-            this.inventoryManagerDataGridView.DataSource = this.iNVENTORYBindingSource;
+            this.dUIDDataGridViewTextBoxColumn,
+            this.sITEIDDataGridViewTextBoxColumn,
+            this.mATERIALIDDataGridViewTextBoxColumn,
+            this.mATERIALNAMEDataGridViewTextBoxColumn,
+            this.pRODIDDataGridViewTextBoxColumn,
+            this.pRODNMDataGridViewTextBoxColumn,
+            this.pRODMODELDataGridViewTextBoxColumn,
+            this.pRODTYPEDataGridViewTextBoxColumn,
+            this.pRODCLASSCODEDataGridViewTextBoxColumn,
+            this.pRODGRADEDataGridViewTextBoxColumn,
+            this.pRODGROUPIDDataGridViewTextBoxColumn,
+            this.pROCIDDataGridViewTextBoxColumn,
+            this.pROCVERDataGridViewTextBoxColumn,
+            this.dELYNDataGridViewTextBoxColumn,
+            this.rEASONCODEDataGridViewTextBoxColumn,
+            this.dESCRDataGridViewTextBoxColumn,
+            this.cREATEUSERIDDataGridViewTextBoxColumn,
+            this.cREATEDATEDataGridViewTextBoxColumn,
+            this.uPDATEUSERIDDataGridViewTextBoxColumn,
+            this.uPDATEDATEDataGridViewTextBoxColumn});
+            this.inventoryManagerDataGridView.DataSource = this.mATERIALMSTBindingSource;
             this.inventoryManagerDataGridView.Location = new System.Drawing.Point(24, 49);
             this.inventoryManagerDataGridView.Name = "inventoryManagerDataGridView";
-            this.inventoryManagerDataGridView.Size = new System.Drawing.Size(648, 329);
+            this.inventoryManagerDataGridView.Size = new System.Drawing.Size(658, 329);
             this.inventoryManagerDataGridView.TabIndex = 4;
             // 
-            // iDDataGridViewTextBoxColumn
+            // dUIDDataGridViewTextBoxColumn
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.dUIDDataGridViewTextBoxColumn.DataPropertyName = "DUID";
+            this.dUIDDataGridViewTextBoxColumn.HeaderText = "DUID";
+            this.dUIDDataGridViewTextBoxColumn.Name = "dUIDDataGridViewTextBoxColumn";
             // 
-            // nAMEDataGridViewTextBoxColumn
+            // sITEIDDataGridViewTextBoxColumn
             // 
-            this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
+            this.sITEIDDataGridViewTextBoxColumn.DataPropertyName = "SITE_ID";
+            this.sITEIDDataGridViewTextBoxColumn.HeaderText = "SITE_ID";
+            this.sITEIDDataGridViewTextBoxColumn.Name = "sITEIDDataGridViewTextBoxColumn";
             // 
-            // qTYDataGridViewTextBoxColumn
+            // mATERIALIDDataGridViewTextBoxColumn
             // 
-            this.qTYDataGridViewTextBoxColumn.DataPropertyName = "QTY";
-            this.qTYDataGridViewTextBoxColumn.HeaderText = "QTY";
-            this.qTYDataGridViewTextBoxColumn.Name = "qTYDataGridViewTextBoxColumn";
+            this.mATERIALIDDataGridViewTextBoxColumn.DataPropertyName = "MATERIAL_ID";
+            this.mATERIALIDDataGridViewTextBoxColumn.HeaderText = "MATERIAL_ID";
+            this.mATERIALIDDataGridViewTextBoxColumn.Name = "mATERIALIDDataGridViewTextBoxColumn";
             // 
-            // rESTOCKDataGridViewTextBoxColumn
+            // mATERIALNAMEDataGridViewTextBoxColumn
             // 
-            this.rESTOCKDataGridViewTextBoxColumn.DataPropertyName = "RESTOCK";
-            this.rESTOCKDataGridViewTextBoxColumn.HeaderText = "RESTOCK";
-            this.rESTOCKDataGridViewTextBoxColumn.Name = "rESTOCKDataGridViewTextBoxColumn";
+            this.mATERIALNAMEDataGridViewTextBoxColumn.DataPropertyName = "MATERIAL_NAME";
+            this.mATERIALNAMEDataGridViewTextBoxColumn.HeaderText = "MATERIAL_NAME";
+            this.mATERIALNAMEDataGridViewTextBoxColumn.Name = "mATERIALNAMEDataGridViewTextBoxColumn";
             // 
-            // iNVENTORYBindingSource
+            // pRODIDDataGridViewTextBoxColumn
             // 
-            this.iNVENTORYBindingSource.DataMember = "INVENTORY";
-            this.iNVENTORYBindingSource.DataSource = this.eRPDB_Inventory;
+            this.pRODIDDataGridViewTextBoxColumn.DataPropertyName = "PROD_ID";
+            this.pRODIDDataGridViewTextBoxColumn.HeaderText = "PROD_ID";
+            this.pRODIDDataGridViewTextBoxColumn.Name = "pRODIDDataGridViewTextBoxColumn";
             // 
-            // eRPDB_Inventory
+            // pRODNMDataGridViewTextBoxColumn
             // 
-            this.eRPDB_Inventory.DataSetName = "ERPDB_Inventory";
-            this.eRPDB_Inventory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.pRODNMDataGridViewTextBoxColumn.DataPropertyName = "PROD_NM";
+            this.pRODNMDataGridViewTextBoxColumn.HeaderText = "PROD_NM";
+            this.pRODNMDataGridViewTextBoxColumn.Name = "pRODNMDataGridViewTextBoxColumn";
+            // 
+            // pRODMODELDataGridViewTextBoxColumn
+            // 
+            this.pRODMODELDataGridViewTextBoxColumn.DataPropertyName = "PROD_MODEL";
+            this.pRODMODELDataGridViewTextBoxColumn.HeaderText = "PROD_MODEL";
+            this.pRODMODELDataGridViewTextBoxColumn.Name = "pRODMODELDataGridViewTextBoxColumn";
+            // 
+            // pRODTYPEDataGridViewTextBoxColumn
+            // 
+            this.pRODTYPEDataGridViewTextBoxColumn.DataPropertyName = "PROD_TYPE";
+            this.pRODTYPEDataGridViewTextBoxColumn.HeaderText = "PROD_TYPE";
+            this.pRODTYPEDataGridViewTextBoxColumn.Name = "pRODTYPEDataGridViewTextBoxColumn";
+            // 
+            // pRODCLASSCODEDataGridViewTextBoxColumn
+            // 
+            this.pRODCLASSCODEDataGridViewTextBoxColumn.DataPropertyName = "PROD_CLASS_CODE";
+            this.pRODCLASSCODEDataGridViewTextBoxColumn.HeaderText = "PROD_CLASS_CODE";
+            this.pRODCLASSCODEDataGridViewTextBoxColumn.Name = "pRODCLASSCODEDataGridViewTextBoxColumn";
+            // 
+            // pRODGRADEDataGridViewTextBoxColumn
+            // 
+            this.pRODGRADEDataGridViewTextBoxColumn.DataPropertyName = "PROD_GRADE";
+            this.pRODGRADEDataGridViewTextBoxColumn.HeaderText = "PROD_GRADE";
+            this.pRODGRADEDataGridViewTextBoxColumn.Name = "pRODGRADEDataGridViewTextBoxColumn";
+            // 
+            // pRODGROUPIDDataGridViewTextBoxColumn
+            // 
+            this.pRODGROUPIDDataGridViewTextBoxColumn.DataPropertyName = "PROD_GROUP_ID";
+            this.pRODGROUPIDDataGridViewTextBoxColumn.HeaderText = "PROD_GROUP_ID";
+            this.pRODGROUPIDDataGridViewTextBoxColumn.Name = "pRODGROUPIDDataGridViewTextBoxColumn";
+            // 
+            // pROCIDDataGridViewTextBoxColumn
+            // 
+            this.pROCIDDataGridViewTextBoxColumn.DataPropertyName = "PROC_ID";
+            this.pROCIDDataGridViewTextBoxColumn.HeaderText = "PROC_ID";
+            this.pROCIDDataGridViewTextBoxColumn.Name = "pROCIDDataGridViewTextBoxColumn";
+            // 
+            // pROCVERDataGridViewTextBoxColumn
+            // 
+            this.pROCVERDataGridViewTextBoxColumn.DataPropertyName = "PROC_VER";
+            this.pROCVERDataGridViewTextBoxColumn.HeaderText = "PROC_VER";
+            this.pROCVERDataGridViewTextBoxColumn.Name = "pROCVERDataGridViewTextBoxColumn";
+            // 
+            // dELYNDataGridViewTextBoxColumn
+            // 
+            this.dELYNDataGridViewTextBoxColumn.DataPropertyName = "DEL_YN";
+            this.dELYNDataGridViewTextBoxColumn.HeaderText = "DEL_YN";
+            this.dELYNDataGridViewTextBoxColumn.Name = "dELYNDataGridViewTextBoxColumn";
+            // 
+            // rEASONCODEDataGridViewTextBoxColumn
+            // 
+            this.rEASONCODEDataGridViewTextBoxColumn.DataPropertyName = "REASON_CODE";
+            this.rEASONCODEDataGridViewTextBoxColumn.HeaderText = "REASON_CODE";
+            this.rEASONCODEDataGridViewTextBoxColumn.Name = "rEASONCODEDataGridViewTextBoxColumn";
+            // 
+            // dESCRDataGridViewTextBoxColumn
+            // 
+            this.dESCRDataGridViewTextBoxColumn.DataPropertyName = "DESCR";
+            this.dESCRDataGridViewTextBoxColumn.HeaderText = "DESCR";
+            this.dESCRDataGridViewTextBoxColumn.Name = "dESCRDataGridViewTextBoxColumn";
+            // 
+            // cREATEUSERIDDataGridViewTextBoxColumn
+            // 
+            this.cREATEUSERIDDataGridViewTextBoxColumn.DataPropertyName = "CREATE_USER_ID";
+            this.cREATEUSERIDDataGridViewTextBoxColumn.HeaderText = "CREATE_USER_ID";
+            this.cREATEUSERIDDataGridViewTextBoxColumn.Name = "cREATEUSERIDDataGridViewTextBoxColumn";
+            // 
+            // cREATEDATEDataGridViewTextBoxColumn
+            // 
+            this.cREATEDATEDataGridViewTextBoxColumn.DataPropertyName = "CREATE_DATE";
+            this.cREATEDATEDataGridViewTextBoxColumn.HeaderText = "CREATE_DATE";
+            this.cREATEDATEDataGridViewTextBoxColumn.Name = "cREATEDATEDataGridViewTextBoxColumn";
+            // 
+            // uPDATEUSERIDDataGridViewTextBoxColumn
+            // 
+            this.uPDATEUSERIDDataGridViewTextBoxColumn.DataPropertyName = "UPDATE_USER_ID";
+            this.uPDATEUSERIDDataGridViewTextBoxColumn.HeaderText = "UPDATE_USER_ID";
+            this.uPDATEUSERIDDataGridViewTextBoxColumn.Name = "uPDATEUSERIDDataGridViewTextBoxColumn";
+            // 
+            // uPDATEDATEDataGridViewTextBoxColumn
+            // 
+            this.uPDATEDATEDataGridViewTextBoxColumn.DataPropertyName = "UPDATE_DATE";
+            this.uPDATEDATEDataGridViewTextBoxColumn.HeaderText = "UPDATE_DATE";
+            this.uPDATEDATEDataGridViewTextBoxColumn.Name = "uPDATEDATEDataGridViewTextBoxColumn";
+            // 
+            // mATERIALMSTBindingSource
+            // 
+            this.mATERIALMSTBindingSource.DataMember = "MATERIAL_MST";
+            this.mATERIALMSTBindingSource.DataSource = this.signes_MESDataSetMaterial_MST;
+            // 
+            // signes_MESDataSetMaterial_MST
+            // 
+            this.signes_MESDataSetMaterial_MST.DataSetName = "Signes_MESDataSetMaterial_MST";
+            this.signes_MESDataSetMaterial_MST.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // layoutControlGroup11
             // 
@@ -1164,7 +1336,7 @@
             this.layoutControlItem14});
             this.layoutControlGroup11.Name = "Root";
             this.layoutControlGroup11.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup11.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControlGroup11.Size = new System.Drawing.Size(1228, 1196);
             this.layoutControlGroup11.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
             this.layoutControlGroup11.TextVisible = false;
             // 
@@ -1177,7 +1349,7 @@
             this.layoutControlGroup16.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup16.Name = "layoutControlGroup16";
             this.layoutControlGroup16.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup16.Size = new System.Drawing.Size(674, 380);
+            this.layoutControlGroup16.Size = new System.Drawing.Size(684, 380);
             this.layoutControlGroup16.Text = "Quick Editor";
             // 
             // layoutControlItem8
@@ -1185,7 +1357,7 @@
             this.layoutControlItem8.Control = this.inventoryManagerDataGridView;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(652, 333);
+            this.layoutControlItem8.Size = new System.Drawing.Size(662, 333);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -1194,10 +1366,10 @@
             this.layoutControlGroup17.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroup17.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.emptySpaceItem5});
-            this.layoutControlGroup17.Location = new System.Drawing.Point(684, 0);
+            this.layoutControlGroup17.Location = new System.Drawing.Point(694, 0);
             this.layoutControlGroup17.Name = "layoutControlGroup17";
             this.layoutControlGroup17.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup17.Size = new System.Drawing.Size(505, 380);
+            this.layoutControlGroup17.Size = new System.Drawing.Size(512, 380);
             this.layoutControlGroup17.Text = "Stats";
             // 
             // emptySpaceItem5
@@ -1205,7 +1377,7 @@
             this.emptySpaceItem5.AllowHotTrack = false;
             this.emptySpaceItem5.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(483, 333);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(490, 333);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup18
@@ -1216,7 +1388,7 @@
             this.layoutControlGroup18.Location = new System.Drawing.Point(0, 390);
             this.layoutControlGroup18.Name = "layoutControlGroup18";
             this.layoutControlGroup18.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup18.Size = new System.Drawing.Size(1189, 760);
+            this.layoutControlGroup18.Size = new System.Drawing.Size(1206, 760);
             this.layoutControlGroup18.Text = "Other Information";
             // 
             // emptySpaceItem6
@@ -1224,7 +1396,7 @@
             this.emptySpaceItem6.AllowHotTrack = false;
             this.emptySpaceItem6.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(1167, 713);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(1184, 713);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem6
@@ -1232,12 +1404,12 @@
             this.splitterItem6.AllowHotTrack = true;
             this.splitterItem6.Location = new System.Drawing.Point(0, 380);
             this.splitterItem6.Name = "splitterItem6";
-            this.splitterItem6.Size = new System.Drawing.Size(1189, 10);
+            this.splitterItem6.Size = new System.Drawing.Size(1206, 10);
             // 
             // splitterItem7
             // 
             this.splitterItem7.AllowHotTrack = true;
-            this.splitterItem7.Location = new System.Drawing.Point(674, 0);
+            this.splitterItem7.Location = new System.Drawing.Point(684, 0);
             this.splitterItem7.Name = "splitterItem7";
             this.splitterItem7.Size = new System.Drawing.Size(10, 380);
             // 
@@ -1246,7 +1418,7 @@
             this.layoutControlItem14.Control = this.dataGridView1;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 1150);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(1189, 24);
+            this.layoutControlItem14.Size = new System.Drawing.Size(1206, 24);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(112, 14);
             // 
             // tabNavigationPage4
@@ -1264,7 +1436,7 @@
             this.panelControlJobDispatch.Location = new System.Drawing.Point(0, 0);
             this.panelControlJobDispatch.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlJobDispatch.Name = "panelControlJobDispatch";
-            this.panelControlJobDispatch.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlJobDispatch.Size = new System.Drawing.Size(1232, 1200);
             this.panelControlJobDispatch.TabIndex = 5;
             // 
             // layoutControl4
@@ -1279,7 +1451,7 @@
             this.layoutControl4.Name = "layoutControl4";
             this.layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(778, 218, 650, 400);
             this.layoutControl4.Root = this.layoutControlGroup12;
-            this.layoutControl4.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControl4.Size = new System.Drawing.Size(1228, 1196);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
             // 
@@ -1288,10 +1460,10 @@
             this.labelControl5.Appearance.BackColor = System.Drawing.Color.DarkGray;
             this.labelControl5.Appearance.Options.UseBackColor = true;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(327, 42);
+            this.labelControl5.Location = new System.Drawing.Point(331, 42);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(302, 14);
+            this.labelControl5.Size = new System.Drawing.Size(307, 14);
             this.labelControl5.StyleController = this.layoutControl4;
             this.labelControl5.TabIndex = 20;
             this.labelControl5.Text = "Event Stack #2";
@@ -1313,7 +1485,7 @@
             this.labelControl3.Location = new System.Drawing.Point(17, 42);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(298, 14);
+            this.labelControl3.Size = new System.Drawing.Size(302, 14);
             this.labelControl3.StyleController = this.layoutControl4;
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Event Stack #1";
@@ -1325,9 +1497,9 @@
             this.eventManagerEventStackPanel2.AutoScroll = true;
             this.eventManagerEventStackPanel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.eventManagerEventStackPanel2.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.TopDown;
-            this.eventManagerEventStackPanel2.Location = new System.Drawing.Point(328, 59);
+            this.eventManagerEventStackPanel2.Location = new System.Drawing.Point(332, 59);
             this.eventManagerEventStackPanel2.Name = "eventManagerEventStackPanel2";
-            this.eventManagerEventStackPanel2.Size = new System.Drawing.Size(300, 350);
+            this.eventManagerEventStackPanel2.Size = new System.Drawing.Size(305, 350);
             this.eventManagerEventStackPanel2.TabIndex = 5;
             // 
             // eventManagerEventStackPanel1
@@ -1339,7 +1511,7 @@
             this.eventManagerEventStackPanel1.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.TopDown;
             this.eventManagerEventStackPanel1.Location = new System.Drawing.Point(18, 59);
             this.eventManagerEventStackPanel1.Name = "eventManagerEventStackPanel1";
-            this.eventManagerEventStackPanel1.Size = new System.Drawing.Size(296, 350);
+            this.eventManagerEventStackPanel1.Size = new System.Drawing.Size(300, 350);
             this.eventManagerEventStackPanel1.TabIndex = 4;
             // 
             // layoutControlGroup12
@@ -1354,7 +1526,7 @@
             this.layoutControlItem12});
             this.layoutControlGroup12.Name = "Root";
             this.layoutControlGroup12.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup12.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControlGroup12.Size = new System.Drawing.Size(1228, 1196);
             this.layoutControlGroup12.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutControlGroup12.TextVisible = false;
             // 
@@ -1370,7 +1542,7 @@
             this.layoutControlGroup13.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup13.Name = "layoutControlGroup13";
             this.layoutControlGroup13.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup13.Size = new System.Drawing.Size(636, 417);
+            this.layoutControlGroup13.Size = new System.Drawing.Size(645, 417);
             this.layoutControlGroup13.Text = "Dispatch Events";
             // 
             // layoutControlItem10
@@ -1378,16 +1550,16 @@
             this.layoutControlItem10.Control = this.eventManagerEventStackPanel1;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 16);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(300, 354);
+            this.layoutControlItem10.Size = new System.Drawing.Size(304, 354);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.eventManagerEventStackPanel2;
-            this.layoutControlItem11.Location = new System.Drawing.Point(310, 16);
+            this.layoutControlItem11.Location = new System.Drawing.Point(314, 16);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(304, 354);
+            this.layoutControlItem11.Size = new System.Drawing.Size(309, 354);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
@@ -1400,7 +1572,7 @@
             this.layoutControlGroup19.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup19.Name = "layoutControlGroup19";
             this.layoutControlGroup19.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup19.Size = new System.Drawing.Size(300, 16);
+            this.layoutControlGroup19.Size = new System.Drawing.Size(304, 16);
             this.layoutControlGroup19.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup19.TextVisible = false;
             // 
@@ -1410,7 +1582,7 @@
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlItem7.Size = new System.Drawing.Size(298, 14);
+            this.layoutControlItem7.Size = new System.Drawing.Size(302, 14);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -1421,10 +1593,10 @@
             this.layoutControlGroup20.AppearanceGroup.Options.UseBackColor = true;
             this.layoutControlGroup20.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem13});
-            this.layoutControlGroup20.Location = new System.Drawing.Point(310, 0);
+            this.layoutControlGroup20.Location = new System.Drawing.Point(314, 0);
             this.layoutControlGroup20.Name = "layoutControlGroup20";
             this.layoutControlGroup20.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup20.Size = new System.Drawing.Size(304, 16);
+            this.layoutControlGroup20.Size = new System.Drawing.Size(309, 16);
             this.layoutControlGroup20.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup20.TextVisible = false;
             // 
@@ -1434,14 +1606,14 @@
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlItem13.Size = new System.Drawing.Size(302, 14);
+            this.layoutControlItem13.Size = new System.Drawing.Size(307, 14);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // splitterItem3
             // 
             this.splitterItem3.AllowHotTrack = true;
-            this.splitterItem3.Location = new System.Drawing.Point(300, 0);
+            this.splitterItem3.Location = new System.Drawing.Point(304, 0);
             this.splitterItem3.Name = "splitterItem3";
             this.splitterItem3.Size = new System.Drawing.Size(10, 370);
             // 
@@ -1450,10 +1622,10 @@
             this.layoutControlGroup14.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroup14.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.emptySpaceItem3});
-            this.layoutControlGroup14.Location = new System.Drawing.Point(646, 0);
+            this.layoutControlGroup14.Location = new System.Drawing.Point(655, 0);
             this.layoutControlGroup14.Name = "layoutControlGroup14";
             this.layoutControlGroup14.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup14.Size = new System.Drawing.Size(555, 417);
+            this.layoutControlGroup14.Size = new System.Drawing.Size(563, 417);
             this.layoutControlGroup14.Text = "Stats";
             // 
             // emptySpaceItem3
@@ -1461,7 +1633,7 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(533, 370);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(541, 370);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup15
@@ -1472,7 +1644,7 @@
             this.emptySpaceItem4});
             this.layoutControlGroup15.Location = new System.Drawing.Point(0, 417);
             this.layoutControlGroup15.Name = "layoutControlGroup15";
-            this.layoutControlGroup15.Size = new System.Drawing.Size(1201, 751);
+            this.layoutControlGroup15.Size = new System.Drawing.Size(1218, 751);
             this.layoutControlGroup15.Text = "Other Information";
             // 
             // emptySpaceItem4
@@ -1480,13 +1652,13 @@
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(1177, 702);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(1194, 702);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem4
             // 
             this.splitterItem4.AllowHotTrack = true;
-            this.splitterItem4.Location = new System.Drawing.Point(636, 0);
+            this.splitterItem4.Location = new System.Drawing.Point(645, 0);
             this.splitterItem4.Name = "splitterItem4";
             this.splitterItem4.Size = new System.Drawing.Size(10, 417);
             // 
@@ -1495,7 +1667,7 @@
             this.layoutControlItem12.Control = this.labelControl4;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 1168);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(1201, 18);
+            this.layoutControlItem12.Size = new System.Drawing.Size(1218, 18);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
@@ -1510,12 +1682,146 @@
             // panelControlManufacturingOrder
             // 
             this.panelControlManufacturingOrder.AutoSize = true;
+            this.panelControlManufacturingOrder.Controls.Add(this.gridControl1);
             this.panelControlManufacturingOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlManufacturingOrder.Location = new System.Drawing.Point(0, 0);
             this.panelControlManufacturingOrder.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlManufacturingOrder.Name = "panelControlManufacturingOrder";
-            this.panelControlManufacturingOrder.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlManufacturingOrder.Size = new System.Drawing.Size(1232, 1200);
             this.panelControlManufacturingOrder.TabIndex = 0;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataSource = this.mMPROCMSTBindingSource;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.toolbarFormManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1228, 1196);
+            this.gridControl1.TabIndex = 7;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // mMPROCMSTBindingSource
+            // 
+            this.mMPROCMSTBindingSource.DataMember = "MM_PROC_MST";
+            this.mMPROCMSTBindingSource.DataSource = this.signes_MESDataSet;
+            // 
+            // signes_MESDataSet
+            // 
+            this.signes_MESDataSet.DataSetName = "Signes_MESDataSet";
+            this.signes_MESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDUID,
+            this.colSITE_ID,
+            this.colPROC_ID,
+            this.colPROC_VER,
+            this.colPROC_NM,
+            this.colPROC_TYPE,
+            this.colDEL_YN,
+            this.colREASON_CODE,
+            this.colDESCR,
+            this.colCREATE_USER_ID,
+            this.colCREATE_DATE,
+            this.colUPDATE_USER_ID,
+            this.colUPDATE_DATE});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colDUID
+            // 
+            this.colDUID.FieldName = "DUID";
+            this.colDUID.Name = "colDUID";
+            this.colDUID.Visible = true;
+            this.colDUID.VisibleIndex = 0;
+            // 
+            // colSITE_ID
+            // 
+            this.colSITE_ID.FieldName = "SITE_ID";
+            this.colSITE_ID.Name = "colSITE_ID";
+            this.colSITE_ID.Visible = true;
+            this.colSITE_ID.VisibleIndex = 1;
+            // 
+            // colPROC_ID
+            // 
+            this.colPROC_ID.FieldName = "PROC_ID";
+            this.colPROC_ID.Name = "colPROC_ID";
+            this.colPROC_ID.Visible = true;
+            this.colPROC_ID.VisibleIndex = 2;
+            // 
+            // colPROC_VER
+            // 
+            this.colPROC_VER.FieldName = "PROC_VER";
+            this.colPROC_VER.Name = "colPROC_VER";
+            this.colPROC_VER.Visible = true;
+            this.colPROC_VER.VisibleIndex = 3;
+            // 
+            // colPROC_NM
+            // 
+            this.colPROC_NM.FieldName = "PROC_NM";
+            this.colPROC_NM.Name = "colPROC_NM";
+            this.colPROC_NM.Visible = true;
+            this.colPROC_NM.VisibleIndex = 4;
+            // 
+            // colPROC_TYPE
+            // 
+            this.colPROC_TYPE.FieldName = "PROC_TYPE";
+            this.colPROC_TYPE.Name = "colPROC_TYPE";
+            this.colPROC_TYPE.Visible = true;
+            this.colPROC_TYPE.VisibleIndex = 5;
+            // 
+            // colDEL_YN
+            // 
+            this.colDEL_YN.FieldName = "DEL_YN";
+            this.colDEL_YN.Name = "colDEL_YN";
+            this.colDEL_YN.Visible = true;
+            this.colDEL_YN.VisibleIndex = 6;
+            // 
+            // colREASON_CODE
+            // 
+            this.colREASON_CODE.FieldName = "REASON_CODE";
+            this.colREASON_CODE.Name = "colREASON_CODE";
+            this.colREASON_CODE.Visible = true;
+            this.colREASON_CODE.VisibleIndex = 7;
+            // 
+            // colDESCR
+            // 
+            this.colDESCR.FieldName = "DESCR";
+            this.colDESCR.Name = "colDESCR";
+            this.colDESCR.Visible = true;
+            this.colDESCR.VisibleIndex = 8;
+            // 
+            // colCREATE_USER_ID
+            // 
+            this.colCREATE_USER_ID.FieldName = "CREATE_USER_ID";
+            this.colCREATE_USER_ID.Name = "colCREATE_USER_ID";
+            this.colCREATE_USER_ID.Visible = true;
+            this.colCREATE_USER_ID.VisibleIndex = 9;
+            // 
+            // colCREATE_DATE
+            // 
+            this.colCREATE_DATE.FieldName = "CREATE_DATE";
+            this.colCREATE_DATE.Name = "colCREATE_DATE";
+            this.colCREATE_DATE.Visible = true;
+            this.colCREATE_DATE.VisibleIndex = 10;
+            // 
+            // colUPDATE_USER_ID
+            // 
+            this.colUPDATE_USER_ID.FieldName = "UPDATE_USER_ID";
+            this.colUPDATE_USER_ID.Name = "colUPDATE_USER_ID";
+            this.colUPDATE_USER_ID.Visible = true;
+            this.colUPDATE_USER_ID.VisibleIndex = 11;
+            // 
+            // colUPDATE_DATE
+            // 
+            this.colUPDATE_DATE.FieldName = "UPDATE_DATE";
+            this.colUPDATE_DATE.Name = "colUPDATE_DATE";
+            this.colUPDATE_DATE.Visible = true;
+            this.colUPDATE_DATE.VisibleIndex = 12;
             // 
             // tabNavigationPage2
             // 
@@ -1533,26 +1839,64 @@
             this.panelControlBOM.Location = new System.Drawing.Point(0, 0);
             this.panelControlBOM.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlBOM.Name = "panelControlBOM";
-            this.panelControlBOM.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlBOM.Size = new System.Drawing.Size(1232, 1200);
             this.panelControlBOM.TabIndex = 0;
             // 
             // layoutControl5
             // 
+            this.layoutControl5.Controls.Add(this.dataNavigator1);
             this.layoutControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl5.Location = new System.Drawing.Point(2, 2);
             this.layoutControl5.Name = "layoutControl5";
+            this.layoutControl5.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(819, 397, 650, 400);
             this.layoutControl5.Root = this.layoutControlGroup21;
-            this.layoutControl5.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControl5.Size = new System.Drawing.Size(1228, 1196);
             this.layoutControl5.TabIndex = 7;
             this.layoutControl5.Text = "layoutControl5";
+            // 
+            // dataNavigator1
+            // 
+            this.dataNavigator1.DataSource = this.mMPRODMSTBindingSource;
+            this.dataNavigator1.Location = new System.Drawing.Point(12, 12);
+            this.dataNavigator1.Name = "dataNavigator1";
+            this.dataNavigator1.Size = new System.Drawing.Size(361, 20);
+            this.dataNavigator1.StyleController = this.layoutControl5;
+            this.dataNavigator1.TabIndex = 7;
+            this.dataNavigator1.Text = "dataNavigator1";
+            this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            // 
+            // mMPRODMSTBindingSource
+            // 
+            this.mMPRODMSTBindingSource.DataMember = "MM_PROD_MST";
+            this.mMPRODMSTBindingSource.DataSource = this.signes_MESDataSet;
             // 
             // layoutControlGroup21
             // 
             this.layoutControlGroup21.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup21.GroupBordersVisible = false;
-            this.layoutControlGroup21.Name = "layoutControlGroup21";
-            this.layoutControlGroup21.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControlGroup21.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem15,
+            this.emptySpaceItem7});
+            this.layoutControlGroup21.Name = "Root";
+            this.layoutControlGroup21.Size = new System.Drawing.Size(1228, 1196);
             this.layoutControlGroup21.TextVisible = false;
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.dataNavigator1;
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(1208, 24);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(1208, 1152);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tabNavigationPage7
             // 
@@ -1561,7 +1905,7 @@
             this.tabNavigationPage7.Controls.Add(this.panelControlFinishedGoodsInventory);
             this.tabNavigationPage7.Name = "tabNavigationPage7";
             this.tabNavigationPage7.PageText = "";
-            this.tabNavigationPage7.Size = new System.Drawing.Size(1232, 539);
+            this.tabNavigationPage7.Size = new System.Drawing.Size(1026, 539);
             // 
             // panelControlFinishedGoodsInventory
             // 
@@ -1570,7 +1914,7 @@
             this.panelControlFinishedGoodsInventory.Location = new System.Drawing.Point(0, 0);
             this.panelControlFinishedGoodsInventory.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlFinishedGoodsInventory.Name = "panelControlFinishedGoodsInventory";
-            this.panelControlFinishedGoodsInventory.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlFinishedGoodsInventory.Size = new System.Drawing.Size(1026, 1200);
             this.panelControlFinishedGoodsInventory.TabIndex = 7;
             // 
             // fluentDesignFormContainer1
@@ -1600,13 +1944,84 @@
             // accordionControlElementMain
             // 
             this.accordionControlElementMain.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementGanttChart,
+            this.accordionControlElement5,
+            this.accordionControlElement1,
+            this.accordionControlElement2,
+            this.accordionControlElementEventManager,
             this.accordionControlElementInventory,
-            this.accordionControlElementEventManager});
+            this.accordionControlElementGanttChart,
+            this.accordionControlElement3});
             this.accordionControlElementMain.Expanded = true;
             this.accordionControlElementMain.Name = "accordionControlElementMain";
             this.accordionControlElementMain.Text = "Main";
             this.accordionControlElementMain.VisibleInFooter = false;
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement4});
+            this.accordionControlElement5.Expanded = true;
+            this.accordionControlElement5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement5.ImageOptions.SvgImage")));
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Text = "Production Overview";
+            // 
+            // accordionControlElement4
+            // 
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "Main page";
+            this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
+            // 
+            // accordionControlElement1
+            // 
+            this.accordionControlElement1.Expanded = true;
+            this.accordionControlElement1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement1.ImageOptions.SvgImage")));
+            this.accordionControlElement1.Name = "accordionControlElement1";
+            this.accordionControlElement1.Text = "BOM";
+            // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Expanded = true;
+            this.accordionControlElement2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement2.ImageOptions.SvgImage")));
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Text = "Manufacturing Order";
+            // 
+            // accordionControlElementEventManager
+            // 
+            this.accordionControlElementEventManager.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElementExportLogs});
+            this.accordionControlElementEventManager.Expanded = true;
+            this.accordionControlElementEventManager.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementEventManager.ImageOptions.SvgImage")));
+            this.accordionControlElementEventManager.Name = "accordionControlElementEventManager";
+            this.accordionControlElementEventManager.Text = "Job Dispatch";
+            // 
+            // accordionControlElementExportLogs
+            // 
+            this.accordionControlElementExportLogs.Name = "accordionControlElementExportLogs";
+            this.accordionControlElementExportLogs.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementExportLogs.Text = "Export logs";
+            // 
+            // accordionControlElementInventory
+            // 
+            this.accordionControlElementInventory.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElementMaterialEditor,
+            this.accordionControlElementViewRestocks});
+            this.accordionControlElementInventory.Expanded = true;
+            this.accordionControlElementInventory.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementInventory.ImageOptions.SvgImage")));
+            this.accordionControlElementInventory.Name = "accordionControlElementInventory";
+            this.accordionControlElementInventory.Text = "Material Inventory";
+            // 
+            // accordionControlElementMaterialEditor
+            // 
+            this.accordionControlElementMaterialEditor.Name = "accordionControlElementMaterialEditor";
+            this.accordionControlElementMaterialEditor.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementMaterialEditor.Text = "Material editor";
+            // 
+            // accordionControlElementViewRestocks
+            // 
+            this.accordionControlElementViewRestocks.Name = "accordionControlElementViewRestocks";
+            this.accordionControlElementViewRestocks.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementViewRestocks.Text = "View restocks";
             // 
             // accordionControlElementGanttChart
             // 
@@ -1616,7 +2031,7 @@
             this.accordionControlElementGanttChart.Expanded = true;
             this.accordionControlElementGanttChart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementGanttChart.ImageOptions.SvgImage")));
             this.accordionControlElementGanttChart.Name = "accordionControlElementGanttChart";
-            this.accordionControlElementGanttChart.Text = "Gantt Chart";
+            this.accordionControlElementGanttChart.Text = "Production Monitor";
             // 
             // accordionControlElementTaskEditor
             // 
@@ -1632,42 +2047,11 @@
             this.accordionControlElementGroupEditor.Text = "Group editor";
             this.accordionControlElementGroupEditor.Click += new System.EventHandler(this.accordionControlElementGroupEditor_Click);
             // 
-            // accordionControlElementInventory
+            // accordionControlElement3
             // 
-            this.accordionControlElementInventory.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementMaterialEditor,
-            this.accordionControlElementViewRestocks});
-            this.accordionControlElementInventory.Expanded = true;
-            this.accordionControlElementInventory.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementInventory.ImageOptions.SvgImage")));
-            this.accordionControlElementInventory.Name = "accordionControlElementInventory";
-            this.accordionControlElementInventory.Text = "Inventory";
-            // 
-            // accordionControlElementMaterialEditor
-            // 
-            this.accordionControlElementMaterialEditor.Name = "accordionControlElementMaterialEditor";
-            this.accordionControlElementMaterialEditor.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementMaterialEditor.Text = "Material editor";
-            // 
-            // accordionControlElementViewRestocks
-            // 
-            this.accordionControlElementViewRestocks.Name = "accordionControlElementViewRestocks";
-            this.accordionControlElementViewRestocks.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementViewRestocks.Text = "View restocks";
-            // 
-            // accordionControlElementEventManager
-            // 
-            this.accordionControlElementEventManager.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementExportLogs});
-            this.accordionControlElementEventManager.Expanded = true;
-            this.accordionControlElementEventManager.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementEventManager.ImageOptions.SvgImage")));
-            this.accordionControlElementEventManager.Name = "accordionControlElementEventManager";
-            this.accordionControlElementEventManager.Text = "Event Manager";
-            // 
-            // accordionControlElementExportLogs
-            // 
-            this.accordionControlElementExportLogs.Name = "accordionControlElementExportLogs";
-            this.accordionControlElementExportLogs.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementExportLogs.Text = "Export logs";
+            this.accordionControlElement3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement3.ImageOptions.SvgImage")));
+            this.accordionControlElement3.Name = "accordionControlElement3";
+            this.accordionControlElement3.Text = "Finished Goods Inventory";
             // 
             // accordionControlElementSetting
             // 
@@ -1748,10 +2132,6 @@
             this.skinPaletteDropDownButtonItem2.Id = 1;
             this.skinPaletteDropDownButtonItem2.Name = "skinPaletteDropDownButtonItem2";
             // 
-            // iNVENTORYTableAdapter
-            // 
-            this.iNVENTORYTableAdapter.ClearBeforeFill = true;
-            // 
             // accountPopupMenu
             // 
             this.accountPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
@@ -1798,6 +2178,37 @@
             this.viewDataSource1.Name = "viewDataSource1";
             this.viewDataSource1.ObjectTypeName = null;
             this.viewDataSource1.TopReturnedRecords = 0;
+            // 
+            // mESDB_Inventory
+            // 
+            this.mESDB_Inventory.DataSetName = "ERPDB_Inventory";
+            this.mESDB_Inventory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mESDBInventoryBindingSource
+            // 
+            this.mESDBInventoryBindingSource.DataSource = this.mESDB_Inventory;
+            this.mESDBInventoryBindingSource.Position = 0;
+            // 
+            // mATERIAL_MSTTableAdapter
+            // 
+            this.mATERIAL_MSTTableAdapter.ClearBeforeFill = true;
+            // 
+            // mMEQPMSTBindingSource
+            // 
+            this.mMEQPMSTBindingSource.DataMember = "MM_EQP_MST";
+            this.mMEQPMSTBindingSource.DataSource = this.signes_MESDataSet;
+            // 
+            // mM_EQP_MSTTableAdapter
+            // 
+            this.mM_EQP_MSTTableAdapter.ClearBeforeFill = true;
+            // 
+            // mM_PROD_MSTTableAdapter
+            // 
+            this.mM_PROD_MSTTableAdapter.ClearBeforeFill = true;
+            // 
+            // mM_PROC_MSTTableAdapter
+            // 
+            this.mM_PROC_MSTTableAdapter.ClearBeforeFill = true;
             // 
             // MainForm
             // 
@@ -1878,8 +2289,8 @@
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryManagerDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVENTORYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eRPDB_Inventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mATERIALMSTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signes_MESDataSetMaterial_MST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
@@ -1915,12 +2326,21 @@
             this.tabNavigationPage3.ResumeLayout(false);
             this.tabNavigationPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlManufacturingOrder)).EndInit();
+            this.panelControlManufacturingOrder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMPROCMSTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.signes_MESDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBOM)).EndInit();
             this.panelControlBOM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
+            this.layoutControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mMPRODMSTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             this.tabNavigationPage7.ResumeLayout(false);
             this.tabNavigationPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlFinishedGoodsInventory)).EndInit();
@@ -1934,6 +2354,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDB_Inventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mESDBInventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMEQPMSTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1994,9 +2417,6 @@
         private DevExpress.XtraEditors.TileItem tileItem3;
         private DevExpress.XtraEditors.TileItem tileItem5;
         private System.Windows.Forms.DataGridView inventoryManagerDataGridView;
-        private ERPDB_Inventory eRPDB_Inventory;
-        private System.Windows.Forms.BindingSource iNVENTORYBindingSource;
-        private ERPDB_InventoryTableAdapters.INVENTORYTableAdapter iNVENTORYTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qTYDataGridViewTextBoxColumn;
@@ -2093,6 +2513,61 @@
         private DevExpress.XtraEditors.PanelControl panelControlFinishedGoodsInventory;
         private DevExpress.XtraLayout.LayoutControl layoutControl5;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup21;
+        private System.Windows.Forms.BindingSource mESDBInventoryBindingSource;
+        private MESDB_Inventory mESDB_Inventory;
+        private Signes_MESDataSetMaterial_MST signes_MESDataSetMaterial_MST;
+        private System.Windows.Forms.BindingSource mATERIALMSTBindingSource;
+        private Signes_MESDataSetMaterial_MSTTableAdapters.MATERIAL_MSTTableAdapter mATERIAL_MSTTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dUIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sITEIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mATERIALIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mATERIALNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODNMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODMODELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODTYPEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODCLASSCODEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODGRADEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODGROUPIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pROCIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pROCVERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dELYNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rEASONCODEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dESCRDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cREATEUSERIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cREATEDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uPDATEUSERIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uPDATEDATEDataGridViewTextBoxColumn;
+        private DevExpress.XtraEditors.DataNavigator dataNavigator1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
+        private Signes_MESDataSet signes_MESDataSet;
+        private System.Windows.Forms.BindingSource mMEQPMSTBindingSource;
+        private Signes_MESDataSetTableAdapters.MM_EQP_MSTTableAdapter mM_EQP_MSTTableAdapter;
+        private System.Windows.Forms.BindingSource mMPRODMSTBindingSource;
+        private Signes_MESDataSetTableAdapters.MM_PROD_MSTTableAdapter mM_PROD_MSTTableAdapter;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource mMPROCMSTBindingSource;
+        private Signes_MESDataSetTableAdapters.MM_PROC_MSTTableAdapter mM_PROC_MSTTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colDUID;
+        private DevExpress.XtraGrid.Columns.GridColumn colSITE_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROC_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROC_VER;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROC_NM;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROC_TYPE;
+        private DevExpress.XtraGrid.Columns.GridColumn colDEL_YN;
+        private DevExpress.XtraGrid.Columns.GridColumn colREASON_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colDESCR;
+        private DevExpress.XtraGrid.Columns.GridColumn colCREATE_USER_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colCREATE_DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colUPDATE_USER_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colUPDATE_DATE;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
     }
 }
 

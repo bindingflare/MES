@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ERP.Properties {
+namespace MES.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -30,6 +30,17 @@ namespace ERP.Properties {
         public string ERPDBConnectionString {
             get {
                 return ((string)(this["ERPDBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=\"C:\\Users\\signes\\Documents\\Visual Studio 2015\\Projects\\MES\\Signes_MES" +
+            ".db\"")]
+        public string Signes_MESConnectionString {
+            get {
+                return ((string)(this["Signes_MESConnectionString"]));
             }
         }
     }

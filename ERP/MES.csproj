@@ -9,8 +9,8 @@
     <ProjectGuid>{C2893FA2-9AEC-4F91-A839-B9137E80049B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ERP</RootNamespace>
-    <AssemblyName>ERP</AssemblyName>
+    <RootNamespace>MES</RootNamespace>
+    <AssemblyName>MES</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -37,7 +37,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ERP.Program</StartupObject>
+    <StartupObject>MES.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v21.1" />
@@ -56,6 +56,7 @@
     <Reference Include="DevExpress.XtraEditors.v21.1" />
     <Reference Include="DevExpress.Printing.v21.1.Core" />
     <Reference Include="DevExpress.XtraGantt.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -97,10 +98,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ERPDB_Inventory.Designer.cs">
+    <Compile Include="MESDB_Inventory.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ERPDB_Inventory.xsd</DependentUpon>
+      <DependentUpon>MESDB_Inventory.xsd</DependentUpon>
     </Compile>
     <Compile Include="Inventory.cs" />
     <Compile Include="MainForm.cs">
@@ -111,6 +112,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signes_MESDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Signes_MESDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Signes_MESDataSetMaterial_MST.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Signes_MESDataSetMaterial_MST.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,16 +137,16 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
-    <None Include="ERPDB_Inventory.xsc">
-      <DependentUpon>ERPDB_Inventory.xsd</DependentUpon>
+    <None Include="MESDB_Inventory.xsc">
+      <DependentUpon>MESDB_Inventory.xsd</DependentUpon>
     </None>
-    <None Include="ERPDB_Inventory.xsd">
+    <None Include="MESDB_Inventory.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ERPDB_Inventory.Designer.cs</LastGenOutput>
+      <LastGenOutput>MESDB_Inventory.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ERPDB_Inventory.xss">
-      <DependentUpon>ERPDB_Inventory.xsd</DependentUpon>
+    <None Include="MESDB_Inventory.xss">
+      <DependentUpon>MESDB_Inventory.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -147,6 +158,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Signes_MESDataSet.xsc">
+      <DependentUpon>Signes_MESDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Signes_MESDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Signes_MESDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Signes_MESDataSet.xss">
+      <DependentUpon>Signes_MESDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Signes_MESDataSetMaterial_MST.xsc">
+      <DependentUpon>Signes_MESDataSetMaterial_MST.xsd</DependentUpon>
+    </None>
+    <None Include="Signes_MESDataSetMaterial_MST.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Signes_MESDataSetMaterial_MST.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Signes_MESDataSetMaterial_MST.xss">
+      <DependentUpon>Signes_MESDataSetMaterial_MST.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GanttChart\GanttChartCore.csproj">

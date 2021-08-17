@@ -12,7 +12,7 @@ using DevExpress.XtraTreeList.Nodes;
 using DevExpress.XtraTreeList.Columns;
 using DevExpress.XtraEditors;
 
-namespace ERP
+namespace MES
 {
     public partial class MainForm : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
@@ -530,8 +530,15 @@ namespace ERP
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROC_MST' table. You can move, or remove it, as needed.
+            this.mM_PROC_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_PROC_MST);
+            // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROD_MST' table. You can move, or remove it, as needed.
+            this.mM_PROD_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_PROD_MST);
+            // TODO: This line of code loads data into the 'signes_MESDataSet.MM_EQP_MST' table. You can move, or remove it, as needed.
+            this.mM_EQP_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_EQP_MST);
+            // TODO: This line of code loads data into the 'signes_MESDataSetMaterial_MST.MATERIAL_MST' table. You can move, or remove it, as needed.
+            this.mATERIAL_MSTTableAdapter.Fill(this.signes_MESDataSetMaterial_MST.MATERIAL_MST);
             // TODO: This line of code loads data into the 'eRPDB_Inventory.INVENTORY' table. You can move, or remove it, as needed.
-            this.iNVENTORYTableAdapter.Fill(this.eRPDB_Inventory.INVENTORY);
 
         }
 
@@ -586,6 +593,11 @@ namespace ERP
         {
             dummyForm.Text = "License dummy form";
             dummyForm.ShowDialog();
+        }
+
+        private void accordionControlElement4_Click(object sender, EventArgs e)
+        {
+            tabPane1.SelectedPage = tabNavigationPage1;
         }
     }
 

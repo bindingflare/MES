@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP", "ERP\ERP.csproj", "{C2893FA2-9AEC-4F91-A839-B9137E80049B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MES", "ERP\MES.csproj", "{C2893FA2-9AEC-4F91-A839-B9137E80049B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F98F97D5-4F29-4531-AD05-D90F8E84C9AA} = {F98F97D5-4F29-4531-AD05-D90F8E84C9AA}
 	EndProjectSection
@@ -13,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26168BAF-32AB-4DC5-95CD-33B2D09CCD43}"
 	ProjectSection(SolutionItems) = preProject
 		ERPDB.db = ERPDB.db
+		Signes_MES.db = Signes_MES.db
 	EndProjectSection
 EndProject
 Global
