@@ -489,12 +489,12 @@ namespace ERP
 
         private void tileItem12_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            tabPane1.SelectedPage = tabNavigationPage2;
+            tabPane1.SelectedPage = tabNavigationPage6;
         }
 
         private void tileInventory_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            tabPane1.SelectedPage = tabNavigationPage3;
+            tabPane1.SelectedPage = tabNavigationPage5;
         }
 
         private void tileEventM_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)

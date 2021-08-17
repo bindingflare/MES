@@ -109,11 +109,11 @@
             this.layoutControlGroup10 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelControlProductionMonitor = new DevExpress.XtraEditors.PanelControl();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
-            this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.panelInventoryManagement = new DevExpress.XtraEditors.PanelControl();
+            this.tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelControlMaterialInventory = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.inventoryManagerDataGridView = new System.Windows.Forms.DataGridView();
@@ -134,7 +134,7 @@
             this.splitterItem7 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.panelEventManager = new DevExpress.XtraEditors.PanelControl();
+            this.panelControlJobDispatch = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -156,9 +156,14 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splitterItem4 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelControlManufacturingOrder = new DevExpress.XtraEditors.PanelControl();
+            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelControlBOM = new DevExpress.XtraEditors.PanelControl();
+            this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup21 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.tabNavigationPage7 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelControlFinishedGoodsInventory = new DevExpress.XtraEditors.PanelControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
@@ -230,12 +235,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
-            this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            this.tabNavigationPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelInventoryManagement)).BeginInit();
-            this.panelInventoryManagement.SuspendLayout();
+            this.tabNavigationPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlProductionMonitor)).BeginInit();
+            this.panelControlProductionMonitor.SuspendLayout();
+            this.tabNavigationPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlMaterialInventory)).BeginInit();
+            this.panelControlMaterialInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -253,8 +258,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.tabNavigationPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelEventManager)).BeginInit();
-            this.panelEventManager.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlJobDispatch)).BeginInit();
+            this.panelControlJobDispatch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventManagerEventStackPanel2)).BeginInit();
@@ -274,6 +279,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            this.tabNavigationPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlManufacturingOrder)).BeginInit();
+            this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlBOM)).BeginInit();
+            this.panelControlBOM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup21)).BeginInit();
+            this.tabNavigationPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlFinishedGoodsInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
@@ -648,11 +662,11 @@
             // 
             this.tabPane1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
-            this.tabPane1.Controls.Add(this.tabNavigationPage2);
-            this.tabPane1.Controls.Add(this.tabNavigationPage3);
-            this.tabPane1.Controls.Add(this.tabNavigationPage4);
             this.tabPane1.Controls.Add(this.tabNavigationPage6);
             this.tabPane1.Controls.Add(this.tabNavigationPage5);
+            this.tabPane1.Controls.Add(this.tabNavigationPage4);
+            this.tabPane1.Controls.Add(this.tabNavigationPage3);
+            this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Controls.Add(this.tabNavigationPage7);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1019,26 +1033,27 @@
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(1191, 10);
             // 
-            // tabNavigationPage2
+            // tabNavigationPage6
             // 
-            this.tabNavigationPage2.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.tabNavigationPage2.Appearance.Options.UseBorderColor = true;
-            this.tabNavigationPage2.AutoScroll = true;
-            this.tabNavigationPage2.Caption = "BOM";
-            this.tabNavigationPage2.Controls.Add(this.panelControl3);
-            this.tabNavigationPage2.Controls.Add(this.xtraScrollableControl1);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1232, 539);
+            this.tabNavigationPage6.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.tabNavigationPage6.Appearance.Options.UseBorderColor = true;
+            this.tabNavigationPage6.AutoScroll = true;
+            this.tabNavigationPage6.Caption = "Production Monitor";
+            this.tabNavigationPage6.Controls.Add(this.panelControlProductionMonitor);
+            this.tabNavigationPage6.Controls.Add(this.xtraScrollableControl1);
+            this.tabNavigationPage6.Name = "tabNavigationPage6";
+            this.tabNavigationPage6.Size = new System.Drawing.Size(1232, 539);
             // 
-            // panelControl3
+            // panelControlProductionMonitor
             // 
-            this.panelControl3.Controls.Add(this.layoutControl1);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(0, 0);
-            this.panelControl3.MinimumSize = new System.Drawing.Size(0, 1000);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1215, 1000);
-            this.panelControl3.TabIndex = 1;
+            this.panelControlProductionMonitor.AutoSize = true;
+            this.panelControlProductionMonitor.Controls.Add(this.layoutControl1);
+            this.panelControlProductionMonitor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlProductionMonitor.Location = new System.Drawing.Point(0, 0);
+            this.panelControlProductionMonitor.MinimumSize = new System.Drawing.Size(0, 1000);
+            this.panelControlProductionMonitor.Name = "panelControlProductionMonitor";
+            this.panelControlProductionMonitor.Size = new System.Drawing.Size(1215, 1000);
+            this.panelControlProductionMonitor.TabIndex = 1;
             // 
             // xtraScrollableControl1
             // 
@@ -1048,23 +1063,23 @@
             this.xtraScrollableControl1.Size = new System.Drawing.Size(1215, 1000);
             this.xtraScrollableControl1.TabIndex = 0;
             // 
-            // tabNavigationPage3
+            // tabNavigationPage5
             // 
-            this.tabNavigationPage3.AutoScroll = true;
-            this.tabNavigationPage3.Caption = "Manufacturing Order";
-            this.tabNavigationPage3.Controls.Add(this.panelInventoryManagement);
-            this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(1232, 539);
+            this.tabNavigationPage5.AutoScroll = true;
+            this.tabNavigationPage5.Caption = "Material Inventory";
+            this.tabNavigationPage5.Controls.Add(this.panelControlMaterialInventory);
+            this.tabNavigationPage5.Name = "tabNavigationPage5";
+            this.tabNavigationPage5.Size = new System.Drawing.Size(1232, 539);
             // 
-            // panelInventoryManagement
+            // panelControlMaterialInventory
             // 
-            this.panelInventoryManagement.Controls.Add(this.layoutControl3);
-            this.panelInventoryManagement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInventoryManagement.Location = new System.Drawing.Point(0, 0);
-            this.panelInventoryManagement.MinimumSize = new System.Drawing.Size(0, 1200);
-            this.panelInventoryManagement.Name = "panelInventoryManagement";
-            this.panelInventoryManagement.Size = new System.Drawing.Size(1215, 1200);
-            this.panelInventoryManagement.TabIndex = 5;
+            this.panelControlMaterialInventory.Controls.Add(this.layoutControl3);
+            this.panelControlMaterialInventory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlMaterialInventory.Location = new System.Drawing.Point(0, 0);
+            this.panelControlMaterialInventory.MinimumSize = new System.Drawing.Size(0, 1200);
+            this.panelControlMaterialInventory.Name = "panelControlMaterialInventory";
+            this.panelControlMaterialInventory.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlMaterialInventory.TabIndex = 5;
             // 
             // layoutControl3
             // 
@@ -1238,19 +1253,19 @@
             // 
             this.tabNavigationPage4.AutoScroll = true;
             this.tabNavigationPage4.Caption = "Job Dispatch";
-            this.tabNavigationPage4.Controls.Add(this.panelEventManager);
+            this.tabNavigationPage4.Controls.Add(this.panelControlJobDispatch);
             this.tabNavigationPage4.Name = "tabNavigationPage4";
             this.tabNavigationPage4.Size = new System.Drawing.Size(1232, 539);
             // 
-            // panelEventManager
+            // panelControlJobDispatch
             // 
-            this.panelEventManager.Controls.Add(this.layoutControl4);
-            this.panelEventManager.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEventManager.Location = new System.Drawing.Point(0, 0);
-            this.panelEventManager.MinimumSize = new System.Drawing.Size(0, 1200);
-            this.panelEventManager.Name = "panelEventManager";
-            this.panelEventManager.Size = new System.Drawing.Size(1215, 1200);
-            this.panelEventManager.TabIndex = 5;
+            this.panelControlJobDispatch.Controls.Add(this.layoutControl4);
+            this.panelControlJobDispatch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlJobDispatch.Location = new System.Drawing.Point(0, 0);
+            this.panelControlJobDispatch.MinimumSize = new System.Drawing.Size(0, 1200);
+            this.panelControlJobDispatch.Name = "panelControlJobDispatch";
+            this.panelControlJobDispatch.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlJobDispatch.TabIndex = 5;
             // 
             // layoutControl4
             // 
@@ -1356,7 +1371,7 @@
             this.layoutControlGroup13.Name = "layoutControlGroup13";
             this.layoutControlGroup13.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
             this.layoutControlGroup13.Size = new System.Drawing.Size(636, 417);
-            this.layoutControlGroup13.Text = "Events";
+            this.layoutControlGroup13.Text = "Dispatch Events";
             // 
             // layoutControlItem10
             // 
@@ -1484,24 +1499,79 @@
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
-            // tabNavigationPage5
+            // tabNavigationPage3
             // 
-            this.tabNavigationPage5.Caption = "Material Inventory";
-            this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(1232, 539);
+            this.tabNavigationPage3.AutoScroll = true;
+            this.tabNavigationPage3.Caption = "Manufacturing Order";
+            this.tabNavigationPage3.Controls.Add(this.panelControlManufacturingOrder);
+            this.tabNavigationPage3.Name = "tabNavigationPage3";
+            this.tabNavigationPage3.Size = new System.Drawing.Size(1232, 539);
             // 
-            // tabNavigationPage6
+            // panelControlManufacturingOrder
             // 
-            this.tabNavigationPage6.Caption = "Production Monitor";
-            this.tabNavigationPage6.Name = "tabNavigationPage6";
-            this.tabNavigationPage6.Size = new System.Drawing.Size(1232, 539);
+            this.panelControlManufacturingOrder.AutoSize = true;
+            this.panelControlManufacturingOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlManufacturingOrder.Location = new System.Drawing.Point(0, 0);
+            this.panelControlManufacturingOrder.MinimumSize = new System.Drawing.Size(0, 1200);
+            this.panelControlManufacturingOrder.Name = "panelControlManufacturingOrder";
+            this.panelControlManufacturingOrder.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlManufacturingOrder.TabIndex = 0;
+            // 
+            // tabNavigationPage2
+            // 
+            this.tabNavigationPage2.AutoScroll = true;
+            this.tabNavigationPage2.Caption = "BOM";
+            this.tabNavigationPage2.Controls.Add(this.panelControlBOM);
+            this.tabNavigationPage2.Name = "tabNavigationPage2";
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1232, 539);
+            // 
+            // panelControlBOM
+            // 
+            this.panelControlBOM.AutoSize = true;
+            this.panelControlBOM.Controls.Add(this.layoutControl5);
+            this.panelControlBOM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlBOM.Location = new System.Drawing.Point(0, 0);
+            this.panelControlBOM.MinimumSize = new System.Drawing.Size(0, 1200);
+            this.panelControlBOM.Name = "panelControlBOM";
+            this.panelControlBOM.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlBOM.TabIndex = 0;
+            // 
+            // layoutControl5
+            // 
+            this.layoutControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl5.Location = new System.Drawing.Point(2, 2);
+            this.layoutControl5.Name = "layoutControl5";
+            this.layoutControl5.Root = this.layoutControlGroup21;
+            this.layoutControl5.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControl5.TabIndex = 7;
+            this.layoutControl5.Text = "layoutControl5";
+            // 
+            // layoutControlGroup21
+            // 
+            this.layoutControlGroup21.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup21.GroupBordersVisible = false;
+            this.layoutControlGroup21.Name = "layoutControlGroup21";
+            this.layoutControlGroup21.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControlGroup21.TextVisible = false;
             // 
             // tabNavigationPage7
             // 
+            this.tabNavigationPage7.AutoScroll = true;
             this.tabNavigationPage7.Caption = "Finished Goods Inventory";
+            this.tabNavigationPage7.Controls.Add(this.panelControlFinishedGoodsInventory);
             this.tabNavigationPage7.Name = "tabNavigationPage7";
             this.tabNavigationPage7.PageText = "";
             this.tabNavigationPage7.Size = new System.Drawing.Size(1232, 539);
+            // 
+            // panelControlFinishedGoodsInventory
+            // 
+            this.panelControlFinishedGoodsInventory.AutoSize = true;
+            this.panelControlFinishedGoodsInventory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlFinishedGoodsInventory.Location = new System.Drawing.Point(0, 0);
+            this.panelControlFinishedGoodsInventory.MinimumSize = new System.Drawing.Size(0, 1200);
+            this.panelControlFinishedGoodsInventory.Name = "panelControlFinishedGoodsInventory";
+            this.panelControlFinishedGoodsInventory.Size = new System.Drawing.Size(1215, 1200);
+            this.panelControlFinishedGoodsInventory.TabIndex = 7;
             // 
             // fluentDesignFormContainer1
             // 
@@ -1797,12 +1867,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
-            this.tabNavigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.tabNavigationPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelInventoryManagement)).EndInit();
-            this.panelInventoryManagement.ResumeLayout(false);
+            this.tabNavigationPage6.ResumeLayout(false);
+            this.tabNavigationPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlProductionMonitor)).EndInit();
+            this.panelControlProductionMonitor.ResumeLayout(false);
+            this.tabNavigationPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlMaterialInventory)).EndInit();
+            this.panelControlMaterialInventory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1820,8 +1891,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.tabNavigationPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelEventManager)).EndInit();
-            this.panelEventManager.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlJobDispatch)).EndInit();
+            this.panelControlJobDispatch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.eventManagerEventStackPanel2)).EndInit();
@@ -1841,6 +1912,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            this.tabNavigationPage3.ResumeLayout(false);
+            this.tabNavigationPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlManufacturingOrder)).EndInit();
+            this.tabNavigationPage2.ResumeLayout(false);
+            this.tabNavigationPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlBOM)).EndInit();
+            this.panelControlBOM.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup21)).EndInit();
+            this.tabNavigationPage7.ResumeLayout(false);
+            this.tabNavigationPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlFinishedGoodsInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
@@ -1870,7 +1953,7 @@
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage6;
         private DevExpress.XtraEditors.TileControl overviewTileControl;
         private DevExpress.XtraEditors.TileGroup groupGanttChart;
         private DevExpress.XtraEditors.TileItem tileItem2;
@@ -1886,7 +1969,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn Delay;
         private DevExpress.XtraEditors.TileItem tileGanttChart;
         private DevExpress.XtraEditors.TileItem tileItem1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage4;
         private DevExpress.XtraTreeList.Columns.TreeListColumn ID;
         private DevExpress.XtraTreeList.Columns.TreeListColumn ParentID;
@@ -1940,7 +2023,7 @@
         private System.Windows.Forms.Panel ganttChartChartOptionsPanel;
         private System.Windows.Forms.PropertyGrid m_TaskGrid;
         private Edcore.GanttChart.GanttChart ganttChartChart;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.PanelControl panelControlProductionMonitor;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
@@ -1965,11 +2048,11 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.SplitterItem splitterItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraEditors.PanelControl panelInventoryManagement;
+        private DevExpress.XtraEditors.PanelControl panelControlMaterialInventory;
         private DevExpress.XtraLayout.LayoutControl layoutControl3;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.PanelControl panelEventManager;
+        private DevExpress.XtraEditors.PanelControl panelControlJobDispatch;
         private DevExpress.XtraLayout.LayoutControl layoutControl4;
         private DevExpress.Utils.Layout.StackPanel eventManagerEventStackPanel2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup12;
@@ -2001,10 +2084,15 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage6;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private DevExpress.Persistent.Base.ReportsV2.ViewDataSource viewDataSource1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage7;
+        private DevExpress.XtraEditors.PanelControl panelControlManufacturingOrder;
+        private DevExpress.XtraEditors.PanelControl panelControlBOM;
+        private DevExpress.XtraEditors.PanelControl panelControlFinishedGoodsInventory;
+        private DevExpress.XtraLayout.LayoutControl layoutControl5;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup21;
     }
 }
 
