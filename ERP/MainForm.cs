@@ -167,10 +167,18 @@ namespace ERP
             for(int i = 0; i < 3; i++)
             {
                 PanelControl panel = new PanelControl();
-                panel.Size = new Size(300, 70);
+                panel.Size = new Size(270, 70);
+
+                LabelControl titleLabel = new LabelControl();
+                titleLabel.Text = string.Format("Event #{0}: Hello world", i);
+                titleLabel.Font = new Font(this.Font.FontFamily, 11f, FontStyle.Bold);
+                titleLabel.Location = new Point(5, 5);
+                panel.Controls.Add(titleLabel);
 
                 LabelControl label = new LabelControl();
-                label.Text = string.Format("Event #{0}: Hello world", i);
+                label.Text = string.Format("Information about the event goes here");
+                label.Font = new Font(this.Font.FontFamily, 9f, FontStyle.Regular);
+                label.Location = new Point(5, 25);
                 panel.Controls.Add(label);
 
                 eventManagerEventStackPanel1.Controls.Add(panel);
@@ -256,6 +264,10 @@ namespace ERP
 
             // Create dummy secondary form
             _CreateDummyForm();
+
+            // account label
+            barButtonItemAccountSettings.ItemClick += BarButtonItemAccountSettings_ItemClick;
+            barButtonItemLogout.ItemClick += BarButtonItemLogout_ItemClick;
         }
 
         private void dummyForm_Disposed(object sender, EventArgs e)
@@ -558,15 +570,21 @@ namespace ERP
             dummyForm.ShowDialog();
         }
 
-        private void BarButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BarButtonItemLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             dummyForm.Text = "Login dummy form";
             dummyForm.ShowDialog();
         }
 
-        private void BarButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BarButtonItemAccountSettings_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             dummyForm.Text = "Account settings dummy form";
+            dummyForm.ShowDialog();
+        }
+
+        private void barButtonItemLicense_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dummyForm.Text = "License dummy form";
             dummyForm.ShowDialog();
         }
     }
