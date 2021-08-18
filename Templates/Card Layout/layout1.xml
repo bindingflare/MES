@@ -1,0 +1,26 @@
+﻿<XtraSerializer version="1.0" application="Appearances">
+  <property name="CardCaption" iskey="true" value="CardCaption">
+    <property name="Options" isnull="true" iskey="true">
+      <property name="UseFont">true</property>
+    </property>
+    <property name="Font">Segoe UI, 11.25pt</property>
+  </property>
+  <property name="HideSelectionCardCaption" iskey="true" value="HideSelectionCardCaption">
+    <property name="Options" isnull="true" iskey="true">
+      <property name="UseFont">true</property>
+    </property>
+    <property name="Font">Segoe UI, 11.25pt</property>
+  </property>
+  <property name="FocusedCardCaption" iskey="true" value="FocusedCardCaption">
+    <property name="Options" isnull="true" iskey="true">
+      <property name="UseFont">true</property>
+    </property>
+    <property name="Font">Segoe UI, 11.25pt, style=Bold</property>
+  </property>
+  <property name="SelectedCardCaption" iskey="true" value="SelectedCardCaption">
+    <property name="Options" isnull="true" iskey="true">
+      <property name="UseFont">true</property>
+    </property>
+    <property name="Font">Segoe UI, 11.25pt, style=Bold</property>
+  </property>
+</XtraSerializer>
