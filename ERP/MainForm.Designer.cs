@@ -240,6 +240,12 @@
             this.panelControlBOM = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -268,6 +274,8 @@
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabNavigationPage7 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlFinishedGoodsInventory = new DevExpress.XtraEditors.PanelControl();
+            this.layoutControl6 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup25 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
@@ -624,14 +632,12 @@
             this.barToolbarsListItem12 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.toolbarFormControl12 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormControl();
             this.materiaL_MSTTableAdapter1 = new MES.Signes_MESDataSetTableAdapters.MATERIAL_MSTTableAdapter();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.layoutControl6 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup25 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProductListing1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.signes_MESDataSet)).BeginInit();
@@ -739,6 +745,9 @@
             this.layoutControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -761,6 +770,9 @@
             this.tabNavigationPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlFinishedGoodsInventory)).BeginInit();
             this.panelControlFinishedGoodsInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl6)).BeginInit();
+            this.layoutControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
@@ -995,11 +1007,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             this.SuspendLayout();
             // 
             // cardView1
@@ -2299,6 +2312,7 @@
             // 
             // layoutControl3
             // 
+            this.layoutControl3.Controls.Add(this.gridControl2);
             this.layoutControl3.Controls.Add(this.dataGridView1);
             this.layoutControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl3.Location = new System.Drawing.Point(2, 2);
@@ -2338,6 +2352,8 @@
             // 
             this.layoutControlGroup16.CustomizationFormText = "Quick Editor";
             this.layoutControlGroup16.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup16.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem22});
             this.layoutControlGroup16.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup16.Name = "layoutControlGroup16";
             this.layoutControlGroup16.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
@@ -2800,6 +2816,66 @@
             this.tablePanel1.Size = new System.Drawing.Size(357, 1109);
             this.tablePanel1.TabIndex = 16;
             // 
+            // labelControl14
+            // 
+            this.tablePanel1.SetColumn(this.labelControl14, 0);
+            this.labelControl14.Location = new System.Drawing.Point(3, 162);
+            this.labelControl14.Name = "labelControl14";
+            this.tablePanel1.SetRow(this.labelControl14, 6);
+            this.labelControl14.Size = new System.Drawing.Size(85, 14);
+            this.labelControl14.TabIndex = 33;
+            this.labelControl14.Text = "Process Version";
+            // 
+            // labelControl13
+            // 
+            this.tablePanel1.SetColumn(this.labelControl13, 0);
+            this.labelControl13.Location = new System.Drawing.Point(3, 136);
+            this.labelControl13.Name = "labelControl13";
+            this.tablePanel1.SetRow(this.labelControl13, 5);
+            this.labelControl13.Size = new System.Drawing.Size(57, 14);
+            this.labelControl13.TabIndex = 32;
+            this.labelControl13.Text = "Process ID";
+            // 
+            // textEdit7
+            // 
+            this.tablePanel1.SetColumn(this.textEdit7, 1);
+            this.textEdit7.Location = new System.Drawing.Point(135, 159);
+            this.textEdit7.MenuManager = this.toolbarFormManager12;
+            this.textEdit7.Name = "textEdit7";
+            this.tablePanel1.SetRow(this.textEdit7, 6);
+            this.textEdit7.Size = new System.Drawing.Size(219, 20);
+            this.textEdit7.TabIndex = 11;
+            // 
+            // textEdit6
+            // 
+            this.tablePanel1.SetColumn(this.textEdit6, 1);
+            this.textEdit6.Location = new System.Drawing.Point(135, 133);
+            this.textEdit6.MenuManager = this.toolbarFormManager12;
+            this.textEdit6.Name = "textEdit6";
+            this.tablePanel1.SetRow(this.textEdit6, 5);
+            this.textEdit6.Size = new System.Drawing.Size(219, 20);
+            this.textEdit6.TabIndex = 10;
+            // 
+            // textEdit5
+            // 
+            this.tablePanel1.SetColumn(this.textEdit5, 1);
+            this.textEdit5.Location = new System.Drawing.Point(135, 107);
+            this.textEdit5.MenuManager = this.toolbarFormManager12;
+            this.textEdit5.Name = "textEdit5";
+            this.tablePanel1.SetRow(this.textEdit5, 4);
+            this.textEdit5.Size = new System.Drawing.Size(219, 20);
+            this.textEdit5.TabIndex = 9;
+            // 
+            // labelControl10
+            // 
+            this.tablePanel1.SetColumn(this.labelControl10, 0);
+            this.labelControl10.Location = new System.Drawing.Point(3, 110);
+            this.labelControl10.Name = "labelControl10";
+            this.tablePanel1.SetRow(this.labelControl10, 4);
+            this.labelControl10.Size = new System.Drawing.Size(79, 14);
+            this.labelControl10.TabIndex = 8;
+            this.labelControl10.Text = "Product Model";
+            // 
             // labelControl9
             // 
             this.tablePanel1.SetColumn(this.labelControl9, 0);
@@ -3096,6 +3172,27 @@
             this.panelControlFinishedGoodsInventory.Name = "panelControlFinishedGoodsInventory";
             this.panelControlFinishedGoodsInventory.Size = new System.Drawing.Size(1215, 1200);
             this.panelControlFinishedGoodsInventory.TabIndex = 7;
+            // 
+            // layoutControl6
+            // 
+            this.layoutControl6.Controls.Add(this.gridControl1);
+            this.layoutControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl6.Location = new System.Drawing.Point(2, 2);
+            this.layoutControl6.Name = "layoutControl6";
+            this.layoutControl6.Root = this.layoutControlGroup25;
+            this.layoutControl6.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControl6.TabIndex = 0;
+            this.layoutControl6.Text = "layoutControl6";
+            // 
+            // layoutControlGroup25
+            // 
+            this.layoutControlGroup25.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup25.GroupBordersVisible = false;
+            this.layoutControlGroup25.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem21});
+            this.layoutControlGroup25.Name = "layoutControlGroup25";
+            this.layoutControlGroup25.Size = new System.Drawing.Size(1211, 1196);
+            this.layoutControlGroup25.TextVisible = false;
             // 
             // fluentDesignFormContainer1
             // 
@@ -6638,83 +6735,55 @@
             // 
             this.materiaL_MSTTableAdapter1.ClearBeforeFill = true;
             // 
-            // labelControl10
+            // gridControl1
             // 
-            this.tablePanel1.SetColumn(this.labelControl10, 0);
-            this.labelControl10.Location = new System.Drawing.Point(3, 110);
-            this.labelControl10.Name = "labelControl10";
-            this.tablePanel1.SetRow(this.labelControl10, 4);
-            this.labelControl10.Size = new System.Drawing.Size(79, 14);
-            this.labelControl10.TabIndex = 8;
-            this.labelControl10.Text = "Product Model";
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.MainView = this.gridView2;
+            this.gridControl1.MenuManager = this.toolbarFormManager12;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1187, 1172);
+            this.gridControl1.TabIndex = 32;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
             // 
-            // textEdit5
+            // gridView2
             // 
-            this.tablePanel1.SetColumn(this.textEdit5, 1);
-            this.textEdit5.Location = new System.Drawing.Point(135, 107);
-            this.textEdit5.MenuManager = this.toolbarFormManager12;
-            this.textEdit5.Name = "textEdit5";
-            this.tablePanel1.SetRow(this.textEdit5, 4);
-            this.textEdit5.Size = new System.Drawing.Size(219, 20);
-            this.textEdit5.TabIndex = 9;
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.Name = "gridView2";
             // 
-            // textEdit6
+            // layoutControlItem21
             // 
-            this.tablePanel1.SetColumn(this.textEdit6, 1);
-            this.textEdit6.Location = new System.Drawing.Point(135, 133);
-            this.textEdit6.MenuManager = this.toolbarFormManager12;
-            this.textEdit6.Name = "textEdit6";
-            this.tablePanel1.SetRow(this.textEdit6, 5);
-            this.textEdit6.Size = new System.Drawing.Size(219, 20);
-            this.textEdit6.TabIndex = 10;
+            this.layoutControlItem21.Control = this.gridControl1;
+            this.layoutControlItem21.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem21.Name = "layoutControlItem21";
+            this.layoutControlItem21.Size = new System.Drawing.Size(1191, 1176);
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem21.TextVisible = false;
             // 
-            // textEdit7
+            // gridControl2
             // 
-            this.tablePanel1.SetColumn(this.textEdit7, 1);
-            this.textEdit7.Location = new System.Drawing.Point(135, 159);
-            this.textEdit7.MenuManager = this.toolbarFormManager12;
-            this.textEdit7.Name = "textEdit7";
-            this.tablePanel1.SetRow(this.textEdit7, 6);
-            this.textEdit7.Size = new System.Drawing.Size(219, 20);
-            this.textEdit7.TabIndex = 11;
+            this.gridControl2.Location = new System.Drawing.Point(24, 49);
+            this.gridControl2.MainView = this.gridView3;
+            this.gridControl2.MenuManager = this.toolbarFormManager12;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(589, 329);
+            this.gridControl2.TabIndex = 15;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
             // 
-            // labelControl13
+            // gridView3
             // 
-            this.tablePanel1.SetColumn(this.labelControl13, 0);
-            this.labelControl13.Location = new System.Drawing.Point(3, 136);
-            this.labelControl13.Name = "labelControl13";
-            this.tablePanel1.SetRow(this.labelControl13, 5);
-            this.labelControl13.Size = new System.Drawing.Size(57, 14);
-            this.labelControl13.TabIndex = 32;
-            this.labelControl13.Text = "Process ID";
+            this.gridView3.GridControl = this.gridControl2;
+            this.gridView3.Name = "gridView3";
             // 
-            // labelControl14
+            // layoutControlItem22
             // 
-            this.tablePanel1.SetColumn(this.labelControl14, 0);
-            this.labelControl14.Location = new System.Drawing.Point(3, 162);
-            this.labelControl14.Name = "labelControl14";
-            this.tablePanel1.SetRow(this.labelControl14, 6);
-            this.labelControl14.Size = new System.Drawing.Size(85, 14);
-            this.labelControl14.TabIndex = 33;
-            this.labelControl14.Text = "Process Version";
-            // 
-            // layoutControl6
-            // 
-            this.layoutControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl6.Location = new System.Drawing.Point(2, 2);
-            this.layoutControl6.Name = "layoutControl6";
-            this.layoutControl6.Root = this.layoutControlGroup25;
-            this.layoutControl6.Size = new System.Drawing.Size(1211, 1196);
-            this.layoutControl6.TabIndex = 0;
-            this.layoutControl6.Text = "layoutControl6";
-            // 
-            // layoutControlGroup25
-            // 
-            this.layoutControlGroup25.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup25.GroupBordersVisible = false;
-            this.layoutControlGroup25.Name = "layoutControlGroup25";
-            this.layoutControlGroup25.Size = new System.Drawing.Size(1211, 1196);
-            this.layoutControlGroup25.TextVisible = false;
+            this.layoutControlItem22.Control = this.gridControl2;
+            this.layoutControlItem22.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem22.Name = "layoutControlItem22";
+            this.layoutControlItem22.Size = new System.Drawing.Size(593, 333);
+            this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem22.TextVisible = false;
             // 
             // MainForm
             // 
@@ -6871,6 +6940,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
@@ -6894,6 +6966,9 @@
             this.tabNavigationPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlFinishedGoodsInventory)).EndInit();
             this.panelControlFinishedGoodsInventory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl6)).EndInit();
+            this.layoutControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
@@ -7146,11 +7221,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7729,6 +7805,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraLayout.LayoutControl layoutControl6;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup25;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
     }
 }
 
