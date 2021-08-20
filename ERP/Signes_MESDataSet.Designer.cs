@@ -499,6 +499,8 @@ namespace MES {
             
             private global::System.Data.DataColumn columnUPDATE_DATE;
             
+            private global::System.Data.DataColumn columnQTY;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MATERIAL_MSTDataTable() {
@@ -686,6 +688,14 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QTYColumn {
+                get {
+                    return this.columnQTY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -740,7 +750,8 @@ namespace MES {
                         string CREATE_USER_ID, 
                         string CREATE_DATE, 
                         string UPDATE_USER_ID, 
-                        string UPDATE_DATE) {
+                        string UPDATE_DATE, 
+                        long QTY) {
                 MATERIAL_MSTRow rowMATERIAL_MSTRow = ((MATERIAL_MSTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MATERIAL_ID,
@@ -761,7 +772,8 @@ namespace MES {
                         CREATE_USER_ID,
                         CREATE_DATE,
                         UPDATE_USER_ID,
-                        UPDATE_DATE};
+                        UPDATE_DATE,
+                        QTY};
                 if ((parentMM_PROD_MSTRowByMM_PROD_MST_MATERIAL_MST != null)) {
                     columnValuesArray[3] = parentMM_PROD_MSTRowByMM_PROD_MST_MATERIAL_MST[0];
                 }
@@ -813,6 +825,7 @@ namespace MES {
                 this.columnCREATE_DATE = base.Columns["CREATE_DATE"];
                 this.columnUPDATE_USER_ID = base.Columns["UPDATE_USER_ID"];
                 this.columnUPDATE_DATE = base.Columns["UPDATE_DATE"];
+                this.columnQTY = base.Columns["QTY"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -856,6 +869,8 @@ namespace MES {
                 base.Columns.Add(this.columnUPDATE_USER_ID);
                 this.columnUPDATE_DATE = new global::System.Data.DataColumn("UPDATE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUPDATE_DATE);
+                this.columnQTY = new global::System.Data.DataColumn("QTY", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQTY);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMATERIAL_ID}, true));
                 this.columnMATERIAL_ID.AllowDBNull = false;
@@ -3831,6 +3846,22 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long QTY {
+                get {
+                    try {
+                        return ((long)(this[this.tableMATERIAL_MST.QTYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QTY\' in table \'MATERIAL_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMATERIAL_MST.QTYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MM_PROD_MSTRow MM_PROD_MSTRow {
                 get {
                     return ((MM_PROD_MSTRow)(this.GetParentRow(this.Table.ParentRelations["MM_PROD_MST_MATERIAL_MST"])));
@@ -4054,6 +4085,18 @@ namespace MES {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUPDATE_DATENull() {
                 this[this.tableMATERIAL_MST.UPDATE_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQTYNull() {
+                return this.IsNull(this.tableMATERIAL_MST.QTYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQTYNull() {
+                this[this.tableMATERIAL_MST.QTYColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6702,33 +6745,34 @@ namespace MES.Signes_MESDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("CREATE_DATE", "CREATE_DATE");
             tableMapping.ColumnMappings.Add("UPDATE_USER_ID", "UPDATE_USER_ID");
             tableMapping.ColumnMappings.Add("UPDATE_DATE", "UPDATE_DATE");
+            tableMapping.ColumnMappings.Add("QTY", "QTY");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [main].[sqlite_default_schema].[MATERIAL_MST] WHERE (([MATERIAL_ID] =" +
                 " @Original_MATERIAL_ID) AND ((@IsNull_MATERIAL_NAME = 1 AND [MATERIAL_NAME] IS N" +
                 "ULL) OR ([MATERIAL_NAME] = @Original_MATERIAL_NAME)) AND ((@IsNull_SITE_ID = 1 A" +
-                "ND [SITE_ID] IS NULL) OR ([SITE_ID] = @Original_SITE_ID)) AND ((@IsNull_PROD_ID " +
-                "= 1 AND [PROD_ID] IS NULL) OR ([PROD_ID] = @Original_PROD_ID)) AND ((@IsNull_PRO" +
-                "D_NM = 1 AND [PROD_NM] IS NULL) OR ([PROD_NM] = @Original_PROD_NM)) AND ((@IsNul" +
-                "l_PROD_MODEL = 1 AND [PROD_MODEL] IS NULL) OR ([PROD_MODEL] = @Original_PROD_MOD" +
-                "EL)) AND ((@IsNull_PROD_TYPE = 1 AND [PROD_TYPE] IS NULL) OR ([PROD_TYPE] = @Ori" +
-                "ginal_PROD_TYPE)) AND ((@IsNull_PROD_CLASS_CODE = 1 AND [PROD_CLASS_CODE] IS NUL" +
-                "L) OR ([PROD_CLASS_CODE] = @Original_PROD_CLASS_CODE)) AND ((@IsNull_PROD_GRADE " +
-                "= 1 AND [PROD_GRADE] IS NULL) OR ([PROD_GRADE] = @Original_PROD_GRADE)) AND ((@I" +
-                "sNull_PROD_GROUP_ID = 1 AND [PROD_GROUP_ID] IS NULL) OR ([PROD_GROUP_ID] = @Orig" +
-                "inal_PROD_GROUP_ID)) AND ((@IsNull_PROC_ID = 1 AND [PROC_ID] IS NULL) OR ([PROC_" +
-                "ID] = @Original_PROC_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR " +
-                "([PROC_VER] = @Original_PROC_VER)) AND ((@IsNull_DEL_YN = 1 AND [DEL_YN] IS NULL" +
-                ") OR ([DEL_YN] = @Original_DEL_YN)) AND ((@IsNull_REASON_CODE = 1 AND [REASON_CO" +
-                "DE] IS NULL) OR ([REASON_CODE] = @Original_REASON_CODE)) AND ((@IsNull_DESCR = 1" +
-                " AND [DESCR] IS NULL) OR ([DESCR] = @Original_DESCR)) AND ((@IsNull_CREATE_USER_" +
-                "ID = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREATE_USER_ID] = @Original_CREATE_USE" +
-                "R_ID)) AND ((@IsNull_CREATE_DATE = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE" +
-                "] = @Original_CREATE_DATE)) AND ((@IsNull_UPDATE_USER_ID = 1 AND [UPDATE_USER_ID" +
-                "] IS NULL) OR ([UPDATE_USER_ID] = @Original_UPDATE_USER_ID)) AND ((@IsNull_UPDAT" +
-                "E_DATE = 1 AND [UPDATE_DATE] IS NULL) OR ([UPDATE_DATE] = @Original_UPDATE_DATE)" +
-                "))";
+                "ND [SITE_ID] IS NULL) OR ([SITE_ID] = @Original_SITE_ID)) AND ((@IsNull_QTY = 1 " +
+                "AND [QTY] IS NULL) OR ([QTY] = @Original_QTY)) AND ((@IsNull_PROD_ID = 1 AND [PR" +
+                "OD_ID] IS NULL) OR ([PROD_ID] = @Original_PROD_ID)) AND ((@IsNull_PROD_NM = 1 AN" +
+                "D [PROD_NM] IS NULL) OR ([PROD_NM] = @Original_PROD_NM)) AND ((@IsNull_PROD_MODE" +
+                "L = 1 AND [PROD_MODEL] IS NULL) OR ([PROD_MODEL] = @Original_PROD_MODEL)) AND ((" +
+                "@IsNull_PROD_TYPE = 1 AND [PROD_TYPE] IS NULL) OR ([PROD_TYPE] = @Original_PROD_" +
+                "TYPE)) AND ((@IsNull_PROD_CLASS_CODE = 1 AND [PROD_CLASS_CODE] IS NULL) OR ([PRO" +
+                "D_CLASS_CODE] = @Original_PROD_CLASS_CODE)) AND ((@IsNull_PROD_GRADE = 1 AND [PR" +
+                "OD_GRADE] IS NULL) OR ([PROD_GRADE] = @Original_PROD_GRADE)) AND ((@IsNull_PROD_" +
+                "GROUP_ID = 1 AND [PROD_GROUP_ID] IS NULL) OR ([PROD_GROUP_ID] = @Original_PROD_G" +
+                "ROUP_ID)) AND ((@IsNull_PROC_ID = 1 AND [PROC_ID] IS NULL) OR ([PROC_ID] = @Orig" +
+                "inal_PROC_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR ([PROC_VER]" +
+                " = @Original_PROC_VER)) AND ((@IsNull_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_" +
+                "YN] = @Original_DEL_YN)) AND ((@IsNull_REASON_CODE = 1 AND [REASON_CODE] IS NULL" +
+                ") OR ([REASON_CODE] = @Original_REASON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR" +
+                "] IS NULL) OR ([DESCR] = @Original_DESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND " +
+                "[CREATE_USER_ID] IS NULL) OR ([CREATE_USER_ID] = @Original_CREATE_USER_ID)) AND " +
+                "((@IsNull_CREATE_DATE = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE] = @Origin" +
+                "al_CREATE_DATE)) AND ((@IsNull_UPDATE_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) " +
+                "OR ([UPDATE_USER_ID] = @Original_UPDATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 " +
+                "AND [UPDATE_DATE] IS NULL) OR ([UPDATE_DATE] = @Original_UPDATE_DATE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::System.Data.SQLite.SQLiteParameter param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Original_MATERIAL_ID";
@@ -6762,6 +6806,21 @@ namespace MES.Signes_MESDataSetTableAdapters {
             param.ParameterName = "@Original_SITE_ID";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "SITE_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_QTY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "QTY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_QTY";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "QTY";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
@@ -6991,7 +7050,7 @@ namespace MES.Signes_MESDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [main].[sqlite_default_schema].[MATERIAL_MST] ([MATERIAL_ID], [MATERIAL_NAME], [SITE_ID], [PROD_ID], [PROD_NM], [PROD_MODEL], [PROD_TYPE], [PROD_CLASS_CODE], [PROD_GRADE], [PROD_GROUP_ID], [PROC_ID], [PROC_VER], [DEL_YN], [REASON_CODE], [DESCR], [CREATE_USER_ID], [CREATE_DATE], [UPDATE_USER_ID], [UPDATE_DATE]) VALUES (@MATERIAL_ID, @MATERIAL_NAME, @SITE_ID, @PROD_ID, @PROD_NM, @PROD_MODEL, @PROD_TYPE, @PROD_CLASS_CODE, @PROD_GRADE, @PROD_GROUP_ID, @PROC_ID, @PROC_VER, @DEL_YN, @REASON_CODE, @DESCR, @CREATE_USER_ID, @CREATE_DATE, @UPDATE_USER_ID, @UPDATE_DATE)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [main].[sqlite_default_schema].[MATERIAL_MST] ([MATERIAL_ID], [MATERIAL_NAME], [SITE_ID], [QTY], [PROD_ID], [PROD_NM], [PROD_MODEL], [PROD_TYPE], [PROD_CLASS_CODE], [PROD_GRADE], [PROD_GROUP_ID], [PROC_ID], [PROC_VER], [DEL_YN], [REASON_CODE], [DESCR], [CREATE_USER_ID], [CREATE_DATE], [UPDATE_USER_ID], [UPDATE_DATE]) VALUES (@MATERIAL_ID, @MATERIAL_NAME, @SITE_ID, @QTY, @PROD_ID, @PROD_NM, @PROD_MODEL, @PROD_TYPE, @PROD_CLASS_CODE, @PROD_GRADE, @PROD_GROUP_ID, @PROC_ID, @PROC_VER, @DEL_YN, @REASON_CODE, @DESCR, @CREATE_USER_ID, @CREATE_DATE, @UPDATE_USER_ID, @UPDATE_DATE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@MATERIAL_ID";
@@ -7007,6 +7066,12 @@ namespace MES.Signes_MESDataSetTableAdapters {
             param.ParameterName = "@SITE_ID";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "SITE_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@QTY";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "QTY";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@PROD_ID";
@@ -7092,35 +7157,36 @@ namespace MES.Signes_MESDataSetTableAdapters {
             this._adapter.UpdateCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [main].[sqlite_default_schema].[MATERIAL_MST] SET [MATERIAL_ID] = @MATERIA" +
-                "L_ID, [MATERIAL_NAME] = @MATERIAL_NAME, [SITE_ID] = @SITE_ID, [PROD_ID] = @PROD_" +
-                "ID, [PROD_NM] = @PROD_NM, [PROD_MODEL] = @PROD_MODEL, [PROD_TYPE] = @PROD_TYPE, " +
-                "[PROD_CLASS_CODE] = @PROD_CLASS_CODE, [PROD_GRADE] = @PROD_GRADE, [PROD_GROUP_ID" +
-                "] = @PROD_GROUP_ID, [PROC_ID] = @PROC_ID, [PROC_VER] = @PROC_VER, [DEL_YN] = @DE" +
-                "L_YN, [REASON_CODE] = @REASON_CODE, [DESCR] = @DESCR, [CREATE_USER_ID] = @CREATE" +
-                "_USER_ID, [CREATE_DATE] = @CREATE_DATE, [UPDATE_USER_ID] = @UPDATE_USER_ID, [UPD" +
-                "ATE_DATE] = @UPDATE_DATE WHERE (([MATERIAL_ID] = @Original_MATERIAL_ID) AND ((@I" +
-                "sNull_MATERIAL_NAME = 1 AND [MATERIAL_NAME] IS NULL) OR ([MATERIAL_NAME] = @Orig" +
-                "inal_MATERIAL_NAME)) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS NULL) OR ([SITE_" +
-                "ID] = @Original_SITE_ID)) AND ((@IsNull_PROD_ID = 1 AND [PROD_ID] IS NULL) OR ([" +
-                "PROD_ID] = @Original_PROD_ID)) AND ((@IsNull_PROD_NM = 1 AND [PROD_NM] IS NULL) " +
-                "OR ([PROD_NM] = @Original_PROD_NM)) AND ((@IsNull_PROD_MODEL = 1 AND [PROD_MODEL" +
-                "] IS NULL) OR ([PROD_MODEL] = @Original_PROD_MODEL)) AND ((@IsNull_PROD_TYPE = 1" +
-                " AND [PROD_TYPE] IS NULL) OR ([PROD_TYPE] = @Original_PROD_TYPE)) AND ((@IsNull_" +
-                "PROD_CLASS_CODE = 1 AND [PROD_CLASS_CODE] IS NULL) OR ([PROD_CLASS_CODE] = @Orig" +
-                "inal_PROD_CLASS_CODE)) AND ((@IsNull_PROD_GRADE = 1 AND [PROD_GRADE] IS NULL) OR" +
-                " ([PROD_GRADE] = @Original_PROD_GRADE)) AND ((@IsNull_PROD_GROUP_ID = 1 AND [PRO" +
-                "D_GROUP_ID] IS NULL) OR ([PROD_GROUP_ID] = @Original_PROD_GROUP_ID)) AND ((@IsNu" +
-                "ll_PROC_ID = 1 AND [PROC_ID] IS NULL) OR ([PROC_ID] = @Original_PROC_ID)) AND ((" +
-                "@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR ([PROC_VER] = @Original_PROC_VER" +
-                ")) AND ((@IsNull_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_DEL_Y" +
-                "N)) AND ((@IsNull_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE] =" +
-                " @Original_REASON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) OR ([DESCR" +
-                "] = @Original_DESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USER_ID] IS N" +
-                "ULL) OR ([CREATE_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_CREATE_DATE" +
-                " = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE)) AND " +
-                "((@IsNull_UPDATE_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER_ID] " +
-                "= @Original_UPDATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] IS " +
-                "NULL) OR ([UPDATE_DATE] = @Original_UPDATE_DATE)))";
+                "L_ID, [MATERIAL_NAME] = @MATERIAL_NAME, [SITE_ID] = @SITE_ID, [QTY] = @QTY, [PRO" +
+                "D_ID] = @PROD_ID, [PROD_NM] = @PROD_NM, [PROD_MODEL] = @PROD_MODEL, [PROD_TYPE] " +
+                "= @PROD_TYPE, [PROD_CLASS_CODE] = @PROD_CLASS_CODE, [PROD_GRADE] = @PROD_GRADE, " +
+                "[PROD_GROUP_ID] = @PROD_GROUP_ID, [PROC_ID] = @PROC_ID, [PROC_VER] = @PROC_VER, " +
+                "[DEL_YN] = @DEL_YN, [REASON_CODE] = @REASON_CODE, [DESCR] = @DESCR, [CREATE_USER" +
+                "_ID] = @CREATE_USER_ID, [CREATE_DATE] = @CREATE_DATE, [UPDATE_USER_ID] = @UPDATE" +
+                "_USER_ID, [UPDATE_DATE] = @UPDATE_DATE WHERE (([MATERIAL_ID] = @Original_MATERIA" +
+                "L_ID) AND ((@IsNull_MATERIAL_NAME = 1 AND [MATERIAL_NAME] IS NULL) OR ([MATERIAL" +
+                "_NAME] = @Original_MATERIAL_NAME)) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS NU" +
+                "LL) OR ([SITE_ID] = @Original_SITE_ID)) AND ((@IsNull_QTY = 1 AND [QTY] IS NULL)" +
+                " OR ([QTY] = @Original_QTY)) AND ((@IsNull_PROD_ID = 1 AND [PROD_ID] IS NULL) OR" +
+                " ([PROD_ID] = @Original_PROD_ID)) AND ((@IsNull_PROD_NM = 1 AND [PROD_NM] IS NUL" +
+                "L) OR ([PROD_NM] = @Original_PROD_NM)) AND ((@IsNull_PROD_MODEL = 1 AND [PROD_MO" +
+                "DEL] IS NULL) OR ([PROD_MODEL] = @Original_PROD_MODEL)) AND ((@IsNull_PROD_TYPE " +
+                "= 1 AND [PROD_TYPE] IS NULL) OR ([PROD_TYPE] = @Original_PROD_TYPE)) AND ((@IsNu" +
+                "ll_PROD_CLASS_CODE = 1 AND [PROD_CLASS_CODE] IS NULL) OR ([PROD_CLASS_CODE] = @O" +
+                "riginal_PROD_CLASS_CODE)) AND ((@IsNull_PROD_GRADE = 1 AND [PROD_GRADE] IS NULL)" +
+                " OR ([PROD_GRADE] = @Original_PROD_GRADE)) AND ((@IsNull_PROD_GROUP_ID = 1 AND [" +
+                "PROD_GROUP_ID] IS NULL) OR ([PROD_GROUP_ID] = @Original_PROD_GROUP_ID)) AND ((@I" +
+                "sNull_PROC_ID = 1 AND [PROC_ID] IS NULL) OR ([PROC_ID] = @Original_PROC_ID)) AND" +
+                " ((@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR ([PROC_VER] = @Original_PROC_" +
+                "VER)) AND ((@IsNull_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_DE" +
+                "L_YN)) AND ((@IsNull_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE" +
+                "] = @Original_REASON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) OR ([DE" +
+                "SCR] = @Original_DESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USER_ID] I" +
+                "S NULL) OR ([CREATE_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_CREATE_D" +
+                "ATE = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE)) A" +
+                "ND ((@IsNull_UPDATE_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER_I" +
+                "D] = @Original_UPDATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] " +
+                "IS NULL) OR ([UPDATE_DATE] = @Original_UPDATE_DATE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@MATERIAL_ID";
@@ -7136,6 +7202,12 @@ namespace MES.Signes_MESDataSetTableAdapters {
             param.ParameterName = "@SITE_ID";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "SITE_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@QTY";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "QTY";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@PROD_ID";
@@ -7250,6 +7322,21 @@ namespace MES.Signes_MESDataSetTableAdapters {
             param.ParameterName = "@Original_SITE_ID";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "SITE_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_QTY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "QTY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_QTY";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "QTY";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
@@ -7492,7 +7579,9 @@ namespace MES.Signes_MESDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT [MATERIAL_ID], [MATERIAL_NAME], [SITE_ID], [PROD_ID], [PROD_NM], [PROD_MODEL], [PROD_TYPE], [PROD_CLASS_CODE], [PROD_GRADE], [PROD_GROUP_ID], [PROC_ID], [PROC_VER], [DEL_YN], [REASON_CODE], [DESCR], [CREATE_USER_ID], [CREATE_DATE], [UPDATE_USER_ID], [UPDATE_DATE] FROM [MATERIAL_MST]";
+            this._commandCollection[0].CommandText = @"SELECT  MATERIAL_ID, MATERIAL_NAME, SITE_ID, QTY, PROD_ID, PROD_NM, PROD_MODEL, PROD_TYPE, PROD_CLASS_CODE, PROD_GRADE, PROD_GROUP_ID, PROC_ID, PROC_VER, DEL_YN, 
+               REASON_CODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE
+FROM     MATERIAL_MST";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7557,6 +7646,7 @@ namespace MES.Signes_MESDataSetTableAdapters {
                     string Original_MATERIAL_ID, 
                     string Original_MATERIAL_NAME, 
                     string Original_SITE_ID, 
+                    global::System.Nullable<long> Original_QTY, 
                     string Original_PROD_ID, 
                     string Original_PROD_NM, 
                     string Original_PROD_MODEL, 
@@ -7595,133 +7685,141 @@ namespace MES.Signes_MESDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_SITE_ID));
             }
-            if ((Original_PROD_ID == null)) {
+            if ((Original_QTY.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((long)(Original_QTY.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PROD_ID));
-            }
-            if ((Original_PROD_NM == null)) {
+            if ((Original_PROD_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PROD_NM));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PROD_ID));
             }
-            if ((Original_PROD_MODEL == null)) {
+            if ((Original_PROD_NM == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PROD_MODEL));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PROD_NM));
             }
-            if ((Original_PROD_TYPE == null)) {
+            if ((Original_PROD_MODEL == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_PROD_TYPE));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_PROD_MODEL));
             }
-            if ((Original_PROD_CLASS_CODE == null)) {
+            if ((Original_PROD_TYPE == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_PROD_CLASS_CODE));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_PROD_TYPE));
             }
-            if ((Original_PROD_GRADE == null)) {
+            if ((Original_PROD_CLASS_CODE == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_PROD_GRADE));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_PROD_CLASS_CODE));
             }
-            if ((Original_PROD_GROUP_ID == null)) {
+            if ((Original_PROD_GRADE == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_PROD_GROUP_ID));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_PROD_GRADE));
             }
-            if ((Original_PROC_ID == null)) {
+            if ((Original_PROD_GROUP_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_PROC_ID));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_PROD_GROUP_ID));
             }
-            if ((Original_PROC_VER == null)) {
+            if ((Original_PROC_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_PROC_VER));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_PROC_ID));
             }
-            if ((Original_DEL_YN.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((long)(Original_DEL_YN.Value));
-            }
-            else {
+            if ((Original_PROC_VER == null)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Original_REASON_CODE == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_PROC_VER));
+            }
+            if ((Original_DEL_YN.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((long)(Original_DEL_YN.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_REASON_CODE));
-            }
-            if ((Original_DESCR == null)) {
+            if ((Original_REASON_CODE == null)) {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_DESCR));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_REASON_CODE));
             }
-            if ((Original_CREATE_USER_ID == null)) {
+            if ((Original_DESCR == null)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_CREATE_USER_ID));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_DESCR));
             }
-            if ((Original_CREATE_DATE == null)) {
+            if ((Original_CREATE_USER_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_CREATE_DATE));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_CREATE_USER_ID));
             }
-            if ((Original_UPDATE_USER_ID == null)) {
+            if ((Original_CREATE_DATE == null)) {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_UPDATE_USER_ID));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_CREATE_DATE));
             }
-            if ((Original_UPDATE_DATE == null)) {
+            if ((Original_UPDATE_USER_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_UPDATE_DATE));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_UPDATE_USER_ID));
+            }
+            if ((Original_UPDATE_DATE == null)) {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7747,6 +7845,7 @@ namespace MES.Signes_MESDataSetTableAdapters {
                     string MATERIAL_ID, 
                     string MATERIAL_NAME, 
                     string SITE_ID, 
+                    global::System.Nullable<long> QTY, 
                     string PROD_ID, 
                     string PROD_NM, 
                     string PROD_MODEL, 
@@ -7781,101 +7880,107 @@ namespace MES.Signes_MESDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SITE_ID));
             }
-            if ((PROD_ID == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((QTY.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((long)(QTY.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PROD_ID));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((PROD_NM == null)) {
+            if ((PROD_ID == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PROD_NM));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PROD_ID));
             }
-            if ((PROD_MODEL == null)) {
+            if ((PROD_NM == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PROD_MODEL));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PROD_NM));
             }
-            if ((PROD_TYPE == null)) {
+            if ((PROD_MODEL == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PROD_TYPE));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PROD_MODEL));
             }
-            if ((PROD_CLASS_CODE == null)) {
+            if ((PROD_TYPE == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(PROD_CLASS_CODE));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(PROD_TYPE));
             }
-            if ((PROD_GRADE == null)) {
+            if ((PROD_CLASS_CODE == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(PROD_GRADE));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(PROD_CLASS_CODE));
             }
-            if ((PROD_GROUP_ID == null)) {
+            if ((PROD_GRADE == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(PROD_GROUP_ID));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(PROD_GRADE));
             }
-            if ((PROC_ID == null)) {
+            if ((PROD_GROUP_ID == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(PROC_ID));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(PROD_GROUP_ID));
             }
-            if ((PROC_VER == null)) {
+            if ((PROC_ID == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(PROC_VER));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(PROC_ID));
             }
-            if ((DEL_YN.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((long)(DEL_YN.Value));
-            }
-            else {
+            if ((PROC_VER == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((REASON_CODE == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(PROC_VER));
+            }
+            if ((DEL_YN.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((long)(DEL_YN.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(REASON_CODE));
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((DESCR == null)) {
+            if ((REASON_CODE == null)) {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(DESCR));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(REASON_CODE));
             }
-            if ((CREATE_USER_ID == null)) {
+            if ((DESCR == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(CREATE_USER_ID));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(DESCR));
             }
-            if ((CREATE_DATE == null)) {
+            if ((CREATE_USER_ID == null)) {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(CREATE_DATE));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(CREATE_USER_ID));
             }
-            if ((UPDATE_USER_ID == null)) {
+            if ((CREATE_DATE == null)) {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(UPDATE_USER_ID));
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(CREATE_DATE));
             }
-            if ((UPDATE_DATE == null)) {
+            if ((UPDATE_USER_ID == null)) {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(UPDATE_DATE));
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(UPDATE_USER_ID));
+            }
+            if ((UPDATE_DATE == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7901,6 +8006,7 @@ namespace MES.Signes_MESDataSetTableAdapters {
                     string MATERIAL_ID, 
                     string MATERIAL_NAME, 
                     string SITE_ID, 
+                    global::System.Nullable<long> QTY, 
                     string PROD_ID, 
                     string PROD_NM, 
                     string PROD_MODEL, 
@@ -7920,6 +8026,7 @@ namespace MES.Signes_MESDataSetTableAdapters {
                     string Original_MATERIAL_ID, 
                     string Original_MATERIAL_NAME, 
                     string Original_SITE_ID, 
+                    global::System.Nullable<long> Original_QTY, 
                     string Original_PROD_ID, 
                     string Original_PROD_NM, 
                     string Original_PROD_MODEL, 
@@ -7954,251 +8061,265 @@ namespace MES.Signes_MESDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SITE_ID));
             }
-            if ((PROD_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((QTY.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(QTY.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PROD_ID));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((PROD_NM == null)) {
+            if ((PROD_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PROD_NM));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PROD_ID));
             }
-            if ((PROD_MODEL == null)) {
+            if ((PROD_NM == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PROD_MODEL));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PROD_NM));
             }
-            if ((PROD_TYPE == null)) {
+            if ((PROD_MODEL == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(PROD_TYPE));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(PROD_MODEL));
             }
-            if ((PROD_CLASS_CODE == null)) {
+            if ((PROD_TYPE == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(PROD_CLASS_CODE));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(PROD_TYPE));
             }
-            if ((PROD_GRADE == null)) {
+            if ((PROD_CLASS_CODE == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(PROD_GRADE));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(PROD_CLASS_CODE));
             }
-            if ((PROD_GROUP_ID == null)) {
+            if ((PROD_GRADE == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(PROD_GROUP_ID));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(PROD_GRADE));
             }
-            if ((PROC_ID == null)) {
+            if ((PROD_GROUP_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(PROC_ID));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(PROD_GROUP_ID));
             }
-            if ((PROC_VER == null)) {
+            if ((PROC_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(PROC_VER));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(PROC_ID));
             }
-            if ((DEL_YN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(DEL_YN.Value));
-            }
-            else {
+            if ((PROC_VER == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((REASON_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(PROC_VER));
+            }
+            if ((DEL_YN.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(DEL_YN.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(REASON_CODE));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((DESCR == null)) {
+            if ((REASON_CODE == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(DESCR));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(REASON_CODE));
             }
-            if ((CREATE_USER_ID == null)) {
+            if ((DESCR == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(CREATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(DESCR));
             }
-            if ((CREATE_DATE == null)) {
+            if ((CREATE_USER_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(CREATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(CREATE_USER_ID));
             }
-            if ((UPDATE_USER_ID == null)) {
+            if ((CREATE_DATE == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(UPDATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(CREATE_DATE));
             }
-            if ((UPDATE_DATE == null)) {
+            if ((UPDATE_USER_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(UPDATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(UPDATE_USER_ID));
+            }
+            if ((UPDATE_DATE == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(UPDATE_DATE));
             }
             if ((Original_MATERIAL_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_MATERIAL_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_MATERIAL_ID));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_MATERIAL_ID));
             }
             if ((Original_MATERIAL_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_MATERIAL_NAME));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_MATERIAL_NAME));
             }
             if ((Original_SITE_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_SITE_ID));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_SITE_ID));
+            }
+            if ((Original_QTY.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((long)(Original_QTY.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             if ((Original_PROD_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_PROD_ID));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_PROD_ID));
             }
             if ((Original_PROD_NM == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_PROD_NM));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_PROD_NM));
             }
             if ((Original_PROD_MODEL == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_PROD_MODEL));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_PROD_MODEL));
             }
             if ((Original_PROD_TYPE == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_PROD_TYPE));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_PROD_TYPE));
             }
             if ((Original_PROD_CLASS_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_PROD_CLASS_CODE));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_PROD_CLASS_CODE));
             }
             if ((Original_PROD_GRADE == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_PROD_GRADE));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_PROD_GRADE));
             }
             if ((Original_PROD_GROUP_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_PROD_GROUP_ID));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_PROD_GROUP_ID));
             }
             if ((Original_PROC_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_PROC_ID));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_PROC_ID));
             }
             if ((Original_PROC_VER == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_PROC_VER));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_PROC_VER));
             }
             if ((Original_DEL_YN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((long)(Original_DEL_YN.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((long)(Original_DEL_YN.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             if ((Original_REASON_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_REASON_CODE));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_REASON_CODE));
             }
             if ((Original_DESCR == null)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_DESCR));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_DESCR));
             }
             if ((Original_CREATE_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_CREATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_CREATE_USER_ID));
             }
             if ((Original_CREATE_DATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_CREATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_CREATE_DATE));
             }
             if ((Original_UPDATE_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_UPDATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_UPDATE_USER_ID));
             }
             if ((Original_UPDATE_DATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_UPDATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8223,6 +8344,7 @@ namespace MES.Signes_MESDataSetTableAdapters {
         public virtual int Update(
                     string MATERIAL_NAME, 
                     string SITE_ID, 
+                    global::System.Nullable<long> QTY, 
                     string PROD_ID, 
                     string PROD_NM, 
                     string PROD_MODEL, 
@@ -8242,6 +8364,7 @@ namespace MES.Signes_MESDataSetTableAdapters {
                     string Original_MATERIAL_ID, 
                     string Original_MATERIAL_NAME, 
                     string Original_SITE_ID, 
+                    global::System.Nullable<long> Original_QTY, 
                     string Original_PROD_ID, 
                     string Original_PROD_NM, 
                     string Original_PROD_MODEL, 
@@ -8258,7 +8381,7 @@ namespace MES.Signes_MESDataSetTableAdapters {
                     string Original_CREATE_DATE, 
                     string Original_UPDATE_USER_ID, 
                     string Original_UPDATE_DATE) {
-            return this.Update(Original_MATERIAL_ID, MATERIAL_NAME, SITE_ID, PROD_ID, PROD_NM, PROD_MODEL, PROD_TYPE, PROD_CLASS_CODE, PROD_GRADE, PROD_GROUP_ID, PROC_ID, PROC_VER, DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE, Original_MATERIAL_ID, Original_MATERIAL_NAME, Original_SITE_ID, Original_PROD_ID, Original_PROD_NM, Original_PROD_MODEL, Original_PROD_TYPE, Original_PROD_CLASS_CODE, Original_PROD_GRADE, Original_PROD_GROUP_ID, Original_PROC_ID, Original_PROC_VER, Original_DEL_YN, Original_REASON_CODE, Original_DESCR, Original_CREATE_USER_ID, Original_CREATE_DATE, Original_UPDATE_USER_ID, Original_UPDATE_DATE);
+            return this.Update(Original_MATERIAL_ID, MATERIAL_NAME, SITE_ID, QTY, PROD_ID, PROD_NM, PROD_MODEL, PROD_TYPE, PROD_CLASS_CODE, PROD_GRADE, PROD_GROUP_ID, PROC_ID, PROC_VER, DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE, Original_MATERIAL_ID, Original_MATERIAL_NAME, Original_SITE_ID, Original_QTY, Original_PROD_ID, Original_PROD_NM, Original_PROD_MODEL, Original_PROD_TYPE, Original_PROD_CLASS_CODE, Original_PROD_GRADE, Original_PROD_GROUP_ID, Original_PROC_ID, Original_PROC_VER, Original_DEL_YN, Original_REASON_CODE, Original_DESCR, Original_CREATE_USER_ID, Original_CREATE_DATE, Original_UPDATE_USER_ID, Original_UPDATE_DATE);
         }
     }
     

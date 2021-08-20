@@ -46,6 +46,26 @@ namespace MES
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.colMATERIAL_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMATERIAL_NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSITE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQTY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_NM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_MODEL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_CLASS_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_GRADE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_GROUP_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROC_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROC_VER = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDEL_YN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colREASON_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDESCR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCREATE_USER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCREATE_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUPDATE_USER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUPDATE_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlBOM = new DevExpress.XtraGrid.GridControl();
             this.mMPRODMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.signes_MESDataSet = new MES.Signes_MESDataSet();
@@ -427,14 +447,171 @@ namespace MES
             // 
             // cardView1
             // 
+            this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMATERIAL_ID1,
+            this.colMATERIAL_NAME1,
+            this.colSITE_ID,
+            this.colQTY,
+            this.colPROD_ID,
+            this.colPROD_NM,
+            this.colPROD_MODEL,
+            this.colPROD_TYPE,
+            this.colPROD_CLASS_CODE,
+            this.colPROD_GRADE,
+            this.colPROD_GROUP_ID,
+            this.colPROC_ID,
+            this.colPROC_VER,
+            this.colDEL_YN,
+            this.colREASON_CODE,
+            this.colDESCR,
+            this.colCREATE_USER_ID,
+            this.colCREATE_DATE,
+            this.colUPDATE_USER_ID,
+            this.colUPDATE_DATE});
             this.cardView1.GridControl = this.gridControlBOM;
             this.cardView1.Name = "cardView1";
+            // 
+            // colMATERIAL_ID1
+            // 
+            this.colMATERIAL_ID1.Caption = "Material ID";
+            this.colMATERIAL_ID1.FieldName = "MATERIAL_ID";
+            this.colMATERIAL_ID1.Name = "colMATERIAL_ID1";
+            this.colMATERIAL_ID1.Visible = true;
+            this.colMATERIAL_ID1.VisibleIndex = 0;
+            // 
+            // colMATERIAL_NAME1
+            // 
+            this.colMATERIAL_NAME1.Caption = "Name";
+            this.colMATERIAL_NAME1.FieldName = "MATERIAL_NAME";
+            this.colMATERIAL_NAME1.Name = "colMATERIAL_NAME1";
+            this.colMATERIAL_NAME1.Visible = true;
+            this.colMATERIAL_NAME1.VisibleIndex = 1;
+            // 
+            // colSITE_ID
+            // 
+            this.colSITE_ID.Caption = "Site";
+            this.colSITE_ID.FieldName = "SITE_ID";
+            this.colSITE_ID.Name = "colSITE_ID";
+            this.colSITE_ID.Visible = true;
+            this.colSITE_ID.VisibleIndex = 2;
+            // 
+            // colQTY
+            // 
+            this.colQTY.Caption = "Quantity";
+            this.colQTY.FieldName = "QTY";
+            this.colQTY.Name = "colQTY";
+            this.colQTY.Visible = true;
+            this.colQTY.VisibleIndex = 8;
+            // 
+            // colPROD_ID
+            // 
+            this.colPROD_ID.Caption = "Product ID";
+            this.colPROD_ID.FieldName = "PROD_ID";
+            this.colPROD_ID.Name = "colPROD_ID";
+            // 
+            // colPROD_NM
+            // 
+            this.colPROD_NM.Caption = "Product Name";
+            this.colPROD_NM.FieldName = "PROD_NM";
+            this.colPROD_NM.Name = "colPROD_NM";
+            // 
+            // colPROD_MODEL
+            // 
+            this.colPROD_MODEL.Caption = "Product Model";
+            this.colPROD_MODEL.FieldName = "PROD_MODEL";
+            this.colPROD_MODEL.Name = "colPROD_MODEL";
+            // 
+            // colPROD_TYPE
+            // 
+            this.colPROD_TYPE.Caption = "Product type";
+            this.colPROD_TYPE.FieldName = "PROD_TYPE";
+            this.colPROD_TYPE.Name = "colPROD_TYPE";
+            // 
+            // colPROD_CLASS_CODE
+            // 
+            this.colPROD_CLASS_CODE.Caption = "Product Class Code";
+            this.colPROD_CLASS_CODE.FieldName = "PROD_CLASS_CODE";
+            this.colPROD_CLASS_CODE.Name = "colPROD_CLASS_CODE";
+            // 
+            // colPROD_GRADE
+            // 
+            this.colPROD_GRADE.Caption = "Product Grade";
+            this.colPROD_GRADE.FieldName = "PROD_GRADE";
+            this.colPROD_GRADE.Name = "colPROD_GRADE";
+            // 
+            // colPROD_GROUP_ID
+            // 
+            this.colPROD_GROUP_ID.Caption = "Product Group ID";
+            this.colPROD_GROUP_ID.FieldName = "PROD_GROUP_ID";
+            this.colPROD_GROUP_ID.Name = "colPROD_GROUP_ID";
+            // 
+            // colPROC_ID
+            // 
+            this.colPROC_ID.Caption = "Process";
+            this.colPROC_ID.FieldName = "PROC_ID";
+            this.colPROC_ID.Name = "colPROC_ID";
+            this.colPROC_ID.Visible = true;
+            this.colPROC_ID.VisibleIndex = 3;
+            // 
+            // colPROC_VER
+            // 
+            this.colPROC_VER.Caption = "Process version";
+            this.colPROC_VER.FieldName = "PROC_VER";
+            this.colPROC_VER.Name = "colPROC_VER";
+            this.colPROC_VER.Visible = true;
+            this.colPROC_VER.VisibleIndex = 4;
+            // 
+            // colDEL_YN
+            // 
+            this.colDEL_YN.FieldName = "DEL_YN";
+            this.colDEL_YN.Name = "colDEL_YN";
+            // 
+            // colREASON_CODE
+            // 
+            this.colREASON_CODE.FieldName = "REASON_CODE";
+            this.colREASON_CODE.Name = "colREASON_CODE";
+            // 
+            // colDESCR
+            // 
+            this.colDESCR.Caption = "Product Description";
+            this.colDESCR.FieldName = "DESCR";
+            this.colDESCR.Name = "colDESCR";
+            this.colDESCR.Visible = true;
+            this.colDESCR.VisibleIndex = 5;
+            // 
+            // colCREATE_USER_ID
+            // 
+            this.colCREATE_USER_ID.Caption = "Created by";
+            this.colCREATE_USER_ID.FieldName = "CREATE_USER_ID";
+            this.colCREATE_USER_ID.Name = "colCREATE_USER_ID";
+            this.colCREATE_USER_ID.Visible = true;
+            this.colCREATE_USER_ID.VisibleIndex = 6;
+            // 
+            // colCREATE_DATE
+            // 
+            this.colCREATE_DATE.Caption = "Create date";
+            this.colCREATE_DATE.FieldName = "CREATE_DATE";
+            this.colCREATE_DATE.Name = "colCREATE_DATE";
+            this.colCREATE_DATE.Visible = true;
+            this.colCREATE_DATE.VisibleIndex = 7;
+            // 
+            // colUPDATE_USER_ID
+            // 
+            this.colUPDATE_USER_ID.Caption = "Updated by";
+            this.colUPDATE_USER_ID.FieldName = "UPDATE_USER_ID";
+            this.colUPDATE_USER_ID.Name = "colUPDATE_USER_ID";
+            // 
+            // colUPDATE_DATE
+            // 
+            this.colUPDATE_DATE.Caption = "Update date";
+            this.colUPDATE_DATE.FieldName = "UPDATE_DATE";
+            this.colUPDATE_DATE.Name = "colUPDATE_DATE";
             // 
             // gridControlBOM
             // 
             this.gridControlBOM.DataSource = this.mMPRODMSTBindingSource;
             gridLevelNode1.LevelTemplate = this.cardView1;
-            gridLevelNode1.RelationName = "Material Listing";
+            gridLevelNode1.RelationName = "MM_PROD_MST_MATERIAL_MST";
             this.gridControlBOM.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
             this.gridControlBOM.Location = new System.Drawing.Point(18, 69);
@@ -479,10 +656,12 @@ namespace MES
             this.colUPDATE_DATE1});
             this.gridView4.GridControl = this.gridControlBOM;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsFilter.InHeaderSearchMode = DevExpress.XtraGrid.Views.Grid.GridInHeaderSearchMode.TextFilter;
             this.gridView4.OptionsView.ColumnAutoWidth = false;
             // 
             // colPROD_ID1
             // 
+            this.colPROD_ID1.Caption = "Product ID";
             this.colPROD_ID1.FieldName = "PROD_ID";
             this.colPROD_ID1.Name = "colPROD_ID1";
             this.colPROD_ID1.Visible = true;
@@ -490,6 +669,7 @@ namespace MES
             // 
             // colPROD_GROUP_ID1
             // 
+            this.colPROD_GROUP_ID1.Caption = "Group ID";
             this.colPROD_GROUP_ID1.FieldName = "PROD_GROUP_ID";
             this.colPROD_GROUP_ID1.Name = "colPROD_GROUP_ID1";
             this.colPROD_GROUP_ID1.Visible = true;
@@ -497,6 +677,7 @@ namespace MES
             // 
             // colSITE_ID1
             // 
+            this.colSITE_ID1.Caption = "Site ID";
             this.colSITE_ID1.FieldName = "SITE_ID";
             this.colSITE_ID1.Name = "colSITE_ID1";
             this.colSITE_ID1.Visible = true;
@@ -504,6 +685,7 @@ namespace MES
             // 
             // colPROC_ID1
             // 
+            this.colPROC_ID1.Caption = "Process";
             this.colPROC_ID1.FieldName = "PROC_ID";
             this.colPROC_ID1.Name = "colPROC_ID1";
             this.colPROC_ID1.Visible = true;
@@ -511,6 +693,7 @@ namespace MES
             // 
             // colPROD_CLASS_CODE1
             // 
+            this.colPROD_CLASS_CODE1.Caption = "Class Code";
             this.colPROD_CLASS_CODE1.FieldName = "PROD_CLASS_CODE";
             this.colPROD_CLASS_CODE1.Name = "colPROD_CLASS_CODE1";
             this.colPROD_CLASS_CODE1.Visible = true;
@@ -518,6 +701,7 @@ namespace MES
             // 
             // colPROD_NM1
             // 
+            this.colPROD_NM1.Caption = "Name";
             this.colPROD_NM1.FieldName = "PROD_NM";
             this.colPROD_NM1.Name = "colPROD_NM1";
             this.colPROD_NM1.Visible = true;
@@ -525,6 +709,7 @@ namespace MES
             // 
             // colPROD_TYPE1
             // 
+            this.colPROD_TYPE1.Caption = "Type";
             this.colPROD_TYPE1.FieldName = "PROD_TYPE";
             this.colPROD_TYPE1.Name = "colPROD_TYPE1";
             this.colPROD_TYPE1.Visible = true;
@@ -532,6 +717,7 @@ namespace MES
             // 
             // colSUB_PROD_TYPE1
             // 
+            this.colSUB_PROD_TYPE1.Caption = "Subtype";
             this.colSUB_PROD_TYPE1.FieldName = "SUB_PROD_TYPE";
             this.colSUB_PROD_TYPE1.Name = "colSUB_PROD_TYPE1";
             this.colSUB_PROD_TYPE1.Visible = true;
@@ -539,6 +725,7 @@ namespace MES
             // 
             // colPROD_GRADE1
             // 
+            this.colPROD_GRADE1.Caption = "Grade";
             this.colPROD_GRADE1.FieldName = "PROD_GRADE";
             this.colPROD_GRADE1.Name = "colPROD_GRADE1";
             this.colPROD_GRADE1.Visible = true;
@@ -546,6 +733,7 @@ namespace MES
             // 
             // colPROD_MODEL1
             // 
+            this.colPROD_MODEL1.Caption = "Model";
             this.colPROD_MODEL1.FieldName = "PROD_MODEL";
             this.colPROD_MODEL1.Name = "colPROD_MODEL1";
             this.colPROD_MODEL1.Visible = true;
@@ -567,6 +755,7 @@ namespace MES
             // 
             // colDESCR1
             // 
+            this.colDESCR1.Caption = "Description";
             this.colDESCR1.FieldName = "DESCR";
             this.colDESCR1.Name = "colDESCR1";
             this.colDESCR1.Visible = true;
@@ -574,6 +763,7 @@ namespace MES
             // 
             // colCREATE_USER_ID1
             // 
+            this.colCREATE_USER_ID1.Caption = "Created by";
             this.colCREATE_USER_ID1.FieldName = "CREATE_USER_ID";
             this.colCREATE_USER_ID1.Name = "colCREATE_USER_ID1";
             this.colCREATE_USER_ID1.Visible = true;
@@ -581,6 +771,7 @@ namespace MES
             // 
             // colCREATE_DATE1
             // 
+            this.colCREATE_DATE1.Caption = "Create date";
             this.colCREATE_DATE1.FieldName = "CREATE_DATE";
             this.colCREATE_DATE1.Name = "colCREATE_DATE1";
             this.colCREATE_DATE1.Visible = true;
@@ -588,6 +779,7 @@ namespace MES
             // 
             // colUPDATE_USER_ID1
             // 
+            this.colUPDATE_USER_ID1.Caption = "Updated by";
             this.colUPDATE_USER_ID1.FieldName = "UPDATE_USER_ID";
             this.colUPDATE_USER_ID1.Name = "colUPDATE_USER_ID1";
             this.colUPDATE_USER_ID1.Visible = true;
@@ -595,6 +787,7 @@ namespace MES
             // 
             // colUPDATE_DATE1
             // 
+            this.colUPDATE_DATE1.Caption = "Update date";
             this.colUPDATE_DATE1.FieldName = "UPDATE_DATE";
             this.colUPDATE_DATE1.Name = "colUPDATE_DATE1";
             this.colUPDATE_DATE1.Visible = true;
@@ -3063,7 +3256,6 @@ namespace MES
         private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_NAME;
         private System.Windows.Forms.BindingSource mMPRODMSTBindingSource;
         private Signes_MESDataSetTableAdapters.MM_PROD_MSTTableAdapter mM_PROD_MSTTableAdapter;
-        private Signes_MESDataSetTableAdapters.MATERIAL_MSTTableAdapter materiaL_MSTTableAdapter;
         private DevExpress.XtraGrid.Views.Card.CardView cardView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn colPROD_ID1;
@@ -3084,6 +3276,27 @@ namespace MES
         private DevExpress.XtraGrid.Columns.GridColumn colUPDATE_USER_ID1;
         private DevExpress.XtraGrid.Columns.GridColumn colUPDATE_DATE1;
         private SplitterItem splitterItem9;
+        private Signes_MESDataSetTableAdapters.MATERIAL_MSTTableAdapter materiaL_MSTTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_ID1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_NAME1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSITE_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colQTY;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_NM;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_MODEL;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_TYPE;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_CLASS_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_GRADE;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_GROUP_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROC_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROC_VER;
+        private DevExpress.XtraGrid.Columns.GridColumn colDEL_YN;
+        private DevExpress.XtraGrid.Columns.GridColumn colREASON_CODE;
+        private DevExpress.XtraGrid.Columns.GridColumn colDESCR;
+        private DevExpress.XtraGrid.Columns.GridColumn colCREATE_USER_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colCREATE_DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colUPDATE_USER_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colUPDATE_DATE;
     }
 }
 
