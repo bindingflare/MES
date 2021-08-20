@@ -291,13 +291,13 @@ namespace MES
         }
         private void simpleButtonBOMSave_Click(object sender, EventArgs e)
         {
-            bool result = gridControlProductListing.MainView.PostEditor();
+            //mM_PROD_MSTTableAdapter.Update(signes_MESDataSet);
         }
         private void barButtonItemCardView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlProductListing.MainView = cardView;
+            //gridControlProductListing.MainView = cardView;
         }
 
         private void barButtonItemGridView_Click(object sender, ItemClickEventArgs e)
@@ -576,8 +576,7 @@ namespace MES
         {
             // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROD_MST' table. You can move, or remove it, as needed.
             this.mM_PROD_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_PROD_MST);
-            // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROD_MST' table. You can move, or remove it, as needed.
-            this.mM_PROD_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_PROD_MST);
+            this.materiaL_MSTTableAdapter.Fill(this.signes_MESDataSet.MATERIAL_MST);
         }
 
         private void labelControl2_Click(object sender, EventArgs e)
@@ -650,7 +649,7 @@ namespace MES
 
         private void simpleButtonBOMAddProduct_Click(object sender, EventArgs e)
         {
-            mMPRODMSTBindingSource.AddNew();
+            //mMPRODMSTBindingSource.AddNew();
         }
     }
 
