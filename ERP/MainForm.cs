@@ -14,6 +14,7 @@ using DevExpress.XtraBars;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Card;
+using DevExpress.XtraGrid.Columns;
 
 namespace MES
 {
@@ -23,6 +24,7 @@ namespace MES
         private OverlayPainter m_Overlay = new OverlayPainter();
 
         private XtraForm dummyForm;
+        private MasterDetailHelper helper;
 
         private DevExpress.XtraGrid.Views.Card.CardView cardView;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView;
@@ -286,7 +288,7 @@ namespace MES
             // view popup
             barButtonItemCardView.ItemClick += barButtonItemCardView_Click;
             barButtonItemGridView.ItemClick += barButtonItemGridView_Click;
-            barButtonItemCustomView.ItemClick += barButtonItemCustomView_Click;
+            barButtonIteLayoutView.ItemClick += barButtonItemLayoutView_Click;
 
             // status strip
             toolStripStatusLabel1.Text = "Ready";
@@ -294,6 +296,10 @@ namespace MES
             // material detail view
             //Handle the InitNewRow event to initialize newly added rows. To initialize row cells use the SetRowCellValue method
             cardViewMaterialDetail.InitNewRow += cardDetailView_InitNewRow;
+
+            gridControlBOM.ForceInitialize();
+            helper = new MasterDetailHelper(gridViewProductListing, ViewType.Grid);
+            helper.CreateDetail();
         }
 
         private void cardDetailView_InitNewRow(object sender, InitNewRowEventArgs e)
@@ -311,21 +317,24 @@ namespace MES
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlBOM.MainView = cardView;
+            //gridControlBOM.MainView = cardView;
+            helper.ViewType = ViewType.Card;
         }
 
         private void barButtonItemGridView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlBOM.MainView = gridViewProductListing;
+            //gridControlBOM.MainView = gridViewProductListing;
+            helper.ViewType = ViewType.Grid;
         }
 
-        private void barButtonItemCustomView_Click(object sender, ItemClickEventArgs e)
+        private void barButtonItemLayoutView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlBOM.MainView = layoutView;
+            //gridControlBOM.MainView = layoutView;
+            helper.ViewType = ViewType.Layout;
         }
 
         private void dummyForm_Disposed(object sender, EventArgs e)
