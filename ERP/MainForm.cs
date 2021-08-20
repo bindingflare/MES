@@ -588,9 +588,12 @@ namespace MES
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROC_MST' table. You can move, or remove it, as needed.
+            this.mM_PROC_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_PROC_MST);
             // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROD_MST' table. You can move, or remove it, as needed.
             this.mM_PROD_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_PROD_MST);
             this.materiaL_MSTTableAdapter.Fill(this.signes_MESDataSet.MATERIAL_MST);
+            this.mM_PROC_STEPTableAdapter.Fill(this.signes_MESDataSet.MM_PROC_STEP);
         }
 
         private void labelControl2_Click(object sender, EventArgs e)
