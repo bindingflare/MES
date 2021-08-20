@@ -304,14 +304,14 @@ namespace MES
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlProductListing.MainView = gridView;
+            gridControlBOM.MainView = gridView;
         }
 
         private void barButtonItemCustomView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlProductListing.MainView = layoutView;
+            gridControlBOM.MainView = layoutView;
         }
 
         private void dummyForm_Disposed(object sender, EventArgs e)

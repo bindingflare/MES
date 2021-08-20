@@ -45,20 +45,10 @@ namespace MES
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
+            this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.gridControlBOM = new DevExpress.XtraGrid.GridControl();
             this.mMPRODMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.signes_MESDataSet = new MES.Signes_MESDataSet();
-            this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barButtonItemAccountSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemLogout = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemCardView = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemGridView = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItemCustomView = new DevExpress.XtraBars.BarButtonItem();
-            this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPROD_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPROD_GROUP_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,7 +67,16 @@ namespace MES
             this.colCREATE_DATE1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUPDATE_USER_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUPDATE_DATE1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItemAccountSettings = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemCardView = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemGridView = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemCustomView = new DevExpress.XtraBars.BarButtonItem();
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -246,8 +245,8 @@ namespace MES
             this.layoutControlGroup21 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup22 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.splitterItem8 = new DevExpress.XtraLayout.SplitterItem();
             this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.splitterItem8 = new DevExpress.XtraLayout.SplitterItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -258,6 +257,7 @@ namespace MES
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup23 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.splitterItem9 = new DevExpress.XtraLayout.SplitterItem();
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabNavigationPage7 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlFinishedGoodsInventory = new DevExpress.XtraEditors.PanelControl();
@@ -273,14 +273,12 @@ namespace MES
             this.tableAdapterManager = new MES.Signes_MESDataSetTableAdapters.TableAdapterManager();
             this.mM_PROD_MSTTableAdapter = new MES.Signes_MESDataSetTableAdapters.MM_PROD_MSTTableAdapter();
             this.materiaL_MSTTableAdapter = new MES.Signes_MESDataSetTableAdapters.MATERIAL_MSTTableAdapter();
-            this.splitterItem9 = new DevExpress.XtraLayout.SplitterItem();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPRODMSTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.signes_MESDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
             this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewPopupMenu)).BeginInit();
@@ -399,8 +397,8 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitterItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
@@ -411,6 +409,7 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
             this.tabNavigationPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlFinishedGoodsInventory)).BeginInit();
@@ -424,8 +423,29 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlGanttChart)).BeginInit();
             this.panelControlGanttChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitterItem9)).BeginInit();
             this.SuspendLayout();
+            // 
+            // cardView1
+            // 
+            this.cardView1.GridControl = this.gridControlBOM;
+            this.cardView1.Name = "cardView1";
+            // 
+            // gridControlBOM
+            // 
+            this.gridControlBOM.DataSource = this.mMPRODMSTBindingSource;
+            gridLevelNode1.LevelTemplate = this.cardView1;
+            gridLevelNode1.RelationName = "Material Listing";
+            this.gridControlBOM.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControlBOM.Location = new System.Drawing.Point(18, 69);
+            this.gridControlBOM.MainView = this.gridView4;
+            this.gridControlBOM.MenuManager = this.toolbarFormManager1;
+            this.gridControlBOM.Name = "gridControlBOM";
+            this.gridControlBOM.Size = new System.Drawing.Size(827, 415);
+            this.gridControlBOM.TabIndex = 15;
+            this.gridControlBOM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4,
+            this.cardView1});
             // 
             // mMPRODMSTBindingSource
             // 
@@ -436,117 +456,6 @@ namespace MES
             // 
             this.signes_MESDataSet.DataSetName = "Signes_MESDataSet";
             this.signes_MESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // toolbarFormManager1
-            // 
-            this.toolbarFormManager1.Categories.AddRange(new DevExpress.XtraBars.BarManagerCategory[] {
-            new DevExpress.XtraBars.BarManagerCategory("Account", new System.Guid("14973033-613e-4200-a862-7e20f2deb65d")),
-            new DevExpress.XtraBars.BarManagerCategory("Product", new System.Guid("ac933564-f1c0-4bd3-842d-ab8cfcdcb063")),
-            new DevExpress.XtraBars.BarManagerCategory("View", new System.Guid("bac13e53-74ad-48f9-b4e4-52d2a5fee75f"))});
-            this.toolbarFormManager1.DockControls.Add(this.barDockControlTop);
-            this.toolbarFormManager1.DockControls.Add(this.barDockControlBottom);
-            this.toolbarFormManager1.DockControls.Add(this.barDockControlLeft);
-            this.toolbarFormManager1.DockControls.Add(this.barDockControlRight);
-            this.toolbarFormManager1.Form = this;
-            this.toolbarFormManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItemAccountSettings,
-            this.barButtonItemLogout,
-            this.barButtonItemCardView,
-            this.barButtonItemGridView,
-            this.barButtonItemCustomView});
-            this.toolbarFormManager1.MaxItemId = 7;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 30);
-            this.barDockControlTop.Manager = this.toolbarFormManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1280, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 720);
-            this.barDockControlBottom.Manager = this.toolbarFormManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1280, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
-            this.barDockControlLeft.Manager = this.toolbarFormManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 690);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1280, 30);
-            this.barDockControlRight.Manager = this.toolbarFormManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 690);
-            // 
-            // barButtonItemAccountSettings
-            // 
-            this.barButtonItemAccountSettings.Caption = "Account settings";
-            this.barButtonItemAccountSettings.CategoryGuid = new System.Guid("14973033-613e-4200-a862-7e20f2deb65d");
-            this.barButtonItemAccountSettings.Id = 2;
-            this.barButtonItemAccountSettings.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItemAccountSettings.ImageOptions.SvgImage")));
-            this.barButtonItemAccountSettings.Name = "barButtonItemAccountSettings";
-            // 
-            // barButtonItemLogout
-            // 
-            this.barButtonItemLogout.Caption = "Logout";
-            this.barButtonItemLogout.CategoryGuid = new System.Guid("14973033-613e-4200-a862-7e20f2deb65d");
-            this.barButtonItemLogout.Id = 3;
-            this.barButtonItemLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemLogout.ImageOptions.Image")));
-            this.barButtonItemLogout.Name = "barButtonItemLogout";
-            // 
-            // barButtonItemCardView
-            // 
-            this.barButtonItemCardView.Caption = "Card View";
-            this.barButtonItemCardView.CategoryGuid = new System.Guid("bac13e53-74ad-48f9-b4e4-52d2a5fee75f");
-            this.barButtonItemCardView.Id = 4;
-            this.barButtonItemCardView.Name = "barButtonItemCardView";
-            // 
-            // barButtonItemGridView
-            // 
-            this.barButtonItemGridView.Caption = "Grid View";
-            this.barButtonItemGridView.CategoryGuid = new System.Guid("bac13e53-74ad-48f9-b4e4-52d2a5fee75f");
-            this.barButtonItemGridView.Id = 5;
-            this.barButtonItemGridView.Name = "barButtonItemGridView";
-            // 
-            // barButtonItemCustomView
-            // 
-            this.barButtonItemCustomView.Caption = "Layout View";
-            this.barButtonItemCustomView.CategoryGuid = new System.Guid("bac13e53-74ad-48f9-b4e4-52d2a5fee75f");
-            this.barButtonItemCustomView.Id = 6;
-            this.barButtonItemCustomView.Name = "barButtonItemCustomView";
-            // 
-            // cardView1
-            // 
-            this.cardView1.GridControl = this.gridControl1;
-            this.cardView1.Name = "cardView1";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.mMPRODMSTBindingSource;
-            gridLevelNode1.LevelTemplate = this.cardView1;
-            gridLevelNode1.RelationName = "MM_PROD_MST_MATERIAL_MST";
-            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(18, 69);
-            this.gridControl1.MainView = this.gridView4;
-            this.gridControl1.MenuManager = this.toolbarFormManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(827, 415);
-            this.gridControl1.TabIndex = 15;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4,
-            this.gridView5,
-            this.cardView1});
             // 
             // gridView4
             // 
@@ -568,8 +477,9 @@ namespace MES
             this.colCREATE_DATE1,
             this.colUPDATE_USER_ID1,
             this.colUPDATE_DATE1});
-            this.gridView4.GridControl = this.gridControl1;
+            this.gridView4.GridControl = this.gridControlBOM;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ColumnAutoWidth = false;
             // 
             // colPROD_ID1
             // 
@@ -690,10 +600,93 @@ namespace MES
             this.colUPDATE_DATE1.Visible = true;
             this.colUPDATE_DATE1.VisibleIndex = 16;
             // 
-            // gridView5
+            // toolbarFormManager1
             // 
-            this.gridView5.GridControl = this.gridControl1;
-            this.gridView5.Name = "gridView5";
+            this.toolbarFormManager1.Categories.AddRange(new DevExpress.XtraBars.BarManagerCategory[] {
+            new DevExpress.XtraBars.BarManagerCategory("Account", new System.Guid("14973033-613e-4200-a862-7e20f2deb65d")),
+            new DevExpress.XtraBars.BarManagerCategory("Product", new System.Guid("ac933564-f1c0-4bd3-842d-ab8cfcdcb063")),
+            new DevExpress.XtraBars.BarManagerCategory("View", new System.Guid("bac13e53-74ad-48f9-b4e4-52d2a5fee75f"))});
+            this.toolbarFormManager1.DockControls.Add(this.barDockControlTop);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControlBottom);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControlLeft);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControlRight);
+            this.toolbarFormManager1.Form = this;
+            this.toolbarFormManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItemAccountSettings,
+            this.barButtonItemLogout,
+            this.barButtonItemCardView,
+            this.barButtonItemGridView,
+            this.barButtonItemCustomView});
+            this.toolbarFormManager1.MaxItemId = 7;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlTop.Manager = this.toolbarFormManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1280, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 720);
+            this.barDockControlBottom.Manager = this.toolbarFormManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1280, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Manager = this.toolbarFormManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 690);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1280, 30);
+            this.barDockControlRight.Manager = this.toolbarFormManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 690);
+            // 
+            // barButtonItemAccountSettings
+            // 
+            this.barButtonItemAccountSettings.Caption = "Account settings";
+            this.barButtonItemAccountSettings.CategoryGuid = new System.Guid("14973033-613e-4200-a862-7e20f2deb65d");
+            this.barButtonItemAccountSettings.Id = 2;
+            this.barButtonItemAccountSettings.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItemAccountSettings.ImageOptions.SvgImage")));
+            this.barButtonItemAccountSettings.Name = "barButtonItemAccountSettings";
+            // 
+            // barButtonItemLogout
+            // 
+            this.barButtonItemLogout.Caption = "Logout";
+            this.barButtonItemLogout.CategoryGuid = new System.Guid("14973033-613e-4200-a862-7e20f2deb65d");
+            this.barButtonItemLogout.Id = 3;
+            this.barButtonItemLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemLogout.ImageOptions.Image")));
+            this.barButtonItemLogout.Name = "barButtonItemLogout";
+            // 
+            // barButtonItemCardView
+            // 
+            this.barButtonItemCardView.Caption = "Card View";
+            this.barButtonItemCardView.CategoryGuid = new System.Guid("bac13e53-74ad-48f9-b4e4-52d2a5fee75f");
+            this.barButtonItemCardView.Id = 4;
+            this.barButtonItemCardView.Name = "barButtonItemCardView";
+            // 
+            // barButtonItemGridView
+            // 
+            this.barButtonItemGridView.Caption = "Grid View";
+            this.barButtonItemGridView.CategoryGuid = new System.Guid("bac13e53-74ad-48f9-b4e4-52d2a5fee75f");
+            this.barButtonItemGridView.Id = 5;
+            this.barButtonItemGridView.Name = "barButtonItemGridView";
+            // 
+            // barButtonItemCustomView
+            // 
+            this.barButtonItemCustomView.Caption = "Layout View";
+            this.barButtonItemCustomView.CategoryGuid = new System.Guid("bac13e53-74ad-48f9-b4e4-52d2a5fee75f");
+            this.barButtonItemCustomView.Id = 6;
+            this.barButtonItemCustomView.Name = "barButtonItemCustomView";
             // 
             // panelControlMain
             // 
@@ -2146,7 +2139,7 @@ namespace MES
             // 
             // layoutControl5
             // 
-            this.layoutControl5.Controls.Add(this.gridControl1);
+            this.layoutControl5.Controls.Add(this.gridControlBOM);
             this.layoutControl5.Controls.Add(this.tablePanel1);
             this.layoutControl5.Controls.Add(this.simpleButtonBOMAddProduct);
             this.layoutControl5.Controls.Add(this.searchControlBOM);
@@ -2422,19 +2415,12 @@ namespace MES
             // 
             // layoutControlItem23
             // 
-            this.layoutControlItem23.Control = this.gridControl1;
+            this.layoutControlItem23.Control = this.gridControlBOM;
             this.layoutControlItem23.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.Size = new System.Drawing.Size(831, 419);
             this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem23.TextVisible = false;
-            // 
-            // splitterItem8
-            // 
-            this.splitterItem8.AllowHotTrack = true;
-            this.splitterItem8.Location = new System.Drawing.Point(0, 419);
-            this.splitterItem8.Name = "splitterItem8";
-            this.splitterItem8.Size = new System.Drawing.Size(831, 10);
             // 
             // emptySpaceItem12
             // 
@@ -2443,6 +2429,13 @@ namespace MES
             this.emptySpaceItem12.Name = "emptySpaceItem12";
             this.emptySpaceItem12.Size = new System.Drawing.Size(831, 684);
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // splitterItem8
+            // 
+            this.splitterItem8.AllowHotTrack = true;
+            this.splitterItem8.Location = new System.Drawing.Point(0, 419);
+            this.splitterItem8.Name = "splitterItem8";
+            this.splitterItem8.Size = new System.Drawing.Size(831, 10);
             // 
             // emptySpaceItem8
             // 
@@ -2542,6 +2535,13 @@ namespace MES
             this.layoutControlItem18.Size = new System.Drawing.Size(380, 409);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
+            // 
+            // splitterItem9
+            // 
+            this.splitterItem9.AllowHotTrack = true;
+            this.splitterItem9.Location = new System.Drawing.Point(0, 409);
+            this.splitterItem9.Name = "splitterItem9";
+            this.splitterItem9.Size = new System.Drawing.Size(380, 10);
             // 
             // emptySpaceItem11
             // 
@@ -2667,13 +2667,6 @@ namespace MES
             // 
             this.materiaL_MSTTableAdapter.ClearBeforeFill = true;
             // 
-            // splitterItem9
-            // 
-            this.splitterItem9.AllowHotTrack = true;
-            this.splitterItem9.Location = new System.Drawing.Point(0, 409);
-            this.splitterItem9.Name = "splitterItem9";
-            this.splitterItem9.Size = new System.Drawing.Size(380, 10);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -2695,13 +2688,12 @@ namespace MES
             this.Text = "SigneS MES";
             this.ToolbarFormControl = this.toolbarFormControl1;
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlBOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPRODMSTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.signes_MESDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
             this.panelControlMain.ResumeLayout(false);
             this.panelControlMain.PerformLayout();
@@ -2829,8 +2821,8 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitterItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
@@ -2841,6 +2833,7 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
             this.tabNavigationPage7.ResumeLayout(false);
             this.tabNavigationPage7.PerformLayout();
@@ -2855,7 +2848,6 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlGanttChart)).EndInit();
             this.panelControlGanttChart.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitterItem9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3021,7 +3013,7 @@ namespace MES
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private DevExpress.XtraEditors.PanelControl panelControlBOM;
         private LayoutControl layoutControl5;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridControlBOM;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
@@ -3065,7 +3057,6 @@ namespace MES
         private LayoutControlGroup layoutControlGroup25;
         private LayoutControlItem layoutControlItem21;
         private LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private Signes_MESDataSet signes_MESDataSet;
         private Signes_MESDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_ID;
