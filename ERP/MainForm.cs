@@ -12,6 +12,8 @@ using DevExpress.XtraTreeList.Columns;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Card;
 
 namespace MES
 {
@@ -22,7 +24,7 @@ namespace MES
 
         private XtraForm dummyForm;
 
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
+        private DevExpress.XtraGrid.Views.Card.CardView cardView;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView;
 
         private int _SplitterX;
@@ -267,14 +269,14 @@ namespace MES
             ganttChartChartProjectLabel.Text = m_Manager.Name;
             layoutControlGroup9.Text = m_Manager.Name;
 
-            UpdateDropDownButton(barButtonItemCardView);
+            UpdateDropDownButton(barButtonItemGridView);
             viewPopupMenu.MinWidth = dropDownButtonBOM.Width;
-            
+
             // Create dummy secondary form
             _CreateDummyForm();
 
             // views
-            gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            cardView = new DevExpress.XtraGrid.Views.Card.CardView();
             layoutView = new DevExpress.XtraGrid.Views.Layout.LayoutView();
 
             // account label
@@ -288,23 +290,35 @@ namespace MES
 
             // status strip
             toolStripStatusLabel1.Text = "Ready";
+
+            // material detail view
+            //Handle the InitNewRow event to initialize newly added rows. To initialize row cells use the SetRowCellValue method
+            cardViewMaterialDetail.InitNewRow += cardDetailView_InitNewRow;
         }
+
+        private void cardDetailView_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            CardView view = sender as CardView;
+            //view.SetRowCellValue(e.RowHandle, view.Columns["PROD_ID"], DateTime.Today);
+        }
+
         private void simpleButtonBOMSave_Click(object sender, EventArgs e)
         {
-            //mM_PROD_MSTTableAdapter.Update(signes_MESDataSet);
+            mM_PROD_MSTTableAdapter.Update(signes_MESDataSet);
+            materiaL_MSTTableAdapter.Update(signes_MESDataSet);
         }
         private void barButtonItemCardView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            //gridControlProductListing.MainView = cardView;
+            gridControlBOM.MainView = cardView;
         }
 
         private void barButtonItemGridView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlBOM.MainView = gridView;
+            gridControlBOM.MainView = gridViewProductListing;
         }
 
         private void barButtonItemCustomView_Click(object sender, ItemClickEventArgs e)
@@ -329,7 +343,7 @@ namespace MES
 
         private void _FormatTreeList()
         {
-            foreach(TreeListColumn column in ganttChartChartTreeList.Columns)
+            foreach (TreeListColumn column in ganttChartChartTreeList.Columns)
             {
                 int hits = 0;
 
@@ -342,7 +356,7 @@ namespace MES
                     }
                 }
 
-                if(hits == 0)
+                if (hits == 0)
                 {
                     column.Visible = false;
                 }
@@ -649,7 +663,14 @@ namespace MES
 
         private void simpleButtonBOMAddProduct_Click(object sender, EventArgs e)
         {
-            //mMPRODMSTBindingSource.AddNew();
+            gridViewProductListing.AddNewRow();
+        }
+
+        private void simpleButtonBOMAddMaterial_Click(object sender, EventArgs e)
+        {
+            gridViewProductListing.ExpandMasterRow(gridViewProductListing.FocusedRowHandle);
+            CardView detailView = (gridViewProductListing.GetDetailView(gridViewProductListing.FocusedRowHandle, 0) as CardView);
+            detailView.AddNewRow();
         }
     }
 
