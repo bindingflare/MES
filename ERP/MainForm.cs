@@ -293,48 +293,58 @@ namespace MES
             // status strip
             toolStripStatusLabel1.Text = "Ready";
 
+            // finished goods lookup
+            ((GridView)gridControlFinishedGoods.MainView).CustomUnboundColumnData += MainForm_CustomUnboundColumnData;
+
             // material detail view
             //Handle the InitNewRow event to initialize newly added rows. To initialize row cells use the SetRowCellValue method
             cardViewMaterialDetail.InitNewRow += cardDetailView_InitNewRow;
+        }
 
-            gridControlBOM.ForceInitialize();
-            helper = new MasterDetailHelper(gridViewProductListing, ViewType.Grid);
-            helper.CreateDetail();
+        private void MainForm_CustomUnboundColumnData(object sender, CustomColumnDataEventArgs e)
+        {
+            // NOTE: To be replaced by object data if converted to business objects first.
+            e.Value = signes_MESDataSet.PRODUCT_MST.FindByPROD_ID(((DataRowView)e.Row).Row.Field<string>("PROD_ID")).Field<string>(e.Column.FieldName);
         }
 
         private void cardDetailView_InitNewRow(object sender, InitNewRowEventArgs e)
         {
             CardView view = sender as CardView;
+
+
             //view.SetRowCellValue(e.RowHandle, view.Columns["PROD_ID"], DateTime.Today);
         }
 
         private void simpleButtonBOMSave_Click(object sender, EventArgs e)
         {
-            mM_PROD_MSTTableAdapter.Update(signes_MESDataSet);
+            PRODUCT_MSTTableAdapter.Update(signes_MESDataSet);
             materiaL_MSTTableAdapter.Update(signes_MESDataSet);
         }
         private void barButtonItemCardView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            //gridControlBOM.MainView = cardView;
-            helper.ViewType = ViewType.Card;
+            gridControlBOM.MainView = cardView;
+
+            helper = new MasterDetailHelper(cardView, ViewType.Card);
+            helper.CreateDetail();
         }
 
         private void barButtonItemGridView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            //gridControlBOM.MainView = gridViewProductListing;
-            helper.ViewType = ViewType.Grid;
+            gridControlBOM.MainView = gridViewProductListing;
         }
 
         private void barButtonItemLayoutView_Click(object sender, ItemClickEventArgs e)
         {
             UpdateDropDownButton(e.Item);
 
-            //gridControlBOM.MainView = layoutView;
-            helper.ViewType = ViewType.Layout;
+            gridControlBOM.MainView = layoutView;
+
+            helper = new MasterDetailHelper(layoutView, ViewType.Card);
+            helper.CreateDetail();
         }
 
         private void dummyForm_Disposed(object sender, EventArgs e)
@@ -597,10 +607,12 @@ namespace MES
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'signes_MESDataSet.FINISHED_MST' table. You can move, or remove it, as needed.
+            this.finisheD_MSTTableAdapter1.Fill(this.signes_MESDataSet.FINISHED_MST);
             // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROC_MST' table. You can move, or remove it, as needed.
             this.mM_PROC_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_PROC_MST);
             // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROD_MST' table. You can move, or remove it, as needed.
-            this.mM_PROD_MSTTableAdapter.Fill(this.signes_MESDataSet.MM_PROD_MST);
+            this.PRODUCT_MSTTableAdapter.Fill(this.signes_MESDataSet.PRODUCT_MST);
             this.materiaL_MSTTableAdapter.Fill(this.signes_MESDataSet.MATERIAL_MST);
             this.mM_PROC_STEPTableAdapter.Fill(this.signes_MESDataSet.MM_PROC_STEP);
         }
@@ -683,6 +695,11 @@ namespace MES
             gridViewProductListing.ExpandMasterRow(gridViewProductListing.FocusedRowHandle);
             CardView detailView = (gridViewProductListing.GetDetailView(gridViewProductListing.FocusedRowHandle, 0) as CardView);
             detailView.AddNewRow();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            finisheD_MSTTableAdapter1.Update(signes_MESDataSet);
         }
     }
 
