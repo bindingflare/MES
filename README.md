@@ -2,7 +2,14 @@
 # SigneS MES 
 Management tool for designing, dispatching and completing orders.
 
-# Dependencies
+## Development State
+- [x] Prototyping
+- [ ] Designing
+- [ ] Programming
+- [ ] Debugging
+- [ ] Shipping
+
+## Dependencies
 DevExpress 21.2 (Winforms)
 
 GanttChart
