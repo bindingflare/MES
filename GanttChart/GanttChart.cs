@@ -103,8 +103,6 @@ namespace Edcore.GanttChart
             };
         }
 
-        public SolidBrush BackgroundBrush { get; set; }
-
         /// <summary>
         /// Delegate method for creating a new Task. Creates Task by default.
         /// </summary>
@@ -1204,7 +1202,7 @@ namespace Edcore.GanttChart
         /// </summary>
         private void _Draw(Graphics graphics, Rectangle clipRect)
         {
-            graphics.Clear(BackgroundBrush.Color);
+            graphics.Clear(this.BackColor);
 
             int row = 0;
             if (m_Project != null)

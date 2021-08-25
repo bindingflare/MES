@@ -283,8 +283,6 @@ namespace MES
             var commonSkin = CommonSkins.GetSkin(this.LookAndFeel);
             var svgPalette = commonSkin.SvgPalettes["DefaultSkinPalette"];
 
-            ganttChartChart.BackgroundBrush =  new SolidBrush(svgPalette["Paint High"].Value);
-
             HeaderFormat headerFormat = ganttChartChart.HeaderFormat;
             headerFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
             headerFormat.GradientLight = commonSkin.Colors["Control"];
