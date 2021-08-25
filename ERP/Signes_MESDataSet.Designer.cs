@@ -36,9 +36,9 @@ namespace MES {
         
         private PRODUCT_MSTDataTable tablePRODUCT_MST;
         
-        private FINISHED_MST_FULLDataTable tableFINISHED_MST_FULL;
-        
         private FINISHED_MSTDataTable tableFINISHED_MST;
+        
+        private FINISHED_MST_FULLDataTable tableFINISHED_MST_FULL;
         
         private global::System.Data.DataRelation relationMM_PROD_MST_MATERIAL_MST;
         
@@ -90,11 +90,11 @@ namespace MES {
                 if ((ds.Tables["PRODUCT_MST"] != null)) {
                     base.Tables.Add(new PRODUCT_MSTDataTable(ds.Tables["PRODUCT_MST"]));
                 }
-                if ((ds.Tables["FINISHED_MST_FULL"] != null)) {
-                    base.Tables.Add(new FINISHED_MST_FULLDataTable(ds.Tables["FINISHED_MST_FULL"]));
-                }
                 if ((ds.Tables["FINISHED_MST"] != null)) {
                     base.Tables.Add(new FINISHED_MSTDataTable(ds.Tables["FINISHED_MST"]));
+                }
+                if ((ds.Tables["FINISHED_MST_FULL"] != null)) {
+                    base.Tables.Add(new FINISHED_MST_FULLDataTable(ds.Tables["FINISHED_MST_FULL"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -178,9 +178,9 @@ namespace MES {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FINISHED_MST_FULLDataTable FINISHED_MST_FULL {
+        public FINISHED_MSTDataTable FINISHED_MST {
             get {
-                return this.tableFINISHED_MST_FULL;
+                return this.tableFINISHED_MST;
             }
         }
         
@@ -188,9 +188,9 @@ namespace MES {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FINISHED_MSTDataTable FINISHED_MST {
+        public FINISHED_MST_FULLDataTable FINISHED_MST_FULL {
             get {
-                return this.tableFINISHED_MST;
+                return this.tableFINISHED_MST_FULL;
             }
         }
         
@@ -279,11 +279,11 @@ namespace MES {
                 if ((ds.Tables["PRODUCT_MST"] != null)) {
                     base.Tables.Add(new PRODUCT_MSTDataTable(ds.Tables["PRODUCT_MST"]));
                 }
-                if ((ds.Tables["FINISHED_MST_FULL"] != null)) {
-                    base.Tables.Add(new FINISHED_MST_FULLDataTable(ds.Tables["FINISHED_MST_FULL"]));
-                }
                 if ((ds.Tables["FINISHED_MST"] != null)) {
                     base.Tables.Add(new FINISHED_MSTDataTable(ds.Tables["FINISHED_MST"]));
+                }
+                if ((ds.Tables["FINISHED_MST_FULL"] != null)) {
+                    base.Tables.Add(new FINISHED_MST_FULLDataTable(ds.Tables["FINISHED_MST_FULL"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -354,16 +354,16 @@ namespace MES {
                     this.tablePRODUCT_MST.InitVars();
                 }
             }
-            this.tableFINISHED_MST_FULL = ((FINISHED_MST_FULLDataTable)(base.Tables["FINISHED_MST_FULL"]));
-            if ((initTable == true)) {
-                if ((this.tableFINISHED_MST_FULL != null)) {
-                    this.tableFINISHED_MST_FULL.InitVars();
-                }
-            }
             this.tableFINISHED_MST = ((FINISHED_MSTDataTable)(base.Tables["FINISHED_MST"]));
             if ((initTable == true)) {
                 if ((this.tableFINISHED_MST != null)) {
                     this.tableFINISHED_MST.InitVars();
+                }
+            }
+            this.tableFINISHED_MST_FULL = ((FINISHED_MST_FULLDataTable)(base.Tables["FINISHED_MST_FULL"]));
+            if ((initTable == true)) {
+                if ((this.tableFINISHED_MST_FULL != null)) {
+                    this.tableFINISHED_MST_FULL.InitVars();
                 }
             }
             this.relationMM_PROD_MST_MATERIAL_MST = this.Relations["MM_PROD_MST_MATERIAL_MST"];
@@ -390,10 +390,10 @@ namespace MES {
             base.Tables.Add(this.tableMM_PROC_STEP);
             this.tablePRODUCT_MST = new PRODUCT_MSTDataTable();
             base.Tables.Add(this.tablePRODUCT_MST);
-            this.tableFINISHED_MST_FULL = new FINISHED_MST_FULLDataTable();
-            base.Tables.Add(this.tableFINISHED_MST_FULL);
             this.tableFINISHED_MST = new FINISHED_MSTDataTable();
             base.Tables.Add(this.tableFINISHED_MST);
+            this.tableFINISHED_MST_FULL = new FINISHED_MST_FULLDataTable();
+            base.Tables.Add(this.tableFINISHED_MST_FULL);
             this.relationMM_PROD_MST_MATERIAL_MST = new global::System.Data.DataRelation("MM_PROD_MST_MATERIAL_MST", new global::System.Data.DataColumn[] {
                         this.tablePRODUCT_MST.PROD_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableMATERIAL_MST.PROD_IDColumn}, false);
@@ -442,13 +442,13 @@ namespace MES {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFINISHED_MST_FULL() {
+        private bool ShouldSerializeFINISHED_MST() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFINISHED_MST() {
+        private bool ShouldSerializeFINISHED_MST_FULL() {
             return false;
         }
         
@@ -526,10 +526,10 @@ namespace MES {
         public delegate void PRODUCT_MSTRowChangeEventHandler(object sender, PRODUCT_MSTRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FINISHED_MST_FULLRowChangeEventHandler(object sender, FINISHED_MST_FULLRowChangeEvent e);
+        public delegate void FINISHED_MSTRowChangeEventHandler(object sender, FINISHED_MSTRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FINISHED_MSTRowChangeEventHandler(object sender, FINISHED_MSTRowChangeEvent e);
+        public delegate void FINISHED_MST_FULLRowChangeEventHandler(object sender, FINISHED_MST_FULLRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2169,8 +2169,6 @@ namespace MES {
             
             private global::System.Data.DataColumn columnSITE_ID;
             
-            private global::System.Data.DataColumn columnPROD_ID;
-            
             private global::System.Data.DataColumn columnPROC_VER;
             
             private global::System.Data.DataColumn columnPROC_NM;
@@ -2190,6 +2188,8 @@ namespace MES {
             private global::System.Data.DataColumn columnUPDATE_USER_ID;
             
             private global::System.Data.DataColumn columnUPDATE_DATE;
+            
+            private global::System.Data.DataColumn columnPROD_ID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2237,14 +2237,6 @@ namespace MES {
             public global::System.Data.DataColumn SITE_IDColumn {
                 get {
                     return this.columnSITE_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PROD_IDColumn {
-                get {
-                    return this.columnPROD_ID;
                 }
             }
             
@@ -2330,6 +2322,14 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PROD_IDColumn {
+                get {
+                    return this.columnPROD_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2365,12 +2365,11 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MM_PROC_MSTRow AddMM_PROC_MSTRow(string PROC_ID, string SITE_ID, string PROD_ID, string PROC_VER, string PROC_NM, string PROC_TYPE, long DEL_YN, string REASON_CODE, string DESCR, string CREATE_USER_ID, string CREATE_DATE, string UPDATE_USER_ID, string UPDATE_DATE) {
+            public MM_PROC_MSTRow AddMM_PROC_MSTRow(string PROC_ID, string SITE_ID, string PROC_VER, string PROC_NM, string PROC_TYPE, long DEL_YN, string REASON_CODE, string DESCR, string CREATE_USER_ID, string CREATE_DATE, string UPDATE_USER_ID, string UPDATE_DATE, string PROD_ID) {
                 MM_PROC_MSTRow rowMM_PROC_MSTRow = ((MM_PROC_MSTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PROC_ID,
                         SITE_ID,
-                        PROD_ID,
                         PROC_VER,
                         PROC_NM,
                         PROC_TYPE,
@@ -2380,7 +2379,8 @@ namespace MES {
                         CREATE_USER_ID,
                         CREATE_DATE,
                         UPDATE_USER_ID,
-                        UPDATE_DATE};
+                        UPDATE_DATE,
+                        PROD_ID};
                 rowMM_PROC_MSTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMM_PROC_MSTRow);
                 return rowMM_PROC_MSTRow;
@@ -2412,7 +2412,6 @@ namespace MES {
             internal void InitVars() {
                 this.columnPROC_ID = base.Columns["PROC_ID"];
                 this.columnSITE_ID = base.Columns["SITE_ID"];
-                this.columnPROD_ID = base.Columns["PROD_ID"];
                 this.columnPROC_VER = base.Columns["PROC_VER"];
                 this.columnPROC_NM = base.Columns["PROC_NM"];
                 this.columnPROC_TYPE = base.Columns["PROC_TYPE"];
@@ -2423,6 +2422,7 @@ namespace MES {
                 this.columnCREATE_DATE = base.Columns["CREATE_DATE"];
                 this.columnUPDATE_USER_ID = base.Columns["UPDATE_USER_ID"];
                 this.columnUPDATE_DATE = base.Columns["UPDATE_DATE"];
+                this.columnPROD_ID = base.Columns["PROD_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2432,8 +2432,6 @@ namespace MES {
                 base.Columns.Add(this.columnPROC_ID);
                 this.columnSITE_ID = new global::System.Data.DataColumn("SITE_ID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSITE_ID);
-                this.columnPROD_ID = new global::System.Data.DataColumn("PROD_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPROD_ID);
                 this.columnPROC_VER = new global::System.Data.DataColumn("PROC_VER", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPROC_VER);
                 this.columnPROC_NM = new global::System.Data.DataColumn("PROC_NM", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2454,13 +2452,14 @@ namespace MES {
                 base.Columns.Add(this.columnUPDATE_USER_ID);
                 this.columnUPDATE_DATE = new global::System.Data.DataColumn("UPDATE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUPDATE_DATE);
+                this.columnPROD_ID = new global::System.Data.DataColumn("PROD_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPROD_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPROC_ID}, true));
                 this.columnPROC_ID.AllowDBNull = false;
                 this.columnPROC_ID.Unique = true;
                 this.columnPROC_ID.MaxLength = 2147483647;
                 this.columnSITE_ID.MaxLength = 2147483647;
-                this.columnPROD_ID.MaxLength = 2147483647;
                 this.columnPROC_VER.MaxLength = 2147483647;
                 this.columnPROC_NM.MaxLength = 2147483647;
                 this.columnPROC_TYPE.MaxLength = 2147483647;
@@ -2470,6 +2469,7 @@ namespace MES {
                 this.columnCREATE_DATE.MaxLength = 2147483647;
                 this.columnUPDATE_USER_ID.MaxLength = 2147483647;
                 this.columnUPDATE_DATE.MaxLength = 2147483647;
+                this.columnPROD_ID.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3646,6 +3646,340 @@ namespace MES {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class FINISHED_MSTDataTable : global::System.Data.TypedTableBase<FINISHED_MSTRow> {
+            
+            private global::System.Data.DataColumn columnDUID;
+            
+            private global::System.Data.DataColumn columnEVENT_TIME;
+            
+            private global::System.Data.DataColumn columnPROD_ID;
+            
+            private global::System.Data.DataColumn columnQTY;
+            
+            private global::System.Data.DataColumn columnCREATE_USER;
+            
+            private global::System.Data.DataColumn columnCREATE_DATE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FINISHED_MSTDataTable() {
+                this.TableName = "FINISHED_MST";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FINISHED_MSTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected FINISHED_MSTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DUIDColumn {
+                get {
+                    return this.columnDUID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EVENT_TIMEColumn {
+                get {
+                    return this.columnEVENT_TIME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PROD_IDColumn {
+                get {
+                    return this.columnPROD_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QTYColumn {
+                get {
+                    return this.columnQTY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CREATE_USERColumn {
+                get {
+                    return this.columnCREATE_USER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CREATE_DATEColumn {
+                get {
+                    return this.columnCREATE_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FINISHED_MSTRow this[int index] {
+                get {
+                    return ((FINISHED_MSTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FINISHED_MSTRowChangeEventHandler FINISHED_MSTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FINISHED_MSTRowChangeEventHandler FINISHED_MSTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FINISHED_MSTRowChangeEventHandler FINISHED_MSTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FINISHED_MSTRowChangeEventHandler FINISHED_MSTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddFINISHED_MSTRow(FINISHED_MSTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FINISHED_MSTRow AddFINISHED_MSTRow(string DUID, string EVENT_TIME, string PROD_ID, long QTY, string CREATE_USER, string CREATE_DATE) {
+                FINISHED_MSTRow rowFINISHED_MSTRow = ((FINISHED_MSTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        DUID,
+                        EVENT_TIME,
+                        PROD_ID,
+                        QTY,
+                        CREATE_USER,
+                        CREATE_DATE};
+                rowFINISHED_MSTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFINISHED_MSTRow);
+                return rowFINISHED_MSTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FINISHED_MSTRow FindByDUID(string DUID) {
+                return ((FINISHED_MSTRow)(this.Rows.Find(new object[] {
+                            DUID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                FINISHED_MSTDataTable cln = ((FINISHED_MSTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new FINISHED_MSTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDUID = base.Columns["DUID"];
+                this.columnEVENT_TIME = base.Columns["EVENT_TIME"];
+                this.columnPROD_ID = base.Columns["PROD_ID"];
+                this.columnQTY = base.Columns["QTY"];
+                this.columnCREATE_USER = base.Columns["CREATE_USER"];
+                this.columnCREATE_DATE = base.Columns["CREATE_DATE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDUID = new global::System.Data.DataColumn("DUID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDUID);
+                this.columnEVENT_TIME = new global::System.Data.DataColumn("EVENT_TIME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEVENT_TIME);
+                this.columnPROD_ID = new global::System.Data.DataColumn("PROD_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPROD_ID);
+                this.columnQTY = new global::System.Data.DataColumn("QTY", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQTY);
+                this.columnCREATE_USER = new global::System.Data.DataColumn("CREATE_USER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCREATE_USER);
+                this.columnCREATE_DATE = new global::System.Data.DataColumn("CREATE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCREATE_DATE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnDUID}, true));
+                this.columnDUID.AllowDBNull = false;
+                this.columnDUID.Unique = true;
+                this.columnDUID.MaxLength = 2147483647;
+                this.columnEVENT_TIME.MaxLength = 2147483647;
+                this.columnPROD_ID.AllowDBNull = false;
+                this.columnPROD_ID.MaxLength = 2147483647;
+                this.columnCREATE_USER.MaxLength = 2147483647;
+                this.columnCREATE_DATE.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FINISHED_MSTRow NewFINISHED_MSTRow() {
+                return ((FINISHED_MSTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new FINISHED_MSTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(FINISHED_MSTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.FINISHED_MSTRowChanged != null)) {
+                    this.FINISHED_MSTRowChanged(this, new FINISHED_MSTRowChangeEvent(((FINISHED_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.FINISHED_MSTRowChanging != null)) {
+                    this.FINISHED_MSTRowChanging(this, new FINISHED_MSTRowChangeEvent(((FINISHED_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.FINISHED_MSTRowDeleted != null)) {
+                    this.FINISHED_MSTRowDeleted(this, new FINISHED_MSTRowChangeEvent(((FINISHED_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.FINISHED_MSTRowDeleting != null)) {
+                    this.FINISHED_MSTRowDeleting(this, new FINISHED_MSTRowChangeEvent(((FINISHED_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveFINISHED_MSTRow(FINISHED_MSTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Signes_MESDataSet ds = new Signes_MESDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "FINISHED_MSTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class FINISHED_MST_FULLDataTable : global::System.Data.TypedTableBase<FINISHED_MST_FULLRow> {
             
             private global::System.Data.DataColumn columnDUID;
@@ -4070,340 +4404,6 @@ namespace MES {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "FINISHED_MST_FULLDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FINISHED_MSTDataTable : global::System.Data.TypedTableBase<FINISHED_MSTRow> {
-            
-            private global::System.Data.DataColumn columnDUID;
-            
-            private global::System.Data.DataColumn columnEVENT_TIME;
-            
-            private global::System.Data.DataColumn columnPROD_ID;
-            
-            private global::System.Data.DataColumn columnQTY;
-            
-            private global::System.Data.DataColumn columnCREATE_USER;
-            
-            private global::System.Data.DataColumn columnCREATE_DATE;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MSTDataTable() {
-                this.TableName = "FINISHED_MST";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FINISHED_MSTDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FINISHED_MSTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DUIDColumn {
-                get {
-                    return this.columnDUID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EVENT_TIMEColumn {
-                get {
-                    return this.columnEVENT_TIME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PROD_IDColumn {
-                get {
-                    return this.columnPROD_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn QTYColumn {
-                get {
-                    return this.columnQTY;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CREATE_USERColumn {
-                get {
-                    return this.columnCREATE_USER;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CREATE_DATEColumn {
-                get {
-                    return this.columnCREATE_DATE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MSTRow this[int index] {
-                get {
-                    return ((FINISHED_MSTRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FINISHED_MSTRowChangeEventHandler FINISHED_MSTRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FINISHED_MSTRowChangeEventHandler FINISHED_MSTRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FINISHED_MSTRowChangeEventHandler FINISHED_MSTRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FINISHED_MSTRowChangeEventHandler FINISHED_MSTRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFINISHED_MSTRow(FINISHED_MSTRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MSTRow AddFINISHED_MSTRow(string DUID, string EVENT_TIME, string PROD_ID, long QTY, string CREATE_USER, string CREATE_DATE) {
-                FINISHED_MSTRow rowFINISHED_MSTRow = ((FINISHED_MSTRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        DUID,
-                        EVENT_TIME,
-                        PROD_ID,
-                        QTY,
-                        CREATE_USER,
-                        CREATE_DATE};
-                rowFINISHED_MSTRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFINISHED_MSTRow);
-                return rowFINISHED_MSTRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MSTRow FindByDUID(string DUID) {
-                return ((FINISHED_MSTRow)(this.Rows.Find(new object[] {
-                            DUID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                FINISHED_MSTDataTable cln = ((FINISHED_MSTDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new FINISHED_MSTDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnDUID = base.Columns["DUID"];
-                this.columnEVENT_TIME = base.Columns["EVENT_TIME"];
-                this.columnPROD_ID = base.Columns["PROD_ID"];
-                this.columnQTY = base.Columns["QTY"];
-                this.columnCREATE_USER = base.Columns["CREATE_USER"];
-                this.columnCREATE_DATE = base.Columns["CREATE_DATE"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnDUID = new global::System.Data.DataColumn("DUID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDUID);
-                this.columnEVENT_TIME = new global::System.Data.DataColumn("EVENT_TIME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEVENT_TIME);
-                this.columnPROD_ID = new global::System.Data.DataColumn("PROD_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPROD_ID);
-                this.columnQTY = new global::System.Data.DataColumn("QTY", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQTY);
-                this.columnCREATE_USER = new global::System.Data.DataColumn("CREATE_USER", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCREATE_USER);
-                this.columnCREATE_DATE = new global::System.Data.DataColumn("CREATE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCREATE_DATE);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnDUID}, true));
-                this.columnDUID.AllowDBNull = false;
-                this.columnDUID.Unique = true;
-                this.columnDUID.MaxLength = 2147483647;
-                this.columnEVENT_TIME.MaxLength = 2147483647;
-                this.columnPROD_ID.AllowDBNull = false;
-                this.columnPROD_ID.MaxLength = 2147483647;
-                this.columnCREATE_USER.MaxLength = 2147483647;
-                this.columnCREATE_DATE.MaxLength = 2147483647;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MSTRow NewFINISHED_MSTRow() {
-                return ((FINISHED_MSTRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FINISHED_MSTRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(FINISHED_MSTRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.FINISHED_MSTRowChanged != null)) {
-                    this.FINISHED_MSTRowChanged(this, new FINISHED_MSTRowChangeEvent(((FINISHED_MSTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.FINISHED_MSTRowChanging != null)) {
-                    this.FINISHED_MSTRowChanging(this, new FINISHED_MSTRowChangeEvent(((FINISHED_MSTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.FINISHED_MSTRowDeleted != null)) {
-                    this.FINISHED_MSTRowDeleted(this, new FINISHED_MSTRowChangeEvent(((FINISHED_MSTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.FINISHED_MSTRowDeleting != null)) {
-                    this.FINISHED_MSTRowDeleting(this, new FINISHED_MSTRowChangeEvent(((FINISHED_MSTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFINISHED_MSTRow(FINISHED_MSTRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Signes_MESDataSet ds = new Signes_MESDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FINISHED_MSTDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6060,22 +6060,6 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PROD_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableMM_PROC_MST.PROD_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_ID\' in table \'MM_PROC_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMM_PROC_MST.PROD_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROC_VER {
                 get {
                     try {
@@ -6236,6 +6220,22 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PROD_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableMM_PROC_MST.PROD_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_ID\' in table \'MM_PROC_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMM_PROC_MST.PROD_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSITE_IDNull() {
                 return this.IsNull(this.tableMM_PROC_MST.SITE_IDColumn);
             }
@@ -6244,18 +6244,6 @@ namespace MES {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSITE_IDNull() {
                 this[this.tableMM_PROC_MST.SITE_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPROD_IDNull() {
-                return this.IsNull(this.tableMM_PROC_MST.PROD_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPROD_IDNull() {
-                this[this.tableMM_PROC_MST.PROD_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6376,6 +6364,18 @@ namespace MES {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUPDATE_DATENull() {
                 this[this.tableMM_PROC_MST.UPDATE_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPROD_IDNull() {
+                return this.IsNull(this.tableMM_PROC_MST.PROD_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPROD_IDNull() {
+                this[this.tableMM_PROC_MST.PROD_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7391,6 +7391,155 @@ namespace MES {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class FINISHED_MSTRow : global::System.Data.DataRow {
+            
+            private FINISHED_MSTDataTable tableFINISHED_MST;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FINISHED_MSTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableFINISHED_MST = ((FINISHED_MSTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DUID {
+                get {
+                    return ((string)(this[this.tableFINISHED_MST.DUIDColumn]));
+                }
+                set {
+                    this[this.tableFINISHED_MST.DUIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EVENT_TIME {
+                get {
+                    try {
+                        return ((string)(this[this.tableFINISHED_MST.EVENT_TIMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EVENT_TIME\' in table \'FINISHED_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFINISHED_MST.EVENT_TIMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PROD_ID {
+                get {
+                    return ((string)(this[this.tableFINISHED_MST.PROD_IDColumn]));
+                }
+                set {
+                    this[this.tableFINISHED_MST.PROD_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long QTY {
+                get {
+                    try {
+                        return ((long)(this[this.tableFINISHED_MST.QTYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QTY\' in table \'FINISHED_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFINISHED_MST.QTYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CREATE_USER {
+                get {
+                    try {
+                        return ((string)(this[this.tableFINISHED_MST.CREATE_USERColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CREATE_USER\' in table \'FINISHED_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFINISHED_MST.CREATE_USERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CREATE_DATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableFINISHED_MST.CREATE_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CREATE_DATE\' in table \'FINISHED_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFINISHED_MST.CREATE_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEVENT_TIMENull() {
+                return this.IsNull(this.tableFINISHED_MST.EVENT_TIMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEVENT_TIMENull() {
+                this[this.tableFINISHED_MST.EVENT_TIMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQTYNull() {
+                return this.IsNull(this.tableFINISHED_MST.QTYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQTYNull() {
+                this[this.tableFINISHED_MST.QTYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCREATE_USERNull() {
+                return this.IsNull(this.tableFINISHED_MST.CREATE_USERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCREATE_USERNull() {
+                this[this.tableFINISHED_MST.CREATE_USERColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCREATE_DATENull() {
+                return this.IsNull(this.tableFINISHED_MST.CREATE_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCREATE_DATENull() {
+                this[this.tableFINISHED_MST.CREATE_DATEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class FINISHED_MST_FULLRow : global::System.Data.DataRow {
             
             private FINISHED_MST_FULLDataTable tableFINISHED_MST_FULL;
@@ -7790,155 +7939,6 @@ namespace MES {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class FINISHED_MSTRow : global::System.Data.DataRow {
-            
-            private FINISHED_MSTDataTable tableFINISHED_MST;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FINISHED_MSTRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableFINISHED_MST = ((FINISHED_MSTDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DUID {
-                get {
-                    return ((string)(this[this.tableFINISHED_MST.DUIDColumn]));
-                }
-                set {
-                    this[this.tableFINISHED_MST.DUIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EVENT_TIME {
-                get {
-                    try {
-                        return ((string)(this[this.tableFINISHED_MST.EVENT_TIMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EVENT_TIME\' in table \'FINISHED_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFINISHED_MST.EVENT_TIMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PROD_ID {
-                get {
-                    return ((string)(this[this.tableFINISHED_MST.PROD_IDColumn]));
-                }
-                set {
-                    this[this.tableFINISHED_MST.PROD_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long QTY {
-                get {
-                    try {
-                        return ((long)(this[this.tableFINISHED_MST.QTYColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'QTY\' in table \'FINISHED_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFINISHED_MST.QTYColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CREATE_USER {
-                get {
-                    try {
-                        return ((string)(this[this.tableFINISHED_MST.CREATE_USERColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CREATE_USER\' in table \'FINISHED_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFINISHED_MST.CREATE_USERColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CREATE_DATE {
-                get {
-                    try {
-                        return ((string)(this[this.tableFINISHED_MST.CREATE_DATEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CREATE_DATE\' in table \'FINISHED_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFINISHED_MST.CREATE_DATEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEVENT_TIMENull() {
-                return this.IsNull(this.tableFINISHED_MST.EVENT_TIMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEVENT_TIMENull() {
-                this[this.tableFINISHED_MST.EVENT_TIMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsQTYNull() {
-                return this.IsNull(this.tableFINISHED_MST.QTYColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetQTYNull() {
-                this[this.tableFINISHED_MST.QTYColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCREATE_USERNull() {
-                return this.IsNull(this.tableFINISHED_MST.CREATE_USERColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCREATE_USERNull() {
-                this[this.tableFINISHED_MST.CREATE_USERColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCREATE_DATENull() {
-                return this.IsNull(this.tableFINISHED_MST.CREATE_DATEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCREATE_DATENull() {
-                this[this.tableFINISHED_MST.CREATE_DATEColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -8146,22 +8146,22 @@ namespace MES {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FINISHED_MST_FULLRowChangeEvent : global::System.EventArgs {
+        public class FINISHED_MSTRowChangeEvent : global::System.EventArgs {
             
-            private FINISHED_MST_FULLRow eventRow;
+            private FINISHED_MSTRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MST_FULLRowChangeEvent(FINISHED_MST_FULLRow row, global::System.Data.DataRowAction action) {
+            public FINISHED_MSTRowChangeEvent(FINISHED_MSTRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MST_FULLRow Row {
+            public FINISHED_MSTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8180,22 +8180,22 @@ namespace MES {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FINISHED_MSTRowChangeEvent : global::System.EventArgs {
+        public class FINISHED_MST_FULLRowChangeEvent : global::System.EventArgs {
             
-            private FINISHED_MSTRow eventRow;
+            private FINISHED_MST_FULLRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MSTRowChangeEvent(FINISHED_MSTRow row, global::System.Data.DataRowAction action) {
+            public FINISHED_MST_FULLRowChangeEvent(FINISHED_MST_FULLRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MSTRow Row {
+            public FINISHED_MST_FULLRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13374,36 +13374,11 @@ FROM     MATERIAL_MST";
             tableMapping.ColumnMappings.Add("CREATE_DATE", "CREATE_DATE");
             tableMapping.ColumnMappings.Add("UPDATE_USER_ID", "UPDATE_USER_ID");
             tableMapping.ColumnMappings.Add("UPDATE_DATE", "UPDATE_DATE");
+            tableMapping.ColumnMappings.Add("PROD_ID", "PROD_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [main].[sqlite_default_schema].[MM_PROC_MST] WHERE (([PROC_ID] = @Ori" +
-                "ginal_PROC_ID) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS NULL) OR ([SITE_ID] = " +
-                "@Original_SITE_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR ([PROC" +
-                "_VER] = @Original_PROC_VER)) AND ((@IsNull_PROC_NM = 1 AND [PROC_NM] IS NULL) OR" +
-                " ([PROC_NM] = @Original_PROC_NM)) AND ((@IsNull_PROC_TYPE = 1 AND [PROC_TYPE] IS" +
-                " NULL) OR ([PROC_TYPE] = @Original_PROC_TYPE)) AND ((@IsNull_DEL_YN = 1 AND [DEL" +
-                "_YN] IS NULL) OR ([DEL_YN] = @Original_DEL_YN)) AND ((@IsNull_REASON_CODE = 1 AN" +
-                "D [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original_REASON_CODE)) AND ((@IsNu" +
-                "ll_DESCR = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original_DESCR)) AND ((@IsNull_" +
-                "CREATE_USER_ID = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREATE_USER_ID] = @Origina" +
-                "l_CREATE_USER_ID)) AND ((@IsNull_CREATE_DATE = 1 AND [CREATE_DATE] IS NULL) OR (" +
-                "[CREATE_DATE] = @Original_CREATE_DATE)) AND ((@IsNull_UPDATE_USER_ID = 1 AND [UP" +
-                "DATE_USER_ID] IS NULL) OR ([UPDATE_USER_ID] = @Original_UPDATE_USER_ID)) AND ((@" +
-                "IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] IS NULL) OR ([UPDATE_DATE] = @Original_" +
-                "UPDATE_DATE)) AND ([PROC_ID] = @Original_Expr1) AND ((@IsNull_Expr2 = 1 AND [SIT" +
-                "E_ID] IS NULL) OR ([SITE_ID] = @Original_Expr2)) AND ((@IsNull_Expr3 = 1 AND [PR" +
-                "OC_VER] IS NULL) OR ([PROC_VER] = @Original_Expr3)) AND ((@IsNull_Expr4 = 1 AND " +
-                "[PROC_NM] IS NULL) OR ([PROC_NM] = @Original_Expr4)) AND ((@IsNull_Expr5 = 1 AND" +
-                " [PROC_TYPE] IS NULL) OR ([PROC_TYPE] = @Original_Expr5)) AND ((@IsNull_Expr6 = " +
-                "1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_Expr6)) AND ((@IsNull_Expr7 = 1" +
-                " AND [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original_Expr7)) AND ((@IsNull_" +
-                "Expr8 = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original_Expr8)) AND ((@IsNull_Exp" +
-                "r9 = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREATE_USER_ID] = @Original_Expr9)) AN" +
-                "D ((@IsNull_Expr10 = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE] = @Original_" +
-                "Expr10)) AND ((@IsNull_Expr11 = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER" +
-                "_ID] = @Original_Expr11)) AND ((@IsNull_Expr12 = 1 AND [UPDATE_DATE] IS NULL) OR" +
-                " ([UPDATE_DATE] = @Original_Expr12)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [main].[sqlite_default_schema].[MM_PROC_MST] WHERE (([PROC_ID] = @Original_PROC_ID) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS NULL) OR ([SITE_ID] = @Original_SITE_ID)) AND ((@IsNull_PROD_ID = 1 AND [PROD_ID] IS NULL) OR ([PROD_ID] = @Original_PROD_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR ([PROC_VER] = @Original_PROC_VER)) AND ((@IsNull_PROC_NM = 1 AND [PROC_NM] IS NULL) OR ([PROC_NM] = @Original_PROC_NM)) AND ((@IsNull_PROC_TYPE = 1 AND [PROC_TYPE] IS NULL) OR ([PROC_TYPE] = @Original_PROC_TYPE)) AND ((@IsNull_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_DEL_YN)) AND ((@IsNull_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original_REASON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original_DESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREATE_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_CREATE_DATE = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE)) AND ((@IsNull_UPDATE_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER_ID] = @Original_UPDATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] IS NULL) OR ([UPDATE_DATE] = @Original_UPDATE_DATE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::System.Data.SQLite.SQLiteParameter param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Original_PROC_ID";
@@ -13426,6 +13401,20 @@ FROM     MATERIAL_MST";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_PROD_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "PROD_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_PROD_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROD_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@IsNull_PROC_VER";
             param.DbType = global::System.Data.DbType.Int32;
             param.DbType = global::System.Data.DbType.Int32;
@@ -13566,170 +13555,9 @@ FROM     MATERIAL_MST";
             param.SourceColumn = "UPDATE_DATE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr1";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr1";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr2";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr3";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr3";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr3";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr4";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr4";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr4";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr4";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr5";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr5";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr5";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr5";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr6";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr6";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr6";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "Expr6";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr7";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr7";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr7";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr7";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr8";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr8";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr8";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr8";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr9";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr9";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr9";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr9";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr10";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr10";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr10";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr10";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr11";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr11";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr11";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr11";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr12";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr12";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr12";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr12";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [main].[sqlite_default_schema].[MM_PROC_MST] ([PROC_ID], [SITE_ID], [PROC_VER], [PROC_NM], [PROC_TYPE], [DEL_YN], [REASON_CODE], [DESCR], [CREATE_USER_ID], [CREATE_DATE], [UPDATE_USER_ID], [UPDATE_DATE], [PROC_ID], [SITE_ID], [PROC_VER], [PROC_NM], [PROC_TYPE], [DEL_YN], [REASON_CODE], [DESCR], [CREATE_USER_ID], [CREATE_DATE], [UPDATE_USER_ID], [UPDATE_DATE]) VALUES (@PROC_ID, @SITE_ID, @PROC_VER, @PROC_NM, @PROC_TYPE, @DEL_YN, @REASON_CODE, @DESCR, @CREATE_USER_ID, @CREATE_DATE, @UPDATE_USER_ID, @UPDATE_DATE, @Expr1, @Expr2, @Expr3, @Expr4, @Expr5, @Expr6, @Expr7, @Expr8, @Expr9, @Expr10, @Expr11, @Expr12)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [main].[sqlite_default_schema].[MM_PROC_MST] ([PROC_ID], [SITE_ID], [PROD_ID], [PROC_VER], [PROC_NM], [PROC_TYPE], [DEL_YN], [REASON_CODE], [DESCR], [CREATE_USER_ID], [CREATE_DATE], [UPDATE_USER_ID], [UPDATE_DATE]) VALUES (@PROC_ID, @SITE_ID, @PROD_ID, @PROC_VER, @PROC_NM, @PROC_TYPE, @DEL_YN, @REASON_CODE, @DESCR, @CREATE_USER_ID, @CREATE_DATE, @UPDATE_USER_ID, @UPDATE_DATE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@PROC_ID";
@@ -13742,6 +13570,11 @@ FROM     MATERIAL_MST";
             param.SourceColumn = "SITE_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@PROD_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROD_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@PROC_VER";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "PROC_VER";
@@ -13792,103 +13625,28 @@ FROM     MATERIAL_MST";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "UPDATE_DATE";
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr1";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr1";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr2";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr2";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr3";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr3";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr4";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr4";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr5";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr5";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr6";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "Expr6";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr7";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr7";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr8";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr8";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr9";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr9";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr10";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr10";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr11";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr11";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr12";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr12";
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [main].[sqlite_default_schema].[MM_PROC_MST] SET [PROC_ID] = @PROC_ID, [SI" +
-                "TE_ID] = @SITE_ID, [PROC_VER] = @PROC_VER, [PROC_NM] = @PROC_NM, [PROC_TYPE] = @" +
-                "PROC_TYPE, [DEL_YN] = @DEL_YN, [REASON_CODE] = @REASON_CODE, [DESCR] = @DESCR, [" +
-                "CREATE_USER_ID] = @CREATE_USER_ID, [CREATE_DATE] = @CREATE_DATE, [UPDATE_USER_ID" +
-                "] = @UPDATE_USER_ID, [UPDATE_DATE] = @UPDATE_DATE, [PROC_ID] = @Expr1, [SITE_ID]" +
-                " = @Expr2, [PROC_VER] = @Expr3, [PROC_NM] = @Expr4, [PROC_TYPE] = @Expr5, [DEL_Y" +
-                "N] = @Expr6, [REASON_CODE] = @Expr7, [DESCR] = @Expr8, [CREATE_USER_ID] = @Expr9" +
-                ", [CREATE_DATE] = @Expr10, [UPDATE_USER_ID] = @Expr11, [UPDATE_DATE] = @Expr12 W" +
-                "HERE (([PROC_ID] = @Original_PROC_ID) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS" +
-                " NULL) OR ([SITE_ID] = @Original_SITE_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_" +
-                "VER] IS NULL) OR ([PROC_VER] = @Original_PROC_VER)) AND ((@IsNull_PROC_NM = 1 AN" +
-                "D [PROC_NM] IS NULL) OR ([PROC_NM] = @Original_PROC_NM)) AND ((@IsNull_PROC_TYPE" +
-                " = 1 AND [PROC_TYPE] IS NULL) OR ([PROC_TYPE] = @Original_PROC_TYPE)) AND ((@IsN" +
-                "ull_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_DEL_YN)) AND ((@Is" +
-                "Null_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original_RE" +
-                "ASON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original" +
-                "_DESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USER_ID] IS NULL) OR ([CRE" +
-                "ATE_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_CREATE_DATE = 1 AND [CRE" +
-                "ATE_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE)) AND ((@IsNull_UPD" +
-                "ATE_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER_ID] = @Original_U" +
-                "PDATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] IS NULL) OR ([UP" +
-                "DATE_DATE] = @Original_UPDATE_DATE)) AND ([PROC_ID] = @Original_Expr1) AND ((@Is" +
-                "Null_Expr2 = 1 AND [SITE_ID] IS NULL) OR ([SITE_ID] = @Original_Expr2)) AND ((@I" +
-                "sNull_Expr3 = 1 AND [PROC_VER] IS NULL) OR ([PROC_VER] = @Original_Expr3)) AND (" +
-                "(@IsNull_Expr4 = 1 AND [PROC_NM] IS NULL) OR ([PROC_NM] = @Original_Expr4)) AND " +
-                "((@IsNull_Expr5 = 1 AND [PROC_TYPE] IS NULL) OR ([PROC_TYPE] = @Original_Expr5))" +
-                " AND ((@IsNull_Expr6 = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_Expr6)) " +
-                "AND ((@IsNull_Expr7 = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original" +
-                "_Expr7)) AND ((@IsNull_Expr8 = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original_Ex" +
-                "pr8)) AND ((@IsNull_Expr9 = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREATE_USER_ID]" +
-                " = @Original_Expr9)) AND ((@IsNull_Expr10 = 1 AND [CREATE_DATE] IS NULL) OR ([CR" +
-                "EATE_DATE] = @Original_Expr10)) AND ((@IsNull_Expr11 = 1 AND [UPDATE_USER_ID] IS" +
-                " NULL) OR ([UPDATE_USER_ID] = @Original_Expr11)) AND ((@IsNull_Expr12 = 1 AND [U" +
-                "PDATE_DATE] IS NULL) OR ([UPDATE_DATE] = @Original_Expr12)))";
+                "TE_ID] = @SITE_ID, [PROD_ID] = @PROD_ID, [PROC_VER] = @PROC_VER, [PROC_NM] = @PR" +
+                "OC_NM, [PROC_TYPE] = @PROC_TYPE, [DEL_YN] = @DEL_YN, [REASON_CODE] = @REASON_COD" +
+                "E, [DESCR] = @DESCR, [CREATE_USER_ID] = @CREATE_USER_ID, [CREATE_DATE] = @CREATE" +
+                "_DATE, [UPDATE_USER_ID] = @UPDATE_USER_ID, [UPDATE_DATE] = @UPDATE_DATE WHERE ((" +
+                "[PROC_ID] = @Original_PROC_ID) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS NULL) " +
+                "OR ([SITE_ID] = @Original_SITE_ID)) AND ((@IsNull_PROD_ID = 1 AND [PROD_ID] IS N" +
+                "ULL) OR ([PROD_ID] = @Original_PROD_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_VE" +
+                "R] IS NULL) OR ([PROC_VER] = @Original_PROC_VER)) AND ((@IsNull_PROC_NM = 1 AND " +
+                "[PROC_NM] IS NULL) OR ([PROC_NM] = @Original_PROC_NM)) AND ((@IsNull_PROC_TYPE =" +
+                " 1 AND [PROC_TYPE] IS NULL) OR ([PROC_TYPE] = @Original_PROC_TYPE)) AND ((@IsNul" +
+                "l_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_DEL_YN)) AND ((@IsNu" +
+                "ll_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original_REAS" +
+                "ON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original_D" +
+                "ESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREAT" +
+                "E_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_CREATE_DATE = 1 AND [CREAT" +
+                "E_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE)) AND ((@IsNull_UPDAT" +
+                "E_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER_ID] = @Original_UPD" +
+                "ATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] IS NULL) OR ([UPDA" +
+                "TE_DATE] = @Original_UPDATE_DATE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@PROC_ID";
@@ -13901,6 +13659,11 @@ FROM     MATERIAL_MST";
             param.SourceColumn = "SITE_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@PROD_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROD_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@PROC_VER";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "PROC_VER";
@@ -13950,67 +13713,6 @@ FROM     MATERIAL_MST";
             param.ParameterName = "@UPDATE_DATE";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "UPDATE_DATE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr1";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr1";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr2";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr2";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr3";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr3";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr4";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr4";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr5";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr5";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr6";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "Expr6";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr7";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr7";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr8";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr8";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr9";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr9";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr10";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr10";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr11";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr11";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Expr12";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr12";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Original_PROC_ID";
@@ -14033,6 +13735,20 @@ FROM     MATERIAL_MST";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_PROD_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "PROD_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_PROD_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROD_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@IsNull_PROC_VER";
             param.DbType = global::System.Data.DbType.Int32;
             param.DbType = global::System.Data.DbType.Int32;
@@ -14173,167 +13889,6 @@ FROM     MATERIAL_MST";
             param.SourceColumn = "UPDATE_DATE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr1";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr1";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr2";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr2";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr3";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr3";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr3";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr4";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr4";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr4";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr4";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr5";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr5";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr5";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr5";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr6";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr6";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr6";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "Expr6";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr7";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr7";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr7";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr7";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr8";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr8";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr8";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr8";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr9";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr9";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr9";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr9";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr10";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr10";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr10";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr10";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr11";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr11";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr11";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr11";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_Expr12";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Expr12";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_Expr12";
-            param.DbType = global::System.Data.DbType.String;
-            param.SourceColumn = "Expr12";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14349,7 +13904,9 @@ FROM     MATERIAL_MST";
             this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT PROC_ID, SITE_ID, PROC_VER, PROC_NM, PROC_TYPE, DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE, PROC_ID AS Expr1, SITE_ID AS Expr2, PROC_VER AS Expr3, PROC_NM AS Expr4, PROC_TYPE AS Expr5, DEL_YN AS Expr6, REASON_CODE AS Expr7, DESCR AS Expr8, CREATE_USER_ID AS Expr9, CREATE_DATE AS Expr10, UPDATE_USER_ID AS Expr11, UPDATE_DATE AS Expr12 FROM MM_PROC_MST";
+            this._commandCollection[0].CommandText = "SELECT  PROC_ID, SITE_ID, PROD_ID, PROC_VER, PROC_NM, PROC_TYPE, DEL_YN, REASON_C" +
+                "ODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE\r\nFROM     M" +
+                "M_PROC_MST";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -14410,31 +13967,7 @@ FROM     MATERIAL_MST";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    string Original_PROC_ID, 
-                    string Original_SITE_ID, 
-                    string Original_PROC_VER, 
-                    string Original_PROC_NM, 
-                    string Original_PROC_TYPE, 
-                    global::System.Nullable<long> Original_DEL_YN, 
-                    string Original_REASON_CODE, 
-                    string Original_DESCR, 
-                    string Original_CREATE_USER_ID, 
-                    string Original_CREATE_DATE, 
-                    string Original_UPDATE_USER_ID, 
-                    string Original_UPDATE_DATE, 
-                    string Original_Expr1, 
-                    string Original_Expr2, 
-                    string Original_Expr3, 
-                    string Original_Expr4, 
-                    string Original_Expr5, 
-                    long Original_Expr6, 
-                    string Original_Expr7, 
-                    string Original_Expr8, 
-                    string Original_Expr9, 
-                    string Original_Expr10, 
-                    string Original_Expr11, 
-                    string Original_Expr12) {
+        public virtual int Delete(string Original_PROC_ID, string Original_SITE_ID, string Original_PROD_ID, string Original_PROC_VER, string Original_PROC_NM, string Original_PROC_TYPE, global::System.Nullable<long> Original_DEL_YN, string Original_REASON_CODE, string Original_DESCR, string Original_CREATE_USER_ID, string Original_CREATE_DATE, string Original_UPDATE_USER_ID, string Original_UPDATE_DATE) {
             if ((Original_PROC_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_PROC_ID");
             }
@@ -14449,163 +13982,93 @@ FROM     MATERIAL_MST";
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_SITE_ID));
             }
-            if ((Original_PROC_VER == null)) {
+            if ((Original_PROD_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PROC_VER));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PROD_ID));
             }
-            if ((Original_PROC_NM == null)) {
+            if ((Original_PROC_VER == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PROC_NM));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PROC_VER));
             }
-            if ((Original_PROC_TYPE == null)) {
+            if ((Original_PROC_NM == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PROC_TYPE));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PROC_NM));
             }
-            if ((Original_DEL_YN.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((long)(Original_DEL_YN.Value));
-            }
-            else {
+            if ((Original_PROC_TYPE == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_REASON_CODE == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PROC_TYPE));
+            }
+            if ((Original_DEL_YN.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((long)(Original_DEL_YN.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_REASON_CODE));
-            }
-            if ((Original_DESCR == null)) {
+            if ((Original_REASON_CODE == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_DESCR));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_REASON_CODE));
             }
-            if ((Original_CREATE_USER_ID == null)) {
+            if ((Original_DESCR == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_CREATE_USER_ID));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_DESCR));
             }
-            if ((Original_CREATE_DATE == null)) {
+            if ((Original_CREATE_USER_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_CREATE_DATE));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_CREATE_USER_ID));
             }
-            if ((Original_UPDATE_USER_ID == null)) {
+            if ((Original_CREATE_DATE == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_UPDATE_USER_ID));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_CREATE_DATE));
             }
-            if ((Original_UPDATE_DATE == null)) {
+            if ((Original_UPDATE_USER_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_UPDATE_DATE));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_UPDATE_USER_ID));
             }
-            if ((Original_Expr1 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr1");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((string)(Original_Expr1));
-            }
-            if ((Original_Expr2 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr2");
+            if ((Original_UPDATE_DATE == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((string)(Original_Expr2));
-            }
-            if ((Original_Expr3 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr3");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((string)(Original_Expr3));
-            }
-            if ((Original_Expr4 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr4");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((string)(Original_Expr4));
-            }
-            if ((Original_Expr5 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr5");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((string)(Original_Expr5));
-            }
-            this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[33].Value = ((long)(Original_Expr6));
-            if ((Original_Expr7 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr7");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((string)(Original_Expr7));
-            }
-            if ((Original_Expr8 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr8");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((string)(Original_Expr8));
-            }
-            if ((Original_Expr9 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr9");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((string)(Original_Expr9));
-            }
-            if ((Original_Expr10 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr10");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((string)(Original_Expr10));
-            }
-            if ((Original_Expr11 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr11");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((string)(Original_Expr11));
-            }
-            if ((Original_Expr12 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr12");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((string)(Original_Expr12));
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14627,31 +14090,7 @@ FROM     MATERIAL_MST";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    string PROC_ID, 
-                    string SITE_ID, 
-                    string PROC_VER, 
-                    string PROC_NM, 
-                    string PROC_TYPE, 
-                    global::System.Nullable<long> DEL_YN, 
-                    string REASON_CODE, 
-                    string DESCR, 
-                    string CREATE_USER_ID, 
-                    string CREATE_DATE, 
-                    string UPDATE_USER_ID, 
-                    string UPDATE_DATE, 
-                    string Expr1, 
-                    string Expr2, 
-                    string Expr3, 
-                    string Expr4, 
-                    string Expr5, 
-                    long Expr6, 
-                    string Expr7, 
-                    string Expr8, 
-                    string Expr9, 
-                    string Expr10, 
-                    string Expr11, 
-                    string Expr12) {
+        public virtual int Insert(string PROC_ID, string SITE_ID, string PROD_ID, string PROC_VER, string PROC_NM, string PROC_TYPE, global::System.Nullable<long> DEL_YN, string REASON_CODE, string DESCR, string CREATE_USER_ID, string CREATE_DATE, string UPDATE_USER_ID, string UPDATE_DATE) {
             if ((PROC_ID == null)) {
                 throw new global::System.ArgumentNullException("PROC_ID");
             }
@@ -14664,132 +14103,71 @@ FROM     MATERIAL_MST";
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(SITE_ID));
             }
-            if ((PROC_VER == null)) {
+            if ((PROD_ID == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PROC_VER));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PROD_ID));
             }
-            if ((PROC_NM == null)) {
+            if ((PROC_VER == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PROC_NM));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PROC_VER));
             }
-            if ((PROC_TYPE == null)) {
+            if ((PROC_NM == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PROC_TYPE));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PROC_NM));
             }
-            if ((DEL_YN.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((long)(DEL_YN.Value));
-            }
-            else {
+            if ((PROC_TYPE == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((REASON_CODE == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PROC_TYPE));
+            }
+            if ((DEL_YN.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((long)(DEL_YN.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(REASON_CODE));
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((DESCR == null)) {
+            if ((REASON_CODE == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(DESCR));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(REASON_CODE));
             }
-            if ((CREATE_USER_ID == null)) {
+            if ((DESCR == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(CREATE_USER_ID));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(DESCR));
             }
-            if ((CREATE_DATE == null)) {
+            if ((CREATE_USER_ID == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CREATE_DATE));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CREATE_USER_ID));
             }
-            if ((UPDATE_USER_ID == null)) {
+            if ((CREATE_DATE == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(UPDATE_USER_ID));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(CREATE_DATE));
             }
-            if ((UPDATE_DATE == null)) {
+            if ((UPDATE_USER_ID == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(UPDATE_DATE));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(UPDATE_USER_ID));
             }
-            if ((Expr1 == null)) {
-                throw new global::System.ArgumentNullException("Expr1");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Expr1));
-            }
-            if ((Expr2 == null)) {
-                throw new global::System.ArgumentNullException("Expr2");
+            if ((UPDATE_DATE == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Expr2));
-            }
-            if ((Expr3 == null)) {
-                throw new global::System.ArgumentNullException("Expr3");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(Expr3));
-            }
-            if ((Expr4 == null)) {
-                throw new global::System.ArgumentNullException("Expr4");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Expr4));
-            }
-            if ((Expr5 == null)) {
-                throw new global::System.ArgumentNullException("Expr5");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Expr5));
-            }
-            this.Adapter.InsertCommand.Parameters[17].Value = ((long)(Expr6));
-            if ((Expr7 == null)) {
-                throw new global::System.ArgumentNullException("Expr7");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Expr7));
-            }
-            if ((Expr8 == null)) {
-                throw new global::System.ArgumentNullException("Expr8");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Expr8));
-            }
-            if ((Expr9 == null)) {
-                throw new global::System.ArgumentNullException("Expr9");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(Expr9));
-            }
-            if ((Expr10 == null)) {
-                throw new global::System.ArgumentNullException("Expr10");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(Expr10));
-            }
-            if ((Expr11 == null)) {
-                throw new global::System.ArgumentNullException("Expr11");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(Expr11));
-            }
-            if ((Expr12 == null)) {
-                throw new global::System.ArgumentNullException("Expr12");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(Expr12));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14814,6 +14192,7 @@ FROM     MATERIAL_MST";
         public virtual int Update(
                     string PROC_ID, 
                     string SITE_ID, 
+                    string PROD_ID, 
                     string PROC_VER, 
                     string PROC_NM, 
                     string PROC_TYPE, 
@@ -14824,20 +14203,9 @@ FROM     MATERIAL_MST";
                     string CREATE_DATE, 
                     string UPDATE_USER_ID, 
                     string UPDATE_DATE, 
-                    string Expr1, 
-                    string Expr2, 
-                    string Expr3, 
-                    string Expr4, 
-                    string Expr5, 
-                    long Expr6, 
-                    string Expr7, 
-                    string Expr8, 
-                    string Expr9, 
-                    string Expr10, 
-                    string Expr11, 
-                    string Expr12, 
                     string Original_PROC_ID, 
                     string Original_SITE_ID, 
+                    string Original_PROD_ID, 
                     string Original_PROC_VER, 
                     string Original_PROC_NM, 
                     string Original_PROC_TYPE, 
@@ -14847,19 +14215,7 @@ FROM     MATERIAL_MST";
                     string Original_CREATE_USER_ID, 
                     string Original_CREATE_DATE, 
                     string Original_UPDATE_USER_ID, 
-                    string Original_UPDATE_DATE, 
-                    string Original_Expr1, 
-                    string Original_Expr2, 
-                    string Original_Expr3, 
-                    string Original_Expr4, 
-                    string Original_Expr5, 
-                    long Original_Expr6, 
-                    string Original_Expr7, 
-                    string Original_Expr8, 
-                    string Original_Expr9, 
-                    string Original_Expr10, 
-                    string Original_Expr11, 
-                    string Original_Expr12) {
+                    string Original_UPDATE_DATE) {
             if ((PROC_ID == null)) {
                 throw new global::System.ArgumentNullException("PROC_ID");
             }
@@ -14872,304 +14228,173 @@ FROM     MATERIAL_MST";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SITE_ID));
             }
-            if ((PROC_VER == null)) {
+            if ((PROD_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PROC_VER));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PROD_ID));
             }
-            if ((PROC_NM == null)) {
+            if ((PROC_VER == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PROC_NM));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PROC_VER));
             }
-            if ((PROC_TYPE == null)) {
+            if ((PROC_NM == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PROC_TYPE));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PROC_NM));
             }
-            if ((DEL_YN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(DEL_YN.Value));
-            }
-            else {
+            if ((PROC_TYPE == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((REASON_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PROC_TYPE));
+            }
+            if ((DEL_YN.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(DEL_YN.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(REASON_CODE));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((DESCR == null)) {
+            if ((REASON_CODE == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(DESCR));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(REASON_CODE));
             }
-            if ((CREATE_USER_ID == null)) {
+            if ((DESCR == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(CREATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(DESCR));
             }
-            if ((CREATE_DATE == null)) {
+            if ((CREATE_USER_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(CREATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(CREATE_USER_ID));
             }
-            if ((UPDATE_USER_ID == null)) {
+            if ((CREATE_DATE == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(UPDATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(CREATE_DATE));
             }
-            if ((UPDATE_DATE == null)) {
+            if ((UPDATE_USER_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(UPDATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(UPDATE_USER_ID));
             }
-            if ((Expr1 == null)) {
-                throw new global::System.ArgumentNullException("Expr1");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Expr1));
-            }
-            if ((Expr2 == null)) {
-                throw new global::System.ArgumentNullException("Expr2");
+            if ((UPDATE_DATE == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Expr2));
-            }
-            if ((Expr3 == null)) {
-                throw new global::System.ArgumentNullException("Expr3");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Expr3));
-            }
-            if ((Expr4 == null)) {
-                throw new global::System.ArgumentNullException("Expr4");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Expr4));
-            }
-            if ((Expr5 == null)) {
-                throw new global::System.ArgumentNullException("Expr5");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Expr5));
-            }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((long)(Expr6));
-            if ((Expr7 == null)) {
-                throw new global::System.ArgumentNullException("Expr7");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Expr7));
-            }
-            if ((Expr8 == null)) {
-                throw new global::System.ArgumentNullException("Expr8");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Expr8));
-            }
-            if ((Expr9 == null)) {
-                throw new global::System.ArgumentNullException("Expr9");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Expr9));
-            }
-            if ((Expr10 == null)) {
-                throw new global::System.ArgumentNullException("Expr10");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Expr10));
-            }
-            if ((Expr11 == null)) {
-                throw new global::System.ArgumentNullException("Expr11");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Expr11));
-            }
-            if ((Expr12 == null)) {
-                throw new global::System.ArgumentNullException("Expr12");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Expr12));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(UPDATE_DATE));
             }
             if ((Original_PROC_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_PROC_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_PROC_ID));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_PROC_ID));
             }
             if ((Original_SITE_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_SITE_ID));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_SITE_ID));
+            }
+            if ((Original_PROD_ID == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_PROD_ID));
             }
             if ((Original_PROC_VER == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_PROC_VER));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_PROC_VER));
             }
             if ((Original_PROC_NM == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_PROC_NM));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_PROC_NM));
             }
             if ((Original_PROC_TYPE == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_PROC_TYPE));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_PROC_TYPE));
             }
             if ((Original_DEL_YN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((long)(Original_DEL_YN.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((long)(Original_DEL_YN.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_REASON_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_REASON_CODE));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_REASON_CODE));
             }
             if ((Original_DESCR == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_DESCR));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_DESCR));
             }
             if ((Original_CREATE_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_CREATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_CREATE_USER_ID));
             }
             if ((Original_CREATE_DATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_CREATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_CREATE_DATE));
             }
             if ((Original_UPDATE_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_UPDATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_UPDATE_USER_ID));
             }
             if ((Original_UPDATE_DATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_UPDATE_DATE));
-            }
-            if ((Original_Expr1 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr1");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_Expr1));
-            }
-            if ((Original_Expr2 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr2");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_Expr2));
-            }
-            if ((Original_Expr3 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr3");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_Expr3));
-            }
-            if ((Original_Expr4 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr4");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_Expr4));
-            }
-            if ((Original_Expr5 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr5");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_Expr5));
-            }
-            this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[57].Value = ((long)(Original_Expr6));
-            if ((Original_Expr7 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr7");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_Expr7));
-            }
-            if ((Original_Expr8 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr8");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_Expr8));
-            }
-            if ((Original_Expr9 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr9");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_Expr9));
-            }
-            if ((Original_Expr10 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr10");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_Expr10));
-            }
-            if ((Original_Expr11 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr11");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_Expr11));
-            }
-            if ((Original_Expr12 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr12");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_Expr12));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -15193,6 +14418,7 @@ FROM     MATERIAL_MST";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     string SITE_ID, 
+                    string PROD_ID, 
                     string PROC_VER, 
                     string PROC_NM, 
                     string PROC_TYPE, 
@@ -15203,20 +14429,9 @@ FROM     MATERIAL_MST";
                     string CREATE_DATE, 
                     string UPDATE_USER_ID, 
                     string UPDATE_DATE, 
-                    string Expr1, 
-                    string Expr2, 
-                    string Expr3, 
-                    string Expr4, 
-                    string Expr5, 
-                    long Expr6, 
-                    string Expr7, 
-                    string Expr8, 
-                    string Expr9, 
-                    string Expr10, 
-                    string Expr11, 
-                    string Expr12, 
                     string Original_PROC_ID, 
                     string Original_SITE_ID, 
+                    string Original_PROD_ID, 
                     string Original_PROC_VER, 
                     string Original_PROC_NM, 
                     string Original_PROC_TYPE, 
@@ -15226,20 +14441,8 @@ FROM     MATERIAL_MST";
                     string Original_CREATE_USER_ID, 
                     string Original_CREATE_DATE, 
                     string Original_UPDATE_USER_ID, 
-                    string Original_UPDATE_DATE, 
-                    string Original_Expr1, 
-                    string Original_Expr2, 
-                    string Original_Expr3, 
-                    string Original_Expr4, 
-                    string Original_Expr5, 
-                    long Original_Expr6, 
-                    string Original_Expr7, 
-                    string Original_Expr8, 
-                    string Original_Expr9, 
-                    string Original_Expr10, 
-                    string Original_Expr11, 
-                    string Original_Expr12) {
-            return this.Update(Original_PROC_ID, SITE_ID, PROC_VER, PROC_NM, PROC_TYPE, DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE, Expr1, Expr2, Expr3, Expr4, Expr5, Expr6, Expr7, Expr8, Expr9, Expr10, Expr11, Expr12, Original_PROC_ID, Original_SITE_ID, Original_PROC_VER, Original_PROC_NM, Original_PROC_TYPE, Original_DEL_YN, Original_REASON_CODE, Original_DESCR, Original_CREATE_USER_ID, Original_CREATE_DATE, Original_UPDATE_USER_ID, Original_UPDATE_DATE, Original_Expr1, Original_Expr2, Original_Expr3, Original_Expr4, Original_Expr5, Original_Expr6, Original_Expr7, Original_Expr8, Original_Expr9, Original_Expr10, Original_Expr11, Original_Expr12);
+                    string Original_UPDATE_DATE) {
+            return this.Update(Original_PROC_ID, SITE_ID, PROD_ID, PROC_VER, PROC_NM, PROC_TYPE, DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE, Original_PROC_ID, Original_SITE_ID, Original_PROD_ID, Original_PROC_VER, Original_PROC_NM, Original_PROC_TYPE, Original_DEL_YN, Original_REASON_CODE, Original_DESCR, Original_CREATE_USER_ID, Original_CREATE_DATE, Original_UPDATE_USER_ID, Original_UPDATE_DATE);
         }
     }
     
@@ -16147,9 +15350,9 @@ FROM     MATERIAL_MST";
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT  DUID, SITE_ID, STEP_ID, STEP_SEQ, PROC_ID, PROC_VER, EQP_TYPE, DCSPEC_ID," +
-                " DCOLL_MAND_YN, DURABLE_USE_YN, CONSUM_USE_YN, CHILD_PROC_ID, CHILD_PROC_VER, \r\n" +
-                "               DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, UPDATE_DATE\r\nFROM    " +
-                " MM_PROC_STEP";
+                " DCOLL_MAND_YN, DURABLE_USE_YN, CONSUM_USE_YN, CHILD_PROC_ID, CHILD_PROC_VER, \n " +
+                "              DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, UPDATE_DATE\nFROM     M" +
+                "M_PROC_STEP";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18422,191 +17625,6 @@ FROM     MATERIAL_MST";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class FINISHED_MST_FULLTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SQLite.SQLiteDataAdapter _adapter;
-        
-        private global::System.Data.SQLite.SQLiteConnection _connection;
-        
-        private global::System.Data.SQLite.SQLiteTransaction _transaction;
-        
-        private global::System.Data.SQLite.SQLiteCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FINISHED_MST_FULLTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SQLite.SQLiteDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SQLite.SQLiteConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SQLite.SQLiteCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SQLite.SQLiteTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SQLite.SQLiteCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SQLite.SQLiteDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "FINISHED_MST_FULL";
-            tableMapping.ColumnMappings.Add("DUID", "DUID");
-            tableMapping.ColumnMappings.Add("EVENT_TIME", "EVENT_TIME");
-            tableMapping.ColumnMappings.Add("QTY", "QTY");
-            tableMapping.ColumnMappings.Add("PROD_ID", "PROD_ID");
-            tableMapping.ColumnMappings.Add("CREATE_USER", "CREATE_USER");
-            tableMapping.ColumnMappings.Add("CREATE_DATE", "CREATE_DATE");
-            tableMapping.ColumnMappings.Add("PROD_GROUP_ID", "PROD_GROUP_ID");
-            tableMapping.ColumnMappings.Add("SITE_ID", "SITE_ID");
-            tableMapping.ColumnMappings.Add("PROC_ID", "PROC_ID");
-            tableMapping.ColumnMappings.Add("PROD_CLASS_CODE", "PROD_CLASS_CODE");
-            tableMapping.ColumnMappings.Add("PROD_NM", "PROD_NM");
-            tableMapping.ColumnMappings.Add("PROD_TYPE", "PROD_TYPE");
-            tableMapping.ColumnMappings.Add("SUB_PROD_TYPE", "SUB_PROD_TYPE");
-            tableMapping.ColumnMappings.Add("PROD_GRADE", "PROD_GRADE");
-            tableMapping.ColumnMappings.Add("PROD_MODEL", "PROD_MODEL");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SQLite.SQLiteConnection();
-            this._connection.ConnectionString = global::MES.Properties.Settings.Default.Signes_MESConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
-            this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT  FINISHED_MST.DUID, FINISHED_MST.EVENT_TIME, FINISHED_MST.QTY, FINISHED_MST.PROD_ID, FINISHED_MST.CREATE_USER, FINISHED_MST.CREATE_DATE, 
-               PRODUCT_MST.PROD_GROUP_ID, PRODUCT_MST.SITE_ID, PRODUCT_MST.PROC_ID, PRODUCT_MST.PROD_CLASS_CODE, PRODUCT_MST.PROD_NM, PRODUCT_MST.PROD_TYPE, 
-               PRODUCT_MST.SUB_PROD_TYPE, PRODUCT_MST.PROD_GRADE, PRODUCT_MST.PROD_MODEL
-FROM     FINISHED_MST INNER JOIN
-               PRODUCT_MST ON FINISHED_MST.PROD_ID = PRODUCT_MST.PROD_ID";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Signes_MESDataSet.FINISHED_MST_FULLDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Signes_MESDataSet.FINISHED_MST_FULLDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            Signes_MESDataSet.FINISHED_MST_FULLDataTable dataTable = new Signes_MESDataSet.FINISHED_MST_FULLDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class FINISHED_MSTTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SQLite.SQLiteDataAdapter _adapter;
@@ -18955,7 +17973,7 @@ FROM     FINISHED_MST INNER JOIN
             this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  FINISHED_MST.*\r\nFROM     FINISHED_MST";
+            this._commandCollection[0].CommandText = "SELECT  FINISHED_MST.*\nFROM     FINISHED_MST";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

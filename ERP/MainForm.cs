@@ -18,6 +18,8 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.Utils.Svg;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using DevExpress.XtraEditors.Controls;
+using System.Globalization;
 
 namespace MES
 {
@@ -305,40 +307,6 @@ namespace MES
             ganttChartChart.RelationFormat = relationFormat;
         }
 
-        private void MainForm_StyleChanged(object sender, EventArgs e)
-        {
-
-            var commonSkin = CommonSkins.GetSkin(UserLookAndFeel.Default);
-            
-            SkinElement skinElement = commonSkin[CommonSkins.SkinForm];
-            Color color = skinElement.Color.BackColor;
-
-            
-
-            //TaskFormat old = ganttChartChart.TaskFormat;
-            //ganttChartChart.TaskFormat = new TaskFormat
-            //{
-            //    Border = new Pen(skinBorderColor),
-            //    BackFill = new SolidBrush(colorelement.Color.BackColor),
-            //    ForeFill = new SolidBrush(colorelement.Color.ForeColor),
-            //    Color = old.Color,
-            //    DelayBackFill = new SolidBrush(colorelement.Color.BackColor2),
-            //    DelayForeFill = new SolidBrush(Color.Crimson),
-            //    SlackFill = old.SlackFill
-            //};
-
-            //HeaderFormat oldHeader = ganttChartChart.HeaderFormat;
-            //ganttChartChart.HeaderFormat = new HeaderFormat
-            //{
-            //    Border = new Pen(skinBorderColor),
-            //    Color = oldHeader.Color,
-            //    GradientDark = oldHeader.GradientDark,
-            //    GradientLight = oldHeader.GradientLight
-            //};
-
-            
-        }
-
         private void AfterInitialization()
         {
             ganttChartChartProjectLabel.Text = m_Manager.Name;
@@ -372,6 +340,61 @@ namespace MES
             // material detail view
             //Handle the InitNewRow event to initialize newly added rows. To initialize row cells use the SetRowCellValue method
             cardViewMaterialDetail.InitNewRow += cardDetailView_InitNewRow;
+
+            // manufacturing order product search
+            comboBoxEditManufacturingOrderProductListing.TextChanged += TextEditManufacturingOrderSelect_TextChanged;
+            comboBoxEditManufacturingOrderProductListing.SelectedIndexChanged += ComboBoxEditManufacturingOrderProductListing_SelectedIndexChanged;
+            generateProductList("");
+        }
+
+        private void ComboBoxEditManufacturingOrderProductListing_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filterText = comboBoxEditManufacturingOrderProductListing.SelectedItem.ToString();
+
+            ColumnView view = gridViewManufacturingOrder;
+
+            ColumnFilterInfo filter = new ColumnFilterInfo("[PROD_ID] = '" + filterText + "'");
+            view.ActiveFilter.Add(view.Columns["PROD_ID"], filter);
+        }
+
+        private void TextEditManufacturingOrderSelect_TextChanged(object sender, EventArgs e)
+        {
+            ComboBoxItemCollection collection = comboBoxEditManufacturingOrderProductListing.Properties.Items;
+            collection.BeginUpdate();
+            try
+            {
+                var products = generateProductList(comboBoxEditManufacturingOrderProductListing.Text);
+
+                collection.Clear();
+                foreach(string str in products)
+                {
+                    collection.Add(str);
+                }
+            }
+            finally
+            {
+                collection.EndUpdate();
+            }
+
+            comboBoxEditManufacturingOrderProductListing.ShowPopup();
+        }
+
+        private List<string> generateProductList(string search)
+        {
+            var products = new List<string>();
+
+            var dataTable = PRODUCT_MSTTableAdapter.GetData();
+            foreach(var row in dataTable)
+            {
+                string prodID = (string) row[dataTable.PROD_IDColumn];
+
+                if(CultureInfo.InvariantCulture.CompareInfo.IndexOf(prodID, search, CompareOptions.IgnoreCase) >= 0)
+                {
+                    products.Add(prodID);
+                }
+            }
+
+            return products;
         }
 
         private void MainForm_CustomUnboundColumnData(object sender, CustomColumnDataEventArgs e)
@@ -773,6 +796,16 @@ namespace MES
         private void simpleButtonFinishedGoodsSave_Click(object sender, EventArgs e)
         {
             finisheD_MSTTableAdapter1.Update(signes_MESDataSet);
+        }
+
+        private void simpleButtonMaterialInventorySave_Click(object sender, EventArgs e)
+        {
+            materiaL_MSTTableAdapter.Update(signes_MESDataSet);
+        }
+
+        private void simpleButtonManufacturingOrderSave_Click(object sender, EventArgs e)
+        {
+            mM_PROC_MSTTableAdapter.Update(signes_MESDataSet);
         }
     }
 
