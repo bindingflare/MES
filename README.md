@@ -4,4 +4,5 @@ Management tool for designing, dispatching and completing orders.
 
 # Dependencies
 DevExpress 21.2 (Winforms)
+
 GanttChart
