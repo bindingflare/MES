@@ -103,6 +103,8 @@ namespace Edcore.GanttChart
             };
         }
 
+        public SolidBrush BackgroundBrush { get; set; }
+
         /// <summary>
         /// Delegate method for creating a new Task. Creates Task by default.
         /// </summary>
@@ -1202,7 +1204,7 @@ namespace Edcore.GanttChart
         /// </summary>
         private void _Draw(Graphics graphics, Rectangle clipRect)
         {
-            graphics.Clear(Color.White);
+            graphics.Clear(BackgroundBrush.Color);
 
             int row = 0;
             if (m_Project != null)
@@ -1414,7 +1416,7 @@ namespace Edcore.GanttChart
                 // highlight weekends for day time scale
                 if (date.DayOfWeek == DayOfWeek.Sunday || date.DayOfWeek == DayOfWeek.Saturday)
                 {
-                    var pattern = new HatchBrush(HatchStyle.Percent20, this.HeaderFormat.Border.Color, Color.Transparent);
+                    var pattern = new HatchBrush(HatchStyle.Percent25, this.HeaderFormat.Border.Color, Color.Transparent);
                     graphics.FillRectangle(pattern, _mHeaderInfo.Columns[i]);
                 }
             }
@@ -1569,7 +1571,7 @@ namespace Edcore.GanttChart
                         compRect.Offset(taskRect.Width, 0);
                         if (viewRect.IntersectsWith(compRect))
                         {
-                            graphics.DrawString(completion, e.Font, e.Format.Color, compRect);
+                            graphics.DrawString(completion, e.Font, TaskFormat.Color, compRect);
                         }
                     }
 
@@ -1659,11 +1661,11 @@ namespace Edcore.GanttChart
                             var linerect = p1.Y < p3.Y ? new RectangleF(p1, size) : new RectangleF(new PointF(p1.X, p1.Y - size.Height), size);
                             if (clipRectF.IntersectsWith(linerect))
                             {
-                                graphics.DrawLines(Pens.Black, new PointF[] { p1, p2, p3 });
+                                graphics.DrawLines(RelationFormat.Line, new PointF[] { p1, p2, p3 });
                                 // draw arrowhead
                                 var p4 = new PointF(p3.X - 3f, p3.Y + (isPointingDown ? -6f : 6f));
                                 var p5 = new PointF(p3.X + 3f, p4.Y);
-                                graphics.FillPolygon(Brushes.Black, new PointF[] { p3, p4, p5 });
+                                graphics.FillPolygon(RelationFormat.Brush, new PointF[] { p3, p4, p5 });
                             }
                         }
                     }
@@ -1961,6 +1963,8 @@ namespace Edcore.GanttChart
     /// </summary>
     public struct RelationFormat
     {
+        public Brush Brush { get; set; }
+
         /// <summary>
         /// Get or set the line pen
         /// </summary>

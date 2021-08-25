@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using DevExpress.XtraEditors;
 
 namespace Edcore.GanttChart
 {
@@ -187,8 +188,8 @@ namespace Edcore.GanttChart
         public ControlViewport(Control view)
         {
             _mDevice = view;
-            HorizontalScroll = new HScrollBar();
-            VerticalScroll = new VScrollBar();
+            HorizontalScroll = new DevExpress.XtraEditors.HScrollBar();
+            VerticalScroll = new DevExpress.XtraEditors.VScrollBar();
             _mScrollHolePatch = new UserControl();
             WorldWidth = view.Width;
             WorldHeight = view.Height;
@@ -217,8 +218,8 @@ namespace Edcore.GanttChart
         /// </summary>
         public int WheelDelta { get; set; }
 
-        public HScrollBar HorizontalScroll { get; set; }
-        public VScrollBar VerticalScroll { get; set; }
+        public DevExpress.XtraEditors.HScrollBar HorizontalScroll { get; set; }
+        public DevExpress.XtraEditors.VScrollBar VerticalScroll { get; set; }
 
         /// <summary>
         /// Get the Rectangle area in world coordinates where the Viewport is currently viewing over
