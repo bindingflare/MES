@@ -294,9 +294,11 @@ namespace MES
 
             TaskFormat taskFormat = ganttChartChart.TaskFormat;
             taskFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
-            taskFormat.Border = new Pen(Color.FromArgb(160, svgPalette["Accent Paint"].Value), 1.9f);
+            taskFormat.Border = new Pen(Color.FromArgb(100, svgPalette["Accent Paint"].Value), 2f);
             taskFormat.ForeFill = new SolidBrush(svgPalette["Accent Paint"].Value);
             taskFormat.BackFill = new SolidBrush(Color.FromArgb(120, svgPalette["Accent Paint"].Value));
+            taskFormat.DelayForeFill = new SolidBrush(commonSkin.Colors["WarningFill"]);
+            taskFormat.DelayBackFill = new SolidBrush(Color.FromArgb(120, commonSkin.Colors["WarningFill"]));
             ganttChartChart.TaskFormat = taskFormat;
 
             RelationFormat relationFormat = ganttChartChart.RelationFormat;
