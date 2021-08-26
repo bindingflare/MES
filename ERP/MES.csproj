@@ -121,6 +121,11 @@
     <Compile Include="MasterDetailHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Signes_MESDataSet.cs">
       <DependentUpon>Signes_MESDataSet.xsd</DependentUpon>
     </Compile>
@@ -135,14 +140,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -154,6 +154,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\NotoSansKR-Black.otf" />
+    <None Include="Resources\NotoSansKR-Bold.otf" />
+    <None Include="Resources\NotoSansKR-Light.otf" />
+    <None Include="Resources\NotoSansKR-Medium.otf" />
+    <None Include="Resources\NotoSansKR-Regular.otf" />
+    <None Include="Resources\NotoSansKR-Thin.otf" />
     <None Include="Signes_MESDataSet.xsc">
       <DependentUpon>Signes_MESDataSet.xsd</DependentUpon>
     </None>

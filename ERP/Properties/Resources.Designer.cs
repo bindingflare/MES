@@ -59,5 +59,65 @@ namespace MES.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] NotoSansKR_Black {
+            get {
+                object obj = ResourceManager.GetObject("NotoSansKR_Black", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] NotoSansKR_Bold {
+            get {
+                object obj = ResourceManager.GetObject("NotoSansKR_Bold", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] NotoSansKR_Light {
+            get {
+                object obj = ResourceManager.GetObject("NotoSansKR_Light", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] NotoSansKR_Medium {
+            get {
+                object obj = ResourceManager.GetObject("NotoSansKR_Medium", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] NotoSansKR_Regular {
+            get {
+                object obj = ResourceManager.GetObject("NotoSansKR_Regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] NotoSansKR_Thin {
+            get {
+                object obj = ResourceManager.GetObject("NotoSansKR_Thin", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
