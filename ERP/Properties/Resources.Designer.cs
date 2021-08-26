@@ -63,39 +63,9 @@ namespace MES.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] NanumBarunGothic {
+        internal static byte[] NotoSansKR_Regular {
             get {
-                object obj = ResourceManager.GetObject("NanumBarunGothic", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] NanumBarunGothicBold {
-            get {
-                object obj = ResourceManager.GetObject("NanumBarunGothicBold", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] NanumBarunGothicLight {
-            get {
-                object obj = ResourceManager.GetObject("NanumBarunGothicLight", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] NanumBarunGothicUltraLight {
-            get {
-                object obj = ResourceManager.GetObject("NanumBarunGothicUltraLight", resourceCulture);
+                object obj = ResourceManager.GetObject("NotoSansKR_Regular", resourceCulture);
                 return ((byte[])(obj));
             }
         }

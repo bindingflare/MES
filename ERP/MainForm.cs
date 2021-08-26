@@ -277,6 +277,9 @@ namespace MES
         }
         private void AfterInitialization()
         {
+            // Set mainform text
+            this.Font = new Font("Segoe UI", 9f);
+
             // Set text
             ganttChartChartProjectLabel.Text = m_Manager.Name;
             layoutControlGroup9.Text = m_Manager.Name;

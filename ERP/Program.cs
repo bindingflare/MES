@@ -25,7 +25,7 @@ namespace MES
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new System.Drawing.Font(regularFontCollection.Families[0], 10f);
+            DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new System.Drawing.Font(regularFontCollection.Families[0], 9f);
             Application.Run(new MainForm());
         }
 
@@ -36,9 +36,8 @@ namespace MES
         {
             regularFontCollection = new PrivateFontCollection();
 
-            byte[][] fontDataArray = new byte[2][];
-            fontDataArray[0] = Properties.Resources.NanumBarunGothic;
-            fontDataArray[1] = Properties.Resources.NanumBarunGothicBold;
+            byte[][] fontDataArray = new byte[1][];
+            fontDataArray[0] = Properties.Resources.NotoSansKR_Regular;
 
             foreach (var fontData in fontDataArray)
             {

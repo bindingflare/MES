@@ -154,13 +154,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\NanumBarunGothic.ttf" />
-    <None Include="Resources\NanumBarunGothicBold.ttf" />
-    <None Include="Resources\NanumBarunGothicLight.ttf" />
-    <None Include="Resources\NanumBarunGothicUltraLight.ttf" />
-    <None Include="Resources\NanumGothic-Bold.ttf" />
-    <None Include="Resources\NanumGothic-ExtraBold.ttf" />
-    <None Include="Resources\NanumGothic-Regular.ttf" />
+    <None Include="Resources\NotoSansKR-Regular.otf" />
     <None Include="Signes_MESDataSet.xsc">
       <DependentUpon>Signes_MESDataSet.xsd</DependentUpon>
     </None>
@@ -182,6 +176,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
