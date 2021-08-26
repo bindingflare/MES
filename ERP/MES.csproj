@@ -154,12 +154,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\NotoSansKR-Black.otf" />
-    <None Include="Resources\NotoSansKR-Bold.otf" />
-    <None Include="Resources\NotoSansKR-Light.otf" />
-    <None Include="Resources\NotoSansKR-Medium.otf" />
-    <None Include="Resources\NotoSansKR-Regular.otf" />
-    <None Include="Resources\NotoSansKR-Thin.otf" />
+    <None Include="Resources\NanumBarunGothic.ttf" />
+    <None Include="Resources\NanumBarunGothicBold.ttf" />
+    <None Include="Resources\NanumBarunGothicLight.ttf" />
+    <None Include="Resources\NanumBarunGothicUltraLight.ttf" />
+    <None Include="Resources\NanumGothic-Bold.ttf" />
+    <None Include="Resources\NanumGothic-ExtraBold.ttf" />
+    <None Include="Resources\NanumGothic-Regular.ttf" />
     <None Include="Signes_MESDataSet.xsc">
       <DependentUpon>Signes_MESDataSet.xsd</DependentUpon>
     </None>

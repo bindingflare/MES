@@ -63,9 +63,9 @@ namespace MES.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] NotoSansKR_Black {
+        internal static byte[] NanumBarunGothic {
             get {
-                object obj = ResourceManager.GetObject("NotoSansKR_Black", resourceCulture);
+                object obj = ResourceManager.GetObject("NanumBarunGothic", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MES.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] NotoSansKR_Bold {
+        internal static byte[] NanumBarunGothicBold {
             get {
-                object obj = ResourceManager.GetObject("NotoSansKR_Bold", resourceCulture);
+                object obj = ResourceManager.GetObject("NanumBarunGothicBold", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace MES.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] NotoSansKR_Light {
+        internal static byte[] NanumBarunGothicLight {
             get {
-                object obj = ResourceManager.GetObject("NotoSansKR_Light", resourceCulture);
+                object obj = ResourceManager.GetObject("NanumBarunGothicLight", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -93,29 +93,9 @@ namespace MES.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] NotoSansKR_Medium {
+        internal static byte[] NanumBarunGothicUltraLight {
             get {
-                object obj = ResourceManager.GetObject("NotoSansKR_Medium", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] NotoSansKR_Regular {
-            get {
-                object obj = ResourceManager.GetObject("NotoSansKR_Regular", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] NotoSansKR_Thin {
-            get {
-                object obj = ResourceManager.GetObject("NotoSansKR_Thin", resourceCulture);
+                object obj = ResourceManager.GetObject("NanumBarunGothicUltraLight", resourceCulture);
                 return ((byte[])(obj));
             }
         }

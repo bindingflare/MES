@@ -13,7 +13,7 @@ namespace MES
 {
     static class Program
     {
-        public static PrivateFontCollection myFontCollection;
+        public static PrivateFontCollection regularFontCollection;
 
         /// <summary>
         /// The main entry point for the application.
@@ -25,7 +25,7 @@ namespace MES
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new System.Drawing.Font(myFontCollection.Families[0], 9f);
+            DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new System.Drawing.Font(regularFontCollection.Families[0], 10f);
             Application.Run(new MainForm());
         }
 
@@ -34,14 +34,11 @@ namespace MES
 
         static void InitFonts()
         {
-            myFontCollection = new PrivateFontCollection();
+            regularFontCollection = new PrivateFontCollection();
 
-            byte[][] fontDataArray = new byte[5][];
-            fontDataArray[0] = Properties.Resources.NotoSansKR_Light;
-            fontDataArray[1] = Properties.Resources.NotoSansKR_Regular;
-            fontDataArray[2] = Properties.Resources.NotoSansKR_Bold;
-            fontDataArray[3] = Properties.Resources.NotoSansKR_Thin;
-            fontDataArray[4] = Properties.Resources.NotoSansKR_Black;
+            byte[][] fontDataArray = new byte[2][];
+            fontDataArray[0] = Properties.Resources.NanumBarunGothic;
+            fontDataArray[1] = Properties.Resources.NanumBarunGothicBold;
 
             foreach (var fontData in fontDataArray)
             {
@@ -54,7 +51,7 @@ namespace MES
                 uint cFonts = 0;
                 AddFontMemResourceEx(data, (uint)fontData.Length, IntPtr.Zero, ref cFonts);
 
-                myFontCollection.AddMemoryFont(data, fontLength);
+                regularFontCollection.AddMemoryFont(data, fontLength);
             }
         }
     }

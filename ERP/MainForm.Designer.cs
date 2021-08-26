@@ -32,20 +32,20 @@ namespace MES
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.TileItemElement tileItemElement46 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement47 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement48 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement49 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement50 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement51 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement52 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement53 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement54 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             this.cardViewMaterialDetail = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colMATERIAL_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMATERIAL_NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -740,15 +740,15 @@ namespace MES
             // gridControlBOM
             // 
             this.gridControlBOM.DataSource = this.mMPRODMSTBindingSource;
-            gridLevelNode2.LevelTemplate = this.cardViewMaterialDetail;
-            gridLevelNode2.RelationName = "MM_PROD_MST_MATERIAL_MST";
+            gridLevelNode1.LevelTemplate = this.cardViewMaterialDetail;
+            gridLevelNode1.RelationName = "MM_PROD_MST_MATERIAL_MST";
             this.gridControlBOM.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControlBOM.Location = new System.Drawing.Point(18, 69);
             this.gridControlBOM.MainView = this.gridViewProductListing;
             this.gridControlBOM.MenuManager = this.toolbarFormManager1;
             this.gridControlBOM.Name = "gridControlBOM";
-            this.gridControlBOM.Size = new System.Drawing.Size(1192, 399);
+            this.gridControlBOM.Size = new System.Drawing.Size(1175, 399);
             this.gridControlBOM.TabIndex = 6;
             this.gridControlBOM.UseEmbeddedNavigator = true;
             this.gridControlBOM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1163,15 +1163,15 @@ namespace MES
             // gridControlManufacturingOrder
             // 
             this.gridControlManufacturingOrder.DataSource = this.mMPROCMSTBindingSource;
-            gridLevelNode3.LevelTemplate = this.gridViewProcessStep;
-            gridLevelNode3.RelationName = "MM_PROC_MST_MM_PROC_STEP";
+            gridLevelNode2.LevelTemplate = this.gridViewProcessStep;
+            gridLevelNode2.RelationName = "MM_PROC_MST_MM_PROC_STEP";
             this.gridControlManufacturingOrder.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode2});
             this.gridControlManufacturingOrder.Location = new System.Drawing.Point(17, 68);
             this.gridControlManufacturingOrder.MainView = this.gridViewManufacturingOrder;
             this.gridControlManufacturingOrder.MenuManager = this.toolbarFormManager1;
             this.gridControlManufacturingOrder.Name = "gridControlManufacturingOrder";
-            this.gridControlManufacturingOrder.Size = new System.Drawing.Size(1194, 429);
+            this.gridControlManufacturingOrder.Size = new System.Drawing.Size(1177, 429);
             this.gridControlManufacturingOrder.TabIndex = 15;
             this.gridControlManufacturingOrder.UseEmbeddedNavigator = true;
             this.gridControlManufacturingOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1336,7 +1336,7 @@ namespace MES
             // 
             // labelControlTitle
             // 
-            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Candara", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Gray;
             this.labelControlTitle.Appearance.Options.UseFont = true;
             this.labelControlTitle.Appearance.Options.UseForeColor = true;
@@ -1346,7 +1346,7 @@ namespace MES
             this.labelControlTitle.IndentBetweenImageAndText = 4;
             this.labelControlTitle.Location = new System.Drawing.Point(9, 55);
             this.labelControlTitle.Name = "labelControlTitle";
-            this.labelControlTitle.Size = new System.Drawing.Size(209, 39);
+            this.labelControlTitle.Size = new System.Drawing.Size(227, 45);
             this.labelControlTitle.TabIndex = 0;
             this.labelControlTitle.Text = "Signe-S MES";
             // 
@@ -1783,7 +1783,7 @@ namespace MES
             this.tileControlOverview.Location = new System.Drawing.Point(612, 41);
             this.tileControlOverview.MaxId = 16;
             this.tileControlOverview.Name = "tileControlOverview";
-            this.tileControlOverview.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.tileControlOverview.Padding = new System.Windows.Forms.Padding(8);
             this.tileControlOverview.RowCount = 3;
             this.tileControlOverview.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.tileControlOverview.SelectionColor = System.Drawing.Color.Empty;
@@ -1805,31 +1805,31 @@ namespace MES
             this.tileGanttChart.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(60)))));
             this.tileGanttChart.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileGanttChart.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement46.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement46.ImageOptions.ImageSize = new System.Drawing.Size(64, 64);
-            tileItemElement46.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
-            tileItemElement46.Text = "Gantt Chart";
-            this.tileGanttChart.Elements.Add(tileItemElement46);
+            tileItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement1.ImageOptions.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement1.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
+            tileItemElement1.Text = "Gantt Chart";
+            this.tileGanttChart.Elements.Add(tileItemElement1);
             this.tileGanttChart.Id = 12;
             this.tileGanttChart.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileGanttChart.Name = "tileGanttChart";
-            toolTipItem6.Text = "View the current tasks";
-            superToolTip6.Items.Add(toolTipItem6);
-            this.tileGanttChart.SuperTip = superToolTip6;
+            toolTipItem1.Text = "View the current tasks";
+            superToolTip1.Items.Add(toolTipItem1);
+            this.tileGanttChart.SuperTip = superToolTip1;
             this.tileGanttChart.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem12_ItemClick);
             // 
             // tileItem2
             // 
-            tileItemElement47.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement47);
+            tileItemElement2.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement2);
             this.tileItem2.Id = 1;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem2.Name = "tileItem2";
             // 
             // tileItem1
             // 
-            tileItemElement48.Text = "tileItem1";
-            this.tileItem1.Elements.Add(tileItemElement48);
+            tileItemElement3.Text = "tileItem1";
+            this.tileItem1.Elements.Add(tileItemElement3);
             this.tileItem1.Id = 11;
             this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem1.Name = "tileItem1";
@@ -1848,9 +1848,9 @@ namespace MES
             this.tileInventory.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(0)))), ((int)(((byte)(142)))));
             this.tileInventory.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileInventory.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement49.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
-            tileItemElement49.Text = "Inventory";
-            this.tileInventory.Elements.Add(tileItemElement49);
+            tileItemElement4.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
+            tileItemElement4.Text = "Inventory";
+            this.tileInventory.Elements.Add(tileItemElement4);
             this.tileInventory.Id = 3;
             this.tileInventory.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileInventory.Name = "tileInventory";
@@ -1863,9 +1863,9 @@ namespace MES
             this.tileEventM.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(180)))));
             this.tileEventM.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileEventM.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement50.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
-            tileItemElement50.Text = "Jobs";
-            this.tileEventM.Elements.Add(tileItemElement50);
+            tileItemElement5.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
+            tileItemElement5.Text = "Jobs";
+            this.tileEventM.Elements.Add(tileItemElement5);
             this.tileEventM.Id = 7;
             this.tileEventM.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileEventM.Name = "tileEventM";
@@ -1873,8 +1873,8 @@ namespace MES
             // 
             // tileItem7
             // 
-            tileItemElement51.Text = "tileItem7";
-            this.tileItem7.Elements.Add(tileItemElement51);
+            tileItemElement6.Text = "tileItem7";
+            this.tileItem7.Elements.Add(tileItemElement6);
             this.tileItem7.Id = 6;
             this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem7.Name = "tileItem7";
@@ -1888,24 +1888,24 @@ namespace MES
             // 
             // tileItem4
             // 
-            tileItemElement52.Text = "tileItem4";
-            this.tileItem4.Elements.Add(tileItemElement52);
+            tileItemElement7.Text = "tileItem4";
+            this.tileItem4.Elements.Add(tileItemElement7);
             this.tileItem4.Id = 14;
             this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem4.Name = "tileItem4";
             // 
             // tileItem3
             // 
-            tileItemElement53.Text = "tileItem3";
-            this.tileItem3.Elements.Add(tileItemElement53);
+            tileItemElement8.Text = "tileItem3";
+            this.tileItem3.Elements.Add(tileItemElement8);
             this.tileItem3.Id = 13;
             this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem3.Name = "tileItem3";
             // 
             // tileItem5
             // 
-            tileItemElement54.Text = "tileItem5";
-            this.tileItem5.Elements.Add(tileItemElement54);
+            tileItemElement9.Text = "tileItem5";
+            this.tileItem5.Elements.Add(tileItemElement9);
             this.tileItem5.Id = 15;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem5.Name = "tileItem5";
@@ -2031,7 +2031,7 @@ namespace MES
             this.panelControlProductionMonitor.Location = new System.Drawing.Point(0, 0);
             this.panelControlProductionMonitor.MinimumSize = new System.Drawing.Size(0, 1000);
             this.panelControlProductionMonitor.Name = "panelControlProductionMonitor";
-            this.panelControlProductionMonitor.Size = new System.Drawing.Size(1232, 1000);
+            this.panelControlProductionMonitor.Size = new System.Drawing.Size(1215, 1000);
             this.panelControlProductionMonitor.TabIndex = 1;
             // 
             // layoutControl1
@@ -2045,7 +2045,7 @@ namespace MES
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(760, 264, 650, 718);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1228, 996);
+            this.layoutControl1.Size = new System.Drawing.Size(1211, 996);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -2078,7 +2078,7 @@ namespace MES
             this.ganttChartChartSplitContainer.Panel2.Controls.Add(this.ganttChartChart);
             this.ganttChartChartSplitContainer.Panel2.MinSize = 200;
             this.ganttChartChartSplitContainer.Panel2.Text = "Panel2";
-            this.ganttChartChartSplitContainer.Size = new System.Drawing.Size(1202, 444);
+            this.ganttChartChartSplitContainer.Size = new System.Drawing.Size(1185, 444);
             this.ganttChartChartSplitContainer.SplitterPosition = 375;
             this.ganttChartChartSplitContainer.TabIndex = 4;
             // 
@@ -2123,7 +2123,7 @@ namespace MES
             this.ganttChartChartOptionsPanel.AutoSize = true;
             this.ganttChartChartOptionsPanel.Controls.Add(this.m_TaskGrid);
             this.ganttChartChartOptionsPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ganttChartChartOptionsPanel.Location = new System.Drawing.Point(617, 0);
+            this.ganttChartChartOptionsPanel.Location = new System.Drawing.Point(600, 0);
             this.ganttChartChartOptionsPanel.MaximumSize = new System.Drawing.Size(350, 1280);
             this.ganttChartChartOptionsPanel.MinimumSize = new System.Drawing.Size(200, 0);
             this.ganttChartChartOptionsPanel.Name = "ganttChartChartOptionsPanel";
@@ -2150,7 +2150,7 @@ namespace MES
             this.ganttChartChart.Location = new System.Drawing.Point(0, 0);
             this.ganttChartChart.Margin = new System.Windows.Forms.Padding(0);
             this.ganttChartChart.Name = "ganttChartChart";
-            this.ganttChartChart.Size = new System.Drawing.Size(817, 444);
+            this.ganttChartChart.Size = new System.Drawing.Size(800, 444);
             this.ganttChartChart.TabIndex = 0;
             // 
             // ganttChartHyperLinkLabelControl1
@@ -2187,7 +2187,7 @@ namespace MES
             this.splitterItem5});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.Root.Size = new System.Drawing.Size(1228, 996);
+            this.Root.Size = new System.Drawing.Size(1211, 996);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup7
@@ -2197,7 +2197,7 @@ namespace MES
             this.emptySpaceItem1});
             this.layoutControlGroup7.Location = new System.Drawing.Point(0, 601);
             this.layoutControlGroup7.Name = "layoutControlGroup7";
-            this.layoutControlGroup7.Size = new System.Drawing.Size(1212, 379);
+            this.layoutControlGroup7.Size = new System.Drawing.Size(1195, 379);
             this.layoutControlGroup7.Text = "Cards";
             // 
             // emptySpaceItem1
@@ -2205,7 +2205,7 @@ namespace MES
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1188, 330);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1171, 330);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup5
@@ -2217,7 +2217,7 @@ namespace MES
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(1212, 479);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(1195, 479);
             this.layoutControlGroup5.Text = "Gantt Chart";
             // 
             // layoutControlItem4
@@ -2225,7 +2225,7 @@ namespace MES
             this.layoutControlItem4.Control = this.ganttChartChartSplitContainer;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1206, 448);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1189, 448);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -2239,7 +2239,7 @@ namespace MES
             this.layoutControlItem3});
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 489);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            this.layoutControlGroup6.Size = new System.Drawing.Size(1212, 112);
+            this.layoutControlGroup6.Size = new System.Drawing.Size(1195, 112);
             this.layoutControlGroup6.Text = "Actions";
             // 
             // layoutControlItem1
@@ -2247,7 +2247,7 @@ namespace MES
             this.layoutControlItem1.Control = this.ganttChartLabelControlQuickLinks;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1188, 27);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1171, 27);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -2256,7 +2256,7 @@ namespace MES
             this.layoutControlItem9.Control = this.ganttChartHyperLinkLabelControl2;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 45);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(1188, 18);
+            this.layoutControlItem9.Size = new System.Drawing.Size(1171, 18);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -2265,7 +2265,7 @@ namespace MES
             this.layoutControlItem3.Control = this.ganttChartHyperLinkLabelControl1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 27);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1188, 18);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1171, 18);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -2274,14 +2274,14 @@ namespace MES
             this.splitterItem5.AllowHotTrack = true;
             this.splitterItem5.Location = new System.Drawing.Point(0, 479);
             this.splitterItem5.Name = "splitterItem5";
-            this.splitterItem5.Size = new System.Drawing.Size(1212, 10);
+            this.splitterItem5.Size = new System.Drawing.Size(1195, 10);
             // 
             // xtraScrollableControl1
             // 
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(1232, 539);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1215, 1000);
             this.xtraScrollableControl1.TabIndex = 0;
             // 
             // tabNavigationPage5
@@ -2299,7 +2299,7 @@ namespace MES
             this.panelControlMaterialInventory.Location = new System.Drawing.Point(0, 0);
             this.panelControlMaterialInventory.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlMaterialInventory.Name = "panelControlMaterialInventory";
-            this.panelControlMaterialInventory.Size = new System.Drawing.Size(1232, 1200);
+            this.panelControlMaterialInventory.Size = new System.Drawing.Size(1215, 1200);
             this.panelControlMaterialInventory.TabIndex = 5;
             // 
             // layoutControl3
@@ -2313,16 +2313,16 @@ namespace MES
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(746, 332, 650, 400);
             this.layoutControl3.Root = this.layoutControlGroup11;
-            this.layoutControl3.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControl3.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
             // simpleButtonMaterialInventorySave
             // 
-            this.simpleButtonMaterialInventorySave.Location = new System.Drawing.Point(159, 13);
+            this.simpleButtonMaterialInventorySave.Location = new System.Drawing.Point(157, 13);
             this.simpleButtonMaterialInventorySave.MinimumSize = new System.Drawing.Size(120, 0);
             this.simpleButtonMaterialInventorySave.Name = "simpleButtonMaterialInventorySave";
-            this.simpleButtonMaterialInventorySave.Size = new System.Drawing.Size(122, 22);
+            this.simpleButtonMaterialInventorySave.Size = new System.Drawing.Size(120, 22);
             this.simpleButtonMaterialInventorySave.StyleController = this.layoutControl3;
             this.simpleButtonMaterialInventorySave.TabIndex = 20;
             this.simpleButtonMaterialInventorySave.Text = "Save changes";
@@ -2333,7 +2333,7 @@ namespace MES
             this.simpleButtonMaterialInventoryReserved.Location = new System.Drawing.Point(13, 13);
             this.simpleButtonMaterialInventoryReserved.MinimumSize = new System.Drawing.Size(120, 0);
             this.simpleButtonMaterialInventoryReserved.Name = "simpleButtonMaterialInventoryReserved";
-            this.simpleButtonMaterialInventoryReserved.Size = new System.Drawing.Size(122, 22);
+            this.simpleButtonMaterialInventoryReserved.Size = new System.Drawing.Size(120, 22);
             this.simpleButtonMaterialInventoryReserved.StyleController = this.layoutControl3;
             this.simpleButtonMaterialInventoryReserved.TabIndex = 15;
             this.simpleButtonMaterialInventoryReserved.Text = "(Reserved)";
@@ -2344,7 +2344,7 @@ namespace MES
             this.gridControlMaterialListing.Location = new System.Drawing.Point(18, 69);
             this.gridControlMaterialListing.MainView = this.gridViewMaterialListing;
             this.gridControlMaterialListing.Name = "gridControlMaterialListing";
-            this.gridControlMaterialListing.Size = new System.Drawing.Size(1192, 420);
+            this.gridControlMaterialListing.Size = new System.Drawing.Size(1175, 420);
             this.gridControlMaterialListing.TabIndex = 4;
             this.gridControlMaterialListing.UseEmbeddedNavigator = true;
             this.gridControlMaterialListing.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -2527,7 +2527,7 @@ namespace MES
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(137, 1163);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1078, 20);
+            this.dataGridView1.Size = new System.Drawing.Size(1061, 20);
             this.dataGridView1.TabIndex = 5;
             // 
             // layoutControlGroup11
@@ -2545,7 +2545,7 @@ namespace MES
             this.emptySpaceItem17});
             this.layoutControlGroup11.Name = "Root";
             this.layoutControlGroup11.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup11.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControlGroup11.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControlGroup11.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
             this.layoutControlGroup11.TextVisible = false;
             // 
@@ -2558,7 +2558,7 @@ namespace MES
             this.layoutControlGroup18.Location = new System.Drawing.Point(0, 495);
             this.layoutControlGroup18.Name = "layoutControlGroup18";
             this.layoutControlGroup18.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup18.Size = new System.Drawing.Size(1206, 655);
+            this.layoutControlGroup18.Size = new System.Drawing.Size(1189, 655);
             this.layoutControlGroup18.Text = "Actions";
             // 
             // emptySpaceItem6
@@ -2566,7 +2566,7 @@ namespace MES
             this.emptySpaceItem6.AllowHotTrack = false;
             this.emptySpaceItem6.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(1184, 608);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(1167, 608);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem6
@@ -2574,14 +2574,14 @@ namespace MES
             this.splitterItem6.AllowHotTrack = true;
             this.splitterItem6.Location = new System.Drawing.Point(0, 485);
             this.splitterItem6.Name = "splitterItem6";
-            this.splitterItem6.Size = new System.Drawing.Size(1206, 10);
+            this.splitterItem6.Size = new System.Drawing.Size(1189, 10);
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.dataGridView1;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 1150);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(1206, 24);
+            this.layoutControlItem14.Size = new System.Drawing.Size(1189, 24);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(112, 14);
             // 
             // layoutControlItem29
@@ -2589,16 +2589,16 @@ namespace MES
             this.layoutControlItem29.Control = this.simpleButtonMaterialInventoryReserved;
             this.layoutControlItem29.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem29.Name = "layoutControlItem29";
-            this.layoutControlItem29.Size = new System.Drawing.Size(126, 26);
+            this.layoutControlItem29.Size = new System.Drawing.Size(124, 26);
             this.layoutControlItem29.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem29.TextVisible = false;
             // 
             // layoutControlItem22
             // 
             this.layoutControlItem22.Control = this.simpleButtonMaterialInventorySave;
-            this.layoutControlItem22.Location = new System.Drawing.Point(146, 0);
+            this.layoutControlItem22.Location = new System.Drawing.Point(144, 0);
             this.layoutControlItem22.Name = "layoutControlItem22";
-            this.layoutControlItem22.Size = new System.Drawing.Size(126, 26);
+            this.layoutControlItem22.Size = new System.Drawing.Size(124, 26);
             this.layoutControlItem22.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem22.TextVisible = false;
             // 
@@ -2610,7 +2610,7 @@ namespace MES
             this.layoutControlGroup16.Location = new System.Drawing.Point(0, 26);
             this.layoutControlGroup16.Name = "layoutControlGroup16";
             this.layoutControlGroup16.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutControlGroup16.Size = new System.Drawing.Size(1206, 459);
+            this.layoutControlGroup16.Size = new System.Drawing.Size(1189, 459);
             this.layoutControlGroup16.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup16.Text = "Material Inventory";
             // 
@@ -2619,14 +2619,14 @@ namespace MES
             this.layoutControlItem30.Control = this.gridControlMaterialListing;
             this.layoutControlItem30.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem30.Name = "layoutControlItem30";
-            this.layoutControlItem30.Size = new System.Drawing.Size(1196, 424);
+            this.layoutControlItem30.Size = new System.Drawing.Size(1179, 424);
             this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem30.TextVisible = false;
             // 
             // emptySpaceItem16
             // 
             this.emptySpaceItem16.AllowHotTrack = false;
-            this.emptySpaceItem16.Location = new System.Drawing.Point(126, 0);
+            this.emptySpaceItem16.Location = new System.Drawing.Point(124, 0);
             this.emptySpaceItem16.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem16.MinSize = new System.Drawing.Size(20, 10);
             this.emptySpaceItem16.Name = "emptySpaceItem16";
@@ -2637,9 +2637,9 @@ namespace MES
             // emptySpaceItem17
             // 
             this.emptySpaceItem17.AllowHotTrack = false;
-            this.emptySpaceItem17.Location = new System.Drawing.Point(272, 0);
+            this.emptySpaceItem17.Location = new System.Drawing.Point(268, 0);
             this.emptySpaceItem17.Name = "emptySpaceItem17";
-            this.emptySpaceItem17.Size = new System.Drawing.Size(934, 26);
+            this.emptySpaceItem17.Size = new System.Drawing.Size(921, 26);
             this.emptySpaceItem17.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tabNavigationPage4
@@ -2657,7 +2657,7 @@ namespace MES
             this.panelControlJobDispatch.Location = new System.Drawing.Point(0, 0);
             this.panelControlJobDispatch.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlJobDispatch.Name = "panelControlJobDispatch";
-            this.panelControlJobDispatch.Size = new System.Drawing.Size(1232, 1200);
+            this.panelControlJobDispatch.Size = new System.Drawing.Size(1215, 1200);
             this.panelControlJobDispatch.TabIndex = 5;
             // 
             // layoutControl4
@@ -2672,7 +2672,7 @@ namespace MES
             this.layoutControl4.Name = "layoutControl4";
             this.layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(778, 218, 650, 400);
             this.layoutControl4.Root = this.layoutControlGroup12;
-            this.layoutControl4.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControl4.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
             // 
@@ -2681,10 +2681,10 @@ namespace MES
             this.labelControl5.Appearance.BackColor = System.Drawing.Color.DarkGray;
             this.labelControl5.Appearance.Options.UseBackColor = true;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(330, 42);
+            this.labelControl5.Location = new System.Drawing.Point(326, 42);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(308, 14);
+            this.labelControl5.Size = new System.Drawing.Size(303, 14);
             this.labelControl5.StyleController = this.layoutControl4;
             this.labelControl5.TabIndex = 20;
             this.labelControl5.Text = "Event Stack #2";
@@ -2706,7 +2706,7 @@ namespace MES
             this.labelControl3.Location = new System.Drawing.Point(17, 42);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(0);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(301, 14);
+            this.labelControl3.Size = new System.Drawing.Size(297, 14);
             this.labelControl3.StyleController = this.layoutControl4;
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Event Stack #1";
@@ -2718,9 +2718,9 @@ namespace MES
             this.eventManagerEventStackPanel2.AutoScroll = true;
             this.eventManagerEventStackPanel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.eventManagerEventStackPanel2.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.TopDown;
-            this.eventManagerEventStackPanel2.Location = new System.Drawing.Point(331, 59);
+            this.eventManagerEventStackPanel2.Location = new System.Drawing.Point(327, 59);
             this.eventManagerEventStackPanel2.Name = "eventManagerEventStackPanel2";
-            this.eventManagerEventStackPanel2.Size = new System.Drawing.Size(306, 350);
+            this.eventManagerEventStackPanel2.Size = new System.Drawing.Size(301, 350);
             this.eventManagerEventStackPanel2.TabIndex = 5;
             // 
             // eventManagerEventStackPanel1
@@ -2732,7 +2732,7 @@ namespace MES
             this.eventManagerEventStackPanel1.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.TopDown;
             this.eventManagerEventStackPanel1.Location = new System.Drawing.Point(18, 59);
             this.eventManagerEventStackPanel1.Name = "eventManagerEventStackPanel1";
-            this.eventManagerEventStackPanel1.Size = new System.Drawing.Size(299, 350);
+            this.eventManagerEventStackPanel1.Size = new System.Drawing.Size(295, 350);
             this.eventManagerEventStackPanel1.TabIndex = 4;
             // 
             // layoutControlGroup12
@@ -2747,7 +2747,7 @@ namespace MES
             this.layoutControlItem12});
             this.layoutControlGroup12.Name = "Root";
             this.layoutControlGroup12.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup12.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControlGroup12.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControlGroup12.Spacing = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutControlGroup12.TextVisible = false;
             // 
@@ -2763,7 +2763,7 @@ namespace MES
             this.layoutControlGroup13.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup13.Name = "layoutControlGroup13";
             this.layoutControlGroup13.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup13.Size = new System.Drawing.Size(645, 417);
+            this.layoutControlGroup13.Size = new System.Drawing.Size(636, 417);
             this.layoutControlGroup13.Text = "Dispatch Events";
             // 
             // layoutControlItem10
@@ -2771,16 +2771,16 @@ namespace MES
             this.layoutControlItem10.Control = this.eventManagerEventStackPanel1;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 16);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(303, 354);
+            this.layoutControlItem10.Size = new System.Drawing.Size(299, 354);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.eventManagerEventStackPanel2;
-            this.layoutControlItem11.Location = new System.Drawing.Point(313, 16);
+            this.layoutControlItem11.Location = new System.Drawing.Point(309, 16);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(310, 354);
+            this.layoutControlItem11.Size = new System.Drawing.Size(305, 354);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
@@ -2793,7 +2793,7 @@ namespace MES
             this.layoutControlGroup19.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup19.Name = "layoutControlGroup19";
             this.layoutControlGroup19.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup19.Size = new System.Drawing.Size(303, 16);
+            this.layoutControlGroup19.Size = new System.Drawing.Size(299, 16);
             this.layoutControlGroup19.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup19.TextVisible = false;
             // 
@@ -2803,7 +2803,7 @@ namespace MES
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlItem7.Size = new System.Drawing.Size(301, 14);
+            this.layoutControlItem7.Size = new System.Drawing.Size(297, 14);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -2814,10 +2814,10 @@ namespace MES
             this.layoutControlGroup20.AppearanceGroup.Options.UseBackColor = true;
             this.layoutControlGroup20.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem13});
-            this.layoutControlGroup20.Location = new System.Drawing.Point(313, 0);
+            this.layoutControlGroup20.Location = new System.Drawing.Point(309, 0);
             this.layoutControlGroup20.Name = "layoutControlGroup20";
             this.layoutControlGroup20.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup20.Size = new System.Drawing.Size(310, 16);
+            this.layoutControlGroup20.Size = new System.Drawing.Size(305, 16);
             this.layoutControlGroup20.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup20.TextVisible = false;
             // 
@@ -2827,14 +2827,14 @@ namespace MES
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlItem13.Size = new System.Drawing.Size(308, 14);
+            this.layoutControlItem13.Size = new System.Drawing.Size(303, 14);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // splitterItem3
             // 
             this.splitterItem3.AllowHotTrack = true;
-            this.splitterItem3.Location = new System.Drawing.Point(303, 0);
+            this.splitterItem3.Location = new System.Drawing.Point(299, 0);
             this.splitterItem3.Name = "splitterItem3";
             this.splitterItem3.Size = new System.Drawing.Size(10, 370);
             // 
@@ -2843,10 +2843,10 @@ namespace MES
             this.layoutControlGroup14.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroup14.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.emptySpaceItem3});
-            this.layoutControlGroup14.Location = new System.Drawing.Point(655, 0);
+            this.layoutControlGroup14.Location = new System.Drawing.Point(646, 0);
             this.layoutControlGroup14.Name = "layoutControlGroup14";
             this.layoutControlGroup14.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 8, 8);
-            this.layoutControlGroup14.Size = new System.Drawing.Size(563, 417);
+            this.layoutControlGroup14.Size = new System.Drawing.Size(555, 417);
             this.layoutControlGroup14.Text = "Stats";
             // 
             // emptySpaceItem3
@@ -2854,7 +2854,7 @@ namespace MES
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(541, 370);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(533, 370);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup15
@@ -2865,7 +2865,7 @@ namespace MES
             this.emptySpaceItem4});
             this.layoutControlGroup15.Location = new System.Drawing.Point(0, 417);
             this.layoutControlGroup15.Name = "layoutControlGroup15";
-            this.layoutControlGroup15.Size = new System.Drawing.Size(1218, 751);
+            this.layoutControlGroup15.Size = new System.Drawing.Size(1201, 751);
             this.layoutControlGroup15.Text = "Other Information";
             // 
             // emptySpaceItem4
@@ -2873,13 +2873,13 @@ namespace MES
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(1194, 702);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(1177, 702);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem4
             // 
             this.splitterItem4.AllowHotTrack = true;
-            this.splitterItem4.Location = new System.Drawing.Point(645, 0);
+            this.splitterItem4.Location = new System.Drawing.Point(636, 0);
             this.splitterItem4.Name = "splitterItem4";
             this.splitterItem4.Size = new System.Drawing.Size(10, 417);
             // 
@@ -2888,7 +2888,7 @@ namespace MES
             this.layoutControlItem12.Control = this.labelControl4;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 1168);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(1218, 18);
+            this.layoutControlItem12.Size = new System.Drawing.Size(1201, 18);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
@@ -2908,7 +2908,7 @@ namespace MES
             this.panelControlManufacturingOrder.Location = new System.Drawing.Point(0, 0);
             this.panelControlManufacturingOrder.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlManufacturingOrder.Name = "panelControlManufacturingOrder";
-            this.panelControlManufacturingOrder.Size = new System.Drawing.Size(1232, 1200);
+            this.panelControlManufacturingOrder.Size = new System.Drawing.Size(1215, 1200);
             this.panelControlManufacturingOrder.TabIndex = 0;
             // 
             // layoutControlManufacturingOrder
@@ -2921,15 +2921,15 @@ namespace MES
             this.layoutControlManufacturingOrder.Name = "layoutControlManufacturingOrder";
             this.layoutControlManufacturingOrder.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(524, 450, 650, 400);
             this.layoutControlManufacturingOrder.Root = this.layoutControlGroup27;
-            this.layoutControlManufacturingOrder.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControlManufacturingOrder.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControlManufacturingOrder.TabIndex = 0;
             // 
             // simpleButtonManufacturingOrderSave
             // 
-            this.simpleButtonManufacturingOrderSave.Location = new System.Drawing.Point(355, 12);
+            this.simpleButtonManufacturingOrderSave.Location = new System.Drawing.Point(350, 12);
             this.simpleButtonManufacturingOrderSave.MinimumSize = new System.Drawing.Size(120, 0);
             this.simpleButtonManufacturingOrderSave.Name = "simpleButtonManufacturingOrderSave";
-            this.simpleButtonManufacturingOrderSave.Size = new System.Drawing.Size(122, 22);
+            this.simpleButtonManufacturingOrderSave.Size = new System.Drawing.Size(120, 22);
             this.simpleButtonManufacturingOrderSave.StyleController = this.layoutControlManufacturingOrder;
             this.simpleButtonManufacturingOrderSave.TabIndex = 2;
             this.simpleButtonManufacturingOrderSave.Text = "Save Changes";
@@ -2943,7 +2943,7 @@ namespace MES
             this.comboBoxEditManufacturingOrderProductListing.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditManufacturingOrderProductListing.Properties.ImmediatePopup = true;
-            this.comboBoxEditManufacturingOrderProductListing.Size = new System.Drawing.Size(260, 20);
+            this.comboBoxEditManufacturingOrderProductListing.Size = new System.Drawing.Size(255, 20);
             this.comboBoxEditManufacturingOrderProductListing.StyleController = this.layoutControlManufacturingOrder;
             this.comboBoxEditManufacturingOrderProductListing.TabIndex = 2;
             // 
@@ -2960,14 +2960,14 @@ namespace MES
             this.layoutControlItem31,
             this.emptySpaceItem19});
             this.layoutControlGroup27.Name = "Root";
-            this.layoutControlGroup27.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControlGroup27.Size = new System.Drawing.Size(1211, 1196);
             // 
             // splitterItem10
             // 
             this.splitterItem10.AllowHotTrack = true;
             this.splitterItem10.Location = new System.Drawing.Point(0, 494);
             this.splitterItem10.Name = "splitterItem10";
-            this.splitterItem10.Size = new System.Drawing.Size(1208, 10);
+            this.splitterItem10.Size = new System.Drawing.Size(1191, 10);
             // 
             // layoutControlGroup29
             // 
@@ -2977,7 +2977,7 @@ namespace MES
             this.layoutControlGroup29.Location = new System.Drawing.Point(0, 26);
             this.layoutControlGroup29.Name = "layoutControlGroup29";
             this.layoutControlGroup29.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutControlGroup29.Size = new System.Drawing.Size(1208, 468);
+            this.layoutControlGroup29.Size = new System.Drawing.Size(1191, 468);
             this.layoutControlGroup29.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup29.Text = "Manufacturing Order";
             // 
@@ -2986,7 +2986,7 @@ namespace MES
             this.layoutControlItem26.Control = this.gridControlManufacturingOrder;
             this.layoutControlItem26.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(1198, 433);
+            this.layoutControlItem26.Size = new System.Drawing.Size(1181, 433);
             this.layoutControlItem26.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem26.TextVisible = false;
             // 
@@ -2997,7 +2997,7 @@ namespace MES
             this.emptySpaceItem14});
             this.layoutControlGroup30.Location = new System.Drawing.Point(0, 504);
             this.layoutControlGroup30.Name = "layoutControlGroup30";
-            this.layoutControlGroup30.Size = new System.Drawing.Size(1208, 672);
+            this.layoutControlGroup30.Size = new System.Drawing.Size(1191, 672);
             this.layoutControlGroup30.Text = "Actions";
             // 
             // emptySpaceItem14
@@ -3005,15 +3005,15 @@ namespace MES
             this.emptySpaceItem14.AllowHotTrack = false;
             this.emptySpaceItem14.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem14.Name = "emptySpaceItem14";
-            this.emptySpaceItem14.Size = new System.Drawing.Size(1184, 623);
+            this.emptySpaceItem14.Size = new System.Drawing.Size(1167, 623);
             this.emptySpaceItem14.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem18
             // 
             this.emptySpaceItem18.AllowHotTrack = false;
-            this.emptySpaceItem18.Location = new System.Drawing.Point(469, 0);
+            this.emptySpaceItem18.Location = new System.Drawing.Point(462, 0);
             this.emptySpaceItem18.Name = "emptySpaceItem18";
-            this.emptySpaceItem18.Size = new System.Drawing.Size(739, 26);
+            this.emptySpaceItem18.Size = new System.Drawing.Size(729, 26);
             this.emptySpaceItem18.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem32
@@ -3021,23 +3021,23 @@ namespace MES
             this.layoutControlItem32.Control = this.comboBoxEditManufacturingOrderProductListing;
             this.layoutControlItem32.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem32.Name = "layoutControlItem32";
-            this.layoutControlItem32.Size = new System.Drawing.Size(323, 26);
+            this.layoutControlItem32.Size = new System.Drawing.Size(318, 26);
             this.layoutControlItem32.Text = "Product:";
             this.layoutControlItem32.TextSize = new System.Drawing.Size(47, 14);
             // 
             // layoutControlItem31
             // 
             this.layoutControlItem31.Control = this.simpleButtonManufacturingOrderSave;
-            this.layoutControlItem31.Location = new System.Drawing.Point(343, 0);
+            this.layoutControlItem31.Location = new System.Drawing.Point(338, 0);
             this.layoutControlItem31.Name = "layoutControlItem31";
-            this.layoutControlItem31.Size = new System.Drawing.Size(126, 26);
+            this.layoutControlItem31.Size = new System.Drawing.Size(124, 26);
             this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem31.TextVisible = false;
             // 
             // emptySpaceItem19
             // 
             this.emptySpaceItem19.AllowHotTrack = false;
-            this.emptySpaceItem19.Location = new System.Drawing.Point(323, 0);
+            this.emptySpaceItem19.Location = new System.Drawing.Point(318, 0);
             this.emptySpaceItem19.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem19.MinSize = new System.Drawing.Size(20, 10);
             this.emptySpaceItem19.Name = "emptySpaceItem19";
@@ -3061,7 +3061,7 @@ namespace MES
             this.panelControlBOM.Location = new System.Drawing.Point(0, 0);
             this.panelControlBOM.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlBOM.Name = "panelControlBOM";
-            this.panelControlBOM.Size = new System.Drawing.Size(1232, 1200);
+            this.panelControlBOM.Size = new System.Drawing.Size(1215, 1200);
             this.panelControlBOM.TabIndex = 0;
             // 
             // layoutControl5
@@ -3080,16 +3080,16 @@ namespace MES
             this.layoutControl5.Name = "layoutControl5";
             this.layoutControl5.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(565, 390, 650, 400);
             this.layoutControl5.Root = this.layoutControlGroup21;
-            this.layoutControl5.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControl5.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControl5.TabIndex = 7;
             this.layoutControl5.Text = "layoutControl5";
             // 
             // simpleButtonBOMAddMaterial
             // 
-            this.simpleButtonBOMAddMaterial.Location = new System.Drawing.Point(667, 12);
+            this.simpleButtonBOMAddMaterial.Location = new System.Drawing.Point(658, 12);
             this.simpleButtonBOMAddMaterial.MaximumSize = new System.Drawing.Size(116, 0);
             this.simpleButtonBOMAddMaterial.Name = "simpleButtonBOMAddMaterial";
-            this.simpleButtonBOMAddMaterial.Size = new System.Drawing.Size(112, 22);
+            this.simpleButtonBOMAddMaterial.Size = new System.Drawing.Size(110, 22);
             this.simpleButtonBOMAddMaterial.StyleController = this.layoutControl5;
             this.simpleButtonBOMAddMaterial.TabIndex = 4;
             this.simpleButtonBOMAddMaterial.Text = "Add material";
@@ -3099,7 +3099,7 @@ namespace MES
             // 
             this.simpleButton2.Location = new System.Drawing.Point(12, 1162);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(1204, 22);
+            this.simpleButton2.Size = new System.Drawing.Size(1187, 22);
             this.simpleButton2.StyleController = this.layoutControl5;
             this.simpleButton2.TabIndex = 9;
             this.simpleButton2.Text = "simpleButton2";
@@ -3108,7 +3108,7 @@ namespace MES
             // 
             this.simpleButton1.Location = new System.Drawing.Point(12, 1136);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(1204, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(1187, 22);
             this.simpleButton1.StyleController = this.layoutControl5;
             this.simpleButton1.TabIndex = 8;
             this.simpleButton1.Text = "simpleButton1";
@@ -3141,7 +3141,7 @@ namespace MES
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1180, 246);
+            this.tablePanel1.Size = new System.Drawing.Size(1163, 246);
             this.tablePanel1.TabIndex = 7;
             // 
             // linkLabel1
@@ -3158,10 +3158,10 @@ namespace MES
             // 
             // simpleButtonBOMAddProduct
             // 
-            this.simpleButtonBOMAddProduct.Location = new System.Drawing.Point(532, 12);
+            this.simpleButtonBOMAddProduct.Location = new System.Drawing.Point(525, 12);
             this.simpleButtonBOMAddProduct.MaximumSize = new System.Drawing.Size(116, 0);
             this.simpleButtonBOMAddProduct.Name = "simpleButtonBOMAddProduct";
-            this.simpleButtonBOMAddProduct.Size = new System.Drawing.Size(112, 22);
+            this.simpleButtonBOMAddProduct.Size = new System.Drawing.Size(110, 22);
             this.simpleButtonBOMAddProduct.StyleController = this.layoutControl5;
             this.simpleButtonBOMAddProduct.TabIndex = 3;
             this.simpleButtonBOMAddProduct.Text = "Add Product";
@@ -3169,14 +3169,14 @@ namespace MES
             // 
             // searchControlBOM
             // 
-            this.searchControlBOM.Location = new System.Drawing.Point(224, 12);
+            this.searchControlBOM.Location = new System.Drawing.Point(221, 12);
             this.searchControlBOM.MaximumSize = new System.Drawing.Size(296, 0);
             this.searchControlBOM.MenuManager = this.toolbarFormManager1;
             this.searchControlBOM.Name = "searchControlBOM";
             this.searchControlBOM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControlBOM.Size = new System.Drawing.Size(285, 20);
+            this.searchControlBOM.Size = new System.Drawing.Size(281, 20);
             this.searchControlBOM.StyleController = this.layoutControl5;
             this.searchControlBOM.TabIndex = 2;
             // 
@@ -3188,17 +3188,17 @@ namespace MES
             this.dropDownButtonBOM.MaximumSize = new System.Drawing.Size(196, 0);
             this.dropDownButtonBOM.MenuManager = this.toolbarFormManager1;
             this.dropDownButtonBOM.Name = "dropDownButtonBOM";
-            this.dropDownButtonBOM.Size = new System.Drawing.Size(189, 22);
+            this.dropDownButtonBOM.Size = new System.Drawing.Size(186, 22);
             this.dropDownButtonBOM.StyleController = this.layoutControl5;
             this.dropDownButtonBOM.TabIndex = 0;
             this.dropDownButtonBOM.Text = "dropDownButtonBOM";
             // 
             // simpleButtonBOMSave
             // 
-            this.simpleButtonBOMSave.Location = new System.Drawing.Point(802, 12);
+            this.simpleButtonBOMSave.Location = new System.Drawing.Point(791, 12);
             this.simpleButtonBOMSave.MaximumSize = new System.Drawing.Size(116, 0);
             this.simpleButtonBOMSave.Name = "simpleButtonBOMSave";
-            this.simpleButtonBOMSave.Size = new System.Drawing.Size(112, 22);
+            this.simpleButtonBOMSave.Size = new System.Drawing.Size(110, 22);
             this.simpleButtonBOMSave.StyleController = this.layoutControl5;
             this.simpleButtonBOMSave.TabIndex = 5;
             this.simpleButtonBOMSave.Text = "Save Changes";
@@ -3223,7 +3223,7 @@ namespace MES
             this.layoutControlItem16,
             this.emptySpaceItem8});
             this.layoutControlGroup21.Name = "Root";
-            this.layoutControlGroup21.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControlGroup21.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControlGroup21.TextVisible = false;
             // 
             // layoutControlGroup22
@@ -3238,7 +3238,7 @@ namespace MES
             this.layoutControlGroup22.Location = new System.Drawing.Point(0, 26);
             this.layoutControlGroup22.Name = "layoutControlGroup22";
             this.layoutControlGroup22.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup22.Size = new System.Drawing.Size(1208, 1098);
+            this.layoutControlGroup22.Size = new System.Drawing.Size(1191, 1098);
             this.layoutControlGroup22.Text = "Product Listing";
             // 
             // layoutControlItem23
@@ -3246,7 +3246,7 @@ namespace MES
             this.layoutControlItem23.Control = this.gridControlBOM;
             this.layoutControlItem23.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(1196, 403);
+            this.layoutControlItem23.Size = new System.Drawing.Size(1179, 403);
             this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem23.TextVisible = false;
             // 
@@ -3255,7 +3255,7 @@ namespace MES
             this.emptySpaceItem12.AllowHotTrack = false;
             this.emptySpaceItem12.Location = new System.Drawing.Point(0, 710);
             this.emptySpaceItem12.Name = "emptySpaceItem12";
-            this.emptySpaceItem12.Size = new System.Drawing.Size(1196, 351);
+            this.emptySpaceItem12.Size = new System.Drawing.Size(1179, 351);
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem8
@@ -3263,7 +3263,7 @@ namespace MES
             this.splitterItem8.AllowHotTrack = true;
             this.splitterItem8.Location = new System.Drawing.Point(0, 403);
             this.splitterItem8.Name = "splitterItem8";
-            this.splitterItem8.Size = new System.Drawing.Size(1196, 10);
+            this.splitterItem8.Size = new System.Drawing.Size(1179, 10);
             // 
             // layoutControlGroup23
             // 
@@ -3277,7 +3277,7 @@ namespace MES
             this.layoutControlGroup23.Location = new System.Drawing.Point(0, 413);
             this.layoutControlGroup23.Name = "layoutControlGroup23";
             this.layoutControlGroup23.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup23.Size = new System.Drawing.Size(1196, 297);
+            this.layoutControlGroup23.Size = new System.Drawing.Size(1179, 297);
             this.layoutControlGroup23.Text = "Actions";
             // 
             // layoutControlItem18
@@ -3285,7 +3285,7 @@ namespace MES
             this.layoutControlItem18.Control = this.tablePanel1;
             this.layoutControlItem18.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(1184, 250);
+            this.layoutControlItem18.Size = new System.Drawing.Size(1167, 250);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
             // 
@@ -3294,21 +3294,21 @@ namespace MES
             this.splitterItem9.AllowHotTrack = true;
             this.splitterItem9.Location = new System.Drawing.Point(0, 250);
             this.splitterItem9.Name = "splitterItem9";
-            this.splitterItem9.Size = new System.Drawing.Size(1184, 10);
+            this.splitterItem9.Size = new System.Drawing.Size(1167, 10);
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.dropDownButtonBOM;
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(193, 26);
+            this.layoutControlItem15.Size = new System.Drawing.Size(190, 26);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(193, 0);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(190, 0);
             this.emptySpaceItem9.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem9.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
@@ -3319,16 +3319,16 @@ namespace MES
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.searchControlBOM;
-            this.layoutControlItem17.Location = new System.Drawing.Point(212, 0);
+            this.layoutControlItem17.Location = new System.Drawing.Point(209, 0);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(289, 26);
+            this.layoutControlItem17.Size = new System.Drawing.Size(285, 26);
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
             // 
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(501, 0);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(494, 0);
             this.emptySpaceItem10.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem10.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
@@ -3339,9 +3339,9 @@ namespace MES
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.simpleButtonBOMAddProduct;
-            this.layoutControlItem8.Location = new System.Drawing.Point(520, 0);
+            this.layoutControlItem8.Location = new System.Drawing.Point(513, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(116, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -3350,7 +3350,7 @@ namespace MES
             this.layoutControlItem19.Control = this.simpleButton1;
             this.layoutControlItem19.Location = new System.Drawing.Point(0, 1124);
             this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(1208, 26);
+            this.layoutControlItem19.Size = new System.Drawing.Size(1191, 26);
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem19.TextVisible = false;
             // 
@@ -3359,23 +3359,23 @@ namespace MES
             this.layoutControlItem24.Control = this.simpleButton2;
             this.layoutControlItem24.Location = new System.Drawing.Point(0, 1150);
             this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(1208, 26);
+            this.layoutControlItem24.Size = new System.Drawing.Size(1191, 26);
             this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem24.TextVisible = false;
             // 
             // layoutControlItem25
             // 
             this.layoutControlItem25.Control = this.simpleButtonBOMAddMaterial;
-            this.layoutControlItem25.Location = new System.Drawing.Point(655, 0);
+            this.layoutControlItem25.Location = new System.Drawing.Point(646, 0);
             this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(116, 26);
+            this.layoutControlItem25.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem25.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem25.TextVisible = false;
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(636, 0);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(627, 0);
             this.emptySpaceItem7.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem7.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
@@ -3386,24 +3386,24 @@ namespace MES
             // emptySpaceItem13
             // 
             this.emptySpaceItem13.AllowHotTrack = false;
-            this.emptySpaceItem13.Location = new System.Drawing.Point(906, 0);
+            this.emptySpaceItem13.Location = new System.Drawing.Point(893, 0);
             this.emptySpaceItem13.Name = "emptySpaceItem13";
-            this.emptySpaceItem13.Size = new System.Drawing.Size(302, 26);
+            this.emptySpaceItem13.Size = new System.Drawing.Size(298, 26);
             this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.simpleButtonBOMSave;
-            this.layoutControlItem16.Location = new System.Drawing.Point(790, 0);
+            this.layoutControlItem16.Location = new System.Drawing.Point(779, 0);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(116, 26);
+            this.layoutControlItem16.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(771, 0);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(760, 0);
             this.emptySpaceItem8.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem8.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
@@ -3428,7 +3428,7 @@ namespace MES
             this.panelControlFinishedGoodsInventory.Location = new System.Drawing.Point(0, 0);
             this.panelControlFinishedGoodsInventory.MinimumSize = new System.Drawing.Size(0, 1200);
             this.panelControlFinishedGoodsInventory.Name = "panelControlFinishedGoodsInventory";
-            this.panelControlFinishedGoodsInventory.Size = new System.Drawing.Size(1232, 1200);
+            this.panelControlFinishedGoodsInventory.Size = new System.Drawing.Size(1215, 1200);
             this.panelControlFinishedGoodsInventory.TabIndex = 7;
             // 
             // layoutControl6
@@ -3441,7 +3441,7 @@ namespace MES
             this.layoutControl6.Name = "layoutControl6";
             this.layoutControl6.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(518, 413, 650, 400);
             this.layoutControl6.Root = this.layoutControlGroup25;
-            this.layoutControl6.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControl6.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControl6.TabIndex = 0;
             this.layoutControl6.Text = "layoutControl6";
             // 
@@ -3450,17 +3450,17 @@ namespace MES
             this.simpleButtonFinishedGoodsReserved.Location = new System.Drawing.Point(12, 12);
             this.simpleButtonFinishedGoodsReserved.MinimumSize = new System.Drawing.Size(120, 0);
             this.simpleButtonFinishedGoodsReserved.Name = "simpleButtonFinishedGoodsReserved";
-            this.simpleButtonFinishedGoodsReserved.Size = new System.Drawing.Size(122, 22);
+            this.simpleButtonFinishedGoodsReserved.Size = new System.Drawing.Size(120, 22);
             this.simpleButtonFinishedGoodsReserved.StyleController = this.layoutControl6;
             this.simpleButtonFinishedGoodsReserved.TabIndex = 15;
             this.simpleButtonFinishedGoodsReserved.Text = "(Reserved)";
             // 
             // simpleButtonFinishedGoodsSave
             // 
-            this.simpleButtonFinishedGoodsSave.Location = new System.Drawing.Point(158, 12);
+            this.simpleButtonFinishedGoodsSave.Location = new System.Drawing.Point(156, 12);
             this.simpleButtonFinishedGoodsSave.MinimumSize = new System.Drawing.Size(120, 0);
             this.simpleButtonFinishedGoodsSave.Name = "simpleButtonFinishedGoodsSave";
-            this.simpleButtonFinishedGoodsSave.Size = new System.Drawing.Size(122, 22);
+            this.simpleButtonFinishedGoodsSave.Size = new System.Drawing.Size(120, 22);
             this.simpleButtonFinishedGoodsSave.StyleController = this.layoutControl6;
             this.simpleButtonFinishedGoodsSave.TabIndex = 15;
             this.simpleButtonFinishedGoodsSave.Text = "Save Changes";
@@ -3472,7 +3472,7 @@ namespace MES
             this.gridControlFinishedGoods.Location = new System.Drawing.Point(17, 68);
             this.gridControlFinishedGoods.MainView = this.gridViewFinishedGoods;
             this.gridControlFinishedGoods.Name = "gridControlFinishedGoods";
-            this.gridControlFinishedGoods.Size = new System.Drawing.Size(1194, 421);
+            this.gridControlFinishedGoods.Size = new System.Drawing.Size(1177, 421);
             this.gridControlFinishedGoods.TabIndex = 4;
             this.gridControlFinishedGoods.UseEmbeddedNavigator = true;
             this.gridControlFinishedGoods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -3641,7 +3641,7 @@ namespace MES
             this.layoutControlItem27,
             this.emptySpaceItem15});
             this.layoutControlGroup25.Name = "Root";
-            this.layoutControlGroup25.Size = new System.Drawing.Size(1228, 1196);
+            this.layoutControlGroup25.Size = new System.Drawing.Size(1211, 1196);
             this.layoutControlGroup25.TextVisible = false;
             // 
             // layoutControlGroup17
@@ -3652,7 +3652,7 @@ namespace MES
             this.layoutControlGroup17.Location = new System.Drawing.Point(0, 26);
             this.layoutControlGroup17.Name = "layoutControlGroup17";
             this.layoutControlGroup17.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutControlGroup17.Size = new System.Drawing.Size(1208, 460);
+            this.layoutControlGroup17.Size = new System.Drawing.Size(1191, 460);
             this.layoutControlGroup17.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup17.Text = "Finished Goods Inventory";
             // 
@@ -3661,7 +3661,7 @@ namespace MES
             this.layoutControlItem21.Control = this.gridControlFinishedGoods;
             this.layoutControlItem21.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(1198, 425);
+            this.layoutControlItem21.Size = new System.Drawing.Size(1181, 425);
             this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem21.TextVisible = false;
             // 
@@ -3670,7 +3670,7 @@ namespace MES
             this.layoutControlGroup28.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroup28.Location = new System.Drawing.Point(0, 496);
             this.layoutControlGroup28.Name = "layoutControlGroup28";
-            this.layoutControlGroup28.Size = new System.Drawing.Size(1208, 680);
+            this.layoutControlGroup28.Size = new System.Drawing.Size(1191, 680);
             this.layoutControlGroup28.Text = "Actions";
             // 
             // splitterItem7
@@ -3678,21 +3678,21 @@ namespace MES
             this.splitterItem7.AllowHotTrack = true;
             this.splitterItem7.Location = new System.Drawing.Point(0, 486);
             this.splitterItem7.Name = "splitterItem7";
-            this.splitterItem7.Size = new System.Drawing.Size(1208, 10);
+            this.splitterItem7.Size = new System.Drawing.Size(1191, 10);
             // 
             // layoutControlItem28
             // 
             this.layoutControlItem28.Control = this.simpleButtonFinishedGoodsReserved;
             this.layoutControlItem28.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem28.Name = "layoutControlItem28";
-            this.layoutControlItem28.Size = new System.Drawing.Size(126, 26);
+            this.layoutControlItem28.Size = new System.Drawing.Size(124, 26);
             this.layoutControlItem28.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem28.TextVisible = false;
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(126, 0);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(124, 0);
             this.emptySpaceItem5.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem5.MinSize = new System.Drawing.Size(20, 10);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
@@ -3703,18 +3703,18 @@ namespace MES
             // layoutControlItem27
             // 
             this.layoutControlItem27.Control = this.simpleButtonFinishedGoodsSave;
-            this.layoutControlItem27.Location = new System.Drawing.Point(146, 0);
+            this.layoutControlItem27.Location = new System.Drawing.Point(144, 0);
             this.layoutControlItem27.Name = "layoutControlItem27";
-            this.layoutControlItem27.Size = new System.Drawing.Size(126, 26);
+            this.layoutControlItem27.Size = new System.Drawing.Size(124, 26);
             this.layoutControlItem27.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem27.TextVisible = false;
             // 
             // emptySpaceItem15
             // 
             this.emptySpaceItem15.AllowHotTrack = false;
-            this.emptySpaceItem15.Location = new System.Drawing.Point(272, 0);
+            this.emptySpaceItem15.Location = new System.Drawing.Point(268, 0);
             this.emptySpaceItem15.Name = "emptySpaceItem15";
-            this.emptySpaceItem15.Size = new System.Drawing.Size(936, 26);
+            this.emptySpaceItem15.Size = new System.Drawing.Size(923, 26);
             this.emptySpaceItem15.TextSize = new System.Drawing.Size(0, 0);
             // 
             // toolStripStatusLabel1

@@ -277,10 +277,6 @@ namespace MES
         }
         private void AfterInitialization()
         {
-            // Custom font
-            Font font = new Font(Program.myFontCollection.Families[0], 22f, FontStyle.Bold);
-            labelControlTitle.Font = font;
-
             // Set text
             ganttChartChartProjectLabel.Text = m_Manager.Name;
             layoutControlGroup9.Text = m_Manager.Name;
