@@ -268,6 +268,7 @@ namespace MES
 
             // Gantt chart styling
             setGanttChartColors();
+            setElementColors();
             UserLookAndFeel.Default.StyleChanged += Default_StyleChanged;
 
             // Initialize other elements
@@ -278,12 +279,21 @@ namespace MES
         private void Default_StyleChanged(object sender, EventArgs e)
         {
             setGanttChartColors();
+            setElementColors();
+        }
+
+        private void setElementColors()
+        {
+            panelControlMain.Appearance.ForeColor = CommonSkins.GetSkin(this.LookAndFeel).SvgPalettes["DefaultSkinPalette"]["Paint High"].Value;
+            panelControlMain.Appearance.BackColor = CommonSkins.GetSkin(this.LookAndFeel).SvgPalettes["DefaultSkinPalette"]["Paint High"].Value;
         }
 
         private void setGanttChartColors()
         {
             var commonSkin = CommonSkins.GetSkin(this.LookAndFeel);
             var svgPalette = commonSkin.SvgPalettes["DefaultSkinPalette"];
+
+            ganttChartChart.BackColor = svgPalette["Paint High"].Value;
 
             HeaderFormat headerFormat = ganttChartChart.HeaderFormat;
             headerFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
