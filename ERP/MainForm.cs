@@ -282,6 +282,7 @@ namespace MES
 
             // Set text
             ganttChartChartProjectLabel.Text = m_Manager.Name;
+            ganttChartChartProjectLabel.Height = ganttChartChart.HeaderOneHeight - 10;
             layoutControlGroup9.Text = m_Manager.Name;
 
             // Popup menus
