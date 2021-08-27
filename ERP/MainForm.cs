@@ -811,6 +811,13 @@ namespace MES
         {
             mM_PROC_MSTTableAdapter.Update(signes_MESDataSet);
         }
+
+        private void simpleButtonMOAddStep_Click(object sender, EventArgs e)
+        {
+            gridViewManufacturingOrder.ExpandMasterRow(gridViewManufacturingOrder.FocusedRowHandle);
+            CardView detailView = (gridViewManufacturingOrder.GetDetailView(gridViewManufacturingOrder.FocusedRowHandle, 0) as CardView);
+            detailView.AddNewRow();
+        }
     }
 
     #region overlay painter
