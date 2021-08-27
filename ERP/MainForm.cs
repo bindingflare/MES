@@ -43,6 +43,7 @@ namespace MES
         private Task m_SelectedTask;
         private DataColumn m_SelectedTaskColumn;
         private bool _IsSearchScroll = false;
+        private bool comboListingPopupActive = false;
 
         public MainForm()
         {
@@ -238,7 +239,7 @@ namespace MES
 
             _FormatTreeList();
 
-            ganttChartChartTreeList.RowHeight = ganttChartChart.BarSpacing;
+            ganttChartChartTreeList.RowHeight = ganttChartChart.BarSpacing - 5;
             ganttChartChartTreeList.Columns.ElementAt(0).Width = 200;
             ganttChartChartTreeList.ExpandAll();
 
@@ -282,7 +283,7 @@ namespace MES
 
             // Set text
             ganttChartChartProjectLabel.Text = m_Manager.Name;
-            ganttChartChartProjectLabel.Height = ganttChartChart.HeaderOneHeight - 10;
+            ganttChartChartTreeListTableLayoutPanel.RowStyles[0].Height = ganttChartChart.HeaderOneHeight - 6;
             layoutControlGroup9.Text = m_Manager.Name;
 
             // Popup menus
@@ -316,9 +317,44 @@ namespace MES
             cardViewMaterialDetail.InitNewRow += cardDetailView_InitNewRow;
 
             // manufacturing order product search
-            comboBoxEditManufacturingOrderProductListing.TextChanged += TextEditManufacturingOrderSelect_TextChanged;
-            comboBoxEditManufacturingOrderProductListing.SelectedIndexChanged += ComboBoxEditManufacturingOrderProductListing_SelectedIndexChanged;
-            generateProductList("");
+            //comboBoxEditManufacturingOrderProductListing.TextChanged += TextEditManufacturingOrderSelect_TextChanged;
+            lookUpEditMOProductFilter.EditValue = null;
+            lookUpEditMOProductFilter.EditValueChanged += LookUpEditMOProductFilter_EditValueChanged;
+
+            lookUpEditMOProductFilter.QueryPopUp += LookUpEditMOProductFilter_QueryPopUp;
+        }
+
+        private void LookUpEditMOProductFilter_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            lookUpEditMOProductFilter.Properties.PopupFormMinSize = new Size(1000, 200);
+
+            GridColumnCollection collection = lookUpEditMOProductFilter.Properties.View.Columns;
+            collection["PROD_CLASS_CODE"].Visible = false;
+            collection["DEL_YN"].Visible = false;
+            collection["REASON_CODE"].Visible = false;
+            collection["CREATE_USER_ID"].Visible = false;
+            collection["CREATE_DATE"].Visible = false;
+            collection["UPDATE_USER_ID"].Visible = false;
+            collection["UPDATE_DATE"].Visible = false;
+
+            collection["PROC_ID"].Visible = false;
+            collection["SITE_ID"].Visible = false;
+        }
+
+        private void LookUpEditMOProductFilter_EditValueChanged(object sender, EventArgs e)
+        {
+            string filterText = (string)lookUpEditMOProductFilter.EditValue;
+
+            if(filterText != null)
+            {
+                ColumnFilterInfo filter = new ColumnFilterInfo("[PROD_ID] = '" + filterText + "'");
+                gridViewManufacturingOrder.ActiveFilter.Add(gridViewManufacturingOrder.Columns["PROD_ID"], filter);
+            }
+            else
+            {
+                // clear all filters
+                gridViewManufacturingOrder.ClearColumnsFilter();
+            }
         }
 
         private void Default_StyleChanged(object sender, EventArgs e)
@@ -335,7 +371,7 @@ namespace MES
             panelControlMain.Appearance.BackColor = svgPalette["Paint High"].Value;
             panelControlMain.Appearance.BackColor2 = svgPalette["Paint Shadow"].Value;
             labelControlTitle.ForeColor = svgPalette["Key Brush Light"].Value;
-            
+
             //panelControlMain.LookAndFeel.Color
         }
 
@@ -368,56 +404,6 @@ namespace MES
             ganttChartChart.RelationFormat = relationFormat;
         }
 
-        private void ComboBoxEditManufacturingOrderProductListing_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string filterText = comboBoxEditManufacturingOrderProductListing.SelectedItem.ToString();
-
-            ColumnView view = gridViewManufacturingOrder;
-
-            ColumnFilterInfo filter = new ColumnFilterInfo("[PROD_ID] = '" + filterText + "'");
-            view.ActiveFilter.Add(view.Columns["PROD_ID"], filter);
-        }
-
-        private void TextEditManufacturingOrderSelect_TextChanged(object sender, EventArgs e)
-        {
-            ComboBoxItemCollection collection = comboBoxEditManufacturingOrderProductListing.Properties.Items;
-            collection.BeginUpdate();
-            try
-            {
-                var products = generateProductList(comboBoxEditManufacturingOrderProductListing.Text);
-
-                collection.Clear();
-                foreach(string str in products)
-                {
-                    collection.Add(str);
-                }
-            }
-            finally
-            {
-                collection.EndUpdate();
-            }
-
-            comboBoxEditManufacturingOrderProductListing.ShowPopup();
-        }
-
-        private List<string> generateProductList(string search)
-        {
-            var products = new List<string>();
-
-            var dataTable = PRODUCT_MSTTableAdapter.GetData();
-            foreach(var row in dataTable)
-            {
-                string prodID = (string) row[dataTable.PROD_IDColumn];
-
-                if(CultureInfo.InvariantCulture.CompareInfo.IndexOf(prodID, search, CompareOptions.IgnoreCase) >= 0)
-                {
-                    products.Add(prodID);
-                }
-            }
-
-            return products;
-        }
-
         private void MainForm_CustomUnboundColumnData(object sender, CustomColumnDataEventArgs e)
         {
             // NOTE: To be replaced by object data if converted to business objects first.
@@ -427,8 +413,7 @@ namespace MES
         private void cardDetailView_InitNewRow(object sender, InitNewRowEventArgs e)
         {
             CardView view = sender as CardView;
-
-
+            
             //view.SetRowCellValue(e.RowHandle, view.Columns["PROD_ID"], DateTime.Today);
         }
 
@@ -791,8 +776,6 @@ namespace MES
         {
             tabPane1.SelectedPage = tabNavigationPage1;
         }
-
-
 
         private void UpdateDropDownButton(BarItem item)
         {

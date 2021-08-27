@@ -32,20 +32,20 @@ namespace MES
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.TileItemElement tileItemElement37 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.XtraEditors.TileItemElement tileItemElement38 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement39 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement40 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement41 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement42 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement43 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement44 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement45 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             this.cardViewMaterialDetail = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colMATERIAL_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMATERIAL_NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -298,7 +298,8 @@ namespace MES
             this.panelControlManufacturingOrder = new DevExpress.XtraEditors.PanelControl();
             this.layoutControlManufacturingOrder = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButtonManufacturingOrderSave = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBoxEditManufacturingOrderProductListing = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.lookUpEditMOProductFilter = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup27 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.splitterItem10 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlGroup29 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -306,9 +307,9 @@ namespace MES
             this.layoutControlGroup30 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem14 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem18 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem32 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem19 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem33 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlBOM = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
@@ -373,6 +374,7 @@ namespace MES
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem15 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.mMPROCMSTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.fINISHEDMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mMPROCSTEPBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -395,6 +397,7 @@ namespace MES
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.productPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.mMPROCMSTMMPROCSTEPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cardViewMaterialDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPRODMSTBindingSource)).BeginInit();
@@ -505,7 +508,8 @@ namespace MES
             this.panelControlManufacturingOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlManufacturingOrder)).BeginInit();
             this.layoutControlManufacturingOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditManufacturingOrderProductListing.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditMOProductFilter.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup29)).BeginInit();
@@ -513,9 +517,9 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBOM)).BeginInit();
             this.panelControlBOM.SuspendLayout();
@@ -561,6 +565,7 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMPROCMSTBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPROCSTEPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -570,6 +575,7 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productPopupMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMPROCMSTMMPROCSTEPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cardViewMaterialDetail
@@ -741,10 +747,10 @@ namespace MES
             // gridControlBOM
             // 
             this.gridControlBOM.DataSource = this.mMPRODMSTBindingSource;
-            gridLevelNode3.LevelTemplate = this.cardViewMaterialDetail;
-            gridLevelNode3.RelationName = "MM_PROD_MST_MATERIAL_MST";
+            gridLevelNode1.LevelTemplate = this.cardViewMaterialDetail;
+            gridLevelNode1.RelationName = "MM_PROD_MST_MATERIAL_MST";
             this.gridControlBOM.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode1});
             this.gridControlBOM.Location = new System.Drawing.Point(18, 69);
             this.gridControlBOM.MainView = this.gridViewProductListing;
             this.gridControlBOM.MenuManager = this.toolbarFormManager1;
@@ -1166,15 +1172,15 @@ namespace MES
             // gridControlManufacturingOrder
             // 
             this.gridControlManufacturingOrder.DataSource = this.mMPROCMSTBindingSource;
-            gridLevelNode1.LevelTemplate = this.gridViewProcessStep;
-            gridLevelNode1.RelationName = "MM_PROC_MST_MM_PROC_STEP";
+            gridLevelNode2.LevelTemplate = this.gridViewProcessStep;
+            gridLevelNode2.RelationName = "MM_PROC_MST_MM_PROC_STEP";
             this.gridControlManufacturingOrder.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControlManufacturingOrder.Location = new System.Drawing.Point(17, 68);
             this.gridControlManufacturingOrder.MainView = this.gridViewManufacturingOrder;
             this.gridControlManufacturingOrder.MenuManager = this.toolbarFormManager1;
             this.gridControlManufacturingOrder.Name = "gridControlManufacturingOrder";
-            this.gridControlManufacturingOrder.Size = new System.Drawing.Size(1194, 466);
+            this.gridControlManufacturingOrder.Size = new System.Drawing.Size(1177, 466);
             this.gridControlManufacturingOrder.TabIndex = 15;
             this.gridControlManufacturingOrder.UseEmbeddedNavigator = true;
             this.gridControlManufacturingOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1809,31 +1815,31 @@ namespace MES
             this.tileGanttChart.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(60)))));
             this.tileGanttChart.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileGanttChart.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement37.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement37.ImageOptions.ImageSize = new System.Drawing.Size(64, 64);
-            tileItemElement37.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
-            tileItemElement37.Text = "Gantt Chart";
-            this.tileGanttChart.Elements.Add(tileItemElement37);
+            tileItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement1.ImageOptions.ImageSize = new System.Drawing.Size(64, 64);
+            tileItemElement1.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
+            tileItemElement1.Text = "Gantt Chart";
+            this.tileGanttChart.Elements.Add(tileItemElement1);
             this.tileGanttChart.Id = 12;
             this.tileGanttChart.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileGanttChart.Name = "tileGanttChart";
-            toolTipItem5.Text = "View the current tasks";
-            superToolTip5.Items.Add(toolTipItem5);
-            this.tileGanttChart.SuperTip = superToolTip5;
+            toolTipItem1.Text = "View the current tasks";
+            superToolTip1.Items.Add(toolTipItem1);
+            this.tileGanttChart.SuperTip = superToolTip1;
             this.tileGanttChart.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem12_ItemClick);
             // 
             // tileItem2
             // 
-            tileItemElement38.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement38);
+            tileItemElement2.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement2);
             this.tileItem2.Id = 1;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem2.Name = "tileItem2";
             // 
             // tileItem1
             // 
-            tileItemElement39.Text = "tileItem1";
-            this.tileItem1.Elements.Add(tileItemElement39);
+            tileItemElement3.Text = "tileItem1";
+            this.tileItem1.Elements.Add(tileItemElement3);
             this.tileItem1.Id = 11;
             this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem1.Name = "tileItem1";
@@ -1852,9 +1858,9 @@ namespace MES
             this.tileInventory.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(0)))), ((int)(((byte)(142)))));
             this.tileInventory.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileInventory.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement40.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
-            tileItemElement40.Text = "Inventory";
-            this.tileInventory.Elements.Add(tileItemElement40);
+            tileItemElement4.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
+            tileItemElement4.Text = "Inventory";
+            this.tileInventory.Elements.Add(tileItemElement4);
             this.tileInventory.Id = 3;
             this.tileInventory.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileInventory.Name = "tileInventory";
@@ -1867,9 +1873,9 @@ namespace MES
             this.tileEventM.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(180)))));
             this.tileEventM.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileEventM.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement41.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
-            tileItemElement41.Text = "Jobs";
-            this.tileEventM.Elements.Add(tileItemElement41);
+            tileItemElement5.ImageOptions.SvgImageSize = new System.Drawing.Size(48, 48);
+            tileItemElement5.Text = "Jobs";
+            this.tileEventM.Elements.Add(tileItemElement5);
             this.tileEventM.Id = 7;
             this.tileEventM.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileEventM.Name = "tileEventM";
@@ -1877,8 +1883,8 @@ namespace MES
             // 
             // tileItem7
             // 
-            tileItemElement42.Text = "tileItem7";
-            this.tileItem7.Elements.Add(tileItemElement42);
+            tileItemElement6.Text = "tileItem7";
+            this.tileItem7.Elements.Add(tileItemElement6);
             this.tileItem7.Id = 6;
             this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem7.Name = "tileItem7";
@@ -1892,24 +1898,24 @@ namespace MES
             // 
             // tileItem4
             // 
-            tileItemElement43.Text = "tileItem4";
-            this.tileItem4.Elements.Add(tileItemElement43);
+            tileItemElement7.Text = "tileItem4";
+            this.tileItem4.Elements.Add(tileItemElement7);
             this.tileItem4.Id = 14;
             this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem4.Name = "tileItem4";
             // 
             // tileItem3
             // 
-            tileItemElement44.Text = "tileItem3";
-            this.tileItem3.Elements.Add(tileItemElement44);
+            tileItemElement8.Text = "tileItem3";
+            this.tileItem3.Elements.Add(tileItemElement8);
             this.tileItem3.Id = 13;
             this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem3.Name = "tileItem3";
             // 
             // tileItem5
             // 
-            tileItemElement45.Text = "tileItem5";
-            this.tileItem5.Elements.Add(tileItemElement45);
+            tileItemElement9.Text = "tileItem5";
+            this.tileItem5.Elements.Add(tileItemElement9);
             this.tileItem5.Id = 15;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem5.Name = "tileItem5";
@@ -2035,7 +2041,7 @@ namespace MES
             this.panelControlProductionMonitor.Location = new System.Drawing.Point(0, 0);
             this.panelControlProductionMonitor.MinimumSize = new System.Drawing.Size(0, 1071);
             this.panelControlProductionMonitor.Name = "panelControlProductionMonitor";
-            this.panelControlProductionMonitor.Size = new System.Drawing.Size(1215, 1071);
+            this.panelControlProductionMonitor.Size = new System.Drawing.Size(1232, 1071);
             this.panelControlProductionMonitor.TabIndex = 1;
             // 
             // layoutControl1
@@ -2049,7 +2055,7 @@ namespace MES
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(760, 264, 650, 718);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1211, 1067);
+            this.layoutControl1.Size = new System.Drawing.Size(1228, 1067);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -2082,22 +2088,22 @@ namespace MES
             this.ganttChartChartSplitContainer.Panel2.Controls.Add(this.ganttChartChart);
             this.ganttChartChartSplitContainer.Panel2.MinSize = 200;
             this.ganttChartChartSplitContainer.Panel2.Text = "Panel2";
-            this.ganttChartChartSplitContainer.Size = new System.Drawing.Size(1185, 478);
+            this.ganttChartChartSplitContainer.Size = new System.Drawing.Size(1202, 478);
             this.ganttChartChartSplitContainer.SplitterPosition = 375;
             this.ganttChartChartSplitContainer.TabIndex = 4;
             // 
             // ganttChartChartTreeListTableLayoutPanel
             // 
             this.ganttChartChartTreeListTableLayoutPanel.ColumnCount = 1;
-            this.ganttChartChartTreeListTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ganttChartChartTreeListTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ganttChartChartTreeListTableLayoutPanel.Controls.Add(this.ganttChartChartProjectLabel, 0, 0);
             this.ganttChartChartTreeListTableLayoutPanel.Controls.Add(this.ganttChartChartTreeList, 0, 1);
             this.ganttChartChartTreeListTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ganttChartChartTreeListTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.ganttChartChartTreeListTableLayoutPanel.Name = "ganttChartChartTreeListTableLayoutPanel";
             this.ganttChartChartTreeListTableLayoutPanel.RowCount = 2;
-            this.ganttChartChartTreeListTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.366071F));
-            this.ganttChartChartTreeListTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.63393F));
+            this.ganttChartChartTreeListTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.ganttChartChartTreeListTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.ganttChartChartTreeListTableLayoutPanel.Size = new System.Drawing.Size(375, 478);
             this.ganttChartChartTreeListTableLayoutPanel.TabIndex = 2;
             // 
@@ -2108,14 +2114,14 @@ namespace MES
             this.ganttChartChartProjectLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ganttChartChartProjectLabel.Location = new System.Drawing.Point(3, 3);
             this.ganttChartChartProjectLabel.Name = "ganttChartChartProjectLabel";
-            this.ganttChartChartProjectLabel.Size = new System.Drawing.Size(369, 29);
+            this.ganttChartChartProjectLabel.Size = new System.Drawing.Size(369, 34);
             this.ganttChartChartProjectLabel.TabIndex = 1;
             this.ganttChartChartProjectLabel.Text = "{project_title}";
             // 
             // ganttChartChartTreeList
             // 
             this.ganttChartChartTreeList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ganttChartChartTreeList.Location = new System.Drawing.Point(3, 38);
+            this.ganttChartChartTreeList.Location = new System.Drawing.Point(3, 43);
             this.ganttChartChartTreeList.MenuManager = this.toolbarFormManager1;
             this.ganttChartChartTreeList.Name = "ganttChartChartTreeList";
             this.ganttChartChartTreeList.OptionsView.AutoWidth = false;
@@ -2127,7 +2133,7 @@ namespace MES
             this.ganttChartChartOptionsPanel.AutoSize = true;
             this.ganttChartChartOptionsPanel.Controls.Add(this.m_TaskGrid);
             this.ganttChartChartOptionsPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ganttChartChartOptionsPanel.Location = new System.Drawing.Point(600, 0);
+            this.ganttChartChartOptionsPanel.Location = new System.Drawing.Point(617, 0);
             this.ganttChartChartOptionsPanel.MaximumSize = new System.Drawing.Size(350, 1371);
             this.ganttChartChartOptionsPanel.MinimumSize = new System.Drawing.Size(200, 0);
             this.ganttChartChartOptionsPanel.Name = "ganttChartChartOptionsPanel";
@@ -2154,7 +2160,7 @@ namespace MES
             this.ganttChartChart.Location = new System.Drawing.Point(0, 0);
             this.ganttChartChart.Margin = new System.Windows.Forms.Padding(0);
             this.ganttChartChart.Name = "ganttChartChart";
-            this.ganttChartChart.Size = new System.Drawing.Size(800, 478);
+            this.ganttChartChart.Size = new System.Drawing.Size(817, 478);
             this.ganttChartChart.TabIndex = 0;
             // 
             // ganttChartHyperLinkLabelControl1
@@ -2191,7 +2197,7 @@ namespace MES
             this.splitterItem5});
             this.Root.Name = "Root";
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 9, 9);
-            this.Root.Size = new System.Drawing.Size(1211, 1067);
+            this.Root.Size = new System.Drawing.Size(1228, 1067);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup7
@@ -2201,7 +2207,7 @@ namespace MES
             this.emptySpaceItem1});
             this.layoutControlGroup7.Location = new System.Drawing.Point(0, 635);
             this.layoutControlGroup7.Name = "layoutControlGroup7";
-            this.layoutControlGroup7.Size = new System.Drawing.Size(1195, 414);
+            this.layoutControlGroup7.Size = new System.Drawing.Size(1212, 414);
             this.layoutControlGroup7.Text = "Cards";
             // 
             // emptySpaceItem1
@@ -2209,7 +2215,7 @@ namespace MES
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1171, 365);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1188, 365);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup5
@@ -2221,7 +2227,7 @@ namespace MES
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(1195, 513);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(1212, 513);
             this.layoutControlGroup5.Text = "Gantt Chart";
             // 
             // layoutControlItem4
@@ -2229,7 +2235,7 @@ namespace MES
             this.layoutControlItem4.Control = this.ganttChartChartSplitContainer;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1189, 482);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1206, 482);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -2243,7 +2249,7 @@ namespace MES
             this.layoutControlItem3});
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 523);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            this.layoutControlGroup6.Size = new System.Drawing.Size(1195, 112);
+            this.layoutControlGroup6.Size = new System.Drawing.Size(1212, 112);
             this.layoutControlGroup6.Text = "Actions";
             // 
             // layoutControlItem1
@@ -2251,7 +2257,7 @@ namespace MES
             this.layoutControlItem1.Control = this.ganttChartLabelControlQuickLinks;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1171, 27);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1188, 27);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -2260,7 +2266,7 @@ namespace MES
             this.layoutControlItem9.Control = this.ganttChartHyperLinkLabelControl2;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 45);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(1171, 18);
+            this.layoutControlItem9.Size = new System.Drawing.Size(1188, 18);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -2269,7 +2275,7 @@ namespace MES
             this.layoutControlItem3.Control = this.ganttChartHyperLinkLabelControl1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 27);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1171, 18);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1188, 18);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -2278,14 +2284,14 @@ namespace MES
             this.splitterItem5.AllowHotTrack = true;
             this.splitterItem5.Location = new System.Drawing.Point(0, 513);
             this.splitterItem5.Name = "splitterItem5";
-            this.splitterItem5.Size = new System.Drawing.Size(1195, 10);
+            this.splitterItem5.Size = new System.Drawing.Size(1212, 10);
             // 
             // xtraScrollableControl1
             // 
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(1215, 1071);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(1232, 581);
             this.xtraScrollableControl1.TabIndex = 0;
             // 
             // tabNavigationPage5
@@ -2903,7 +2909,7 @@ namespace MES
             this.tabNavigationPage3.Caption = "Manufacturing Order";
             this.tabNavigationPage3.Controls.Add(this.panelControlManufacturingOrder);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(1232, 577);
+            this.tabNavigationPage3.Size = new System.Drawing.Size(1232, 581);
             // 
             // panelControlManufacturingOrder
             // 
@@ -2913,44 +2919,56 @@ namespace MES
             this.panelControlManufacturingOrder.Location = new System.Drawing.Point(0, 0);
             this.panelControlManufacturingOrder.MinimumSize = new System.Drawing.Size(0, 1286);
             this.panelControlManufacturingOrder.Name = "panelControlManufacturingOrder";
-            this.panelControlManufacturingOrder.Size = new System.Drawing.Size(1232, 1286);
+            this.panelControlManufacturingOrder.Size = new System.Drawing.Size(1215, 1286);
             this.panelControlManufacturingOrder.TabIndex = 0;
             // 
             // layoutControlManufacturingOrder
             // 
             this.layoutControlManufacturingOrder.Controls.Add(this.simpleButtonManufacturingOrderSave);
-            this.layoutControlManufacturingOrder.Controls.Add(this.comboBoxEditManufacturingOrderProductListing);
             this.layoutControlManufacturingOrder.Controls.Add(this.gridControlManufacturingOrder);
+            this.layoutControlManufacturingOrder.Controls.Add(this.lookUpEditMOProductFilter);
             this.layoutControlManufacturingOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControlManufacturingOrder.Location = new System.Drawing.Point(2, 2);
             this.layoutControlManufacturingOrder.Name = "layoutControlManufacturingOrder";
             this.layoutControlManufacturingOrder.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(524, 450, 650, 400);
             this.layoutControlManufacturingOrder.Root = this.layoutControlGroup27;
-            this.layoutControlManufacturingOrder.Size = new System.Drawing.Size(1228, 1282);
+            this.layoutControlManufacturingOrder.Size = new System.Drawing.Size(1211, 1282);
             this.layoutControlManufacturingOrder.TabIndex = 0;
             // 
             // simpleButtonManufacturingOrderSave
             // 
-            this.simpleButtonManufacturingOrderSave.Location = new System.Drawing.Point(355, 12);
+            this.simpleButtonManufacturingOrderSave.Location = new System.Drawing.Point(374, 12);
             this.simpleButtonManufacturingOrderSave.MinimumSize = new System.Drawing.Size(120, 0);
             this.simpleButtonManufacturingOrderSave.Name = "simpleButtonManufacturingOrderSave";
-            this.simpleButtonManufacturingOrderSave.Size = new System.Drawing.Size(122, 22);
+            this.simpleButtonManufacturingOrderSave.Size = new System.Drawing.Size(120, 22);
             this.simpleButtonManufacturingOrderSave.StyleController = this.layoutControlManufacturingOrder;
             this.simpleButtonManufacturingOrderSave.TabIndex = 2;
             this.simpleButtonManufacturingOrderSave.Text = "Save Changes";
             this.simpleButtonManufacturingOrderSave.Click += new System.EventHandler(this.simpleButtonManufacturingOrderSave_Click);
             // 
-            // comboBoxEditManufacturingOrderProductListing
+            // lookUpEditMOProductFilter
             // 
-            this.comboBoxEditManufacturingOrderProductListing.Location = new System.Drawing.Point(71, 12);
-            this.comboBoxEditManufacturingOrderProductListing.MenuManager = this.toolbarFormManager1;
-            this.comboBoxEditManufacturingOrderProductListing.Name = "comboBoxEditManufacturingOrderProductListing";
-            this.comboBoxEditManufacturingOrderProductListing.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lookUpEditMOProductFilter.EditValue = "Search product ID, name..";
+            this.lookUpEditMOProductFilter.Location = new System.Drawing.Point(109, 12);
+            this.lookUpEditMOProductFilter.MenuManager = this.toolbarFormManager1;
+            this.lookUpEditMOProductFilter.Name = "lookUpEditMOProductFilter";
+            this.lookUpEditMOProductFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditManufacturingOrderProductListing.Properties.ImmediatePopup = true;
-            this.comboBoxEditManufacturingOrderProductListing.Size = new System.Drawing.Size(260, 20);
-            this.comboBoxEditManufacturingOrderProductListing.StyleController = this.layoutControlManufacturingOrder;
-            this.comboBoxEditManufacturingOrderProductListing.TabIndex = 2;
+            this.lookUpEditMOProductFilter.Properties.DataSource = this.mMPRODMSTBindingSource;
+            this.lookUpEditMOProductFilter.Properties.DisplayMember = "PROD_ID";
+            this.lookUpEditMOProductFilter.Properties.NullText = "Search product ID, name..";
+            this.lookUpEditMOProductFilter.Properties.PopupView = this.searchLookUpEdit1View;
+            this.lookUpEditMOProductFilter.Properties.ValueMember = "PROD_ID";
+            this.lookUpEditMOProductFilter.Size = new System.Drawing.Size(241, 20);
+            this.lookUpEditMOProductFilter.StyleController = this.layoutControlManufacturingOrder;
+            this.lookUpEditMOProductFilter.TabIndex = 2;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // layoutControlGroup27
             // 
@@ -2961,18 +2979,18 @@ namespace MES
             this.layoutControlGroup29,
             this.layoutControlGroup30,
             this.emptySpaceItem18,
-            this.layoutControlItem32,
             this.layoutControlItem31,
-            this.emptySpaceItem19});
+            this.emptySpaceItem19,
+            this.layoutControlItem33});
             this.layoutControlGroup27.Name = "Root";
-            this.layoutControlGroup27.Size = new System.Drawing.Size(1228, 1282);
+            this.layoutControlGroup27.Size = new System.Drawing.Size(1211, 1282);
             // 
             // splitterItem10
             // 
             this.splitterItem10.AllowHotTrack = true;
             this.splitterItem10.Location = new System.Drawing.Point(0, 531);
             this.splitterItem10.Name = "splitterItem10";
-            this.splitterItem10.Size = new System.Drawing.Size(1208, 10);
+            this.splitterItem10.Size = new System.Drawing.Size(1191, 10);
             // 
             // layoutControlGroup29
             // 
@@ -2982,7 +3000,7 @@ namespace MES
             this.layoutControlGroup29.Location = new System.Drawing.Point(0, 26);
             this.layoutControlGroup29.Name = "layoutControlGroup29";
             this.layoutControlGroup29.Padding = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutControlGroup29.Size = new System.Drawing.Size(1208, 505);
+            this.layoutControlGroup29.Size = new System.Drawing.Size(1191, 505);
             this.layoutControlGroup29.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup29.Text = "Manufacturing Order";
             // 
@@ -2991,7 +3009,7 @@ namespace MES
             this.layoutControlItem26.Control = this.gridControlManufacturingOrder;
             this.layoutControlItem26.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(1198, 470);
+            this.layoutControlItem26.Size = new System.Drawing.Size(1181, 470);
             this.layoutControlItem26.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem26.TextVisible = false;
             // 
@@ -3002,7 +3020,7 @@ namespace MES
             this.emptySpaceItem14});
             this.layoutControlGroup30.Location = new System.Drawing.Point(0, 541);
             this.layoutControlGroup30.Name = "layoutControlGroup30";
-            this.layoutControlGroup30.Size = new System.Drawing.Size(1208, 721);
+            this.layoutControlGroup30.Size = new System.Drawing.Size(1191, 721);
             this.layoutControlGroup30.Text = "Actions";
             // 
             // emptySpaceItem14
@@ -3010,39 +3028,30 @@ namespace MES
             this.emptySpaceItem14.AllowHotTrack = false;
             this.emptySpaceItem14.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem14.Name = "emptySpaceItem14";
-            this.emptySpaceItem14.Size = new System.Drawing.Size(1184, 672);
+            this.emptySpaceItem14.Size = new System.Drawing.Size(1167, 672);
             this.emptySpaceItem14.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem18
             // 
             this.emptySpaceItem18.AllowHotTrack = false;
-            this.emptySpaceItem18.Location = new System.Drawing.Point(469, 0);
+            this.emptySpaceItem18.Location = new System.Drawing.Point(486, 0);
             this.emptySpaceItem18.Name = "emptySpaceItem18";
-            this.emptySpaceItem18.Size = new System.Drawing.Size(739, 26);
+            this.emptySpaceItem18.Size = new System.Drawing.Size(705, 26);
             this.emptySpaceItem18.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem32
-            // 
-            this.layoutControlItem32.Control = this.comboBoxEditManufacturingOrderProductListing;
-            this.layoutControlItem32.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem32.Name = "layoutControlItem32";
-            this.layoutControlItem32.Size = new System.Drawing.Size(323, 26);
-            this.layoutControlItem32.Text = "Product:";
-            this.layoutControlItem32.TextSize = new System.Drawing.Size(47, 14);
             // 
             // layoutControlItem31
             // 
             this.layoutControlItem31.Control = this.simpleButtonManufacturingOrderSave;
-            this.layoutControlItem31.Location = new System.Drawing.Point(343, 0);
+            this.layoutControlItem31.Location = new System.Drawing.Point(362, 0);
             this.layoutControlItem31.Name = "layoutControlItem31";
-            this.layoutControlItem31.Size = new System.Drawing.Size(126, 26);
+            this.layoutControlItem31.Size = new System.Drawing.Size(124, 26);
             this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem31.TextVisible = false;
             // 
             // emptySpaceItem19
             // 
             this.emptySpaceItem19.AllowHotTrack = false;
-            this.emptySpaceItem19.Location = new System.Drawing.Point(323, 0);
+            this.emptySpaceItem19.Location = new System.Drawing.Point(342, 0);
             this.emptySpaceItem19.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem19.MinSize = new System.Drawing.Size(20, 11);
             this.emptySpaceItem19.Name = "emptySpaceItem19";
@@ -3050,13 +3059,22 @@ namespace MES
             this.emptySpaceItem19.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem19.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem33
+            // 
+            this.layoutControlItem33.Control = this.lookUpEditMOProductFilter;
+            this.layoutControlItem33.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem33.Name = "layoutControlItem33";
+            this.layoutControlItem33.Size = new System.Drawing.Size(342, 26);
+            this.layoutControlItem33.Text = "Select product:";
+            this.layoutControlItem33.TextSize = new System.Drawing.Size(85, 14);
+            // 
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.AutoScroll = true;
             this.tabNavigationPage2.Caption = "BOM";
             this.tabNavigationPage2.Controls.Add(this.panelControlBOM);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1232, 577);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1232, 581);
             // 
             // panelControlBOM
             // 
@@ -3723,6 +3741,11 @@ namespace MES
             this.emptySpaceItem15.Size = new System.Drawing.Size(936, 26);
             this.emptySpaceItem15.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // mMPROCMSTBindingSource1
+            // 
+            this.mMPROCMSTBindingSource1.DataMember = "MM_PROC_MST";
+            this.mMPROCMSTBindingSource1.DataSource = this.signes_MESDataSet;
+            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
@@ -3868,6 +3891,11 @@ namespace MES
             this.productPopupMenu.Manager = this.toolbarFormManager1;
             this.productPopupMenu.Name = "productPopupMenu";
             // 
+            // mMPROCMSTMMPROCSTEPBindingSource
+            // 
+            this.mMPROCMSTMMPROCSTEPBindingSource.DataMember = "MM_PROC_MST_MM_PROC_STEP";
+            this.mMPROCMSTMMPROCSTEPBindingSource.DataSource = this.mMPROCMSTBindingSource;
+            // 
             // MainForm
             // 
             this.Appearance.Options.UseFont = true;
@@ -4012,7 +4040,8 @@ namespace MES
             this.panelControlManufacturingOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlManufacturingOrder)).EndInit();
             this.layoutControlManufacturingOrder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditManufacturingOrderProductListing.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditMOProductFilter.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup29)).EndInit();
@@ -4020,9 +4049,9 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBOM)).EndInit();
@@ -4071,6 +4100,7 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMPROCMSTBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPROCSTEPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -4080,6 +4110,7 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productPopupMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMPROCMSTMMPROCSTEPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4432,11 +4463,14 @@ namespace MES
         private LayoutControlGroup layoutControlGroup30;
         private EmptySpaceItem emptySpaceItem18;
         private DevExpress.XtraBars.PopupMenu productPopupMenu;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditManufacturingOrderProductListing;
-        private LayoutControlItem layoutControlItem32;
         private DevExpress.XtraEditors.SimpleButton simpleButtonManufacturingOrderSave;
         private LayoutControlItem layoutControlItem31;
         private EmptySpaceItem emptySpaceItem19;
+        private DevExpress.XtraEditors.SearchLookUpEdit lookUpEditMOProductFilter;
+        private System.Windows.Forms.BindingSource mMPROCMSTBindingSource1;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private LayoutControlItem layoutControlItem33;
+        private System.Windows.Forms.BindingSource mMPROCMSTMMPROCSTEPBindingSource;
     }
 }
 
