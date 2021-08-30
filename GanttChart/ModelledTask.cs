@@ -55,17 +55,20 @@ namespace Edcore.GanttChart
                 ParentID = Parent.ID;
             }
             Children = m_Task.Children;
-            StartDate = m_Manager.Start + m_Task.Start;
-            FinishDate = m_Manager.Start + m_Task.End;
-            TimeDuration = m_Task.Duration;
+
             // Delay
             Delay = m_Task.Delay;
-            BaselineStartDate = StartDate;
-            BaselineFinishDate = FinishDate + Delay;
+            TimeDuration = m_Task.Duration;
+            // Baseline
+            BaselineStartDate = m_Manager.Start + m_Task.Start;
+            BaselineFinishDate = m_Manager.Start + m_Task.End;
+            // Task
+            StartDate = BaselineStartDate;
+            FinishDate = BaselineFinishDate + Delay;
 
             Text = m_Task.Name;
             Tooltip = m_Task.Complete.ToString("p");
-            Progress = m_Task.Complete;
+            Progress = m_Task.Complete * 100;
         }
     }
 }

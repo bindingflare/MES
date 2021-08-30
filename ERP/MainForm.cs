@@ -195,7 +195,7 @@ namespace MES
                 label.Location = new Point(5, 25);
                 panel.Controls.Add(label);
 
-                eventManagerEventStackPanel1.Controls.Add(panel);
+                //eventManagerEventStackPanel1.Controls.Add(panel);
             }
 
 
@@ -220,8 +220,8 @@ namespace MES
                 ganttControlOverview.Columns.AddField(column.ColumnName);
             }
             ganttControlOverview.OptionsBehavior.PopulateServiceColumns = true;
-            ganttControlOverview.OptionsBehavior.AllowSplitTasks = DevExpress.Utils.DefaultBoolean.True;
-            ganttControlOverview.OptionsCustomization.AllowModifyProgress = DevExpress.Utils.DefaultBoolean.True;
+            //ganttControlOverview.OptionsBehavior.AllowSplitTasks = DevExpress.Utils.DefaultBoolean.True;
+            //ganttControlOverview.OptionsCustomization.AllowModifyProgress = DevExpress.Utils.DefaultBoolean.True;
 
             ganttControlOverview.ChartStartDate = m_Manager.Start;
             ganttControlOverview.OptionsView.ShowBaselines = true;
@@ -239,7 +239,7 @@ namespace MES
 
             _FormatTreeList();
 
-            ganttChartChartTreeList.RowHeight = ganttChartChart.BarSpacing - 5;
+            ganttChartChartTreeList.RowHeight = ganttChartChart.BarSpacing - 1;
             ganttChartChartTreeList.Columns.ElementAt(0).Width = 200;
             ganttChartChartTreeList.ExpandAll();
 
