@@ -20,10 +20,13 @@ using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors.Controls;
 using System.Globalization;
+using DevExpress.Skins.XtraForm;
+using DevExpress.Utils;
+using DevExpress.XtraBars.ToolbarForm;
 
 namespace MES
 {
-    public partial class MainForm : DevExpress.XtraBars.ToolbarForm.ToolbarForm
+    public partial class MainForm : ToolbarForm
     {
         private ProjectManager m_Manager = null;
         private OverlayPainter m_Overlay = new OverlayPainter();
@@ -279,7 +282,7 @@ namespace MES
         private void AfterInitialization()
         {
             // Set mainform text
-            this.Appearance.Caption = new Font("Segoe UI", 9f);
+            //this.Appearance.Caption = new Font("Segoe UI", 9f);
 
             // Set text
             ganttChartChartProjectLabel.Text = m_Manager.Name;
@@ -868,7 +871,11 @@ namespace MES
         }
 
         #endregion
-        
+
+        protected override FormPainter CreateFormBorderPainter()
+        {
+            return new CustomToolbarFormPainter(this, LookAndFeel);
+        }
     }
 
     #region overlay painter
@@ -952,4 +959,21 @@ namespace MES
         public new float Complete { get { return base.Complete; } set { Manager.SetComplete(this, value); } }
     }
     #endregion MyTask (Custom Task Class)
+
+    public class CustomToolbarFormPainter : ToolbarFormPainter
+    {
+        public CustomToolbarFormPainter(Control owner, ISkinProvider provider) : base(owner, provider) { }
+
+        protected override void DrawText(DevExpress.Utils.Drawing.GraphicsCache cache)
+        {
+            string text = Text;
+            if (text == null || text.Length == 0 || this.TextBounds.IsEmpty) return;
+            AppearanceObject appearance = new AppearanceObject(GetDefaultAppearance());
+            appearance.Font = new Font("Segoe UI", 9, FontStyle.Regular);
+            appearance.TextOptions.Trimming = Trimming.EllipsisCharacter;
+            Rectangle r = RectangleHelper.GetCenterBounds(TextBounds, new Size(TextBounds.Width, appearance.CalcDefaultTextSize(cache.Graphics).Height));
+            DrawTextShadow(cache, appearance, r);
+            cache.DrawString(text, appearance.Font, appearance.GetForeBrush(cache), r, appearance.GetStringFormat());
+        }
+    }
 }
