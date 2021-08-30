@@ -279,7 +279,7 @@ namespace MES
         private void AfterInitialization()
         {
             // Set mainform text
-            this.Font = new Font("Segoe UI", 9f);
+            this.Appearance.Font = new Font("Segoe UI", 9f);
 
             // Set text
             ganttChartChartProjectLabel.Text = m_Manager.Name;
@@ -293,32 +293,37 @@ namespace MES
             // Create dummy secondary form
             _CreateDummyForm();
 
-            // views
+            // BOM
+            searchControlBOM.EditValueChanged += SearchControlBOM_Enter;
+
+            // Views
             cardView = new DevExpress.XtraGrid.Views.Card.CardView();
             layoutView = new DevExpress.XtraGrid.Views.Layout.LayoutView();
 
-            // account label
+            // Account label
             barButtonItemAccountSettings.ItemClick += BarButtonItemAccountSettings_ItemClick;
             barButtonItemLogout.ItemClick += BarButtonItemLogout_ItemClick;
 
-            // view popup
+            // View popup
             barButtonItemCardView.ItemClick += barButtonItemCardView_Click;
             barButtonItemGridView.ItemClick += barButtonItemGridView_Click;
             barButtonIteLayoutView.ItemClick += barButtonItemLayoutView_Click;
 
-            // status strip
+            // Status strip
             toolStripStatusLabel1.Text = "Ready";
 
-            // finished goods lookup
+            // Finished goods lookup
             gridViewFinishedGoods.CustomUnboundColumnData += GridViewFinishedGoods_CustomUnboundColumnData;
 
-            // manufacturing order product search
+            // Manufacturing order product search
             // comboBoxEditManufacturingOrderProductListing.TextChanged += TextEditManufacturingOrderSelect_TextChanged;
             lookUpEditMOProductFilter.EditValue = null;
             lookUpEditMOProductFilter.EditValueChanged += LookUpEditMOProductFilter_EditValueChanged;
 
             lookUpEditMOProductFilter.QueryPopUp += LookUpEditMOProductFilter_QueryPopUp;
         }
+
+        
 
         #region Overview
 
@@ -340,6 +345,24 @@ namespace MES
         #endregion
 
         #region BOM
+
+        private void SearchControlBOM_Enter(object sender, EventArgs e)
+        {
+            GridView view = gridViewProductListing;
+            GridColumn col = view.Columns["PROD_ID"];
+            string text = searchControlBOM.Text;
+            
+            if(text.Length != 0)
+            {
+                view.BeginUpdate();
+
+                //col.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+                view.ActiveFilter.Remove(col);
+                view.ActiveFilter.Add(col, new ColumnFilterInfo("Contains([PROD_ID], '" + text + "')"));
+                
+                view.EndUpdate();
+            }
+        }
 
         private void simpleButtonBOMSave_Click(object sender, EventArgs e)
         {
