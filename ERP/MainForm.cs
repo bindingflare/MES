@@ -215,54 +215,54 @@ namespace MES
 
             //ganttControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
 
-            ganttControlOverview.ChartMappings.TextFieldName = "Text";
-            ganttControlOverview.ChartMappings.InteractionTooltipTextFieldName = "Tooltip";
+            ganttControlHome.ChartMappings.TextFieldName = "Text";
+            ganttControlHome.ChartMappings.InteractionTooltipTextFieldName = "Tooltip";
 
             foreach (DataColumn column in m_Manager.HeaderList)
             {
-                ganttControlOverview.Columns.AddField(column.ColumnName);
+                ganttControlHome.Columns.AddField(column.ColumnName);
             }
-            ganttControlOverview.OptionsBehavior.PopulateServiceColumns = true;
+            ganttControlHome.OptionsBehavior.PopulateServiceColumns = true;
             //ganttControlOverview.OptionsBehavior.AllowSplitTasks = DevExpress.Utils.DefaultBoolean.True;
             //ganttControlOverview.OptionsCustomization.AllowModifyProgress = DevExpress.Utils.DefaultBoolean.True;
 
-            ganttControlOverview.ChartStartDate = m_Manager.Start;
-            ganttControlOverview.OptionsView.ShowBaselines = true;
-            ganttControlOverview.DataSource = GetTasks();
+            ganttControlHome.ChartStartDate = m_Manager.Start;
+            ganttControlHome.OptionsView.ShowBaselines = true;
+            ganttControlHome.DataSource = GetTasks();
 
-            ganttControlOverview.ExpandAll();
+            ganttControlHome.ExpandAll();
 
             // Build tree for GanttChart
-            ganttChartChart.Init(m_Manager);
-            ganttChartChart.CreateTaskDelegate = delegate () { return new MyTask(m_Manager); };
+            ganttChartProductionMonitor.Init(m_Manager);
+            ganttChartProductionMonitor.CreateTaskDelegate = delegate () { return new MyTask(m_Manager); };
 
             ganttChartChartSplitContainer.SplitterPosition = 400;
 
-            ganttChartChartTreeList.DataSource = GetTasks();
+            treeListPMChartTreeList.DataSource = GetTasks();
 
             _FormatTreeList();
 
-            ganttChartChartTreeList.RowHeight = ganttChartChart.BarSpacing - 1;
-            ganttChartChartTreeList.Columns.ElementAt(0).Width = 200;
-            ganttChartChartTreeList.ExpandAll();
+            treeListPMChartTreeList.RowHeight = ganttChartProductionMonitor.BarSpacing - 1;
+            treeListPMChartTreeList.Columns.ElementAt(0).Width = 200;
+            treeListPMChartTreeList.ExpandAll();
 
             // GanttChart event listeners
             //ganttChart.TaskMouseOver += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseOver);
             //ganttChart.TaskMouseOut += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseOut);
-            ganttChartChart.TaskSelected += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskSelected);
-            ganttChartChart.TaskDeselecting += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskDeselecting);
-            ganttChartChart.TaskMouseDoubleClick += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseDoubleClick);
+            ganttChartProductionMonitor.TaskSelected += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskSelected);
+            ganttChartProductionMonitor.TaskDeselecting += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskDeselecting);
+            ganttChartProductionMonitor.TaskMouseDoubleClick += new EventHandler<TaskMouseEventArgs>(m_Chart_TaskMouseDoubleClick);
             m_Overlay.PrintMode = true;
-            ganttChartChart.PaintOverlay += m_Overlay.ChartOverlayPainter;
-            ganttChartChart.AllowTaskDragDrop = true;
+            ganttChartProductionMonitor.PaintOverlay += m_Overlay.ChartOverlayPainter;
+            ganttChartProductionMonitor.AllowTaskDragDrop = true;
             //m_Chart.Scroll += new ScrollEventHandler(m_Chart_Scroll);
-            ganttChartChart.MouseWheel += new MouseEventHandler(m_Chart_MouseWheel);
-            ganttChartChart.MousePan += new EventHandler<MousePanEventArgs>(m_Chart_MousePan);
+            ganttChartProductionMonitor.MouseWheel += new MouseEventHandler(m_Chart_MouseWheel);
+            ganttChartProductionMonitor.MousePan += new EventHandler<MousePanEventArgs>(m_Chart_MousePan);
 
             // Tasklist event listeners
-            ganttChartChartTreeList.AfterExpand += new NodeEventHandler(m_TaskList_Expanded);
-            ganttChartChartTreeList.AfterCollapse += new NodeEventHandler(m_TaskList_Collapsed);
-            ganttChartChartTreeList.TopVisibleNodeIndexChanged += new EventHandler(gChartTreeList_TopVisibleIndexChanged);
+            treeListPMChartTreeList.AfterExpand += new NodeEventHandler(m_TaskList_Expanded);
+            treeListPMChartTreeList.AfterCollapse += new NodeEventHandler(m_TaskList_Collapsed);
+            treeListPMChartTreeList.TopVisibleNodeIndexChanged += new EventHandler(gChartTreeList_TopVisibleIndexChanged);
             //gChartTreeList.BeforeExpand += new NodeEventHandler(m_TaskList_Expanding);
             //gChartTreeList.BeforeCollapse += new NodeEventHandler(m_TaskList_Collapsing);
 
@@ -285,8 +285,8 @@ namespace MES
             //this.Appearance.Caption = new Font("Segoe UI", 9f);
 
             // Set text
-            ganttChartChartProjectLabel.Text = m_Manager.Name;
-            ganttChartChartTreeListTableLayoutPanel.RowStyles[0].Height = ganttChartChart.HeaderOneHeight - 6;
+            labelControlPMProjectLabel.Text = m_Manager.Name;
+            ganttChartChartTreeListTableLayoutPanel.RowStyles[0].Height = ganttChartProductionMonitor.HeaderOneHeight - 6;
             layoutControlGroup9.Text = m_Manager.Name;
 
             // Popup menus
@@ -491,8 +491,8 @@ namespace MES
         #region GanttChart Events
         void m_Chart_TaskSelected(object sender, TaskMouseEventArgs e)
         {
-            m_TaskGrid.SelectedObjects = ganttChartChart.SelectedTasks.Select(x => m_Manager.IsPart(x) ? m_Manager.SplitTaskOf(x) : x).ToArray();
-            m_TaskGrid.ExpandAllGridItems();
+            taskGridPMSidebar.SelectedObjects = ganttChartProductionMonitor.SelectedTasks.Select(x => m_Manager.IsPart(x) ? m_Manager.SplitTaskOf(x) : x).ToArray();
+            taskGridPMSidebar.ExpandAllGridItems();
 
             // Change visibility
             ganttChartChartOptionsPanel.Visible = true;
@@ -562,7 +562,7 @@ namespace MES
                 }
             }
 
-            ganttChartChart.Invalidate();
+            ganttChartProductionMonitor.Invalidate();
         }
 
         private void m_TaskList_Expanded(object sender, NodeEventArgs e)
@@ -576,7 +576,7 @@ namespace MES
                 }
             }
 
-            ganttChartChart.Invalidate();
+            ganttChartProductionMonitor.Invalidate();
 
         }
 
@@ -584,7 +584,7 @@ namespace MES
         {
             if (e.Button == MouseButtons.Left && !_SearchMode)
             {
-                TreeListNode node = ganttChartChartTreeList.FindNodeByID(int.Parse(e.Task.ID));
+                TreeListNode node = treeListPMChartTreeList.FindNodeByID(int.Parse(e.Task.ID));
                 // this check happens BEFORE IsCollapsed is toggled by double click
                 if (!e.Task.IsCollapsed)
                 {
@@ -602,17 +602,17 @@ namespace MES
             int delta;
             if (e.Delta > 0)
             {
-                delta = -ganttChartChart.Viewport.WheelDelta;
+                delta = -ganttChartProductionMonitor.Viewport.WheelDelta;
                 _ScrollFix = -1;
             }
             else
             {
-                delta = ganttChartChart.Viewport.WheelDelta;
+                delta = ganttChartProductionMonitor.Viewport.WheelDelta;
                 _ScrollFix = 1;
             }
 
-            int index = (int)(ganttChartChart.Viewport.Y - ganttChartChart.HeaderOneHeight + ganttChartChart.HeaderTwoHeight + delta) / ganttChartChart.BarSpacing;
-            ganttChartChartTreeList.TopVisibleNodeIndex = index;
+            int index = (int)(ganttChartProductionMonitor.Viewport.Y - ganttChartProductionMonitor.HeaderOneHeight + ganttChartProductionMonitor.HeaderTwoHeight + delta) / ganttChartProductionMonitor.BarSpacing;
+            treeListPMChartTreeList.TopVisibleNodeIndex = index;
         }
 
         private void _mChart_Scroll(object sender, ScrollEventArgs e)
@@ -620,10 +620,10 @@ namespace MES
             if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
             {
                 //float ratio = (float) dataTreeListView1.GetItemCount() * m_Chart.BarSpacing / m_Chart.Viewport.WorldHeight;
-                int nodes = (e.NewValue - ganttChartChart.HeaderOneHeight - ganttChartChart.HeaderTwoHeight) / ganttChartChart.BarSpacing;
+                int nodes = (e.NewValue - ganttChartProductionMonitor.HeaderOneHeight - ganttChartProductionMonitor.HeaderTwoHeight) / ganttChartProductionMonitor.BarSpacing;
                 //int rem = e.NewValue % ganttChart.BarSpacing;
 
-                ganttChartChartTreeList.TopVisibleNodeIndex = nodes;
+                treeListPMChartTreeList.TopVisibleNodeIndex = nodes;
             }
 
             //int h1 = dataTreeListView1.Height * dataTreeListView1.RowHeight;
@@ -642,7 +642,7 @@ namespace MES
         #region GanttChartTreeList Events
         private void gChartTreeList_TopVisibleIndexChanged(object sender, EventArgs e)
         {
-            ganttChartChart.Viewport.Y = ganttChartChart.HeaderOneHeight + ganttChartChart.HeaderTwoHeight + ganttChartChartTreeList.TopVisibleNodeIndex * ganttChartChart.BarSpacing;
+            ganttChartProductionMonitor.Viewport.Y = ganttChartProductionMonitor.HeaderOneHeight + ganttChartProductionMonitor.HeaderTwoHeight + treeListPMChartTreeList.TopVisibleNodeIndex * ganttChartProductionMonitor.BarSpacing;
 
             _ScrollFix = 0;
         }
@@ -705,28 +705,28 @@ namespace MES
             var commonSkin = CommonSkins.GetSkin(this.LookAndFeel);
             var svgPalette = commonSkin.SvgPalettes["DefaultSkinPalette"];
 
-            ganttChartChart.BackColor = svgPalette["Paint High"].Value;
+            ganttChartProductionMonitor.BackColor = svgPalette["Paint High"].Value;
 
-            HeaderFormat headerFormat = ganttChartChart.HeaderFormat;
+            HeaderFormat headerFormat = ganttChartProductionMonitor.HeaderFormat;
             headerFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
             headerFormat.GradientLight = commonSkin.Colors["Control"];
             headerFormat.GradientDark = commonSkin.Colors["Control"];
             headerFormat.Border = new Pen(svgPalette["Brush Major"].Value);
-            ganttChartChart.HeaderFormat = headerFormat;
+            ganttChartProductionMonitor.HeaderFormat = headerFormat;
 
-            TaskFormat taskFormat = ganttChartChart.TaskFormat;
+            TaskFormat taskFormat = ganttChartProductionMonitor.TaskFormat;
             taskFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
             taskFormat.Border = new Pen(Color.FromArgb(100, svgPalette["Accent Paint"].Value), 2f);
             taskFormat.ForeFill = new SolidBrush(svgPalette["Accent Paint"].Value);
             taskFormat.BackFill = new SolidBrush(Color.FromArgb(120, svgPalette["Accent Paint"].Value));
             taskFormat.DelayForeFill = new SolidBrush(commonSkin.Colors["WarningFill"]);
             taskFormat.DelayBackFill = new SolidBrush(Color.FromArgb(120, commonSkin.Colors["WarningFill"]));
-            ganttChartChart.TaskFormat = taskFormat;
+            ganttChartProductionMonitor.TaskFormat = taskFormat;
 
-            RelationFormat relationFormat = ganttChartChart.RelationFormat;
+            RelationFormat relationFormat = ganttChartProductionMonitor.RelationFormat;
             relationFormat.Line = new Pen(svgPalette["Brush"].Value);
             relationFormat.Brush = new SolidBrush(svgPalette["Brush"].Value);
-            ganttChartChart.RelationFormat = relationFormat;
+            ganttChartProductionMonitor.RelationFormat = relationFormat;
         }
 
         #endregion
@@ -785,7 +785,7 @@ namespace MES
 
         private void _FormatTreeList()
         {
-            foreach (TreeListColumn column in ganttChartChartTreeList.Columns)
+            foreach (TreeListColumn column in treeListPMChartTreeList.Columns)
             {
                 int hits = 0;
 
