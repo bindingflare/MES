@@ -310,25 +310,101 @@ namespace MES
             toolStripStatusLabel1.Text = "Ready";
 
             // finished goods lookup
-            ((GridView)gridControlFinishedGoods.MainView).CustomUnboundColumnData += MainForm_CustomUnboundColumnData;
-
-            // material detail view
-            //Handle the InitNewRow event to initialize newly added rows. To initialize row cells use the SetRowCellValue method
-            cardViewMaterialDetail.InitNewRow += cardDetailView_InitNewRow;
+            gridViewFinishedGoods.CustomUnboundColumnData += GridViewFinishedGoods_CustomUnboundColumnData;
 
             // manufacturing order product search
-            //comboBoxEditManufacturingOrderProductListing.TextChanged += TextEditManufacturingOrderSelect_TextChanged;
+            // comboBoxEditManufacturingOrderProductListing.TextChanged += TextEditManufacturingOrderSelect_TextChanged;
             lookUpEditMOProductFilter.EditValue = null;
             lookUpEditMOProductFilter.EditValueChanged += LookUpEditMOProductFilter_EditValueChanged;
 
             lookUpEditMOProductFilter.QueryPopUp += LookUpEditMOProductFilter_QueryPopUp;
         }
 
+        #region Overview
+
+        private void tileItem12_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            tabPane1.SelectedPage = tabNavigationPage6;
+        }
+
+        private void tileInventory_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            tabPane1.SelectedPage = tabNavigationPage5;
+        }
+
+        private void tileEventM_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            tabPane1.SelectedPage = tabNavigationPage4;
+        }
+
+        #endregion
+
+        #region BOM
+
+        private void simpleButtonBOMSave_Click(object sender, EventArgs e)
+        {
+            PRODUCT_MSTTableAdapter.Update(signes_MESDataSet);
+            materiaL_MSTTableAdapter.Update(signes_MESDataSet);
+        }
+
+        private void barButtonItemCardView_Click(object sender, ItemClickEventArgs e)
+        {
+            UpdateDropDownButton(e.Item);
+
+            gridControlBOM.MainView = cardView;
+
+            helper = new MasterDetailHelper(cardView, ViewType.Card);
+            helper.CreateDetail();
+        }
+
+        private void barButtonItemGridView_Click(object sender, ItemClickEventArgs e)
+        {
+            UpdateDropDownButton(e.Item);
+
+            gridControlBOM.MainView = gridViewProductListing;
+        }
+
+        private void barButtonItemLayoutView_Click(object sender, ItemClickEventArgs e)
+        {
+            UpdateDropDownButton(e.Item);
+
+            gridControlBOM.MainView = layoutView;
+
+            helper = new MasterDetailHelper(layoutView, ViewType.Card);
+            helper.CreateDetail();
+        }
+
+        private void UpdateDropDownButton(BarItem item)
+        {
+            dropDownButtonBOM.Text = item.Caption;
+            dropDownButtonBOM.ImageOptions.SvgImage = item.ImageOptions.SvgImage;
+            dropDownButtonBOM.ImageOptions.SvgImageSize = new Size(16, 16);
+            dropDownButtonBOM.Tag = item.Tag;
+        }
+
+        private void simpleButtonBOMAddProduct_Click(object sender, EventArgs e)
+        {
+            gridViewProductListing.AddNewRow();
+        }
+
+        private void simpleButtonBOMAddMaterial_Click(object sender, EventArgs e)
+        {
+            gridViewProductListing.ExpandMasterRow(gridViewProductListing.FocusedRowHandle);
+            CardView detailView = (gridViewProductListing.GetDetailView(gridViewProductListing.FocusedRowHandle, 0) as CardView);
+            detailView.AddNewRow();
+        }
+
+        #endregion
+
+        #region Manufacturing Order
+
         private void LookUpEditMOProductFilter_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
         {
             lookUpEditMOProductFilter.Properties.PopupFormMinSize = new Size(1000, 200);
 
             GridColumnCollection collection = lookUpEditMOProductFilter.Properties.View.Columns;
+
+            // hide columns
             collection["PROD_CLASS_CODE"].Visible = false;
             collection["DEL_YN"].Visible = false;
             collection["REASON_CODE"].Visible = false;
@@ -357,165 +433,36 @@ namespace MES
             }
         }
 
-        private void Default_StyleChanged(object sender, EventArgs e)
+        private void simpleButtonManufacturingOrderSave_Click(object sender, EventArgs e)
         {
-            setGanttChartColors();
-            setElementColors();
+            mM_PROC_MSTTableAdapter.Update(signes_MESDataSet);
         }
 
-        private void setElementColors()
+        private void simpleButtonMOAddStep_Click(object sender, EventArgs e)
         {
-            var commonSkin = CommonSkins.GetSkin(this.LookAndFeel);
-            var svgPalette = commonSkin.SvgPalettes["DefaultSkinPalette"];
-
-            panelControlMain.Appearance.BackColor = svgPalette["Paint High"].Value;
-            panelControlMain.Appearance.BackColor2 = svgPalette["Paint Shadow"].Value;
-            labelControlTitle.ForeColor = svgPalette["Key Brush Light"].Value;
-
-            //panelControlMain.LookAndFeel.Color
+            gridViewManufacturingOrder.ExpandMasterRow(gridViewManufacturingOrder.FocusedRowHandle);
+            CardView detailView = (gridViewManufacturingOrder.GetDetailView(gridViewManufacturingOrder.FocusedRowHandle, 0) as CardView);
+            detailView.AddNewRow();
         }
 
-        private void setGanttChartColors()
+        #endregion
+
+        #region Job Despatch
+
+        #endregion
+
+        #region Material Inventory
+
+        private void simpleButtonMaterialInventorySave_Click(object sender, EventArgs e)
         {
-            var commonSkin = CommonSkins.GetSkin(this.LookAndFeel);
-            var svgPalette = commonSkin.SvgPalettes["DefaultSkinPalette"];
-
-            ganttChartChart.BackColor = svgPalette["Paint High"].Value;
-
-            HeaderFormat headerFormat = ganttChartChart.HeaderFormat;
-            headerFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
-            headerFormat.GradientLight = commonSkin.Colors["Control"];
-            headerFormat.GradientDark = commonSkin.Colors["Control"];
-            headerFormat.Border = new Pen(svgPalette["Brush Major"].Value);
-            ganttChartChart.HeaderFormat = headerFormat;
-
-            TaskFormat taskFormat = ganttChartChart.TaskFormat;
-            taskFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
-            taskFormat.Border = new Pen(Color.FromArgb(100, svgPalette["Accent Paint"].Value), 2f);
-            taskFormat.ForeFill = new SolidBrush(svgPalette["Accent Paint"].Value);
-            taskFormat.BackFill = new SolidBrush(Color.FromArgb(120, svgPalette["Accent Paint"].Value));
-            taskFormat.DelayForeFill = new SolidBrush(commonSkin.Colors["WarningFill"]);
-            taskFormat.DelayBackFill = new SolidBrush(Color.FromArgb(120, commonSkin.Colors["WarningFill"]));
-            ganttChartChart.TaskFormat = taskFormat;
-
-            RelationFormat relationFormat = ganttChartChart.RelationFormat;
-            relationFormat.Line = new Pen(svgPalette["Brush"].Value);
-            relationFormat.Brush = new SolidBrush(svgPalette["Brush"].Value);
-            ganttChartChart.RelationFormat = relationFormat;
-        }
-
-        private void MainForm_CustomUnboundColumnData(object sender, CustomColumnDataEventArgs e)
-        {
-            // NOTE: To be replaced by object data if converted to business objects first.
-            e.Value = signes_MESDataSet.PRODUCT_MST.FindByPROD_ID(((DataRowView)e.Row).Row.Field<string>("PROD_ID")).Field<string>(e.Column.FieldName);
-        }
-
-        private void cardDetailView_InitNewRow(object sender, InitNewRowEventArgs e)
-        {
-            CardView view = sender as CardView;
-            
-            //view.SetRowCellValue(e.RowHandle, view.Columns["PROD_ID"], DateTime.Today);
-        }
-
-        private void simpleButtonBOMSave_Click(object sender, EventArgs e)
-        {
-            PRODUCT_MSTTableAdapter.Update(signes_MESDataSet);
             materiaL_MSTTableAdapter.Update(signes_MESDataSet);
         }
-        private void barButtonItemCardView_Click(object sender, ItemClickEventArgs e)
-        {
-            UpdateDropDownButton(e.Item);
 
-            gridControlBOM.MainView = cardView;
+        #endregion
 
-            helper = new MasterDetailHelper(cardView, ViewType.Card);
-            helper.CreateDetail();
-        }
+        #region Production Monitor
 
-        private void barButtonItemGridView_Click(object sender, ItemClickEventArgs e)
-        {
-            UpdateDropDownButton(e.Item);
-
-            gridControlBOM.MainView = gridViewProductListing;
-        }
-
-        private void barButtonItemLayoutView_Click(object sender, ItemClickEventArgs e)
-        {
-            UpdateDropDownButton(e.Item);
-
-            gridControlBOM.MainView = layoutView;
-
-            helper = new MasterDetailHelper(layoutView, ViewType.Card);
-            helper.CreateDetail();
-        }
-
-        private void dummyForm_Disposed(object sender, EventArgs e)
-        {
-            _CreateDummyForm();
-        }
-
-        private void _CreateDummyForm()
-        {
-            dummyForm = new XtraForm();
-            dummyForm.Size = new Size(852, 480);
-            dummyForm.Name = "Dummy form";
-            dummyForm.Disposed += new EventHandler(dummyForm_Disposed);
-        }
-
-        private void _FormatTreeList()
-        {
-            foreach (TreeListColumn column in ganttChartChartTreeList.Columns)
-            {
-                int hits = 0;
-
-                foreach (DataColumn headerColumn in m_Manager.HeaderList)
-                {
-                    if (column.FieldName == headerColumn.ColumnName)
-                    {
-                        hits++;
-                        break;
-                    }
-                }
-
-                if (hits == 0)
-                {
-                    column.Visible = false;
-                }
-            }
-        }
-        private object GetTasks()
-        {
-            //DataTable table = new DataTable();
-
-
-            //foreach (Task task in m_Manager.Tasks)
-            //{
-            //    ModelledTask mTask = new ModelledTask(task, m_Manager);
-
-            //    DataRow row = table.NewRow();
-            //    row["Text"] = mTask.Text;
-            //    row["ID"] = mTask.ID;
-            //    row["ParentID"] = mTask.ParentID;
-            //    row["StartDate"] = mTask.StartDate;
-            //    row["FinishDate"] = mTask.FinishDate;
-            //    row["BaselineStartDate"] = mTask.BaselineStartDate;
-            //    row["BaselineFinishDate"] = mTask.BaselineFinishDate;
-            //    row["Duration"] = mTask.Duration;
-            //    row["Delay"] = mTask.Delay;
-            //    row["Tooltip"] = mTask.Tooltip;
-            //    row["Progress"] = mTask.Progress;
-            //    table.Rows.Add(row);
-            //}
-
-            List<ModelledTask> tasks = new List<ModelledTask>();
-            foreach (Task task in m_Manager.Tasks)
-            {
-                tasks.Add(new ModelledTask(task, m_Manager));
-            }
-
-            return tasks;
-        }
-        #region ganttChart Events
+        #region GanttChart Events
         void m_Chart_TaskSelected(object sender, TaskMouseEventArgs e)
         {
             m_TaskGrid.SelectedObjects = ganttChartChart.SelectedTasks.Select(x => m_Manager.IsPart(x) ? m_Manager.SplitTaskOf(x) : x).ToArray();
@@ -666,23 +613,7 @@ namespace MES
         }
         #endregion
 
-        private void tileItem12_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
-        {
-            tabPane1.SelectedPage = tabNavigationPage6;
-        }
-
-        private void tileInventory_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
-        {
-            tabPane1.SelectedPage = tabNavigationPage5;
-        }
-
-        private void tileEventM_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
-        {
-            tabPane1.SelectedPage = tabNavigationPage4;
-        }
-
-
-        #region gChartTreeList Events
+        #region GanttChartTreeList Events
         private void gChartTreeList_TopVisibleIndexChanged(object sender, EventArgs e)
         {
             ganttChartChart.Viewport.Y = ganttChartChart.HeaderOneHeight + ganttChartChart.HeaderTwoHeight + ganttChartChartTreeList.TopVisibleNodeIndex * ganttChartChart.BarSpacing;
@@ -706,6 +637,73 @@ namespace MES
             }
         }
         #endregion
+        
+        #endregion
+
+        #region FinishedGoods
+        private void GridViewFinishedGoods_CustomUnboundColumnData(object sender, CustomColumnDataEventArgs e)
+        {
+            // NOTE: To be replaced by object data if converted to business objects first.
+            e.Value = signes_MESDataSet.PRODUCT_MST.FindByPROD_ID(((DataRowView)e.Row).Row.Field<string>("PROD_ID")).Field<string>(e.Column.FieldName);
+        }
+
+        private void simpleButtonFinishedGoodsSave_Click(object sender, EventArgs e)
+        {
+            finisheD_MSTTableAdapter1.Update(signes_MESDataSet);
+        }
+
+        #endregion
+
+        #region Mainform
+
+        #region Appearance & Style
+        private void Default_StyleChanged(object sender, EventArgs e)
+        {
+            setGanttChartColors();
+            setElementColors();
+        }
+
+        private void setElementColors()
+        {
+            var commonSkin = CommonSkins.GetSkin(this.LookAndFeel);
+            var svgPalette = commonSkin.SvgPalettes["DefaultSkinPalette"];
+
+            panelControlMain.Appearance.BackColor = svgPalette["Paint High"].Value;
+            panelControlMain.Appearance.BackColor2 = svgPalette["Paint Shadow"].Value;
+            labelControlTitle.ForeColor = svgPalette["Key Brush Light"].Value;
+
+            //panelControlMain.LookAndFeel.Color
+        }
+        private void setGanttChartColors()
+        {
+            var commonSkin = CommonSkins.GetSkin(this.LookAndFeel);
+            var svgPalette = commonSkin.SvgPalettes["DefaultSkinPalette"];
+
+            ganttChartChart.BackColor = svgPalette["Paint High"].Value;
+
+            HeaderFormat headerFormat = ganttChartChart.HeaderFormat;
+            headerFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
+            headerFormat.GradientLight = commonSkin.Colors["Control"];
+            headerFormat.GradientDark = commonSkin.Colors["Control"];
+            headerFormat.Border = new Pen(svgPalette["Brush Major"].Value);
+            ganttChartChart.HeaderFormat = headerFormat;
+
+            TaskFormat taskFormat = ganttChartChart.TaskFormat;
+            taskFormat.Color = new SolidBrush(commonSkin.Colors["ControlText"]);
+            taskFormat.Border = new Pen(Color.FromArgb(100, svgPalette["Accent Paint"].Value), 2f);
+            taskFormat.ForeFill = new SolidBrush(svgPalette["Accent Paint"].Value);
+            taskFormat.BackFill = new SolidBrush(Color.FromArgb(120, svgPalette["Accent Paint"].Value));
+            taskFormat.DelayForeFill = new SolidBrush(commonSkin.Colors["WarningFill"]);
+            taskFormat.DelayBackFill = new SolidBrush(Color.FromArgb(120, commonSkin.Colors["WarningFill"]));
+            ganttChartChart.TaskFormat = taskFormat;
+
+            RelationFormat relationFormat = ganttChartChart.RelationFormat;
+            relationFormat.Line = new Pen(svgPalette["Brush"].Value);
+            relationFormat.Brush = new SolidBrush(svgPalette["Brush"].Value);
+            ganttChartChart.RelationFormat = relationFormat;
+        }
+
+        #endregion
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -726,6 +724,74 @@ namespace MES
             accountPopupMenu.ShowPopup(bottomleft, labelControl2);
         }
 
+        private object GetTasks()
+        {
+            //DataTable table = new DataTable();
+
+
+            //foreach (Task task in m_Manager.Tasks)
+            //{
+            //    ModelledTask mTask = new ModelledTask(task, m_Manager);
+
+            //    DataRow row = table.NewRow();
+            //    row["Text"] = mTask.Text;
+            //    row["ID"] = mTask.ID;
+            //    row["ParentID"] = mTask.ParentID;
+            //    row["StartDate"] = mTask.StartDate;
+            //    row["FinishDate"] = mTask.FinishDate;
+            //    row["BaselineStartDate"] = mTask.BaselineStartDate;
+            //    row["BaselineFinishDate"] = mTask.BaselineFinishDate;
+            //    row["Duration"] = mTask.Duration;
+            //    row["Delay"] = mTask.Delay;
+            //    row["Tooltip"] = mTask.Tooltip;
+            //    row["Progress"] = mTask.Progress;
+            //    table.Rows.Add(row);
+            //}
+
+            List<ModelledTask> tasks = new List<ModelledTask>();
+            foreach (Task task in m_Manager.Tasks)
+            {
+                tasks.Add(new ModelledTask(task, m_Manager));
+            }
+
+            return tasks;
+        }
+
+        private void _FormatTreeList()
+        {
+            foreach (TreeListColumn column in ganttChartChartTreeList.Columns)
+            {
+                int hits = 0;
+
+                foreach (DataColumn headerColumn in m_Manager.HeaderList)
+                {
+                    if (column.FieldName == headerColumn.ColumnName)
+                    {
+                        hits++;
+                        break;
+                    }
+                }
+
+                if (hits == 0)
+                {
+                    column.Visible = false;
+                }
+            }
+        }
+
+        private void dummyForm_Disposed(object sender, EventArgs e)
+        {
+            _CreateDummyForm();
+        }
+
+        private void _CreateDummyForm()
+        {
+            dummyForm = new XtraForm();
+            dummyForm.Size = new Size(852, 480);
+            dummyForm.Name = "Dummy form";
+            dummyForm.Disposed += new EventHandler(dummyForm_Disposed);
+        }
+
         private void hyperlinkLabelControl2_Click(object sender, EventArgs e)
         {
             dummyForm.Text = "Group editor dummy form";
@@ -736,16 +802,6 @@ namespace MES
         {
             dummyForm.Text = "Task editor dummy form";
             dummyForm.ShowDialog();
-        }
-
-        private void accordionControlElementTaskEditor_Click(object sender, EventArgs e)
-        {
-            hyperlinkLabelControl1_Click(sender, e);
-        }
-
-        private void accordionControlElementGroupEditor_Click(object sender, EventArgs e)
-        {
-            hyperlinkLabelControl2_Click(sender, e);
         }
 
         private void accordionControlElementSetting_Click(object sender, EventArgs e)
@@ -772,52 +828,24 @@ namespace MES
             dummyForm.ShowDialog();
         }
 
+        private void accordionControlElementTaskEditor_Click(object sender, EventArgs e)
+        {
+            hyperlinkLabelControl1_Click(sender, e);
+        }
+
+        private void accordionControlElementGroupEditor_Click(object sender, EventArgs e)
+        {
+            hyperlinkLabelControl2_Click(sender, e);
+        }
+
+
         private void accordionControlElement4_Click(object sender, EventArgs e)
         {
             tabPane1.SelectedPage = tabNavigationPage1;
         }
 
-        private void UpdateDropDownButton(BarItem item)
-        {
-            dropDownButtonBOM.Text = item.Caption;
-            dropDownButtonBOM.ImageOptions.SvgImage = item.ImageOptions.SvgImage;
-            dropDownButtonBOM.ImageOptions.SvgImageSize = new Size(16, 16);
-            dropDownButtonBOM.Tag = item.Tag;
-        }
+        #endregion
 
-        private void simpleButtonBOMAddProduct_Click(object sender, EventArgs e)
-        {
-            gridViewProductListing.AddNewRow();
-        }
-
-        private void simpleButtonBOMAddMaterial_Click(object sender, EventArgs e)
-        {
-            gridViewProductListing.ExpandMasterRow(gridViewProductListing.FocusedRowHandle);
-            CardView detailView = (gridViewProductListing.GetDetailView(gridViewProductListing.FocusedRowHandle, 0) as CardView);
-            detailView.AddNewRow();
-        }
-
-        private void simpleButtonFinishedGoodsSave_Click(object sender, EventArgs e)
-        {
-            finisheD_MSTTableAdapter1.Update(signes_MESDataSet);
-        }
-
-        private void simpleButtonMaterialInventorySave_Click(object sender, EventArgs e)
-        {
-            materiaL_MSTTableAdapter.Update(signes_MESDataSet);
-        }
-
-        private void simpleButtonManufacturingOrderSave_Click(object sender, EventArgs e)
-        {
-            mM_PROC_MSTTableAdapter.Update(signes_MESDataSet);
-        }
-
-        private void simpleButtonMOAddStep_Click(object sender, EventArgs e)
-        {
-            gridViewManufacturingOrder.ExpandMasterRow(gridViewManufacturingOrder.FocusedRowHandle);
-            CardView detailView = (gridViewManufacturingOrder.GetDetailView(gridViewManufacturingOrder.FocusedRowHandle, 0) as CardView);
-            detailView.AddNewRow();
-        }
     }
 
     #region overlay painter
