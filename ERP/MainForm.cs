@@ -279,7 +279,7 @@ namespace MES
         private void AfterInitialization()
         {
             // Set mainform text
-            this.Appearance.Font = new Font("Segoe UI", 9f);
+            this.Appearance.Caption = new Font("Segoe UI", 9f);
 
             // Set text
             ganttChartChartProjectLabel.Text = m_Manager.Name;
@@ -868,7 +868,7 @@ namespace MES
         }
 
         #endregion
-
+        
     }
 
     #region overlay painter
