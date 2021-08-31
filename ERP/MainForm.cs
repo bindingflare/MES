@@ -303,16 +303,24 @@ namespace MES
             // Add details to ProductListing Views by temporarily giving them main view status
             cardViewProductListing = new DevExpress.XtraGrid.Views.Card.CardView();
             MasterDetailHelper cardHelper = new MasterDetailHelper(cardViewProductListing, ViewType.Card);
+
             gridControlBOM.MainView = cardViewProductListing;
+            cardViewProductListing.CardCaptionFormat = "{1}/{2}/{3}";
+
             cardHelper.CreateDetail();
             _viewSetColumnProdCaption(cardViewProductListing);
-            cardHelper.AfterPopup += CardHelper_AfterPopup;
 
             layoutViewProductListing = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             MasterDetailHelper layoutHelper = new MasterDetailHelper(layoutViewProductListing, ViewType.Layout);
+
             gridControlBOM.MainView = layoutViewProductListing;
+            layoutViewProductListing.CardCaptionFormat = "{1}/{2}/{3}";
+
             layoutHelper.CreateDetail();
             _viewSetColumnProdCaption(layoutViewProductListing);
+
+            // MasterDetailHelper events
+            cardHelper.AfterPopup += CardHelper_AfterPopup;
             layoutHelper.AfterPopup += LayoutHelper_AfterPopup;
 
             gridControlBOM.MainView = gridViewProductListing; // Reset to default view
@@ -345,11 +353,13 @@ namespace MES
         private void LayoutHelper_AfterPopup(object sender, DetailEventArgs e)
         {
             _viewSetColumnMaterialCaption(e.DetailView);
+            (e.DetailView as LayoutView).CardCaptionFormat = "{1}/{2}/{3}";
         }
 
         private void CardHelper_AfterPopup(object sender, DetailEventArgs e)
         {
             _viewSetColumnMaterialCaption(e.DetailView);
+            (e.DetailView as CardView).CardCaptionFormat = "{1}/{2}/{3}";
         }
 
         #region Overview
