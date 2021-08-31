@@ -32,7 +32,6 @@ namespace MES
             this.viewType = viewType;
         }
 
-
         public GridControl DetailGrid
         {
             get
@@ -69,6 +68,10 @@ namespace MES
                 }
             }
         }
+
+        public delegate void DetailEventHandler(object sender, DetailEventArgs e);
+
+        public event DetailEventHandler AfterPopup;
 
         public void CreateDetail()
         {
@@ -107,13 +110,15 @@ namespace MES
         private void SetColumnEdit(GridColumn column)
         {
             column.ColumnEdit = CreateItem();
+            column.Tag = this;
         }
 
         private RepositoryItemPopupContainerEdit CreateItem()
         {
             RepositoryItemPopupContainerEdit item = new RepositoryItemPopupContainerEdit();
             item.PopupControl = CreatePopupControl();
-            item.ShowPopupCloseButton = item.ShowPopupShadow = false;
+            item.ShowPopupCloseButton = true;
+            item.ShowPopupShadow = false;
             item.PopupSizeable = false;
             item.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             item.QueryPopUp += OnPopup;
@@ -126,6 +131,7 @@ namespace MES
         {
             PopupContainerControl popupControl = new PopupContainerControl();
             popupControl.Controls.Add(DetailGrid);
+
             return popupControl;
         }
 
@@ -147,6 +153,8 @@ namespace MES
                 edit.Properties.PopupControl.Parent = edit.FindForm();
             DetailGrid.ForceInitialize();
             edit.Properties.PopupFormSize = CalcDetailViewSize();
+
+            AfterPopup?.Invoke(this, new DetailEventArgs(detailView));
         }
 
         private IList GetDetailData()
@@ -166,6 +174,16 @@ namespace MES
         {
             DetailView.PostEditor();
             detailView.UpdateCurrentRow();
+        }
+    }
+
+    public class DetailEventArgs : EventArgs {
+
+        public ColumnView DetailView { get; }
+
+        public DetailEventArgs(ColumnView detailView)
+        {
+            DetailView = detailView;
         }
     }
 }

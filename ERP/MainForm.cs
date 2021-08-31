@@ -24,6 +24,7 @@ using DevExpress.Skins.XtraForm;
 using DevExpress.Utils;
 using DevExpress.XtraBars.ToolbarForm;
 using DevExpress.XtraGrid.Views.Layout;
+using DevExpress.XtraEditors.Repository;
 
 namespace MES
 {
@@ -34,8 +35,8 @@ namespace MES
 
         private XtraForm dummyForm;
 
-        private DevExpress.XtraGrid.Views.Card.CardView cardView;
-        private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView;
+        private DevExpress.XtraGrid.Views.Card.CardView cardViewProductListing;
+        private DevExpress.XtraGrid.Views.Layout.LayoutView layoutViewProductListing;
 
         private int _SplitterX;
         private int _ScrollFix = 0;
@@ -299,18 +300,20 @@ namespace MES
             // BOM
             searchControlBOM.EditValueChanged += SearchControlBOM_Enter;
 
-            // Add details to Views by temporarily giving them main view status
-            cardView = new DevExpress.XtraGrid.Views.Card.CardView();
-            MasterDetailHelper cardHelper = new MasterDetailHelper(cardView, ViewType.Card);
-            gridControlBOM.MainView = cardView;
+            // Add details to ProductListing Views by temporarily giving them main view status
+            cardViewProductListing = new DevExpress.XtraGrid.Views.Card.CardView();
+            MasterDetailHelper cardHelper = new MasterDetailHelper(cardViewProductListing, ViewType.Card);
+            gridControlBOM.MainView = cardViewProductListing;
             cardHelper.CreateDetail();
-            _viewSetColumnProdCaption(cardView);
+            _viewSetColumnProdCaption(cardViewProductListing);
+            cardHelper.AfterPopup += CardHelper_AfterPopup;
 
-            layoutView = new DevExpress.XtraGrid.Views.Layout.LayoutView();
-            MasterDetailHelper layoutHelper = new MasterDetailHelper(layoutView, ViewType.Layout);
-            gridControlBOM.MainView = layoutView;
+            layoutViewProductListing = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+            MasterDetailHelper layoutHelper = new MasterDetailHelper(layoutViewProductListing, ViewType.Layout);
+            gridControlBOM.MainView = layoutViewProductListing;
             layoutHelper.CreateDetail();
-            _viewSetColumnProdCaption(layoutView);
+            _viewSetColumnProdCaption(layoutViewProductListing);
+            layoutHelper.AfterPopup += LayoutHelper_AfterPopup;
 
             gridControlBOM.MainView = gridViewProductListing; // Reset to default view
 
@@ -337,6 +340,16 @@ namespace MES
             lookUpEditMOProductFilter.EditValueChanged += LookUpEditMOProductFilter_EditValueChanged;
 
             lookUpEditMOProductFilter.QueryPopUp += LookUpEditMOProductFilter_QueryPopUp;
+        }
+
+        private void LayoutHelper_AfterPopup(object sender, DetailEventArgs e)
+        {
+            _viewSetColumnMaterialCaption(e.DetailView);
+        }
+
+        private void CardHelper_AfterPopup(object sender, DetailEventArgs e)
+        {
+            _viewSetColumnMaterialCaption(e.DetailView);
         }
 
         #region Overview
@@ -388,7 +401,7 @@ namespace MES
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlBOM.MainView = cardView;
+            gridControlBOM.MainView = cardViewProductListing;
         }
 
         private void barButtonItemGridView_Click(object sender, ItemClickEventArgs e)
@@ -402,7 +415,7 @@ namespace MES
         {
             UpdateDropDownButton(e.Item);
 
-            gridControlBOM.MainView = layoutView;
+            gridControlBOM.MainView = layoutViewProductListing;
         }
 
         private void UpdateDropDownButton(BarItem item)
@@ -434,9 +447,41 @@ namespace MES
 
         private void simpleButtonBOMAddMaterial_Click(object sender, EventArgs e)
         {
-            gridViewProductListing.ExpandMasterRow(gridViewProductListing.FocusedRowHandle);
-            CardView detailView = (gridViewProductListing.GetDetailView(gridViewProductListing.FocusedRowHandle, 0) as CardView);
-            detailView.AddNewRow();
+            BaseView view = gridControlBOM.MainView;
+            if (view is GridView)
+            {
+                gridViewProductListing.ExpandMasterRow(gridViewProductListing.FocusedRowHandle);
+                CardView detailView = (gridViewProductListing.GetDetailView(gridViewProductListing.FocusedRowHandle, 0) as CardView);
+                detailView.AddNewRow();
+            }
+            else
+            {
+                ColumnView columnView = view as ColumnView;
+                GridColumn column = columnView.Columns["Detail"];
+                RepositoryItemPopupContainerEdit containerEdit = column.ColumnEdit as RepositoryItemPopupContainerEdit;
+                PopupContainerControl control = containerEdit.PopupControl;
+
+                MasterDetailHelper helper = column.Tag as MasterDetailHelper;
+                
+                // Get editor shown in focused column to utilize ShowPopup()
+                columnView.FocusedColumn = column;
+                columnView.ShowEditor();
+                (columnView.ActiveEditor as PopupContainerEdit).ShowPopup();
+
+                // Add new entry
+                helper.DetailView.AddNewRow();
+                
+
+                //view.GridControl.BeginInvoke(new MethodInvoker(() => {
+                //    PopupBaseEdit edit = view.ActiveEditor as PopupBaseEdit;
+                //    if (edit == null) return;
+                //    edit.ShowPopup();
+                //}));
+
+                
+                //control.Show();
+                //(containerEdit as RepositoryItemPopupContainerEdit).
+            }
         }
 
         #endregion
@@ -850,6 +895,32 @@ namespace MES
             view.Columns["CREATE_DATE"].Caption = "Create date";
             view.Columns["UPDATE_USER_ID"].Caption = "Updated by";
             view.Columns["UPDATE_DATE"].Caption = "Update date";
+        }
+
+        private void _viewSetColumnMaterialCaption(ColumnView view)
+        {
+            view.Columns["MATERIAL_ID"].Caption = "Material ID";
+            view.Columns["MATERIAL_NAME"].Caption = "Name";
+            view.Columns["QTY"].Caption = "Quantity";
+            view.Columns["PROD_ID"].Caption = "Product ID";
+            view.Columns["PROD_GROUP_ID"].Caption = "Product Group ID";
+            view.Columns["SITE_ID"].Caption = "Product Site ID";
+            view.Columns["PROC_ID"].Caption = "Product Process ID";
+            view.Columns["PROD_CLASS_CODE"].Caption = "Product Class code";
+            view.Columns["PROD_NM"].Caption = "Product Name";
+            view.Columns["PROD_TYPE"].Caption = "Product Type";
+            //view.Columns["SUB_PROD_TYPE"].Caption = "Product Subtype";
+            view.Columns["PROD_GRADE"].Caption = "Product Grade";
+            view.Columns["PROD_MODEL"].Caption = "Product Model";
+            view.Columns["DEL_YN"].Visible = false;
+            view.Columns["REASON_CODE"].Visible = false;
+            view.Columns["DESCR"].Caption = "Product Description";
+            view.Columns["CREATE_USER_ID"].Caption = "Created by";
+            view.Columns["CREATE_DATE"].Caption = "Create date";
+            view.Columns["UPDATE_USER_ID"].Caption = "Updated by";
+            view.Columns["UPDATE_DATE"].Caption = "Update date";
+
+            view.Columns["PROC_VER"].Caption = "Process Version";
         }
 
         private void dummyForm_Disposed(object sender, EventArgs e)

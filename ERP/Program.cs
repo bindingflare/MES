@@ -24,7 +24,8 @@ namespace MES
             InitFonts();
 
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(true);
+            DevExpress.XtraEditors.WindowsFormsSettings.UseAdvancedTextEdit = DevExpress.Utils.DefaultBoolean.True;
             DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new System.Drawing.Font(regularFontCollection.Families[0], 9f);
             Application.Run(new MainForm());
         }
