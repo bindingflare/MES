@@ -23,6 +23,7 @@ using System.Globalization;
 using DevExpress.Skins.XtraForm;
 using DevExpress.Utils;
 using DevExpress.XtraBars.ToolbarForm;
+using DevExpress.XtraGrid.Views.Layout;
 
 namespace MES
 {
@@ -32,7 +33,6 @@ namespace MES
         private OverlayPainter m_Overlay = new OverlayPainter();
 
         private XtraForm dummyForm;
-        private MasterDetailHelper helper;
 
         private DevExpress.XtraGrid.Views.Card.CardView cardView;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView;
@@ -299,9 +299,20 @@ namespace MES
             // BOM
             searchControlBOM.EditValueChanged += SearchControlBOM_Enter;
 
-            // Views
+            // Add details to Views by temporarily giving them main view status
             cardView = new DevExpress.XtraGrid.Views.Card.CardView();
+            MasterDetailHelper cardHelper = new MasterDetailHelper(cardView, ViewType.Card);
+            gridControlBOM.MainView = cardView;
+            cardHelper.CreateDetail();
+            _viewSetColumnProdCaption(cardView);
+
             layoutView = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+            MasterDetailHelper layoutHelper = new MasterDetailHelper(layoutView, ViewType.Layout);
+            gridControlBOM.MainView = layoutView;
+            layoutHelper.CreateDetail();
+            _viewSetColumnProdCaption(layoutView);
+
+            gridControlBOM.MainView = gridViewProductListing; // Reset to default view
 
             // Account label
             barButtonItemAccountSettings.ItemClick += BarButtonItemAccountSettings_ItemClick;
@@ -313,7 +324,9 @@ namespace MES
             barButtonIteLayoutView.ItemClick += barButtonItemLayoutView_Click;
 
             // Status strip
-            toolStripStatusLabel1.Text = "Ready";
+            toolStripStatusLabelStatus.Text = "Ready";
+            statusStrip.Paint += StatusStrip_Paint;
+            
 
             // Finished goods lookup
             gridViewFinishedGoods.CustomUnboundColumnData += GridViewFinishedGoods_CustomUnboundColumnData;
@@ -325,8 +338,6 @@ namespace MES
 
             lookUpEditMOProductFilter.QueryPopUp += LookUpEditMOProductFilter_QueryPopUp;
         }
-
-        
 
         #region Overview
 
@@ -378,9 +389,6 @@ namespace MES
             UpdateDropDownButton(e.Item);
 
             gridControlBOM.MainView = cardView;
-
-            helper = new MasterDetailHelper(cardView, ViewType.Card);
-            helper.CreateDetail();
         }
 
         private void barButtonItemGridView_Click(object sender, ItemClickEventArgs e)
@@ -395,9 +403,6 @@ namespace MES
             UpdateDropDownButton(e.Item);
 
             gridControlBOM.MainView = layoutView;
-
-            helper = new MasterDetailHelper(layoutView, ViewType.Card);
-            helper.CreateDetail();
         }
 
         private void UpdateDropDownButton(BarItem item)
@@ -410,7 +415,21 @@ namespace MES
 
         private void simpleButtonBOMAddProduct_Click(object sender, EventArgs e)
         {
-            gridViewProductListing.AddNewRow();
+            BaseView view = gridControlBOM.MainView;
+            (view as ColumnView).AddNewRow();
+
+            //if (view is GridView)
+            //{
+            //    gridViewProductListing.AddNewRow();
+            //}
+            //else if(view is CardView)
+            //{
+            //    cardView.AddNewRow();
+            //}
+            //else if(view is LayoutView)
+            //{
+            //    layoutView.AddNewRow();
+            //}
         }
 
         private void simpleButtonBOMAddMaterial_Click(object sender, EventArgs e)
@@ -698,6 +717,10 @@ namespace MES
             panelControlMain.Appearance.BackColor2 = svgPalette["Paint Shadow"].Value;
             labelControlTitle.ForeColor = svgPalette["Key Brush Light"].Value;
 
+            //Color color = Color.FromArgb(Math.Max(color.A - 10, 0), Math.Max(color.R - 10, 0), Math.Max(color.G - 10, 0));
+            statusStrip.BackColor = svgPalette["Accent Paint"].Value;
+            toolStripStatusLabelStatus.ForeColor = commonSkin.Colors["Control"];
+
             //panelControlMain.LookAndFeel.Color
         }
         private void setGanttChartColors()
@@ -729,6 +752,16 @@ namespace MES
             ganttChartProductionMonitor.RelationFormat = relationFormat;
         }
 
+        private void StatusStrip_Paint(object sender, PaintEventArgs e)
+        {
+            Brush background = new SolidBrush(statusStrip.BackColor);
+            //Pen pen = new Pen(new SolidBrush(Color.Gray));
+            e.Graphics.FillRectangle(background, e.ClipRectangle);
+            //e.Graphics.DrawRectangle(pen, e.ClipRectangle);
+
+            base.OnPaint(e);
+        }
+
         #endregion
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -741,13 +774,6 @@ namespace MES
             this.PRODUCT_MSTTableAdapter.Fill(this.signes_MESDataSet.PRODUCT_MST);
             this.materiaL_MSTTableAdapter.Fill(this.signes_MESDataSet.MATERIAL_MST);
             this.mM_PROC_STEPTableAdapter.Fill(this.signes_MESDataSet.MM_PROC_STEP);
-        }
-
-        private void labelControl2_Click(object sender, EventArgs e)
-        {
-            //Point loc = 
-            Point bottomleft = panelControlMain.PointToScreen(new Point(labelControl2.Left, labelControl2.Bottom));
-            accountPopupMenu.ShowPopup(bottomleft, labelControl2);
         }
 
         private object GetTasks()
@@ -803,6 +829,27 @@ namespace MES
                     column.Visible = false;
                 }
             }
+        }
+
+        private void _viewSetColumnProdCaption(ColumnView view)
+        {
+            view.Columns["PROD_ID"].Caption = "Product ID";
+            view.Columns["PROD_GROUP_ID"].Caption = "Group ID";
+            view.Columns["SITE_ID"].Caption = "Site ID";
+            view.Columns["PROC_ID"].Caption = "Process ID";
+            view.Columns["PROD_CLASS_CODE"].Caption = "Class code";
+            view.Columns["PROD_NM"].Caption = "Name";
+            view.Columns["PROD_TYPE"].Caption = "Type";
+            view.Columns["SUB_PROD_TYPE"].Caption = "Subtype";
+            view.Columns["PROD_GRADE"].Caption = "Grade";
+            view.Columns["PROD_MODEL"].Caption = "Model";
+            view.Columns["DEL_YN"].Visible = false;
+            view.Columns["REASON_CODE"].Visible = false;
+            view.Columns["DESCR"].Caption = "Description";
+            view.Columns["CREATE_USER_ID"].Caption = "Created by";
+            view.Columns["CREATE_DATE"].Caption = "Create date";
+            view.Columns["UPDATE_USER_ID"].Caption = "Updated by";
+            view.Columns["UPDATE_DATE"].Caption = "Update date";
         }
 
         private void dummyForm_Disposed(object sender, EventArgs e)
@@ -870,12 +917,20 @@ namespace MES
             tabPane1.SelectedPage = tabNavigationPage1;
         }
 
-        #endregion
-
         protected override FormPainter CreateFormBorderPainter()
         {
             return new CustomToolbarFormPainter(this, LookAndFeel);
         }
+
+        #endregion
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+            //Point loc = 
+            Point bottomleft = panelControlMain.PointToScreen(new Point(labelControl2.Left, labelControl2.Bottom));
+            accountPopupMenu.ShowPopup(bottomleft, labelControl2);
+        }
+
     }
 
     #region overlay painter
