@@ -38,11 +38,17 @@ namespace MES {
         
         private FINISHED_MSTDataTable tableFINISHED_MST;
         
+        private JOB_MSTDataTable tableJOB_MST;
+        
         private FINISHED_MST_FULLDataTable tableFINISHED_MST_FULL;
         
         private global::System.Data.DataRelation relationMM_PROD_MST_MATERIAL_MST;
         
         private global::System.Data.DataRelation relationMM_PROC_MST_MM_PROC_STEP;
+        
+        private global::System.Data.DataRelation relationPRODUCT_MST_JOB_MST;
+        
+        private global::System.Data.DataRelation relationPRODUCT_MST_FINISHED_MST;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -92,6 +98,9 @@ namespace MES {
                 }
                 if ((ds.Tables["FINISHED_MST"] != null)) {
                     base.Tables.Add(new FINISHED_MSTDataTable(ds.Tables["FINISHED_MST"]));
+                }
+                if ((ds.Tables["JOB_MST"] != null)) {
+                    base.Tables.Add(new JOB_MSTDataTable(ds.Tables["JOB_MST"]));
                 }
                 if ((ds.Tables["FINISHED_MST_FULL"] != null)) {
                     base.Tables.Add(new FINISHED_MST_FULLDataTable(ds.Tables["FINISHED_MST_FULL"]));
@@ -181,6 +190,16 @@ namespace MES {
         public FINISHED_MSTDataTable FINISHED_MST {
             get {
                 return this.tableFINISHED_MST;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public JOB_MSTDataTable JOB_MST {
+            get {
+                return this.tableJOB_MST;
             }
         }
         
@@ -282,6 +301,9 @@ namespace MES {
                 if ((ds.Tables["FINISHED_MST"] != null)) {
                     base.Tables.Add(new FINISHED_MSTDataTable(ds.Tables["FINISHED_MST"]));
                 }
+                if ((ds.Tables["JOB_MST"] != null)) {
+                    base.Tables.Add(new JOB_MSTDataTable(ds.Tables["JOB_MST"]));
+                }
                 if ((ds.Tables["FINISHED_MST_FULL"] != null)) {
                     base.Tables.Add(new FINISHED_MST_FULLDataTable(ds.Tables["FINISHED_MST_FULL"]));
                 }
@@ -360,6 +382,12 @@ namespace MES {
                     this.tableFINISHED_MST.InitVars();
                 }
             }
+            this.tableJOB_MST = ((JOB_MSTDataTable)(base.Tables["JOB_MST"]));
+            if ((initTable == true)) {
+                if ((this.tableJOB_MST != null)) {
+                    this.tableJOB_MST.InitVars();
+                }
+            }
             this.tableFINISHED_MST_FULL = ((FINISHED_MST_FULLDataTable)(base.Tables["FINISHED_MST_FULL"]));
             if ((initTable == true)) {
                 if ((this.tableFINISHED_MST_FULL != null)) {
@@ -368,6 +396,8 @@ namespace MES {
             }
             this.relationMM_PROD_MST_MATERIAL_MST = this.Relations["MM_PROD_MST_MATERIAL_MST"];
             this.relationMM_PROC_MST_MM_PROC_STEP = this.Relations["MM_PROC_MST_MM_PROC_STEP"];
+            this.relationPRODUCT_MST_JOB_MST = this.Relations["PRODUCT_MST_JOB_MST"];
+            this.relationPRODUCT_MST_FINISHED_MST = this.Relations["PRODUCT_MST_FINISHED_MST"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -392,6 +422,8 @@ namespace MES {
             base.Tables.Add(this.tablePRODUCT_MST);
             this.tableFINISHED_MST = new FINISHED_MSTDataTable();
             base.Tables.Add(this.tableFINISHED_MST);
+            this.tableJOB_MST = new JOB_MSTDataTable();
+            base.Tables.Add(this.tableJOB_MST);
             this.tableFINISHED_MST_FULL = new FINISHED_MST_FULLDataTable();
             base.Tables.Add(this.tableFINISHED_MST_FULL);
             this.relationMM_PROD_MST_MATERIAL_MST = new global::System.Data.DataRelation("MM_PROD_MST_MATERIAL_MST", new global::System.Data.DataColumn[] {
@@ -402,6 +434,14 @@ namespace MES {
                         this.tableMM_PROC_MST.PROC_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableMM_PROC_STEP.PROC_IDColumn}, false);
             this.Relations.Add(this.relationMM_PROC_MST_MM_PROC_STEP);
+            this.relationPRODUCT_MST_JOB_MST = new global::System.Data.DataRelation("PRODUCT_MST_JOB_MST", new global::System.Data.DataColumn[] {
+                        this.tablePRODUCT_MST.PROD_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableJOB_MST.PROD_IDColumn}, false);
+            this.Relations.Add(this.relationPRODUCT_MST_JOB_MST);
+            this.relationPRODUCT_MST_FINISHED_MST = new global::System.Data.DataRelation("PRODUCT_MST_FINISHED_MST", new global::System.Data.DataColumn[] {
+                        this.tablePRODUCT_MST.PROD_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableFINISHED_MST.PROD_IDColumn}, false);
+            this.Relations.Add(this.relationPRODUCT_MST_FINISHED_MST);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -443,6 +483,12 @@ namespace MES {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeFINISHED_MST() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeJOB_MST() {
             return false;
         }
         
@@ -527,6 +573,9 @@ namespace MES {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void FINISHED_MSTRowChangeEventHandler(object sender, FINISHED_MSTRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void JOB_MSTRowChangeEventHandler(object sender, JOB_MSTRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void FINISHED_MST_FULLRowChangeEventHandler(object sender, FINISHED_MST_FULLRowChangeEvent e);
@@ -3778,15 +3827,18 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FINISHED_MSTRow AddFINISHED_MSTRow(string DUID, string EVENT_TIME, string PROD_ID, long QTY, string CREATE_USER, string CREATE_DATE) {
+            public FINISHED_MSTRow AddFINISHED_MSTRow(string DUID, string EVENT_TIME, PRODUCT_MSTRow parentPRODUCT_MSTRowByPRODUCT_MST_FINISHED_MST, long QTY, string CREATE_USER, string CREATE_DATE) {
                 FINISHED_MSTRow rowFINISHED_MSTRow = ((FINISHED_MSTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DUID,
                         EVENT_TIME,
-                        PROD_ID,
+                        null,
                         QTY,
                         CREATE_USER,
                         CREATE_DATE};
+                if ((parentPRODUCT_MSTRowByPRODUCT_MST_FINISHED_MST != null)) {
+                    columnValuesArray[2] = parentPRODUCT_MSTRowByPRODUCT_MST_FINISHED_MST[0];
+                }
                 rowFINISHED_MSTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFINISHED_MSTRow);
                 return rowFINISHED_MSTRow;
@@ -3935,6 +3987,476 @@ namespace MES {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "FINISHED_MSTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class JOB_MSTDataTable : global::System.Data.TypedTableBase<JOB_MSTRow> {
+            
+            private global::System.Data.DataColumn columnJOB_ID;
+            
+            private global::System.Data.DataColumn columnJOB_NM;
+            
+            private global::System.Data.DataColumn columnPROD_ID;
+            
+            private global::System.Data.DataColumn columnQTY;
+            
+            private global::System.Data.DataColumn columnSTART_TIME;
+            
+            private global::System.Data.DataColumn columnEND_TIME;
+            
+            private global::System.Data.DataColumn columnDURATION;
+            
+            private global::System.Data.DataColumn columnDELAY;
+            
+            private global::System.Data.DataColumn columnCOMPLETE;
+            
+            private global::System.Data.DataColumn columnPROC_START_ID;
+            
+            private global::System.Data.DataColumn columnPROC_END_ID;
+            
+            private global::System.Data.DataColumn columnCREATE_USER;
+            
+            private global::System.Data.DataColumn columnCREATE_DATE;
+            
+            private global::System.Data.DataColumn columnUPDATE_USER;
+            
+            private global::System.Data.DataColumn columnUPDATE_DATE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public JOB_MSTDataTable() {
+                this.TableName = "JOB_MST";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal JOB_MSTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected JOB_MSTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JOB_IDColumn {
+                get {
+                    return this.columnJOB_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JOB_NMColumn {
+                get {
+                    return this.columnJOB_NM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PROD_IDColumn {
+                get {
+                    return this.columnPROD_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QTYColumn {
+                get {
+                    return this.columnQTY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn START_TIMEColumn {
+                get {
+                    return this.columnSTART_TIME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn END_TIMEColumn {
+                get {
+                    return this.columnEND_TIME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DURATIONColumn {
+                get {
+                    return this.columnDURATION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DELAYColumn {
+                get {
+                    return this.columnDELAY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn COMPLETEColumn {
+                get {
+                    return this.columnCOMPLETE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PROC_START_IDColumn {
+                get {
+                    return this.columnPROC_START_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PROC_END_IDColumn {
+                get {
+                    return this.columnPROC_END_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CREATE_USERColumn {
+                get {
+                    return this.columnCREATE_USER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CREATE_DATEColumn {
+                get {
+                    return this.columnCREATE_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UPDATE_USERColumn {
+                get {
+                    return this.columnUPDATE_USER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UPDATE_DATEColumn {
+                get {
+                    return this.columnUPDATE_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public JOB_MSTRow this[int index] {
+                get {
+                    return ((JOB_MSTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event JOB_MSTRowChangeEventHandler JOB_MSTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event JOB_MSTRowChangeEventHandler JOB_MSTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event JOB_MSTRowChangeEventHandler JOB_MSTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event JOB_MSTRowChangeEventHandler JOB_MSTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddJOB_MSTRow(JOB_MSTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public JOB_MSTRow AddJOB_MSTRow(string JOB_ID, string JOB_NM, PRODUCT_MSTRow parentPRODUCT_MSTRowByPRODUCT_MST_JOB_MST, long QTY, string START_TIME, string END_TIME, string DURATION, string DELAY, long COMPLETE, string PROC_START_ID, string PROC_END_ID, string CREATE_USER, string CREATE_DATE, string UPDATE_USER, string UPDATE_DATE) {
+                JOB_MSTRow rowJOB_MSTRow = ((JOB_MSTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        JOB_ID,
+                        JOB_NM,
+                        null,
+                        QTY,
+                        START_TIME,
+                        END_TIME,
+                        DURATION,
+                        DELAY,
+                        COMPLETE,
+                        PROC_START_ID,
+                        PROC_END_ID,
+                        CREATE_USER,
+                        CREATE_DATE,
+                        UPDATE_USER,
+                        UPDATE_DATE};
+                if ((parentPRODUCT_MSTRowByPRODUCT_MST_JOB_MST != null)) {
+                    columnValuesArray[2] = parentPRODUCT_MSTRowByPRODUCT_MST_JOB_MST[0];
+                }
+                rowJOB_MSTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowJOB_MSTRow);
+                return rowJOB_MSTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public JOB_MSTRow FindByJOB_ID(string JOB_ID) {
+                return ((JOB_MSTRow)(this.Rows.Find(new object[] {
+                            JOB_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                JOB_MSTDataTable cln = ((JOB_MSTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new JOB_MSTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnJOB_ID = base.Columns["JOB_ID"];
+                this.columnJOB_NM = base.Columns["JOB_NM"];
+                this.columnPROD_ID = base.Columns["PROD_ID"];
+                this.columnQTY = base.Columns["QTY"];
+                this.columnSTART_TIME = base.Columns["START_TIME"];
+                this.columnEND_TIME = base.Columns["END_TIME"];
+                this.columnDURATION = base.Columns["DURATION"];
+                this.columnDELAY = base.Columns["DELAY"];
+                this.columnCOMPLETE = base.Columns["COMPLETE"];
+                this.columnPROC_START_ID = base.Columns["PROC_START_ID"];
+                this.columnPROC_END_ID = base.Columns["PROC_END_ID"];
+                this.columnCREATE_USER = base.Columns["CREATE_USER"];
+                this.columnCREATE_DATE = base.Columns["CREATE_DATE"];
+                this.columnUPDATE_USER = base.Columns["UPDATE_USER"];
+                this.columnUPDATE_DATE = base.Columns["UPDATE_DATE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnJOB_ID = new global::System.Data.DataColumn("JOB_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJOB_ID);
+                this.columnJOB_NM = new global::System.Data.DataColumn("JOB_NM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJOB_NM);
+                this.columnPROD_ID = new global::System.Data.DataColumn("PROD_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPROD_ID);
+                this.columnQTY = new global::System.Data.DataColumn("QTY", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQTY);
+                this.columnSTART_TIME = new global::System.Data.DataColumn("START_TIME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTART_TIME);
+                this.columnEND_TIME = new global::System.Data.DataColumn("END_TIME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEND_TIME);
+                this.columnDURATION = new global::System.Data.DataColumn("DURATION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDURATION);
+                this.columnDELAY = new global::System.Data.DataColumn("DELAY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELAY);
+                this.columnCOMPLETE = new global::System.Data.DataColumn("COMPLETE", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOMPLETE);
+                this.columnPROC_START_ID = new global::System.Data.DataColumn("PROC_START_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPROC_START_ID);
+                this.columnPROC_END_ID = new global::System.Data.DataColumn("PROC_END_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPROC_END_ID);
+                this.columnCREATE_USER = new global::System.Data.DataColumn("CREATE_USER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCREATE_USER);
+                this.columnCREATE_DATE = new global::System.Data.DataColumn("CREATE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCREATE_DATE);
+                this.columnUPDATE_USER = new global::System.Data.DataColumn("UPDATE_USER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUPDATE_USER);
+                this.columnUPDATE_DATE = new global::System.Data.DataColumn("UPDATE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUPDATE_DATE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint11", new global::System.Data.DataColumn[] {
+                                this.columnJOB_ID}, true));
+                this.columnJOB_ID.AllowDBNull = false;
+                this.columnJOB_ID.Unique = true;
+                this.columnJOB_ID.MaxLength = 2147483647;
+                this.columnJOB_NM.MaxLength = 2147483647;
+                this.columnPROD_ID.MaxLength = 2147483647;
+                this.columnSTART_TIME.MaxLength = 2147483647;
+                this.columnEND_TIME.MaxLength = 2147483647;
+                this.columnDURATION.MaxLength = 2147483647;
+                this.columnDELAY.MaxLength = 2147483647;
+                this.columnPROC_START_ID.MaxLength = 2147483647;
+                this.columnPROC_END_ID.MaxLength = 2147483647;
+                this.columnCREATE_USER.MaxLength = 2147483647;
+                this.columnCREATE_DATE.MaxLength = 2147483647;
+                this.columnUPDATE_USER.MaxLength = 2147483647;
+                this.columnUPDATE_DATE.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public JOB_MSTRow NewJOB_MSTRow() {
+                return ((JOB_MSTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new JOB_MSTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(JOB_MSTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.JOB_MSTRowChanged != null)) {
+                    this.JOB_MSTRowChanged(this, new JOB_MSTRowChangeEvent(((JOB_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.JOB_MSTRowChanging != null)) {
+                    this.JOB_MSTRowChanging(this, new JOB_MSTRowChangeEvent(((JOB_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.JOB_MSTRowDeleted != null)) {
+                    this.JOB_MSTRowDeleted(this, new JOB_MSTRowChangeEvent(((JOB_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.JOB_MSTRowDeleting != null)) {
+                    this.JOB_MSTRowDeleting(this, new JOB_MSTRowChangeEvent(((JOB_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveJOB_MSTRow(JOB_MSTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Signes_MESDataSet ds = new Signes_MESDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "JOB_MSTDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -7386,6 +7908,28 @@ namespace MES {
                     return ((MATERIAL_MSTRow[])(base.GetChildRows(this.Table.ChildRelations["MM_PROD_MST_MATERIAL_MST"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public JOB_MSTRow[] GetJOB_MSTRows() {
+                if ((this.Table.ChildRelations["PRODUCT_MST_JOB_MST"] == null)) {
+                    return new JOB_MSTRow[0];
+                }
+                else {
+                    return ((JOB_MSTRow[])(base.GetChildRows(this.Table.ChildRelations["PRODUCT_MST_JOB_MST"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FINISHED_MSTRow[] GetFINISHED_MSTRows() {
+                if ((this.Table.ChildRelations["PRODUCT_MST_FINISHED_MST"] == null)) {
+                    return new FINISHED_MSTRow[0];
+                }
+                else {
+                    return ((FINISHED_MSTRow[])(base.GetChildRows(this.Table.ChildRelations["PRODUCT_MST_FINISHED_MST"])));
+                }
+            }
         }
         
         /// <summary>
@@ -7490,6 +8034,17 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PRODUCT_MSTRow PRODUCT_MSTRow {
+                get {
+                    return ((PRODUCT_MSTRow)(this.GetParentRow(this.Table.ParentRelations["PRODUCT_MST_FINISHED_MST"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["PRODUCT_MST_FINISHED_MST"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEVENT_TIMENull() {
                 return this.IsNull(this.tableFINISHED_MST.EVENT_TIMEColumn);
             }
@@ -7534,6 +8089,435 @@ namespace MES {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCREATE_DATENull() {
                 this[this.tableFINISHED_MST.CREATE_DATEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class JOB_MSTRow : global::System.Data.DataRow {
+            
+            private JOB_MSTDataTable tableJOB_MST;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal JOB_MSTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableJOB_MST = ((JOB_MSTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string JOB_ID {
+                get {
+                    return ((string)(this[this.tableJOB_MST.JOB_IDColumn]));
+                }
+                set {
+                    this[this.tableJOB_MST.JOB_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string JOB_NM {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.JOB_NMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'JOB_NM\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.JOB_NMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PROD_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.PROD_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_ID\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.PROD_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long QTY {
+                get {
+                    try {
+                        return ((long)(this[this.tableJOB_MST.QTYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QTY\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.QTYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string START_TIME {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.START_TIMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'START_TIME\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.START_TIMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string END_TIME {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.END_TIMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'END_TIME\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.END_TIMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DURATION {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.DURATIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DURATION\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.DURATIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DELAY {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.DELAYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DELAY\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.DELAYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long COMPLETE {
+                get {
+                    try {
+                        return ((long)(this[this.tableJOB_MST.COMPLETEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'COMPLETE\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.COMPLETEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PROC_START_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.PROC_START_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PROC_START_ID\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.PROC_START_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PROC_END_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.PROC_END_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PROC_END_ID\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.PROC_END_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CREATE_USER {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.CREATE_USERColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CREATE_USER\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.CREATE_USERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CREATE_DATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.CREATE_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CREATE_DATE\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.CREATE_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UPDATE_USER {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.UPDATE_USERColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UPDATE_USER\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.UPDATE_USERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UPDATE_DATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableJOB_MST.UPDATE_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UPDATE_DATE\' in table \'JOB_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableJOB_MST.UPDATE_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PRODUCT_MSTRow PRODUCT_MSTRow {
+                get {
+                    return ((PRODUCT_MSTRow)(this.GetParentRow(this.Table.ParentRelations["PRODUCT_MST_JOB_MST"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["PRODUCT_MST_JOB_MST"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsJOB_NMNull() {
+                return this.IsNull(this.tableJOB_MST.JOB_NMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetJOB_NMNull() {
+                this[this.tableJOB_MST.JOB_NMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPROD_IDNull() {
+                return this.IsNull(this.tableJOB_MST.PROD_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPROD_IDNull() {
+                this[this.tableJOB_MST.PROD_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQTYNull() {
+                return this.IsNull(this.tableJOB_MST.QTYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQTYNull() {
+                this[this.tableJOB_MST.QTYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSTART_TIMENull() {
+                return this.IsNull(this.tableJOB_MST.START_TIMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSTART_TIMENull() {
+                this[this.tableJOB_MST.START_TIMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEND_TIMENull() {
+                return this.IsNull(this.tableJOB_MST.END_TIMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEND_TIMENull() {
+                this[this.tableJOB_MST.END_TIMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDURATIONNull() {
+                return this.IsNull(this.tableJOB_MST.DURATIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDURATIONNull() {
+                this[this.tableJOB_MST.DURATIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDELAYNull() {
+                return this.IsNull(this.tableJOB_MST.DELAYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDELAYNull() {
+                this[this.tableJOB_MST.DELAYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCOMPLETENull() {
+                return this.IsNull(this.tableJOB_MST.COMPLETEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCOMPLETENull() {
+                this[this.tableJOB_MST.COMPLETEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPROC_START_IDNull() {
+                return this.IsNull(this.tableJOB_MST.PROC_START_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPROC_START_IDNull() {
+                this[this.tableJOB_MST.PROC_START_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPROC_END_IDNull() {
+                return this.IsNull(this.tableJOB_MST.PROC_END_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPROC_END_IDNull() {
+                this[this.tableJOB_MST.PROC_END_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCREATE_USERNull() {
+                return this.IsNull(this.tableJOB_MST.CREATE_USERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCREATE_USERNull() {
+                this[this.tableJOB_MST.CREATE_USERColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCREATE_DATENull() {
+                return this.IsNull(this.tableJOB_MST.CREATE_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCREATE_DATENull() {
+                this[this.tableJOB_MST.CREATE_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUPDATE_USERNull() {
+                return this.IsNull(this.tableJOB_MST.UPDATE_USERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUPDATE_USERNull() {
+                this[this.tableJOB_MST.UPDATE_USERColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUPDATE_DATENull() {
+                return this.IsNull(this.tableJOB_MST.UPDATE_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUPDATE_DATENull() {
+                this[this.tableJOB_MST.UPDATE_DATEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8162,6 +9146,40 @@ namespace MES {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FINISHED_MSTRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class JOB_MSTRowChangeEvent : global::System.EventArgs {
+            
+            private JOB_MSTRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public JOB_MSTRowChangeEvent(JOB_MSTRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public JOB_MSTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13905,8 +14923,8 @@ FROM     MATERIAL_MST";
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT  PROC_ID, SITE_ID, PROD_ID, PROC_VER, PROC_NM, PROC_TYPE, DEL_YN, REASON_C" +
-                "ODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE\r\nFROM     M" +
-                "M_PROC_MST";
+                "ODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE\nFROM     MM" +
+                "_PROC_MST";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18263,6 +19281,395 @@ FROM     MATERIAL_MST";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class JOB_MSTTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SQLite.SQLiteDataAdapter _adapter;
+        
+        private global::System.Data.SQLite.SQLiteConnection _connection;
+        
+        private global::System.Data.SQLite.SQLiteTransaction _transaction;
+        
+        private global::System.Data.SQLite.SQLiteCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public JOB_MSTTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SQLite.SQLiteDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SQLite.SQLiteConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SQLite.SQLiteCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SQLite.SQLiteTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SQLite.SQLiteCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SQLite.SQLiteDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "JOB_MST";
+            tableMapping.ColumnMappings.Add("START_TIME", "START_TIME");
+            tableMapping.ColumnMappings.Add("END_TIME", "END_TIME");
+            tableMapping.ColumnMappings.Add("DURATION", "DURATION");
+            tableMapping.ColumnMappings.Add("DELAY", "DELAY");
+            tableMapping.ColumnMappings.Add("PROC_START_ID", "PROC_START_ID");
+            tableMapping.ColumnMappings.Add("CREATE_USER", "CREATE_USER");
+            tableMapping.ColumnMappings.Add("CREATE_DATE", "CREATE_DATE");
+            tableMapping.ColumnMappings.Add("UPDATE_USER", "UPDATE_USER");
+            tableMapping.ColumnMappings.Add("UPDATE_DATE", "UPDATE_DATE");
+            tableMapping.ColumnMappings.Add("JOB_ID", "JOB_ID");
+            tableMapping.ColumnMappings.Add("JOB_NM", "JOB_NM");
+            tableMapping.ColumnMappings.Add("COMPLETE", "COMPLETE");
+            tableMapping.ColumnMappings.Add("PROD_ID", "PROD_ID");
+            tableMapping.ColumnMappings.Add("PROC_END_ID", "PROC_END_ID");
+            tableMapping.ColumnMappings.Add("QTY", "QTY");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SQLite.SQLiteCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [main].[sqlite_default_schema].[JOB_MST] WHERE (([JOB_ID] = @Original" +
+                "_JOB_ID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::System.Data.SQLite.SQLiteParameter param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_JOB_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "JOB_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::System.Data.SQLite.SQLiteCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [main].[sqlite_default_schema].[JOB_MST] ([JOB_ID], [JOB_NM], [COMPLETE], [START_TIME], [END_TIME], [DURATION], [DELAY], [PROD_ID], [PROC_START_ID], [PROC_END_ID], [QTY], [CREATE_USER], [CREATE_DATE], [UPDATE_USER], [UPDATE_DATE]) VALUES (@JOB_ID, @JOB_NM, @COMPLETE, @START_TIME, @END_TIME, @DURATION, @DELAY, @PROD_ID, @PROC_START_ID, @PROC_END_ID, @QTY, @CREATE_USER, @CREATE_DATE, @UPDATE_USER, @UPDATE_DATE)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@JOB_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "JOB_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@JOB_NM";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "JOB_NM";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@COMPLETE";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "COMPLETE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@START_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "START_TIME";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@END_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "END_TIME";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@DURATION";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DURATION";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@DELAY";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DELAY";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@PROD_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROD_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@PROC_START_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROC_START_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@PROC_END_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROC_END_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@QTY";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "QTY";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@CREATE_USER";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "CREATE_USER";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@CREATE_DATE";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "CREATE_DATE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@UPDATE_USER";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "UPDATE_USER";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@UPDATE_DATE";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "UPDATE_DATE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::System.Data.SQLite.SQLiteCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [main].[sqlite_default_schema].[JOB_MST] SET [JOB_ID] = @JOB_ID, [JOB_NM] = @JOB_NM, [COMPLETE] = @COMPLETE, [START_TIME] = @START_TIME, [END_TIME] = @END_TIME, [DURATION] = @DURATION, [DELAY] = @DELAY, [PROD_ID] = @PROD_ID, [PROC_START_ID] = @PROC_START_ID, [PROC_END_ID] = @PROC_END_ID, [QTY] = @QTY, [CREATE_USER] = @CREATE_USER, [CREATE_DATE] = @CREATE_DATE, [UPDATE_USER] = @UPDATE_USER, [UPDATE_DATE] = @UPDATE_DATE WHERE (([JOB_ID] = @Original_JOB_ID))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@JOB_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "JOB_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@JOB_NM";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "JOB_NM";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@COMPLETE";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "COMPLETE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@START_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "START_TIME";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@END_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "END_TIME";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@DURATION";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DURATION";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@DELAY";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DELAY";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@PROD_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROD_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@PROC_START_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROC_START_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@PROC_END_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "PROC_END_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@QTY";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "QTY";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@CREATE_USER";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "CREATE_USER";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@CREATE_DATE";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "CREATE_DATE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@UPDATE_USER";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "UPDATE_USER";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@UPDATE_DATE";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "UPDATE_DATE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_JOB_ID";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "JOB_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SQLite.SQLiteConnection();
+            this._connection.ConnectionString = global::MES.Properties.Settings.Default.Signes_MESConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
+            this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT  JOB_MST.*\r\nFROM     JOB_MST";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Signes_MESDataSet.JOB_MSTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Signes_MESDataSet.JOB_MSTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Signes_MESDataSet.JOB_MSTDataTable dataTable = new Signes_MESDataSet.JOB_MSTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Signes_MESDataSet.JOB_MSTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Signes_MESDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "JOB_MST");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -18287,6 +19694,8 @@ FROM     MATERIAL_MST";
         private PRODUCT_MSTTableAdapter _pRODUCT_MSTTableAdapter;
         
         private FINISHED_MSTTableAdapter _fINISHED_MSTTableAdapter;
+        
+        private JOB_MSTTableAdapter _jOB_MSTTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -18403,6 +19812,20 @@ FROM     MATERIAL_MST";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public JOB_MSTTableAdapter JOB_MSTTableAdapter {
+            get {
+                return this._jOB_MSTTableAdapter;
+            }
+            set {
+                this._jOB_MSTTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -18448,6 +19871,10 @@ FROM     MATERIAL_MST";
                             && (this._fINISHED_MSTTableAdapter.Connection != null))) {
                     return this._fINISHED_MSTTableAdapter.Connection;
                 }
+                if (((this._jOB_MSTTableAdapter != null) 
+                            && (this._jOB_MSTTableAdapter.Connection != null))) {
+                    return this._jOB_MSTTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -18480,6 +19907,9 @@ FROM     MATERIAL_MST";
                     count = (count + 1);
                 }
                 if ((this._fINISHED_MSTTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._jOB_MSTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -18556,6 +19986,15 @@ FROM     MATERIAL_MST";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._jOB_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.JOB_MST.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._jOB_MSTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -18622,6 +20061,14 @@ FROM     MATERIAL_MST";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._jOB_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.JOB_MST.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._jOB_MSTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -18632,6 +20079,14 @@ FROM     MATERIAL_MST";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(Signes_MESDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._jOB_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.JOB_MST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._jOB_MSTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._fINISHED_MSTTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.FINISHED_MST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -18762,6 +20217,11 @@ FROM     MATERIAL_MST";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._jOB_MSTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._jOB_MSTTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -18857,6 +20317,15 @@ FROM     MATERIAL_MST";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._fINISHED_MSTTableAdapter.Adapter);
                     }
                 }
+                if ((this._jOB_MSTTableAdapter != null)) {
+                    revertConnections.Add(this._jOB_MSTTableAdapter, this._jOB_MSTTableAdapter.Connection);
+                    this._jOB_MSTTableAdapter.Connection = ((global::System.Data.SQLite.SQLiteConnection)(workConnection));
+                    this._jOB_MSTTableAdapter.Transaction = ((global::System.Data.SQLite.SQLiteTransaction)(workTransaction));
+                    if (this._jOB_MSTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._jOB_MSTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._jOB_MSTTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -18942,6 +20411,10 @@ FROM     MATERIAL_MST";
                 if ((this._fINISHED_MSTTableAdapter != null)) {
                     this._fINISHED_MSTTableAdapter.Connection = ((global::System.Data.SQLite.SQLiteConnection)(revertConnections[this._fINISHED_MSTTableAdapter]));
                     this._fINISHED_MSTTableAdapter.Transaction = null;
+                }
+                if ((this._jOB_MSTTableAdapter != null)) {
+                    this._jOB_MSTTableAdapter.Connection = ((global::System.Data.SQLite.SQLiteConnection)(revertConnections[this._jOB_MSTTableAdapter]));
+                    this._jOB_MSTTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

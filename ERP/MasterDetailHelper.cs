@@ -88,14 +88,21 @@ namespace MES
         private ColumnView CreateView()
         {
             if (viewType == ViewType.Card)
+            {
                 detailView = new CardView(DetailGrid);
+                (detailView as CardView).OptionsView.ShowHorzScrollBar = true;
+            }
             else if (viewType == ViewType.Grid)
             {
                 detailView = new GridView(DetailGrid);
                 ((GridView)detailView).OptionsView.ShowGroupPanel = false;
+                ((GridView)detailView).OptionsView.ColumnAutoWidth = false;
             }
             else
+            {
                 detailView = new LayoutView(DetailGrid);
+            }
+
             return detailView;
         }
 
@@ -117,7 +124,7 @@ namespace MES
         {
             RepositoryItemPopupContainerEdit item = new RepositoryItemPopupContainerEdit();
             item.PopupControl = CreatePopupControl();
-            item.ShowPopupCloseButton = true;
+            item.ShowPopupCloseButton = false;
             item.ShowPopupShadow = false;
             item.PopupSizeable = false;
             item.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
@@ -152,9 +159,11 @@ namespace MES
             if (edit.Properties.PopupControl.Parent == null)
                 edit.Properties.PopupControl.Parent = edit.FindForm();
             DetailGrid.ForceInitialize();
-            edit.Properties.PopupFormSize = CalcDetailViewSize();
+            
 
             AfterPopup?.Invoke(this, new DetailEventArgs(detailView));
+
+            edit.Properties.PopupFormSize = CalcDetailViewSize();
         }
 
         private IList GetDetailData()
@@ -165,8 +174,8 @@ namespace MES
         private System.Drawing.Size CalcDetailViewSize()
         {
             ColumnViewInfo viewInfo = DetailView.GetViewInfo() as ColumnViewInfo;
-            Rectangle rect = new Rectangle(0, 0, view.GridControl.ClientSize.Width, DetailView.DetailHeight);
-            rect.Height = viewInfo.CalcRealViewHeight(rect, true) + 5;
+            Rectangle rect = new Rectangle(0, 0, view.GridControl.ClientSize.Width, DetailView.DetailHeight + 100);
+            //rect.Height = viewInfo.CalcRealViewHeight(rect, true) + 5;
             return rect.Size;
         }
 

@@ -56,130 +56,10 @@ namespace MES
             // Create a Project
             m_Manager = new ProjectManager("256K DRAM 7월 진척현황");
 
-            // Perform some task operations
+            // Custom fields
             m_Manager.AddCustomField("Greeting", typeof(string), 80);
             m_Manager.AddCustomField("Cancelled", typeof(string), 80);
             m_Manager.AddCustomField("Important", typeof(bool), 80);
-
-            var work = new MyTask(m_Manager) { Name = "Prepare for Work" };
-            var wake = new MyTask(m_Manager) { Name = "Wake Up" };
-            var teeth = new MyTask(m_Manager) { Name = "Brush Teeth" };
-            var shower = new MyTask(m_Manager) { Name = "Shower" };
-            var clothes = new MyTask(m_Manager) { Name = "Change into New Clothes" };
-            var hair = new MyTask(m_Manager) { Name = "Blow My Hair" };
-            var pack = new MyTask(m_Manager) { Name = "Pack the Suitcase" };
-
-            m_Manager.Add(work);
-            m_Manager.Add(wake);
-            m_Manager.Add(teeth);
-            m_Manager.Add(shower);
-            m_Manager.Add(clothes);
-            m_Manager.Add(hair);
-            m_Manager.Add(pack);
-
-            m_Manager.SetField(work, 7, "Hello");
-            m_Manager.SetField(wake, 7, "HI");
-            m_Manager.SetField(teeth, 7, "hey");
-            m_Manager.SetField(shower, 7, "Yo");
-            m_Manager.SetField(clothes, 7, "Greetings");
-            m_Manager.SetField(hair, 7, "Good morning");
-            m_Manager.SetField(pack, 7, "Good evening");
-
-            var job1 = new MyTask(m_Manager) { Name = "Job1" };
-            var job2 = new MyTask(m_Manager) { Name = "Job2" };
-            var job3 = new MyTask(m_Manager) { Name = "Brush Teeth" };
-            var job4 = new MyTask(m_Manager) { Name = "JOb4" };
-            var job5 = new MyTask(m_Manager) { Name = "JOb 5" };
-            var job6 = new MyTask(m_Manager) { Name = "job 6" };
-            var job7 = new MyTask(m_Manager) { Name = "end job" };
-
-            m_Manager.Add(job1);
-            m_Manager.Add(job2);
-            m_Manager.Add(job3);
-            m_Manager.Add(job4);
-            m_Manager.Add(job5);
-            m_Manager.Add(job6);
-            m_Manager.Add(job7);
-
-            m_Manager.SetField(job1, 7, "Hello");
-            m_Manager.SetField(job2, 7, "HI");
-            m_Manager.SetField(job3, 7, "hey");
-            m_Manager.SetField(job4, 7, "Yo");
-            m_Manager.SetField(job5, 7, "Greetings");
-            m_Manager.SetField(job6, 7, "Good morning");
-            m_Manager.SetField(job7, 7, "Good evening");
-
-            //m_Manager.SetField(work, "Important", "Yes");
-
-            // Test delay
-            m_Manager.SetDelay(job2, new TimeSpan(3, 0, 0, 0));
-            m_Manager.SetDelay(job3, new TimeSpan(1, 0, 0, 0));
-            m_Manager.SetDelay(job4, new TimeSpan(7, 0, 0, 0));
-            m_Manager.SetDelay(job7, new TimeSpan(3, 0, 0, 0));
-
-            // Create another 1000 tasks for stress testing
-            Random rand = new Random();
-            for (int i = 0; i < 1000; i++)
-            {
-                var task = new MyTask(m_Manager) { Name = string.Format("New Task {0}", i.ToString()) };
-                m_Manager.Add(task);
-                m_Manager.SetStart(task, TimeSpan.FromDays(rand.Next(100)));
-                m_Manager.SetDuration(task, TimeSpan.FromDays(rand.Next(50)));
-            }
-
-            // Set task durations, e.g. using ProjectManager methods 
-            m_Manager.SetDuration(wake, TimeSpan.FromDays(3));
-            m_Manager.SetDuration(teeth, TimeSpan.FromDays(5));
-            m_Manager.SetDuration(shower, TimeSpan.FromDays(7));
-            m_Manager.SetDuration(clothes, TimeSpan.FromDays(4));
-            m_Manager.SetDuration(hair, TimeSpan.FromDays(3));
-            m_Manager.SetDuration(pack, TimeSpan.FromDays(5));
-            m_Manager.SetDuration(job2, TimeSpan.FromDays(3));
-            m_Manager.SetDuration(job3, TimeSpan.FromDays(5));
-            m_Manager.SetDuration(job4, TimeSpan.FromDays(7));
-            m_Manager.SetDuration(job5, TimeSpan.FromDays(4));
-            m_Manager.SetDuration(job6, TimeSpan.FromDays(3));
-            m_Manager.SetDuration(job7, TimeSpan.FromDays(5));
-
-            // demostrate splitting a task
-            m_Manager.Split(pack, new MyTask(m_Manager), new MyTask(m_Manager), TimeSpan.FromDays(2));
-            m_Manager.Split(job7, new MyTask(m_Manager), new MyTask(m_Manager), TimeSpan.FromDays(2));
-
-            // Set task complete status, e.g. using newly created properties
-            wake.Complete = 0.9f;
-            teeth.Complete = 0.5f;
-            shower.Complete = 0.4f;
-
-            job2.Complete = 0.9f;
-            job3.Complete = 0.5f;
-            job4.Complete = 0.4f;
-
-            // Give the Tasks some organisation, setting group and precedents
-            m_Manager.Group(work, wake);
-            m_Manager.Group(work, teeth);
-            m_Manager.Group(work, shower);
-            m_Manager.Group(work, clothes);
-            m_Manager.Group(work, hair);
-            m_Manager.Group(work, pack);
-            m_Manager.Relate(wake, teeth);
-            m_Manager.Relate(wake, shower);
-            m_Manager.Relate(shower, clothes);
-            m_Manager.Relate(shower, hair);
-            m_Manager.Relate(hair, pack);
-            m_Manager.Relate(clothes, pack);
-
-            m_Manager.Group(job1, job2);
-            m_Manager.Group(job1, job3);
-            m_Manager.Group(job1, job4);
-            m_Manager.Group(job1, job5);
-            //m_Manager.Group(job1, job6);
-            m_Manager.Group(job1, job7);
-            m_Manager.Relate(job2, job3);
-            m_Manager.Relate(job2, job4);
-            m_Manager.Relate(job4, job5);
-            //m_Manager.Relate(job4, job6);
-            //m_Manager.Relate(job6, job7);
-            m_Manager.Relate(job5, job7);
 
             // Add some events to event manager
             for (int i = 0; i < 3; i++)
@@ -201,8 +81,7 @@ namespace MES
 
                 //eventManagerEventStackPanel1.Controls.Add(panel);
             }
-
-
+            
             // Build tree for Overview
             IEnumerable<Task> tasks = m_Manager.RootTasks;
             foreach (Task task in tasks)
@@ -213,25 +92,6 @@ namespace MES
                     task.CanExpand = true;
                 }
             }
-
-            //ganttControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-
-            ganttControlHome.ChartMappings.TextFieldName = "Text";
-            ganttControlHome.ChartMappings.InteractionTooltipTextFieldName = "Tooltip";
-
-            foreach (DataColumn column in m_Manager.HeaderList)
-            {
-                ganttControlHome.Columns.AddField(column.ColumnName);
-            }
-            ganttControlHome.OptionsBehavior.PopulateServiceColumns = true;
-            //ganttControlOverview.OptionsBehavior.AllowSplitTasks = DevExpress.Utils.DefaultBoolean.True;
-            //ganttControlOverview.OptionsCustomization.AllowModifyProgress = DevExpress.Utils.DefaultBoolean.True;
-
-            ganttControlHome.ChartStartDate = m_Manager.Start;
-            ganttControlHome.OptionsView.ShowBaselines = true;
-            ganttControlHome.DataSource = GetTasks();
-
-            ganttControlHome.ExpandAll();
 
             // Build tree for GanttChart
             ganttChartProductionMonitor.Init(m_Manager);
@@ -267,19 +127,18 @@ namespace MES
             //gChartTreeList.BeforeExpand += new NodeEventHandler(m_TaskList_Expanding);
             //gChartTreeList.BeforeCollapse += new NodeEventHandler(m_TaskList_Collapsing);
 
-            // Set Time information
-            var span = DateTime.Today - m_Manager.Start;
-            m_Manager.Now = span; // set the "Now" marker at the correct date
+            // BOM events
+            searchControlBOM.EditValueChanged += SearchControlBOM_Enter;
 
-            // Gantt chart styling
-            setGanttChartColors();
-            setElementColors();
-            UserLookAndFeel.Default.StyleChanged += Default_StyleChanged;
+            // Job Dispatch events
+            listBoxControlJDOrderListing.SelectedIndexChanged += ListBoxControlJDOrderListing_SelectedIndexChanged;
+            listBoxControlJDProductListing.SelectedIndexChanged += ListBoxControlJDSelectProduct_SelectedIndexChanged;
 
             // Initialize other elements
             AfterInitialization();
             // This line of code is generated by Data Source Configuration Wizard
         }
+
         private void AfterInitialization()
         {
             // Set mainform text
@@ -297,8 +156,33 @@ namespace MES
             // Create dummy secondary form
             _CreateDummyForm();
 
-            // BOM
-            searchControlBOM.EditValueChanged += SearchControlBOM_Enter;
+            // Set Time information
+            var span = DateTime.Today - m_Manager.Start;
+            m_Manager.Now = span; // set the "Now" marker at the correct date
+
+            // Gantt chart styling
+            setGanttChartColors();
+            setElementColors();
+            UserLookAndFeel.Default.StyleChanged += Default_StyleChanged;
+
+            // Gantt control settings
+            //ganttControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            ganttControlHome.ChartMappings.TextFieldName = "Text";
+            ganttControlHome.ChartMappings.InteractionTooltipTextFieldName = "Tooltip";
+
+            foreach (DataColumn column in m_Manager.HeaderList)
+            {
+                ganttControlHome.Columns.AddField(column.ColumnName);
+            }
+            ganttControlHome.OptionsBehavior.PopulateServiceColumns = true;
+            //ganttControlOverview.OptionsBehavior.AllowSplitTasks = DevExpress.Utils.DefaultBoolean.True;
+            //ganttControlOverview.OptionsCustomization.AllowModifyProgress = DevExpress.Utils.DefaultBoolean.True;
+
+            ganttControlHome.ChartStartDate = m_Manager.Start;
+            ganttControlHome.OptionsView.ShowBaselines = true;
+            ganttControlHome.DataSource = GetTasks();
+
+            ganttControlHome.ExpandAll();
 
             // Add details to ProductListing Views by temporarily giving them main view status
             cardViewProductListing = new DevExpress.XtraGrid.Views.Card.CardView();
@@ -337,7 +221,8 @@ namespace MES
             // Status strip
             toolStripStatusLabelStatus.Text = "Ready";
             statusStrip.Paint += StatusStrip_Paint;
-            
+
+            tabPaneMainForm.SelectedPageChanged += TabPaneMainForm_SelectedPageChanged;
 
             // Finished goods lookup
             gridViewFinishedGoods.CustomUnboundColumnData += GridViewFinishedGoods_CustomUnboundColumnData;
@@ -366,17 +251,17 @@ namespace MES
 
         private void tileItem12_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            tabPane1.SelectedPage = tabNavigationPage6;
+            tabPaneMainForm.SelectedPage = tabNavigationPage6;
         }
 
         private void tileInventory_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            tabPane1.SelectedPage = tabNavigationPage5;
+            tabPaneMainForm.SelectedPage = tabNavigationPage5;
         }
 
         private void tileEventM_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            tabPane1.SelectedPage = tabNavigationPage4;
+            tabPaneMainForm.SelectedPage = tabNavigationPage4;
         }
 
         #endregion
@@ -547,7 +432,67 @@ namespace MES
 
         #endregion
 
-        #region Job Despatch
+        #region Job Dispatch
+
+        private void ListBoxControlJDSelectProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string prod_id = listBoxControlJDProductListing.SelectedValue as string;
+
+            // Check selection
+            if (prod_id != null)
+            {
+                // Update status
+                checkEditJDSelectProduct.Checked = true;
+
+                // Filter order list
+                DataView view = jOB_MSTTableAdapter.GetData().DefaultView;
+                view.RowFilter = "PROD_ID = '" + prod_id + "'";
+
+                listBoxControlJDOrderListing.DataSource = view;
+                listBoxControlJDOrderListing.SelectedIndex = -1;
+            }
+            else
+            {
+                // Update status
+                checkEditJDSelectProduct.Checked = false;
+
+                // Clear order list
+                listBoxControlJDOrderListing.DataSource = null;
+            }
+        }
+
+        private void ListBoxControlJDOrderListing_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string prod_id = listBoxControlJDProductListing.SelectedValue as string;
+            string order_id = listBoxControlJDOrderListing.SelectedValue as string;
+
+            // Check selection
+            if (prod_id != null && order_id != null)
+            {
+                // Update status
+                checkEditJDSelectOrder.Checked = true;
+
+                _createOrderDetailsForm(prod_id, order_id);
+            }
+            else
+            {
+                // Update status
+                checkEditJDSelectOrder.Checked = false;
+
+                // TODO create empty order details form
+            }
+        }
+
+        private void _createOrderDetailsForm(string prod_id, string order_id)
+        {
+            tableLayoutPanelJDOrderDetails.Controls.Clear();
+
+            LabelControl label = new LabelControl();
+            TextEdit edit = new TextEdit();
+
+            tableLayoutPanelJDOrderDetails.Controls.Add(edit);
+            tableLayoutPanelJDOrderDetails.Controls.Add(label);
+        }
 
         #endregion
 
@@ -821,6 +766,8 @@ namespace MES
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'signes_MESDataSet.JOB_MST' table. You can move, or remove it, as needed.
+            this.jOB_MSTTableAdapter.Fill(this.signes_MESDataSet.JOB_MST);
             // TODO: This line of code loads data into the 'signes_MESDataSet.FINISHED_MST' table. You can move, or remove it, as needed.
             this.finisheD_MSTTableAdapter1.Fill(this.signes_MESDataSet.FINISHED_MST);
             // TODO: This line of code loads data into the 'signes_MESDataSet.MM_PROC_MST' table. You can move, or remove it, as needed.
@@ -829,6 +776,19 @@ namespace MES
             this.PRODUCT_MSTTableAdapter.Fill(this.signes_MESDataSet.PRODUCT_MST);
             this.materiaL_MSTTableAdapter.Fill(this.signes_MESDataSet.MATERIAL_MST);
             this.mM_PROC_STEPTableAdapter.Fill(this.signes_MESDataSet.MM_PROC_STEP);
+        }
+
+        private void TabPaneMainForm_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        {
+            string page = e.Page.Caption;
+
+            if (page == "Job Dispatch")
+            {
+                // Reset selection
+                listBoxControlJDProductListing.SelectedIndex = -1;
+                listBoxControlJDOrderListing.SelectedIndex = -1;
+            }
+
         }
 
         private object GetTasks()
@@ -888,6 +848,7 @@ namespace MES
 
         private void _viewSetColumnProdCaption(ColumnView view)
         {
+            view.BeginUpdate();
             view.Columns["PROD_ID"].Caption = "Product ID";
             view.Columns["PROD_GROUP_ID"].Caption = "Group ID";
             view.Columns["SITE_ID"].Caption = "Site ID";
@@ -905,10 +866,12 @@ namespace MES
             view.Columns["CREATE_DATE"].Caption = "Create date";
             view.Columns["UPDATE_USER_ID"].Caption = "Updated by";
             view.Columns["UPDATE_DATE"].Caption = "Update date";
+            view.EndUpdate();
         }
 
         private void _viewSetColumnMaterialCaption(ColumnView view)
         {
+            view.BeginUpdate();
             view.Columns["MATERIAL_ID"].Caption = "Material ID";
             view.Columns["MATERIAL_NAME"].Caption = "Name";
             view.Columns["QTY"].Caption = "Quantity";
@@ -931,6 +894,7 @@ namespace MES
             view.Columns["UPDATE_DATE"].Caption = "Update date";
 
             view.Columns["PROC_VER"].Caption = "Process Version";
+            view.EndUpdate();
         }
 
         private void dummyForm_Disposed(object sender, EventArgs e)
@@ -995,7 +959,7 @@ namespace MES
 
         private void accordionControlElement4_Click(object sender, EventArgs e)
         {
-            tabPane1.SelectedPage = tabNavigationPage1;
+            tabPaneMainForm.SelectedPage = tabNavigationPage1;
         }
 
         protected override FormPainter CreateFormBorderPainter()

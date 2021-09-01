@@ -16,3 +16,9 @@ namespace MES.Signes_MESDataSetTableAdapters {
     public partial class MM_PROC_MSTTableAdapter {
     }
 }
+namespace MES {
+    
+    
+    public partial class Signes_MESDataSet {
+    }
+}
