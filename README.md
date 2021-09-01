@@ -1,10 +1,10 @@
-![Project Version](https://img.shields.io/badge/Version-0.1.0-green)
+![Project Version](https://img.shields.io/badge/Version-0.1.3-green)
 # :package: SigneS MES 
 Management tool for designing, dispatching and completing orders.
 
 ## Development State
 - [x] Prototyping
-- [ ] Designing
+- [x] Designing
 - [ ] Programming
 - [ ] Debugging
 - [ ] Shipping
