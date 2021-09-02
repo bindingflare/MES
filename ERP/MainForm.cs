@@ -119,8 +119,6 @@ namespace MES
             m_Overlay.PrintMode = true;
             ganttChartProductionMonitor.PaintOverlay += m_Overlay.ChartOverlayPainter;
             ganttChartProductionMonitor.AllowTaskDragDrop = true;
-            //m_Chart.Scroll += new ScrollEventHandler(m_Chart_Scroll);
-            ganttChartProductionMonitor.MouseWheel += new MouseEventHandler(m_Chart_MouseWheel);
             ganttChartProductionMonitor.MousePan += new EventHandler<MousePanEventArgs>(m_Chart_MousePan);
 
             // Tasklist event listeners
@@ -560,41 +558,6 @@ namespace MES
         //    m_Chart.Invalidate();
         //}
 
-        //private void m_TaskList_CellEditFinishing(object sender, CellEditEventArgs e)
-        //{
-        //    m_Chart.Invalidate();
-        //}
-
-        //private void m_TaskList_CellEditValidating(object sender, CellEditEventArgs e)
-        //{
-        //    //int index = e.ListViewItem.Index;
-
-        //    //if (e.NewValue is string)
-        //    //{
-        //    //    if (!m_Manager.SetField((Task)e.RowObject, index, (string)e.NewValue))
-        //    //    {
-        //    //        MessageBox.Show("Unknown error", "Gantt Chart", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    //        e.Cancel = true;
-        //    //    }
-        //    //}
-        //    //else if (e.NewValue is TimeSpan)
-        //    //{
-        //    //    if (!m_Manager.SetField((Task)e.RowObject, index, (TimeSpan)e.NewValue))
-        //    //    {
-        //    //        MessageBox.Show("Please try checking datetime input again", "Gantt Chart", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    //        e.Cancel = true;
-        //    //    }
-        //    //}
-        //    //else if (e.NewValue is DateTime)
-        //    //{
-        //    //    if (!m_Manager.SetField((Task)e.RowObject, index, m_Manager.Start - (DateTime)e.NewValue))
-        //    //    {
-        //    //        MessageBox.Show("Please try checking datetime input again", "Gantt Chart", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    //        e.Cancel = true;
-        //    //    }
-        //    //}
-        //}
-
         private void m_TaskList_Collapsed(object sender, NodeEventArgs e)
         {
             string ID = e.Node.Id.ToString();
@@ -641,54 +604,16 @@ namespace MES
             }
         }
 
-        private void m_Chart_MouseWheel(object sender, MouseEventArgs e)
-        {
-            int delta;
-            if (e.Delta > 0)
-            {
-                delta = -ganttChartProductionMonitor.Viewport.WheelDelta;
-                _ScrollFix = -1;
-            }
-            else
-            {
-                delta = ganttChartProductionMonitor.Viewport.WheelDelta;
-                _ScrollFix = 1;
-            }
-
-            int index = (int)(ganttChartProductionMonitor.Viewport.Y - ganttChartProductionMonitor.HeaderOneHeight + ganttChartProductionMonitor.HeaderTwoHeight + delta) / ganttChartProductionMonitor.BarSpacing;
-            treeListPMChartTreeList.TopVisibleNodeIndex = index;
-        }
-
-        private void _mChart_Scroll(object sender, ScrollEventArgs e)
-        {
-            if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
-            {
-                //float ratio = (float) dataTreeListView1.GetItemCount() * m_Chart.BarSpacing / m_Chart.Viewport.WorldHeight;
-                int nodes = (e.NewValue - ganttChartProductionMonitor.HeaderOneHeight - ganttChartProductionMonitor.HeaderTwoHeight) / ganttChartProductionMonitor.BarSpacing;
-                //int rem = e.NewValue % ganttChart.BarSpacing;
-
-                treeListPMChartTreeList.TopVisibleNodeIndex = nodes;
-            }
-
-            //int h1 = dataTreeListView1.Height * dataTreeListView1.RowHeight;
-            //float h2 = m_Chart.Viewport.WorldHeight;
-        }
-
         private void m_Chart_MousePan(object sender, MousePanEventArgs e)
         {
-            // Prevent tasklist's Scroll event from mixing with panning functionality
-            _IsPanning = true;
-            //gChartTreeList.TopVisibleNodeIndex = TODO
-            _IsPanning = false;
+            treeListPMChartTreeList.TopVisibleNodeIndex = (int) (ganttChartProductionMonitor.Viewport.Y / ganttChartProductionMonitor.BarSpacing);
         }
         #endregion
 
         #region GanttChartTreeList Events
         private void gChartTreeList_TopVisibleIndexChanged(object sender, EventArgs e)
         {
-            ganttChartProductionMonitor.Viewport.Y = ganttChartProductionMonitor.HeaderOneHeight + ganttChartProductionMonitor.HeaderTwoHeight + treeListPMChartTreeList.TopVisibleNodeIndex * ganttChartProductionMonitor.BarSpacing;
-
-            _ScrollFix = 0;
+            ganttChartProductionMonitor.Viewport.Y = treeListPMChartTreeList.TopVisibleNodeIndex * ganttChartProductionMonitor.BarSpacing;
         }
 
         private void m_TaskList_Collapsing(object sender, NodeEventArgs e)
@@ -865,7 +790,15 @@ namespace MES
                 tableLayoutPanelJDOrderDetails.SetRow(label, i);
             }
 
-            
+            // Add save and cancel buttons
+            tableLayoutPanelJDOrderDetails.Controls.Add(simpleButtonJDSaveOrder);
+            tableLayoutPanelJDOrderDetails.SetColumn(simpleButtonJDSaveOrder, 1);
+
+            tableLayoutPanelJDOrderDetails.Controls.Add(simpleButtonJDCancelOrder);
+
+            int row = tableLayoutPanelJDOrderDetails.RowCount;
+            tableLayoutPanelJDOrderDetails.SetRow(simpleButtonJDSaveOrder, row);
+            tableLayoutPanelJDOrderDetails.SetRow(simpleButtonJDCancelOrder, row);
         }
 
         private void loadTasks()
