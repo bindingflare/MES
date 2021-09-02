@@ -11,15 +11,12 @@ namespace Edcore.GanttChart
     [Serializable]
     public class Task
     {
-        static int ID_GENERATOR = 0;
         /// <summary>
         /// Initialize a new task to hold schedule information
         /// </summary>
-        public Task()
+        public Task(string ID)
         {
-            ID = ID_GENERATOR.ToString();
-            ID_GENERATOR++;
-
+            this.ID = ID;
             Complete = 0.0f;
             Start = TimeSpan.Zero;
             End = new TimeSpan(1, 0, 0, 0);
@@ -27,6 +24,8 @@ namespace Edcore.GanttChart
             Slack = TimeSpan.Zero;
             CanExpand = false;
         }
+
+        public string ID { get; internal set; }
 
         /// <summary>
         /// Get or set the Name of this Task
@@ -91,7 +90,7 @@ namespace Edcore.GanttChart
         /// Indicate whether this task is filtered such that it is hidden from view. Inherits isFiltered from its parent under normal behavior.
         /// </summary>
         public bool IsFiltered { get; set; }
-        public string ID { get; internal set; }
+        
 
         /// <summary>
         /// Convert this Task to a descriptive string

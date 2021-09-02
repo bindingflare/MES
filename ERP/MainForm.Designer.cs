@@ -48,24 +48,28 @@ namespace MES
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement3 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement4 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan1 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan2 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase2 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement4 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement5 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement6 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement7 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement8 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan1 = new DevExpress.XtraEditors.TableLayout.TableSpan();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan2 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan3 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan4 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             this.cardViewMaterialDetail = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colMATERIAL_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMATERIAL_NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -393,10 +397,12 @@ namespace MES
             this.tabNavigationPage7 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlFinishedGoodsInventory = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl6 = new DevExpress.XtraLayout.LayoutControl();
+            this.button1 = new System.Windows.Forms.Button();
+            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.simpleButtonFGReserved = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonFGSave = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlFinishedGoods = new DevExpress.XtraGrid.GridControl();
-            this.fINISHEDMSTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fINISHEDMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewFinishedGoods = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDUID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEVENT_TIME = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -422,11 +428,13 @@ namespace MES
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem15 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem39 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem40 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.fINISHEDMSTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tASKMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mMPRODMSTMATERIALMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mMPROCMSTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.fINISHEDMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mMPROCSTEPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colMATERIAL_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMATERIAL_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -449,6 +457,7 @@ namespace MES
             this.productPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.mMPROCMSTMMPROCSTEPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jOB_MSTTableAdapter = new MES.Signes_MESDataSetTableAdapters.JOB_MSTTableAdapter();
+            this.reportGenerator1 = new DevExpress.XtraReports.ReportGeneration.ReportGenerator(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cardViewMaterialDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPRODMSTBindingSource)).BeginInit();
@@ -624,8 +633,9 @@ namespace MES
             this.panelControlFinishedGoodsInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl6)).BeginInit();
             this.layoutControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlFinishedGoods)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewFinishedGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup17)).BeginInit();
@@ -636,10 +646,12 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem39)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem40)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tASKMSTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPRODMSTMATERIALMSTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPROCMSTBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPROCSTEPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlGanttChart)).BeginInit();
@@ -1615,11 +1627,6 @@ namespace MES
             this.accordionControlElementEventManager.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementExportLogs});
             this.accordionControlElementEventManager.Expanded = true;
-            this.accordionControlElementEventManager.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons)});
             this.accordionControlElementEventManager.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementEventManager.ImageOptions.SvgImage")));
             this.accordionControlElementEventManager.Name = "accordionControlElementEventManager";
             this.accordionControlElementEventManager.Text = "Job Dispatch";
@@ -1787,7 +1794,7 @@ namespace MES
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(1212, 353);
             // 
-            // tabPane1
+            // tabPaneMainForm
             // 
             this.tabPaneMainForm.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.tabPaneMainForm.Controls.Add(this.statusStrip);
@@ -1801,7 +1808,7 @@ namespace MES
             this.tabPaneMainForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPaneMainForm.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPaneMainForm.Location = new System.Drawing.Point(2, 2);
-            this.tabPaneMainForm.Name = "tabPane1";
+            this.tabPaneMainForm.Name = "tabPaneMainForm";
             this.tabPaneMainForm.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2,
@@ -2821,7 +2828,9 @@ namespace MES
             this.listBoxControlJDOrderListing.StyleController = this.layoutControl4;
             this.listBoxControlJDOrderListing.TabIndex = 2;
             tableColumnDefinition1.Length.Value = 4D;
+            tableColumnDefinition2.Length.Value = 9D;
             itemTemplateBase1.Columns.Add(tableColumnDefinition1);
+            itemTemplateBase1.Columns.Add(tableColumnDefinition2);
             templatedItemElement1.FieldName = "JOB_ID";
             templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             templatedItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
@@ -2834,15 +2843,23 @@ namespace MES
             templatedItemElement2.RowIndex = 1;
             templatedItemElement2.Text = "JOB_NM";
             templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement3.ColumnIndex = 1;
             templatedItemElement3.FieldName = "QTY";
             templatedItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             templatedItemElement3.RowIndex = 2;
             templatedItemElement3.Text = "QTY";
             templatedItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement4.FieldName = null;
+            templatedItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement4.RowIndex = 2;
+            templatedItemElement4.Text = "Qty:";
+            templatedItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             itemTemplateBase1.Elements.Add(templatedItemElement1);
             itemTemplateBase1.Elements.Add(templatedItemElement2);
             itemTemplateBase1.Elements.Add(templatedItemElement3);
+            itemTemplateBase1.Elements.Add(templatedItemElement4);
             itemTemplateBase1.Name = "templateJOB";
             tableRowDefinition1.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
             tableRowDefinition1.Length.Value = 20D;
@@ -2853,6 +2870,11 @@ namespace MES
             itemTemplateBase1.Rows.Add(tableRowDefinition1);
             itemTemplateBase1.Rows.Add(tableRowDefinition2);
             itemTemplateBase1.Rows.Add(tableRowDefinition3);
+            tableSpan1.ColumnSpan = 2;
+            tableSpan2.ColumnSpan = 2;
+            tableSpan2.RowIndex = 1;
+            itemTemplateBase1.Spans.Add(tableSpan1);
+            itemTemplateBase1.Spans.Add(tableSpan2);
             this.listBoxControlJDOrderListing.Templates.Add(itemTemplateBase1);
             this.listBoxControlJDOrderListing.ValueMember = "JOB_ID";
             // 
@@ -2876,49 +2898,49 @@ namespace MES
             this.searchControlJDProductSearch.StyleController = this.layoutControl4;
             this.searchControlJDProductSearch.TabIndex = 2;
             // 
-            // listBoxControlJDSelectProduct
+            // listBoxControlJDProductListing
             // 
             this.listBoxControlJDProductListing.DataSource = this.mMPRODMSTBindingSource;
             this.listBoxControlJDProductListing.ItemHeight = 65;
             this.listBoxControlJDProductListing.Location = new System.Drawing.Point(23, 97);
-            this.listBoxControlJDProductListing.Name = "listBoxControlJDSelectProduct";
+            this.listBoxControlJDProductListing.Name = "listBoxControlJDProductListing";
             this.listBoxControlJDProductListing.Size = new System.Drawing.Size(192, 289);
             this.listBoxControlJDProductListing.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.listBoxControlJDProductListing.StyleController = this.layoutControl4;
             this.listBoxControlJDProductListing.TabIndex = 2;
-            tableColumnDefinition2.Length.Value = 4D;
-            tableColumnDefinition3.Length.Value = 5D;
-            itemTemplateBase2.Columns.Add(tableColumnDefinition2);
+            tableColumnDefinition3.Length.Value = 4D;
+            tableColumnDefinition4.Length.Value = 5D;
             itemTemplateBase2.Columns.Add(tableColumnDefinition3);
-            templatedItemElement4.FieldName = "PROD_ID";
-            templatedItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            templatedItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
-            templatedItemElement4.Text = "PROD_ID";
-            templatedItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
-            templatedItemElement5.ColumnIndex = 1;
-            templatedItemElement5.FieldName = "PROD_NM";
-            templatedItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            itemTemplateBase2.Columns.Add(tableColumnDefinition4);
+            templatedItemElement5.FieldName = "PROD_ID";
+            templatedItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             templatedItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement5.Text = "PROD_NM";
-            templatedItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
+            templatedItemElement5.Text = "PROD_ID";
+            templatedItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
             templatedItemElement6.ColumnIndex = 1;
-            templatedItemElement6.FieldName = "PROD_MODEL";
+            templatedItemElement6.FieldName = "PROD_NM";
             templatedItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement6.RowIndex = 1;
-            templatedItemElement6.Text = "PROD_MODEL";
-            templatedItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            templatedItemElement7.FieldName = "SITE_ID";
+            templatedItemElement6.Text = "PROD_NM";
+            templatedItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement7.ColumnIndex = 1;
+            templatedItemElement7.FieldName = "PROD_MODEL";
             templatedItemElement7.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement7.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement7.RowIndex = 2;
-            templatedItemElement7.Text = "SITE_ID";
+            templatedItemElement7.RowIndex = 1;
+            templatedItemElement7.Text = "PROD_MODEL";
             templatedItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            itemTemplateBase2.Elements.Add(templatedItemElement4);
+            templatedItemElement8.FieldName = "SITE_ID";
+            templatedItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement8.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement8.RowIndex = 2;
+            templatedItemElement8.Text = "SITE_ID";
+            templatedItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             itemTemplateBase2.Elements.Add(templatedItemElement5);
             itemTemplateBase2.Elements.Add(templatedItemElement6);
             itemTemplateBase2.Elements.Add(templatedItemElement7);
+            itemTemplateBase2.Elements.Add(templatedItemElement8);
             itemTemplateBase2.Name = "templatePRODUCT";
             tableRowDefinition4.AutoHeight = true;
             tableRowDefinition4.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
@@ -2930,12 +2952,12 @@ namespace MES
             itemTemplateBase2.Rows.Add(tableRowDefinition4);
             itemTemplateBase2.Rows.Add(tableRowDefinition5);
             itemTemplateBase2.Rows.Add(tableRowDefinition6);
-            tableSpan1.ColumnSpan = 2;
-            tableSpan1.RowIndex = 1;
-            tableSpan2.ColumnSpan = 2;
-            tableSpan2.RowIndex = 2;
-            itemTemplateBase2.Spans.Add(tableSpan1);
-            itemTemplateBase2.Spans.Add(tableSpan2);
+            tableSpan3.ColumnSpan = 2;
+            tableSpan3.RowIndex = 1;
+            tableSpan4.ColumnSpan = 2;
+            tableSpan4.RowIndex = 2;
+            itemTemplateBase2.Spans.Add(tableSpan3);
+            itemTemplateBase2.Spans.Add(tableSpan4);
             this.listBoxControlJDProductListing.Templates.Add(itemTemplateBase2);
             this.listBoxControlJDProductListing.ValueMember = "PROD_ID";
             // 
@@ -3108,16 +3130,16 @@ namespace MES
             this.checkEditJDOrderDetails.StyleController = this.layoutControl4;
             this.checkEditJDOrderDetails.TabIndex = 2;
             // 
-            // checkEditJDOrderListing
+            // checkEditJDSelectOrder
             // 
             this.checkEditJDSelectOrder.Location = new System.Drawing.Point(229, 49);
             this.checkEditJDSelectOrder.MenuManager = this.toolbarFormManager1;
-            this.checkEditJDSelectOrder.Name = "checkEditJDOrderListing";
+            this.checkEditJDSelectOrder.Name = "checkEditJDSelectOrder";
             this.checkEditJDSelectOrder.Properties.Caption = "Order List";
             this.checkEditJDSelectOrder.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Custom;
-            this.checkEditJDSelectOrder.Properties.ImageOptions.SvgImageChecked = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("checkEditJDOrderListing.Properties.ImageOptions.SvgImageChecked")));
+            this.checkEditJDSelectOrder.Properties.ImageOptions.SvgImageChecked = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("checkEditJDSelectOrder.Properties.ImageOptions.SvgImageChecked")));
             this.checkEditJDSelectOrder.Properties.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.checkEditJDSelectOrder.Properties.ImageOptions.SvgImageUnchecked = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("checkEditJDOrderListing.Properties.ImageOptions.SvgImageUnchecked")));
+            this.checkEditJDSelectOrder.Properties.ImageOptions.SvgImageUnchecked = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("checkEditJDSelectOrder.Properties.ImageOptions.SvgImageUnchecked")));
             this.checkEditJDSelectOrder.Properties.ReadOnly = true;
             this.checkEditJDSelectOrder.Size = new System.Drawing.Size(191, 20);
             this.checkEditJDSelectOrder.StyleController = this.layoutControl4;
@@ -3950,6 +3972,8 @@ namespace MES
             // 
             // layoutControl6
             // 
+            this.layoutControl6.Controls.Add(this.button1);
+            this.layoutControl6.Controls.Add(this.progressBarControl1);
             this.layoutControl6.Controls.Add(this.simpleButtonFGReserved);
             this.layoutControl6.Controls.Add(this.simpleButtonFGSave);
             this.layoutControl6.Controls.Add(this.gridControlFinishedGoods);
@@ -3962,6 +3986,26 @@ namespace MES
             this.layoutControl6.TabIndex = 0;
             this.layoutControl6.Text = "layoutControl6";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(280, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 22);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Preview";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // progressBarControl1
+            // 
+            this.progressBarControl1.Location = new System.Drawing.Point(423, 12);
+            this.progressBarControl1.MenuManager = this.toolbarFormManager1;
+            this.progressBarControl1.Name = "progressBarControl1";
+            this.progressBarControl1.Properties.FlowAnimationEnabled = true;
+            this.progressBarControl1.Size = new System.Drawing.Size(675, 18);
+            this.progressBarControl1.StyleController = this.layoutControl6;
+            this.progressBarControl1.TabIndex = 2;
+            // 
             // simpleButtonFGReserved
             // 
             this.simpleButtonFGReserved.Location = new System.Drawing.Point(12, 12);
@@ -3972,6 +4016,7 @@ namespace MES
             this.simpleButtonFGReserved.StyleController = this.layoutControl6;
             this.simpleButtonFGReserved.TabIndex = 15;
             this.simpleButtonFGReserved.Text = "(Reserved)";
+            this.simpleButtonFGReserved.Click += new System.EventHandler(this.simpleButtonFGReserved_Click);
             // 
             // simpleButtonFGSave
             // 
@@ -3987,7 +4032,7 @@ namespace MES
             // 
             // gridControlFinishedGoods
             // 
-            this.gridControlFinishedGoods.DataSource = this.fINISHEDMSTBindingSource1;
+            this.gridControlFinishedGoods.DataSource = this.fINISHEDMSTBindingSource;
             this.gridControlFinishedGoods.Location = new System.Drawing.Point(17, 68);
             this.gridControlFinishedGoods.MainView = this.gridViewFinishedGoods;
             this.gridControlFinishedGoods.Name = "gridControlFinishedGoods";
@@ -3997,10 +4042,10 @@ namespace MES
             this.gridControlFinishedGoods.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewFinishedGoods});
             // 
-            // fINISHEDMSTBindingSource1
+            // fINISHEDMSTBindingSource
             // 
-            this.fINISHEDMSTBindingSource1.DataMember = "FINISHED_MST";
-            this.fINISHEDMSTBindingSource1.DataSource = this.signes_MESDataSet;
+            this.fINISHEDMSTBindingSource.DataMember = "FINISHED_MST";
+            this.fINISHEDMSTBindingSource.DataSource = this.signes_MESDataSet;
             // 
             // gridViewFinishedGoods
             // 
@@ -4159,7 +4204,9 @@ namespace MES
             this.layoutControlItem28,
             this.emptySpaceItem5,
             this.layoutControlItem27,
-            this.emptySpaceItem15});
+            this.emptySpaceItem15,
+            this.layoutControlItem39,
+            this.layoutControlItem40});
             this.layoutControlGroup25.Name = "Root";
             this.layoutControlGroup25.Size = new System.Drawing.Size(1228, 1282);
             this.layoutControlGroup25.TextVisible = false;
@@ -4232,10 +4279,33 @@ namespace MES
             // emptySpaceItem15
             // 
             this.emptySpaceItem15.AllowHotTrack = false;
-            this.emptySpaceItem15.Location = new System.Drawing.Point(268, 0);
+            this.emptySpaceItem15.Location = new System.Drawing.Point(1090, 0);
             this.emptySpaceItem15.Name = "emptySpaceItem15";
-            this.emptySpaceItem15.Size = new System.Drawing.Size(940, 26);
+            this.emptySpaceItem15.Size = new System.Drawing.Size(118, 26);
             this.emptySpaceItem15.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem39
+            // 
+            this.layoutControlItem39.Control = this.progressBarControl1;
+            this.layoutControlItem39.Location = new System.Drawing.Point(411, 0);
+            this.layoutControlItem39.Name = "layoutControlItem39";
+            this.layoutControlItem39.Size = new System.Drawing.Size(679, 26);
+            this.layoutControlItem39.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem39.TextVisible = false;
+            // 
+            // layoutControlItem40
+            // 
+            this.layoutControlItem40.Control = this.button1;
+            this.layoutControlItem40.Location = new System.Drawing.Point(268, 0);
+            this.layoutControlItem40.Name = "layoutControlItem40";
+            this.layoutControlItem40.Size = new System.Drawing.Size(143, 26);
+            this.layoutControlItem40.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem40.TextVisible = false;
+            // 
+            // fINISHEDMSTBindingSource1
+            // 
+            this.fINISHEDMSTBindingSource1.DataMember = "FINISHED_MST";
+            this.fINISHEDMSTBindingSource1.DataSource = this.signes_MESDataSet;
             // 
             // mMPRODMSTMATERIALMSTBindingSource
             // 
@@ -4252,11 +4322,6 @@ namespace MES
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(79, 17);
             this.toolStripStatusLabel1.Text = "Design mode";
-            // 
-            // fINISHEDMSTBindingSource
-            // 
-            this.fINISHEDMSTBindingSource.DataMember = "FINISHED_MST";
-            this.fINISHEDMSTBindingSource.DataSource = this.signes_MESDataSet;
             // 
             // mMPROCSTEPBindingSource
             // 
@@ -4616,8 +4681,9 @@ namespace MES
             this.panelControlFinishedGoodsInventory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl6)).EndInit();
             this.layoutControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlFinishedGoods)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewFinishedGoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup17)).EndInit();
@@ -4628,10 +4694,12 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem39)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem40)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tASKMSTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPRODMSTMATERIALMSTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPROCMSTBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fINISHEDMSTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mMPROCSTEPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlGanttChart)).EndInit();
@@ -5032,6 +5100,11 @@ namespace MES
         private System.Windows.Forms.BindingSource tASKMSTBindingSource;
         private System.Windows.Forms.BindingSource jOBMSTBindingSource;
         private Signes_MESDataSetTableAdapters.JOB_MSTTableAdapter jOB_MSTTableAdapter;
+        private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
+        private LayoutControlItem layoutControlItem39;
+        private DevExpress.XtraReports.ReportGeneration.ReportGenerator reportGenerator1;
+        private System.Windows.Forms.Button button1;
+        private LayoutControlItem layoutControlItem40;
     }
 }
 

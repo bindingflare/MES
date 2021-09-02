@@ -25,6 +25,8 @@ using DevExpress.Utils;
 using DevExpress.XtraBars.ToolbarForm;
 using DevExpress.XtraGrid.Views.Layout;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraReports.UI;
 
 namespace MES
 {
@@ -55,6 +57,7 @@ namespace MES
 
             // Create a Project
             m_Manager = new ProjectManager("256K DRAM 7월 진척현황");
+            m_Manager.Start = DateTime.Parse("2021-09-01 00:00:00");
 
             // Custom fields
             m_Manager.AddCustomField("Greeting", typeof(string), 80);
@@ -95,7 +98,7 @@ namespace MES
 
             // Build tree for GanttChart
             ganttChartProductionMonitor.Init(m_Manager);
-            ganttChartProductionMonitor.CreateTaskDelegate = delegate () { return new MyTask(m_Manager); };
+            //ganttChartProductionMonitor.CreateTaskDelegate = delegate () { return new MyTask(m_Manager); };
 
             ganttChartChartSplitContainer.SplitterPosition = 400;
 
@@ -141,9 +144,6 @@ namespace MES
 
         private void AfterInitialization()
         {
-            // Set mainform text
-            //this.Appearance.Caption = new Font("Segoe UI", 9f);
-
             // Set text
             labelControlPMProjectLabel.Text = m_Manager.Name;
             ganttChartChartTreeListTableLayoutPanel.RowStyles[0].Height = ganttChartProductionMonitor.HeaderOneHeight - 6;
@@ -166,7 +166,6 @@ namespace MES
             UserLookAndFeel.Default.StyleChanged += Default_StyleChanged;
 
             // Gantt control settings
-            //ganttControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             ganttControlHome.ChartMappings.TextFieldName = "Text";
             ganttControlHome.ChartMappings.InteractionTooltipTextFieldName = "Tooltip";
 
@@ -181,7 +180,6 @@ namespace MES
             ganttControlHome.ChartStartDate = m_Manager.Start;
             ganttControlHome.OptionsView.ShowBaselines = true;
             ganttControlHome.DataSource = GetTasks();
-
             ganttControlHome.ExpandAll();
 
             // Add details to ProductListing Views by temporarily giving them main view status
@@ -228,10 +226,8 @@ namespace MES
             gridViewFinishedGoods.CustomUnboundColumnData += GridViewFinishedGoods_CustomUnboundColumnData;
 
             // Manufacturing order product search
-            // comboBoxEditManufacturingOrderProductListing.TextChanged += TextEditManufacturingOrderSelect_TextChanged;
             lookUpEditMOProductFilter.EditValue = null;
             lookUpEditMOProductFilter.EditValueChanged += LookUpEditMOProductFilter_EditValueChanged;
-
             lookUpEditMOProductFilter.QueryPopUp += LookUpEditMOProductFilter_QueryPopUp;
         }
 
@@ -450,6 +446,7 @@ namespace MES
 
                 listBoxControlJDOrderListing.DataSource = view;
                 listBoxControlJDOrderListing.SelectedIndex = -1;
+                _clearOrderDetailsForm();
             }
             else
             {
@@ -472,7 +469,7 @@ namespace MES
                 // Update status
                 checkEditJDSelectOrder.Checked = true;
 
-                _createOrderDetailsForm(prod_id, order_id);
+                _fillOrderDetailsForm(prod_id, order_id);
             }
             else
             {
@@ -483,15 +480,43 @@ namespace MES
             }
         }
 
-        private void _createOrderDetailsForm(string prod_id, string order_id)
+        private void _clearOrderDetailsForm()
         {
-            tableLayoutPanelJDOrderDetails.Controls.Clear();
+            foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
+            {
+                if (control is TextEdit)
+                {
+                    (control as TextEdit).Text = null;
+                }
+            }
+        }
 
-            LabelControl label = new LabelControl();
-            TextEdit edit = new TextEdit();
+        private void _fillOrderDetailsForm(string prod_id, string order_id)
+        {
+            DataRow prodRow = signes_MESDataSet.PRODUCT_MST.FindByPROD_ID(prod_id);
+            DataRow orderRow = signes_MESDataSet.JOB_MST.FindByJOB_ID(order_id);
 
-            tableLayoutPanelJDOrderDetails.Controls.Add(edit);
-            tableLayoutPanelJDOrderDetails.Controls.Add(label);
+            foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
+            {
+                if(control is TextEdit)
+                {
+                    TextEdit edit = control as TextEdit;
+                    string tag = edit.Tag as string;
+
+                    if (tag != null)
+                    {
+                        if (tag[0] == 'p')
+                        {
+                            edit.Text = prodRow.Field<object>(tag.Substring(1)).ToString();
+                        }
+                        else if (tag[0] == 'j')
+                        {
+                            edit.Text = orderRow.Field<object>(tag.Substring(1)).ToString();
+                        }
+                    }
+                    
+                }
+            }
         }
 
         #endregion
@@ -787,8 +812,101 @@ namespace MES
                 // Reset selection
                 listBoxControlJDProductListing.SelectedIndex = -1;
                 listBoxControlJDOrderListing.SelectedIndex = -1;
+
+                // Create order form
+                _createOrderDetailsForm();
+            }
+            else if(page == "Production Monitor")
+            {
+                loadTasks();
+                treeListPMChartTreeList.DataSource = GetTasks();
+                treeListPMChartTreeList.ExpandAll();
+            }
+        }
+
+        private void _createOrderDetailsForm()
+        {
+            tableLayoutPanelJDOrderDetails.Controls.Clear();
+
+            List<string> displayNames = new List<string>();
+            List<string> fieldNames = new List<string>();
+
+            // Display names to add
+            displayNames.Add("Product ID");
+            displayNames.Add("Product Name");
+            displayNames.Add("Product Model");
+            displayNames.Add("Product Type");
+            displayNames.Add("Order ID");
+            displayNames.Add("Order Name");
+            displayNames.Add("Order Quantity");
+
+            // Field names to add
+            fieldNames.Add("pPROD_ID");
+            fieldNames.Add("pPROD_NM");
+            fieldNames.Add("pPROD_MODEL");
+            fieldNames.Add("pPROD_TYPE");
+            fieldNames.Add("jJOB_ID");
+            fieldNames.Add("jJOB_NM");
+            fieldNames.Add("jQTY");
+
+            for (int i = 0; i < displayNames.Count(); i++)
+            {
+                LabelControl label = new LabelControl();
+                label.Text = displayNames[i];
+                TextEdit edit = new TextEdit();
+                edit.Tag = fieldNames[i];
+
+                tableLayoutPanelJDOrderDetails.Controls.Add(edit);
+                tableLayoutPanelJDOrderDetails.Controls.Add(label);
+
+                tableLayoutPanelJDOrderDetails.SetColumn(edit, 1);
+
+                tableLayoutPanelJDOrderDetails.SetRow(edit, i);
+                tableLayoutPanelJDOrderDetails.SetRow(label, i);
             }
 
+            
+        }
+
+        private void loadTasks()
+        {
+            // load jobs
+            DataTable jobTable = signes_MESDataSet.JOB_MST.CopyToDataTable();
+            
+            foreach(DataRow row in jobTable.Rows)
+            {
+                var task = new MyTask(m_Manager, row.Field<string>("JOB_ID")) { Name = row.Field<string>("JOB_NM") };
+                m_Manager.Add(task);
+                m_Manager.SetStart(task, DateTime.Parse(row.Field<string>("START_TIME")) - m_Manager.Start);
+                m_Manager.SetDuration(task, TimeSpan.Parse(row.Field<string>("DURATION")));
+                m_Manager.SetDelay(task, TimeSpan.Parse(row.Field<string>("DELAY")));
+                
+            }
+
+            // load processes
+            DataTable procTable = signes_MESDataSet.MM_PROC_MST.CopyToDataTable();
+
+            foreach (DataRow row in procTable.Rows)
+            {
+                var task = new MyTask(m_Manager, row.Field<string>("PROC_ID")) { Name = row.Field<string>("PROC_NM") };
+                m_Manager.Add(task);
+                m_Manager.SetStart(task, DateTime.Parse(row.Field<string>("START_TIME")) - m_Manager.Start);
+                m_Manager.SetDuration(task, TimeSpan.Parse(row.Field<string>("DURATION")));
+                m_Manager.SetDelay(task, TimeSpan.Parse(row.Field<string>("DELAY")));
+
+                m_Manager.Group(getGroupTask(row.Field<string>("PROD_ID")), task);
+            }
+        }
+
+        private Task getGroupTask(string prod_id)
+        {
+            foreach(Task task in m_Manager.RootTasks)
+            {
+                if (task.ID.Substring(1, 6) == prod_id.Substring(1))
+                    return task;
+            }
+
+            return null;
         }
 
         private object GetTasks()
@@ -976,6 +1094,84 @@ namespace MES
             accountPopupMenu.ShowPopup(bottomleft, labelControl2);
         }
 
+        private void simpleButtonFGReserved_Click(object sender, EventArgs e)
+        {
+            ExportControl(gridControlFinishedGoods, "Hello");
+            ProgressDummy();
+        }
+
+        public bool ExportControl(IPrintable control, string filename)
+        {
+            try
+            {
+                PrintingSystem printingSystem = new PrintingSystem();
+                PrintableComponentLink link = new PrintableComponentLink();
+                printingSystem.Links.Add(link);
+                link.Component = control;
+                // Specify CSV export options.
+                var options = new CsvExportOptions();
+                options.SkipEmptyColumns = false;
+                options.SkipEmptyRows = false;
+                options.EncodeExecutableContent = DefaultBoolean.True;
+                // Export a document to CSV.
+                link.ExportToCsv(filename + ".csv", options);
+
+                var options2 = new ImageExportOptions();
+                options2.ExportMode = ImageExportMode.SingleFile;
+
+                link.ExportToImage(filename + ".png", options2);
+                return true;
+            }
+            // Return false if the CSV export failed.
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void ProgressDummy()
+        {
+            // Initializing progress bar properties
+            progressBarControl1.Properties.Step = 1;
+            progressBarControl1.Properties.PercentView = true;
+            progressBarControl1.Properties.Maximum = 20;
+                progressBarControl1.Properties.Minimum = 0;
+
+            progressBarControl1.PerformStep();
+            progressBarControl1.PerformStep();
+            progressBarControl1.PerformStep();
+            progressBarControl1.Update();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            foreach (GridColumn column in gridViewFinishedGoods.VisibleColumns)
+            {
+                dt.Columns.Add(column.FieldName, column.ColumnType);
+            }
+            for (int i = 0; i < gridViewFinishedGoods.DataRowCount; i++)
+            {
+                DataRow row = dt.NewRow();
+                foreach (GridColumn column in gridViewFinishedGoods.VisibleColumns)
+                {
+                    row[column.FieldName] = gridViewFinishedGoods.GetRowCellValue(i, column);
+                }
+                dt.Rows.Add(row);
+            }
+
+
+            //gridControlFinishedGoods.MainView.
+            FinishedReport report = new FinishedReport();
+            report.DataSource = dt;
+            report.ShowPreviewDialog();
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            // Invoke the Print dialog.
+            printTool.PrintDialog();
+            // Send the report to the default printer.
+            //printTool.Print();
+
+        }
     }
 
     #region overlay painter
@@ -1049,8 +1245,8 @@ namespace MES
     [Serializable]
     public class MyTask : Task
     {
-        public MyTask(ProjectManager manager)
-            : base()
+        public MyTask(ProjectManager manager, string ID)
+            : base(ID)
         {
             Manager = manager;
         }

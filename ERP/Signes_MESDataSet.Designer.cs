@@ -2218,11 +2218,23 @@ namespace MES {
             
             private global::System.Data.DataColumn columnSITE_ID;
             
+            private global::System.Data.DataColumn columnPROD_ID;
+            
             private global::System.Data.DataColumn columnPROC_VER;
             
             private global::System.Data.DataColumn columnPROC_NM;
             
             private global::System.Data.DataColumn columnPROC_TYPE;
+            
+            private global::System.Data.DataColumn columnSTART_TIME;
+            
+            private global::System.Data.DataColumn columnEND_TIME;
+            
+            private global::System.Data.DataColumn columnDURATION;
+            
+            private global::System.Data.DataColumn columnDELAY;
+            
+            private global::System.Data.DataColumn columnCOMPLETE;
             
             private global::System.Data.DataColumn columnDEL_YN;
             
@@ -2237,8 +2249,6 @@ namespace MES {
             private global::System.Data.DataColumn columnUPDATE_USER_ID;
             
             private global::System.Data.DataColumn columnUPDATE_DATE;
-            
-            private global::System.Data.DataColumn columnPROD_ID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2291,6 +2301,14 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PROD_IDColumn {
+                get {
+                    return this.columnPROD_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn PROC_VERColumn {
                 get {
                     return this.columnPROC_VER;
@@ -2310,6 +2328,46 @@ namespace MES {
             public global::System.Data.DataColumn PROC_TYPEColumn {
                 get {
                     return this.columnPROC_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn START_TIMEColumn {
+                get {
+                    return this.columnSTART_TIME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn END_TIMEColumn {
+                get {
+                    return this.columnEND_TIME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DURATIONColumn {
+                get {
+                    return this.columnDURATION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DELAYColumn {
+                get {
+                    return this.columnDELAY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn COMPLETEColumn {
+                get {
+                    return this.columnCOMPLETE;
                 }
             }
             
@@ -2371,14 +2429,6 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PROD_IDColumn {
-                get {
-                    return this.columnPROD_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2414,22 +2464,45 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MM_PROC_MSTRow AddMM_PROC_MSTRow(string PROC_ID, string SITE_ID, string PROC_VER, string PROC_NM, string PROC_TYPE, long DEL_YN, string REASON_CODE, string DESCR, string CREATE_USER_ID, string CREATE_DATE, string UPDATE_USER_ID, string UPDATE_DATE, string PROD_ID) {
+            public MM_PROC_MSTRow AddMM_PROC_MSTRow(
+                        string PROC_ID, 
+                        string SITE_ID, 
+                        string PROD_ID, 
+                        string PROC_VER, 
+                        string PROC_NM, 
+                        string PROC_TYPE, 
+                        string START_TIME, 
+                        string END_TIME, 
+                        string DURATION, 
+                        string DELAY, 
+                        long COMPLETE, 
+                        long DEL_YN, 
+                        string REASON_CODE, 
+                        string DESCR, 
+                        string CREATE_USER_ID, 
+                        string CREATE_DATE, 
+                        string UPDATE_USER_ID, 
+                        string UPDATE_DATE) {
                 MM_PROC_MSTRow rowMM_PROC_MSTRow = ((MM_PROC_MSTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PROC_ID,
                         SITE_ID,
+                        PROD_ID,
                         PROC_VER,
                         PROC_NM,
                         PROC_TYPE,
+                        START_TIME,
+                        END_TIME,
+                        DURATION,
+                        DELAY,
+                        COMPLETE,
                         DEL_YN,
                         REASON_CODE,
                         DESCR,
                         CREATE_USER_ID,
                         CREATE_DATE,
                         UPDATE_USER_ID,
-                        UPDATE_DATE,
-                        PROD_ID};
+                        UPDATE_DATE};
                 rowMM_PROC_MSTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMM_PROC_MSTRow);
                 return rowMM_PROC_MSTRow;
@@ -2461,9 +2534,15 @@ namespace MES {
             internal void InitVars() {
                 this.columnPROC_ID = base.Columns["PROC_ID"];
                 this.columnSITE_ID = base.Columns["SITE_ID"];
+                this.columnPROD_ID = base.Columns["PROD_ID"];
                 this.columnPROC_VER = base.Columns["PROC_VER"];
                 this.columnPROC_NM = base.Columns["PROC_NM"];
                 this.columnPROC_TYPE = base.Columns["PROC_TYPE"];
+                this.columnSTART_TIME = base.Columns["START_TIME"];
+                this.columnEND_TIME = base.Columns["END_TIME"];
+                this.columnDURATION = base.Columns["DURATION"];
+                this.columnDELAY = base.Columns["DELAY"];
+                this.columnCOMPLETE = base.Columns["COMPLETE"];
                 this.columnDEL_YN = base.Columns["DEL_YN"];
                 this.columnREASON_CODE = base.Columns["REASON_CODE"];
                 this.columnDESCR = base.Columns["DESCR"];
@@ -2471,7 +2550,6 @@ namespace MES {
                 this.columnCREATE_DATE = base.Columns["CREATE_DATE"];
                 this.columnUPDATE_USER_ID = base.Columns["UPDATE_USER_ID"];
                 this.columnUPDATE_DATE = base.Columns["UPDATE_DATE"];
-                this.columnPROD_ID = base.Columns["PROD_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2481,12 +2559,24 @@ namespace MES {
                 base.Columns.Add(this.columnPROC_ID);
                 this.columnSITE_ID = new global::System.Data.DataColumn("SITE_ID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSITE_ID);
+                this.columnPROD_ID = new global::System.Data.DataColumn("PROD_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPROD_ID);
                 this.columnPROC_VER = new global::System.Data.DataColumn("PROC_VER", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPROC_VER);
                 this.columnPROC_NM = new global::System.Data.DataColumn("PROC_NM", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPROC_NM);
                 this.columnPROC_TYPE = new global::System.Data.DataColumn("PROC_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPROC_TYPE);
+                this.columnSTART_TIME = new global::System.Data.DataColumn("START_TIME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTART_TIME);
+                this.columnEND_TIME = new global::System.Data.DataColumn("END_TIME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEND_TIME);
+                this.columnDURATION = new global::System.Data.DataColumn("DURATION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDURATION);
+                this.columnDELAY = new global::System.Data.DataColumn("DELAY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELAY);
+                this.columnCOMPLETE = new global::System.Data.DataColumn("COMPLETE", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCOMPLETE);
                 this.columnDEL_YN = new global::System.Data.DataColumn("DEL_YN", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDEL_YN);
                 this.columnREASON_CODE = new global::System.Data.DataColumn("REASON_CODE", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2501,24 +2591,26 @@ namespace MES {
                 base.Columns.Add(this.columnUPDATE_USER_ID);
                 this.columnUPDATE_DATE = new global::System.Data.DataColumn("UPDATE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUPDATE_DATE);
-                this.columnPROD_ID = new global::System.Data.DataColumn("PROD_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPROD_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPROC_ID}, true));
                 this.columnPROC_ID.AllowDBNull = false;
                 this.columnPROC_ID.Unique = true;
                 this.columnPROC_ID.MaxLength = 2147483647;
                 this.columnSITE_ID.MaxLength = 2147483647;
+                this.columnPROD_ID.MaxLength = 2147483647;
                 this.columnPROC_VER.MaxLength = 2147483647;
                 this.columnPROC_NM.MaxLength = 2147483647;
                 this.columnPROC_TYPE.MaxLength = 2147483647;
+                this.columnSTART_TIME.MaxLength = 2147483647;
+                this.columnEND_TIME.MaxLength = 2147483647;
+                this.columnDURATION.MaxLength = 2147483647;
+                this.columnDELAY.MaxLength = 2147483647;
                 this.columnREASON_CODE.MaxLength = 2147483647;
                 this.columnDESCR.MaxLength = 2147483647;
                 this.columnCREATE_USER_ID.MaxLength = 2147483647;
                 this.columnCREATE_DATE.MaxLength = 2147483647;
                 this.columnUPDATE_USER_ID.MaxLength = 2147483647;
                 this.columnUPDATE_DATE.MaxLength = 2147483647;
-                this.columnPROD_ID.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6582,6 +6674,22 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PROD_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableMM_PROC_MST.PROD_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_ID\' in table \'MM_PROC_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMM_PROC_MST.PROD_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROC_VER {
                 get {
                     try {
@@ -6625,6 +6733,86 @@ namespace MES {
                 }
                 set {
                     this[this.tableMM_PROC_MST.PROC_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string START_TIME {
+                get {
+                    try {
+                        return ((string)(this[this.tableMM_PROC_MST.START_TIMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'START_TIME\' in table \'MM_PROC_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMM_PROC_MST.START_TIMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string END_TIME {
+                get {
+                    try {
+                        return ((string)(this[this.tableMM_PROC_MST.END_TIMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'END_TIME\' in table \'MM_PROC_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMM_PROC_MST.END_TIMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DURATION {
+                get {
+                    try {
+                        return ((string)(this[this.tableMM_PROC_MST.DURATIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DURATION\' in table \'MM_PROC_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMM_PROC_MST.DURATIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DELAY {
+                get {
+                    try {
+                        return ((string)(this[this.tableMM_PROC_MST.DELAYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DELAY\' in table \'MM_PROC_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMM_PROC_MST.DELAYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long COMPLETE {
+                get {
+                    try {
+                        return ((long)(this[this.tableMM_PROC_MST.COMPLETEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'COMPLETE\' in table \'MM_PROC_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMM_PROC_MST.COMPLETEColumn] = value;
                 }
             }
             
@@ -6742,22 +6930,6 @@ namespace MES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PROD_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableMM_PROC_MST.PROD_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_ID\' in table \'MM_PROC_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMM_PROC_MST.PROD_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSITE_IDNull() {
                 return this.IsNull(this.tableMM_PROC_MST.SITE_IDColumn);
             }
@@ -6766,6 +6938,18 @@ namespace MES {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSITE_IDNull() {
                 this[this.tableMM_PROC_MST.SITE_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPROD_IDNull() {
+                return this.IsNull(this.tableMM_PROC_MST.PROD_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPROD_IDNull() {
+                this[this.tableMM_PROC_MST.PROD_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6802,6 +6986,66 @@ namespace MES {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPROC_TYPENull() {
                 this[this.tableMM_PROC_MST.PROC_TYPEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSTART_TIMENull() {
+                return this.IsNull(this.tableMM_PROC_MST.START_TIMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSTART_TIMENull() {
+                this[this.tableMM_PROC_MST.START_TIMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEND_TIMENull() {
+                return this.IsNull(this.tableMM_PROC_MST.END_TIMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEND_TIMENull() {
+                this[this.tableMM_PROC_MST.END_TIMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDURATIONNull() {
+                return this.IsNull(this.tableMM_PROC_MST.DURATIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDURATIONNull() {
+                this[this.tableMM_PROC_MST.DURATIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDELAYNull() {
+                return this.IsNull(this.tableMM_PROC_MST.DELAYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDELAYNull() {
+                this[this.tableMM_PROC_MST.DELAYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCOMPLETENull() {
+                return this.IsNull(this.tableMM_PROC_MST.COMPLETEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCOMPLETENull() {
+                this[this.tableMM_PROC_MST.COMPLETEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6886,18 +7130,6 @@ namespace MES {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUPDATE_DATENull() {
                 this[this.tableMM_PROC_MST.UPDATE_DATEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPROD_IDNull() {
-                return this.IsNull(this.tableMM_PROC_MST.PROD_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPROD_IDNull() {
-                this[this.tableMM_PROC_MST.PROD_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14393,10 +14625,35 @@ FROM     MATERIAL_MST";
             tableMapping.ColumnMappings.Add("UPDATE_USER_ID", "UPDATE_USER_ID");
             tableMapping.ColumnMappings.Add("UPDATE_DATE", "UPDATE_DATE");
             tableMapping.ColumnMappings.Add("PROD_ID", "PROD_ID");
+            tableMapping.ColumnMappings.Add("START_TIME", "START_TIME");
+            tableMapping.ColumnMappings.Add("END_TIME", "END_TIME");
+            tableMapping.ColumnMappings.Add("DURATION", "DURATION");
+            tableMapping.ColumnMappings.Add("DELAY", "DELAY");
+            tableMapping.ColumnMappings.Add("COMPLETE", "COMPLETE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [main].[sqlite_default_schema].[MM_PROC_MST] WHERE (([PROC_ID] = @Original_PROC_ID) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS NULL) OR ([SITE_ID] = @Original_SITE_ID)) AND ((@IsNull_PROD_ID = 1 AND [PROD_ID] IS NULL) OR ([PROD_ID] = @Original_PROD_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR ([PROC_VER] = @Original_PROC_VER)) AND ((@IsNull_PROC_NM = 1 AND [PROC_NM] IS NULL) OR ([PROC_NM] = @Original_PROC_NM)) AND ((@IsNull_PROC_TYPE = 1 AND [PROC_TYPE] IS NULL) OR ([PROC_TYPE] = @Original_PROC_TYPE)) AND ((@IsNull_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_DEL_YN)) AND ((@IsNull_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original_REASON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original_DESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREATE_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_CREATE_DATE = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE)) AND ((@IsNull_UPDATE_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER_ID] = @Original_UPDATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] IS NULL) OR ([UPDATE_DATE] = @Original_UPDATE_DATE)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [main].[sqlite_default_schema].[MM_PROC_MST] WHERE (([PROC_ID] = @Ori" +
+                "ginal_PROC_ID) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS NULL) OR ([SITE_ID] = " +
+                "@Original_SITE_ID)) AND ((@IsNull_PROD_ID = 1 AND [PROD_ID] IS NULL) OR ([PROD_I" +
+                "D] = @Original_PROD_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR (" +
+                "[PROC_VER] = @Original_PROC_VER)) AND ((@IsNull_PROC_NM = 1 AND [PROC_NM] IS NUL" +
+                "L) OR ([PROC_NM] = @Original_PROC_NM)) AND ((@IsNull_PROC_TYPE = 1 AND [PROC_TYP" +
+                "E] IS NULL) OR ([PROC_TYPE] = @Original_PROC_TYPE)) AND ((@IsNull_START_TIME = 1" +
+                " AND [START_TIME] IS NULL) OR ([START_TIME] = @Original_START_TIME)) AND ((@IsNu" +
+                "ll_END_TIME = 1 AND [END_TIME] IS NULL) OR ([END_TIME] = @Original_END_TIME)) AN" +
+                "D ((@IsNull_DURATION = 1 AND [DURATION] IS NULL) OR ([DURATION] = @Original_DURA" +
+                "TION)) AND ((@IsNull_DELAY = 1 AND [DELAY] IS NULL) OR ([DELAY] = @Original_DELA" +
+                "Y)) AND ((@IsNull_COMPLETE = 1 AND [COMPLETE] IS NULL) OR ([COMPLETE] = @Origina" +
+                "l_COMPLETE)) AND ((@IsNull_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Orig" +
+                "inal_DEL_YN)) AND ((@IsNull_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REAS" +
+                "ON_CODE] = @Original_REASON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) " +
+                "OR ([DESCR] = @Original_DESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USE" +
+                "R_ID] IS NULL) OR ([CREATE_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_C" +
+                "REATE_DATE = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_D" +
+                "ATE)) AND ((@IsNull_UPDATE_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE" +
+                "_USER_ID] = @Original_UPDATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE" +
+                "_DATE] IS NULL) OR ([UPDATE_DATE] = @Original_UPDATE_DATE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::System.Data.SQLite.SQLiteParameter param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Original_PROC_ID";
@@ -14472,6 +14729,77 @@ FROM     MATERIAL_MST";
             param.ParameterName = "@Original_PROC_TYPE";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "PROC_TYPE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_START_TIME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "START_TIME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_START_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "START_TIME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_END_TIME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "END_TIME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_END_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "END_TIME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_DURATION";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "DURATION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_DURATION";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DURATION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_DELAY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "DELAY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_DELAY";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DELAY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_COMPLETE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "COMPLETE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_COMPLETE";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "COMPLETE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
@@ -14575,7 +14903,7 @@ FROM     MATERIAL_MST";
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [main].[sqlite_default_schema].[MM_PROC_MST] ([PROC_ID], [SITE_ID], [PROD_ID], [PROC_VER], [PROC_NM], [PROC_TYPE], [DEL_YN], [REASON_CODE], [DESCR], [CREATE_USER_ID], [CREATE_DATE], [UPDATE_USER_ID], [UPDATE_DATE]) VALUES (@PROC_ID, @SITE_ID, @PROD_ID, @PROC_VER, @PROC_NM, @PROC_TYPE, @DEL_YN, @REASON_CODE, @DESCR, @CREATE_USER_ID, @CREATE_DATE, @UPDATE_USER_ID, @UPDATE_DATE)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [main].[sqlite_default_schema].[MM_PROC_MST] ([PROC_ID], [SITE_ID], [PROD_ID], [PROC_VER], [PROC_NM], [PROC_TYPE], [START_TIME], [END_TIME], [DURATION], [DELAY], [COMPLETE], [DEL_YN], [REASON_CODE], [DESCR], [CREATE_USER_ID], [CREATE_DATE], [UPDATE_USER_ID], [UPDATE_DATE]) VALUES (@PROC_ID, @SITE_ID, @PROD_ID, @PROC_VER, @PROC_NM, @PROC_TYPE, @START_TIME, @END_TIME, @DURATION, @DELAY, @COMPLETE, @DEL_YN, @REASON_CODE, @DESCR, @CREATE_USER_ID, @CREATE_DATE, @UPDATE_USER_ID, @UPDATE_DATE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@PROC_ID";
@@ -14606,6 +14934,32 @@ FROM     MATERIAL_MST";
             param.ParameterName = "@PROC_TYPE";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "PROC_TYPE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@START_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "START_TIME";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@END_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "END_TIME";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@DURATION";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DURATION";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@DELAY";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DELAY";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@COMPLETE";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "COMPLETE";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@DEL_YN";
@@ -14647,24 +15001,31 @@ FROM     MATERIAL_MST";
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [main].[sqlite_default_schema].[MM_PROC_MST] SET [PROC_ID] = @PROC_ID, [SI" +
                 "TE_ID] = @SITE_ID, [PROD_ID] = @PROD_ID, [PROC_VER] = @PROC_VER, [PROC_NM] = @PR" +
-                "OC_NM, [PROC_TYPE] = @PROC_TYPE, [DEL_YN] = @DEL_YN, [REASON_CODE] = @REASON_COD" +
-                "E, [DESCR] = @DESCR, [CREATE_USER_ID] = @CREATE_USER_ID, [CREATE_DATE] = @CREATE" +
-                "_DATE, [UPDATE_USER_ID] = @UPDATE_USER_ID, [UPDATE_DATE] = @UPDATE_DATE WHERE ((" +
-                "[PROC_ID] = @Original_PROC_ID) AND ((@IsNull_SITE_ID = 1 AND [SITE_ID] IS NULL) " +
-                "OR ([SITE_ID] = @Original_SITE_ID)) AND ((@IsNull_PROD_ID = 1 AND [PROD_ID] IS N" +
-                "ULL) OR ([PROD_ID] = @Original_PROD_ID)) AND ((@IsNull_PROC_VER = 1 AND [PROC_VE" +
-                "R] IS NULL) OR ([PROC_VER] = @Original_PROC_VER)) AND ((@IsNull_PROC_NM = 1 AND " +
-                "[PROC_NM] IS NULL) OR ([PROC_NM] = @Original_PROC_NM)) AND ((@IsNull_PROC_TYPE =" +
-                " 1 AND [PROC_TYPE] IS NULL) OR ([PROC_TYPE] = @Original_PROC_TYPE)) AND ((@IsNul" +
-                "l_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_DEL_YN)) AND ((@IsNu" +
-                "ll_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original_REAS" +
-                "ON_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original_D" +
-                "ESCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREAT" +
-                "E_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_CREATE_DATE = 1 AND [CREAT" +
-                "E_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE)) AND ((@IsNull_UPDAT" +
-                "E_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER_ID] = @Original_UPD" +
-                "ATE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] IS NULL) OR ([UPDA" +
-                "TE_DATE] = @Original_UPDATE_DATE)))";
+                "OC_NM, [PROC_TYPE] = @PROC_TYPE, [START_TIME] = @START_TIME, [END_TIME] = @END_T" +
+                "IME, [DURATION] = @DURATION, [DELAY] = @DELAY, [COMPLETE] = @COMPLETE, [DEL_YN] " +
+                "= @DEL_YN, [REASON_CODE] = @REASON_CODE, [DESCR] = @DESCR, [CREATE_USER_ID] = @C" +
+                "REATE_USER_ID, [CREATE_DATE] = @CREATE_DATE, [UPDATE_USER_ID] = @UPDATE_USER_ID," +
+                " [UPDATE_DATE] = @UPDATE_DATE WHERE (([PROC_ID] = @Original_PROC_ID) AND ((@IsNu" +
+                "ll_SITE_ID = 1 AND [SITE_ID] IS NULL) OR ([SITE_ID] = @Original_SITE_ID)) AND ((" +
+                "@IsNull_PROD_ID = 1 AND [PROD_ID] IS NULL) OR ([PROD_ID] = @Original_PROD_ID)) A" +
+                "ND ((@IsNull_PROC_VER = 1 AND [PROC_VER] IS NULL) OR ([PROC_VER] = @Original_PRO" +
+                "C_VER)) AND ((@IsNull_PROC_NM = 1 AND [PROC_NM] IS NULL) OR ([PROC_NM] = @Origin" +
+                "al_PROC_NM)) AND ((@IsNull_PROC_TYPE = 1 AND [PROC_TYPE] IS NULL) OR ([PROC_TYPE" +
+                "] = @Original_PROC_TYPE)) AND ((@IsNull_START_TIME = 1 AND [START_TIME] IS NULL)" +
+                " OR ([START_TIME] = @Original_START_TIME)) AND ((@IsNull_END_TIME = 1 AND [END_T" +
+                "IME] IS NULL) OR ([END_TIME] = @Original_END_TIME)) AND ((@IsNull_DURATION = 1 A" +
+                "ND [DURATION] IS NULL) OR ([DURATION] = @Original_DURATION)) AND ((@IsNull_DELAY" +
+                " = 1 AND [DELAY] IS NULL) OR ([DELAY] = @Original_DELAY)) AND ((@IsNull_COMPLETE" +
+                " = 1 AND [COMPLETE] IS NULL) OR ([COMPLETE] = @Original_COMPLETE)) AND ((@IsNull" +
+                "_DEL_YN = 1 AND [DEL_YN] IS NULL) OR ([DEL_YN] = @Original_DEL_YN)) AND ((@IsNul" +
+                "l_REASON_CODE = 1 AND [REASON_CODE] IS NULL) OR ([REASON_CODE] = @Original_REASO" +
+                "N_CODE)) AND ((@IsNull_DESCR = 1 AND [DESCR] IS NULL) OR ([DESCR] = @Original_DE" +
+                "SCR)) AND ((@IsNull_CREATE_USER_ID = 1 AND [CREATE_USER_ID] IS NULL) OR ([CREATE" +
+                "_USER_ID] = @Original_CREATE_USER_ID)) AND ((@IsNull_CREATE_DATE = 1 AND [CREATE" +
+                "_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE)) AND ((@IsNull_UPDATE" +
+                "_USER_ID = 1 AND [UPDATE_USER_ID] IS NULL) OR ([UPDATE_USER_ID] = @Original_UPDA" +
+                "TE_USER_ID)) AND ((@IsNull_UPDATE_DATE = 1 AND [UPDATE_DATE] IS NULL) OR ([UPDAT" +
+                "E_DATE] = @Original_UPDATE_DATE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@PROC_ID";
@@ -14695,6 +15056,32 @@ FROM     MATERIAL_MST";
             param.ParameterName = "@PROC_TYPE";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "PROC_TYPE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@START_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "START_TIME";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@END_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "END_TIME";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@DURATION";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DURATION";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@DELAY";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DELAY";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@COMPLETE";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "COMPLETE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@DEL_YN";
@@ -14806,6 +15193,77 @@ FROM     MATERIAL_MST";
             param.ParameterName = "@Original_PROC_TYPE";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "PROC_TYPE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_START_TIME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "START_TIME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_START_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "START_TIME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_END_TIME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "END_TIME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_END_TIME";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "END_TIME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_DURATION";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "DURATION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_DURATION";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DURATION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_DELAY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "DELAY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_DELAY";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "DELAY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@IsNull_COMPLETE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SourceColumn = "COMPLETE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@Original_COMPLETE";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "COMPLETE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
@@ -14922,9 +15380,7 @@ FROM     MATERIAL_MST";
             this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  PROC_ID, SITE_ID, PROD_ID, PROC_VER, PROC_NM, PROC_TYPE, DEL_YN, REASON_C" +
-                "ODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE\nFROM     MM" +
-                "_PROC_MST";
+            this._commandCollection[0].CommandText = "SELECT  MM_PROC_MST.*\r\nFROM     MM_PROC_MST";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -14985,7 +15441,25 @@ FROM     MATERIAL_MST";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_PROC_ID, string Original_SITE_ID, string Original_PROD_ID, string Original_PROC_VER, string Original_PROC_NM, string Original_PROC_TYPE, global::System.Nullable<long> Original_DEL_YN, string Original_REASON_CODE, string Original_DESCR, string Original_CREATE_USER_ID, string Original_CREATE_DATE, string Original_UPDATE_USER_ID, string Original_UPDATE_DATE) {
+        public virtual int Delete(
+                    string Original_PROC_ID, 
+                    string Original_SITE_ID, 
+                    string Original_PROD_ID, 
+                    string Original_PROC_VER, 
+                    string Original_PROC_NM, 
+                    string Original_PROC_TYPE, 
+                    string Original_START_TIME, 
+                    string Original_END_TIME, 
+                    string Original_DURATION, 
+                    string Original_DELAY, 
+                    global::System.Nullable<long> Original_COMPLETE, 
+                    global::System.Nullable<long> Original_DEL_YN, 
+                    string Original_REASON_CODE, 
+                    string Original_DESCR, 
+                    string Original_CREATE_USER_ID, 
+                    string Original_CREATE_DATE, 
+                    string Original_UPDATE_USER_ID, 
+                    string Original_UPDATE_DATE) {
             if ((Original_PROC_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_PROC_ID");
             }
@@ -15032,61 +15506,101 @@ FROM     MATERIAL_MST";
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PROC_TYPE));
             }
-            if ((Original_DEL_YN.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((long)(Original_DEL_YN.Value));
-            }
-            else {
+            if ((Original_START_TIME == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_REASON_CODE == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_START_TIME));
+            }
+            if ((Original_END_TIME == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_REASON_CODE));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_END_TIME));
             }
-            if ((Original_DESCR == null)) {
+            if ((Original_DURATION == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_DESCR));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_DURATION));
             }
-            if ((Original_CREATE_USER_ID == null)) {
+            if ((Original_DELAY == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_CREATE_USER_ID));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_DELAY));
             }
-            if ((Original_CREATE_DATE == null)) {
+            if ((Original_COMPLETE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((long)(Original_COMPLETE.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_CREATE_DATE));
+            if ((Original_DEL_YN.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((long)(Original_DEL_YN.Value));
             }
-            if ((Original_UPDATE_USER_ID == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_UPDATE_USER_ID));
-            }
-            if ((Original_UPDATE_DATE == null)) {
+            if ((Original_REASON_CODE == null)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_UPDATE_DATE));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_REASON_CODE));
+            }
+            if ((Original_DESCR == null)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_DESCR));
+            }
+            if ((Original_CREATE_USER_ID == null)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_CREATE_USER_ID));
+            }
+            if ((Original_CREATE_DATE == null)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_CREATE_DATE));
+            }
+            if ((Original_UPDATE_USER_ID == null)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_UPDATE_USER_ID));
+            }
+            if ((Original_UPDATE_DATE == null)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -15108,7 +15622,25 @@ FROM     MATERIAL_MST";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string PROC_ID, string SITE_ID, string PROD_ID, string PROC_VER, string PROC_NM, string PROC_TYPE, global::System.Nullable<long> DEL_YN, string REASON_CODE, string DESCR, string CREATE_USER_ID, string CREATE_DATE, string UPDATE_USER_ID, string UPDATE_DATE) {
+        public virtual int Insert(
+                    string PROC_ID, 
+                    string SITE_ID, 
+                    string PROD_ID, 
+                    string PROC_VER, 
+                    string PROC_NM, 
+                    string PROC_TYPE, 
+                    string START_TIME, 
+                    string END_TIME, 
+                    string DURATION, 
+                    string DELAY, 
+                    global::System.Nullable<long> COMPLETE, 
+                    global::System.Nullable<long> DEL_YN, 
+                    string REASON_CODE, 
+                    string DESCR, 
+                    string CREATE_USER_ID, 
+                    string CREATE_DATE, 
+                    string UPDATE_USER_ID, 
+                    string UPDATE_DATE) {
             if ((PROC_ID == null)) {
                 throw new global::System.ArgumentNullException("PROC_ID");
             }
@@ -15145,47 +15677,77 @@ FROM     MATERIAL_MST";
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PROC_TYPE));
             }
-            if ((DEL_YN.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((long)(DEL_YN.Value));
-            }
-            else {
+            if ((START_TIME == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((REASON_CODE == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(START_TIME));
+            }
+            if ((END_TIME == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(REASON_CODE));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(END_TIME));
             }
-            if ((DESCR == null)) {
+            if ((DURATION == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(DESCR));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(DURATION));
             }
-            if ((CREATE_USER_ID == null)) {
+            if ((DELAY == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CREATE_USER_ID));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(DELAY));
             }
-            if ((CREATE_DATE == null)) {
+            if ((COMPLETE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((long)(COMPLETE.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(CREATE_DATE));
+            if ((DEL_YN.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((long)(DEL_YN.Value));
             }
-            if ((UPDATE_USER_ID == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(UPDATE_USER_ID));
-            }
-            if ((UPDATE_DATE == null)) {
+            if ((REASON_CODE == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(UPDATE_DATE));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(REASON_CODE));
+            }
+            if ((DESCR == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(DESCR));
+            }
+            if ((CREATE_USER_ID == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(CREATE_USER_ID));
+            }
+            if ((CREATE_DATE == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(CREATE_DATE));
+            }
+            if ((UPDATE_USER_ID == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(UPDATE_USER_ID));
+            }
+            if ((UPDATE_DATE == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -15214,6 +15776,11 @@ FROM     MATERIAL_MST";
                     string PROC_VER, 
                     string PROC_NM, 
                     string PROC_TYPE, 
+                    string START_TIME, 
+                    string END_TIME, 
+                    string DURATION, 
+                    string DELAY, 
+                    global::System.Nullable<long> COMPLETE, 
                     global::System.Nullable<long> DEL_YN, 
                     string REASON_CODE, 
                     string DESCR, 
@@ -15227,6 +15794,11 @@ FROM     MATERIAL_MST";
                     string Original_PROC_VER, 
                     string Original_PROC_NM, 
                     string Original_PROC_TYPE, 
+                    string Original_START_TIME, 
+                    string Original_END_TIME, 
+                    string Original_DURATION, 
+                    string Original_DELAY, 
+                    global::System.Nullable<long> Original_COMPLETE, 
                     global::System.Nullable<long> Original_DEL_YN, 
                     string Original_REASON_CODE, 
                     string Original_DESCR, 
@@ -15270,149 +15842,219 @@ FROM     MATERIAL_MST";
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PROC_TYPE));
             }
-            if ((DEL_YN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(DEL_YN.Value));
-            }
-            else {
+            if ((START_TIME == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((REASON_CODE == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(START_TIME));
+            }
+            if ((END_TIME == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(REASON_CODE));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(END_TIME));
             }
-            if ((DESCR == null)) {
+            if ((DURATION == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(DESCR));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(DURATION));
             }
-            if ((CREATE_USER_ID == null)) {
+            if ((DELAY == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(CREATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(DELAY));
             }
-            if ((CREATE_DATE == null)) {
+            if ((COMPLETE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(COMPLETE.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(CREATE_DATE));
+            if ((DEL_YN.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(DEL_YN.Value));
             }
-            if ((UPDATE_USER_ID == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(UPDATE_USER_ID));
-            }
-            if ((UPDATE_DATE == null)) {
+            if ((REASON_CODE == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(UPDATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(REASON_CODE));
+            }
+            if ((DESCR == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(DESCR));
+            }
+            if ((CREATE_USER_ID == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(CREATE_USER_ID));
+            }
+            if ((CREATE_DATE == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(CREATE_DATE));
+            }
+            if ((UPDATE_USER_ID == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(UPDATE_USER_ID));
+            }
+            if ((UPDATE_DATE == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(UPDATE_DATE));
             }
             if ((Original_PROC_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_PROC_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_PROC_ID));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_PROC_ID));
             }
             if ((Original_SITE_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_SITE_ID));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_SITE_ID));
             }
             if ((Original_PROD_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_PROD_ID));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_PROD_ID));
             }
             if ((Original_PROC_VER == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_PROC_VER));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_PROC_VER));
             }
             if ((Original_PROC_NM == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_PROC_NM));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_PROC_NM));
             }
             if ((Original_PROC_TYPE == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_PROC_TYPE));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_PROC_TYPE));
+            }
+            if ((Original_START_TIME == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_START_TIME));
+            }
+            if ((Original_END_TIME == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_END_TIME));
+            }
+            if ((Original_DURATION == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_DURATION));
+            }
+            if ((Original_DELAY == null)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_DELAY));
+            }
+            if ((Original_COMPLETE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((long)(Original_COMPLETE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             if ((Original_DEL_YN.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((long)(Original_DEL_YN.Value));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((long)(Original_DEL_YN.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             if ((Original_REASON_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_REASON_CODE));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_REASON_CODE));
             }
             if ((Original_DESCR == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_DESCR));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_DESCR));
             }
             if ((Original_CREATE_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_CREATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_CREATE_USER_ID));
             }
             if ((Original_CREATE_DATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_CREATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_CREATE_DATE));
             }
             if ((Original_UPDATE_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_UPDATE_USER_ID));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_UPDATE_USER_ID));
             }
             if ((Original_UPDATE_DATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_UPDATE_DATE));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_UPDATE_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -15440,6 +16082,11 @@ FROM     MATERIAL_MST";
                     string PROC_VER, 
                     string PROC_NM, 
                     string PROC_TYPE, 
+                    string START_TIME, 
+                    string END_TIME, 
+                    string DURATION, 
+                    string DELAY, 
+                    global::System.Nullable<long> COMPLETE, 
                     global::System.Nullable<long> DEL_YN, 
                     string REASON_CODE, 
                     string DESCR, 
@@ -15453,6 +16100,11 @@ FROM     MATERIAL_MST";
                     string Original_PROC_VER, 
                     string Original_PROC_NM, 
                     string Original_PROC_TYPE, 
+                    string Original_START_TIME, 
+                    string Original_END_TIME, 
+                    string Original_DURATION, 
+                    string Original_DELAY, 
+                    global::System.Nullable<long> Original_COMPLETE, 
                     global::System.Nullable<long> Original_DEL_YN, 
                     string Original_REASON_CODE, 
                     string Original_DESCR, 
@@ -15460,7 +16112,7 @@ FROM     MATERIAL_MST";
                     string Original_CREATE_DATE, 
                     string Original_UPDATE_USER_ID, 
                     string Original_UPDATE_DATE) {
-            return this.Update(Original_PROC_ID, SITE_ID, PROD_ID, PROC_VER, PROC_NM, PROC_TYPE, DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE, Original_PROC_ID, Original_SITE_ID, Original_PROD_ID, Original_PROC_VER, Original_PROC_NM, Original_PROC_TYPE, Original_DEL_YN, Original_REASON_CODE, Original_DESCR, Original_CREATE_USER_ID, Original_CREATE_DATE, Original_UPDATE_USER_ID, Original_UPDATE_DATE);
+            return this.Update(Original_PROC_ID, SITE_ID, PROD_ID, PROC_VER, PROC_NM, PROC_TYPE, START_TIME, END_TIME, DURATION, DELAY, COMPLETE, DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE, Original_PROC_ID, Original_SITE_ID, Original_PROD_ID, Original_PROC_VER, Original_PROC_NM, Original_PROC_TYPE, Original_START_TIME, Original_END_TIME, Original_DURATION, Original_DELAY, Original_COMPLETE, Original_DEL_YN, Original_REASON_CODE, Original_DESCR, Original_CREATE_USER_ID, Original_CREATE_DATE, Original_UPDATE_USER_ID, Original_UPDATE_DATE);
         }
     }
     
@@ -18991,7 +19643,7 @@ FROM     MATERIAL_MST";
             this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  FINISHED_MST.*\nFROM     FINISHED_MST";
+            this._commandCollection[0].CommandText = "SELECT  FINISHED_MST.*\r\n\nFROM     FINISHED_MST";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -106,7 +106,7 @@ namespace Edcore.GanttChart
         /// <summary>
         /// Delegate method for creating a new Task. Creates Task by default.
         /// </summary>
-        public Func<Task> CreateTaskDelegate = delegate () { return new Task(); };
+        public Func<Task> CreateTaskDelegate = delegate () { return new Task(null); };
 
         /// <summary>
         /// Get the selected tasks.
