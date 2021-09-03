@@ -27,6 +27,7 @@ using DevExpress.XtraGrid.Views.Layout;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
+using static MES.Signes_MESDataSet;
 
 namespace MES
 {
@@ -217,7 +218,10 @@ namespace MES
             // Manufacturing order product search
             lookUpEditMOProductFilter.EditValue = null;
             lookUpEditMOProductFilter.EditValueChanged += LookUpEditMOProductFilter_EditValueChanged;
-            lookUpEditMOProductFilter.QueryPopUp += LookUpEditMOProductFilter_QueryPopUp;
+
+            // Job Disptach product search
+            searchLookUpEditJDProductFilter.EditValue = null;
+            searchLookUpEditJDProductFilter.EditValueChanged += SearchLookUpEditJDProductFilter_EditValueChanged;
         }
 
         private void LayoutHelper_AfterPopup(object sender, DetailEventArgs e)
@@ -367,26 +371,7 @@ namespace MES
         #endregion
 
         #region Manufacturing Order
-
-        private void LookUpEditMOProductFilter_QueryPopUp(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            lookUpEditMOProductFilter.Properties.PopupFormMinSize = new Size(1000, 200);
-
-            GridColumnCollection collection = lookUpEditMOProductFilter.Properties.View.Columns;
-
-            // hide columns
-            collection["PROD_CLASS_CODE"].Visible = false;
-            collection["DEL_YN"].Visible = false;
-            collection["REASON_CODE"].Visible = false;
-            collection["CREATE_USER_ID"].Visible = false;
-            collection["CREATE_DATE"].Visible = false;
-            collection["UPDATE_USER_ID"].Visible = false;
-            collection["UPDATE_DATE"].Visible = false;
-
-            collection["PROC_ID"].Visible = false;
-            collection["SITE_ID"].Visible = false;
-        }
-
+        
         private void LookUpEditMOProductFilter_EditValueChanged(object sender, EventArgs e)
         {
             string filterText = (string)lookUpEditMOProductFilter.EditValue;
@@ -419,22 +404,49 @@ namespace MES
 
         #region Job Dispatch
 
+        private void SearchLookUpEditJDProductFilter_EditValueChanged(object sender, EventArgs e)
+        {
+            string filterText = (string)searchLookUpEditJDProductFilter.EditValue;
+
+            if (filterText != null)
+            {
+                DataView dv = signes_MESDataSet.JOB_MST.AsDataView();
+                dv.RowFilter = "PROD_ID = '" + filterText + "'"; 
+                imageListBoxControlJDJobStatus.DataSource = dv;
+            }
+            else
+            {
+                imageListBoxControlJDJobStatus.DataSource = jOBMSTBindingSource;
+            }
+        }
+
         private void ListBoxControlJDSelectProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string prod_id = listBoxControlJDProductListing.SelectedValue as string;
+            var control = sender as ListBoxControl;
 
             // Check selection
-            if (prod_id != null)
+            if (control.SelectedIndex != -1)
             {
+                string prod_id = (sender as ListBoxControl).SelectedValue as string;
+
                 // Update status
                 checkEditJDSelectProduct.Checked = true;
 
                 // Filter order list
                 DataView view = jOB_MSTTableAdapter.GetData().DefaultView;
                 view.RowFilter = "PROD_ID = '" + prod_id + "'";
+                DataTable table = view.Table;
+
+                // Add new row for new order
+                DataRow newRow = table.NewRow();
+                newRow["PROD_ID"] = prod_id;
+                newRow["JOB_ID"] = prod_id + "-New";
+                newRow["JOB_NM"] = "New order";
+                table.Rows.InsertAt(newRow, 0);
 
                 listBoxControlJDOrderListing.DataSource = view;
                 listBoxControlJDOrderListing.SelectedIndex = -1;
+
                 _clearOrderDetailsForm();
             }
             else
@@ -449,15 +461,20 @@ namespace MES
 
         private void ListBoxControlJDOrderListing_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var control = sender as ListBoxControl;
+
             string prod_id = listBoxControlJDProductListing.SelectedValue as string;
-            string order_id = listBoxControlJDOrderListing.SelectedValue as string;
+            string order_id = control.SelectedValue as string;
+
+            if (prod_id == null || order_id == null) control.SelectedIndex = -1;
 
             // Check selection
-            if (prod_id != null && order_id != null)
+            if (control.SelectedIndex != -1)
             {
                 // Update status
                 checkEditJDSelectOrder.Checked = true;
 
+                _clearOrderDetailsForm();
                 _fillOrderDetailsForm(prod_id, order_id);
             }
             else
@@ -465,8 +482,59 @@ namespace MES
                 // Update status
                 checkEditJDSelectOrder.Checked = false;
 
-                // TODO create empty order details form
+                _clearOrderDetailsForm();
             }
+        }
+
+        private void simpleButtonCancelOrder_Click(object sender, EventArgs e)
+        {
+            // Delete order from DB
+        }
+
+        private void simpleButtonJDCancelEdit_Click(object sender, EventArgs e)
+        {
+            listBoxControlJDProductListing.SelectedIndex = -1;
+            _clearOrderDetailsForm();
+        }
+
+        private void simpleButtonJDSaveOrder_Click(object sender, EventArgs e)
+        {
+            DataRowView newRow;
+
+            if (listBoxControlJDOrderListing.SelectedIndex == 0)
+            {
+                // Add new entry
+                newRow = jOBMSTBindingSource.AddNew() as DataRowView;
+            }
+            else
+            {
+                // Edit existing entry
+                string job_id = (tableLayoutPanelJDOrderDetails.GetControlFromPosition(1, 4) as TextEdit).Text;
+                int index = jOBMSTBindingSource.Find("JOB_ID", job_id);
+
+                newRow = jOBMSTBindingSource.List[index] as DataRowView;
+            }
+
+            newRow.BeginEdit();
+
+            // TODO: Autogenerate required information (such as DURATION, DELAY, COMPLETE) when new entry is being created
+            foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
+            {
+                if (control is TextEdit)
+                {
+                    TextEdit edit = control as TextEdit;
+                    string tag = edit.Tag as string;
+
+                    if (tag != null)
+                    {
+                        if (tag[0] == 'j')
+                            newRow[tag.Substring(1)] = edit.Text;
+                    }
+                }
+            }
+
+            newRow.EndEdit();
+            jOB_MSTTableAdapter.Update(jOBMSTBindingSource.DataSource as Signes_MESDataSet);
         }
 
         private void _clearOrderDetailsForm()
@@ -483,27 +551,57 @@ namespace MES
         private void _fillOrderDetailsForm(string prod_id, string order_id)
         {
             DataRow prodRow = signes_MESDataSet.PRODUCT_MST.FindByPROD_ID(prod_id);
-            DataRow orderRow = signes_MESDataSet.JOB_MST.FindByJOB_ID(order_id);
 
-            foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
+            if (!order_id.Contains("-New"))
             {
-                if(control is TextEdit)
-                {
-                    TextEdit edit = control as TextEdit;
-                    string tag = edit.Tag as string;
+                // Fill details of existing order form
+                DataRow orderRow = signes_MESDataSet.JOB_MST.FindByJOB_ID(order_id);
 
-                    if (tag != null)
+                foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
+                {
+                    if (control is TextEdit)
                     {
-                        if (tag[0] == 'p')
+                        TextEdit edit = control as TextEdit;
+                        string tag = edit.Tag as string;
+
+                        if (tag != null)
                         {
-                            edit.Text = prodRow.Field<object>(tag.Substring(1)).ToString();
+                            object obj = null;
+
+                            if (tag[0] == 'p')
+                                obj = prodRow.Field<object>(tag.Substring(1));
+                            else if (tag[0] == 'j')
+                                obj = orderRow.Field<object>(tag.Substring(1));
+
+                            if (obj != null)
+                                edit.Text = obj.ToString();
                         }
-                        else if (tag[0] == 'j')
-                        {
-                            edit.Text = orderRow.Field<object>(tag.Substring(1)).ToString();
-                        }
+
                     }
-                    
+                }
+            }
+            else
+            {
+                // Only fill product information
+                foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
+                {
+                    if (control is TextEdit)
+                    {
+                        TextEdit edit = control as TextEdit;
+                        string tag = edit.Tag as string;
+
+                        if (tag != null)
+                        {
+                            object obj = null;
+
+                            if (tag[0] == 'p')
+                                obj = prodRow.Field<object>(tag.Substring(1));
+
+                            if (obj != null)
+                                edit.Text = obj.ToString();
+                        }
+
+                    }
                 }
             }
         }
@@ -712,6 +810,7 @@ namespace MES
                 // Reset selection
                 listBoxControlJDProductListing.SelectedIndex = -1;
                 listBoxControlJDOrderListing.SelectedIndex = -1;
+                imageListBoxControlJDJobStatus.SelectedIndex = -1;
 
                 // Create order form
                 _createOrderDetailsForm();
@@ -732,6 +831,7 @@ namespace MES
         private void _createOrderDetailsForm()
         {
             tableLayoutPanelJDOrderDetails.Controls.Clear();
+            tableLayoutPanelJDOrderDetails.SuspendLayout();
 
             List<string> displayNames = new List<string>();
             List<string> fieldNames = new List<string>();
@@ -744,6 +844,8 @@ namespace MES
             displayNames.Add("Order ID");
             displayNames.Add("Order Name");
             displayNames.Add("Order Quantity");
+            displayNames.Add("Start Date");
+            displayNames.Add("End Date");
 
             // Field names to add
             fieldNames.Add("pPROD_ID");
@@ -753,13 +855,21 @@ namespace MES
             fieldNames.Add("jJOB_ID");
             fieldNames.Add("jJOB_NM");
             fieldNames.Add("jQTY");
+            fieldNames.Add("jSTART_TIME");
+            fieldNames.Add("jEND_TIME");
 
             for (int i = 0; i < displayNames.Count(); i++)
             {
                 LabelControl label = new LabelControl();
+                label.Dock = DockStyle.Fill;
                 label.Text = displayNames[i];
                 TextEdit edit = new TextEdit();
+                edit.Dock = DockStyle.Fill;
                 edit.Tag = fieldNames[i];
+                if((edit.Tag as string)[0] == 'p')
+                {
+                    edit.Enabled = false;
+                }
 
                 tableLayoutPanelJDOrderDetails.Controls.Add(edit);
                 tableLayoutPanelJDOrderDetails.Controls.Add(label);
@@ -774,11 +884,13 @@ namespace MES
             tableLayoutPanelJDOrderDetails.Controls.Add(simpleButtonJDSaveOrder);
             tableLayoutPanelJDOrderDetails.SetColumn(simpleButtonJDSaveOrder, 1);
 
-            tableLayoutPanelJDOrderDetails.Controls.Add(simpleButtonJDCancelOrder);
+            tableLayoutPanelJDOrderDetails.Controls.Add(simpleButtonJDCancelEdit);
 
             int row = tableLayoutPanelJDOrderDetails.RowCount;
             tableLayoutPanelJDOrderDetails.SetRow(simpleButtonJDSaveOrder, row);
-            tableLayoutPanelJDOrderDetails.SetRow(simpleButtonJDCancelOrder, row);
+            tableLayoutPanelJDOrderDetails.SetRow(simpleButtonJDCancelEdit, row);
+
+            tableLayoutPanelJDOrderDetails.ResumeLayout();
         }
 
         private void loadTasks()

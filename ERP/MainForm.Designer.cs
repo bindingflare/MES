@@ -75,6 +75,7 @@ namespace MES
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition7 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition8 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition9 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement9 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement10 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement11 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
@@ -87,6 +88,8 @@ namespace MES
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement18 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement19 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement20 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement21 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement22 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition7 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition8 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition9 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
@@ -94,7 +97,6 @@ namespace MES
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan5 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan6 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan7 = new DevExpress.XtraEditors.TableLayout.TableSpan();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan8 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             this.cardViewMaterialDetail = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colMATERIAL_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMATERIAL_NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -324,6 +326,15 @@ namespace MES
             this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlJobDispatch = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonCancelOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.searchLookUpEditJDProductFilter = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPROD_ID5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_MODEL4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_NM4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_TYPE4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSUB_PROD_TYPE2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSITE_ID6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchControlJDOrderSearch = new DevExpress.XtraEditors.SearchControl();
             this.listBoxControlJDOrderListing = new DevExpress.XtraEditors.ListBoxControl();
             this.jOBMSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -331,8 +342,8 @@ namespace MES
             this.listBoxControlJDProductListing = new DevExpress.XtraEditors.ListBoxControl();
             this.imageListBoxControlJDJobStatus = new DevExpress.XtraEditors.ImageListBoxControl();
             this.tableLayoutPanelJDOrderDetails = new System.Windows.Forms.TableLayoutPanel();
+            this.simpleButtonJDCancelEdit = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonJDSaveOrder = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonJDCancelOrder = new DevExpress.XtraEditors.SimpleButton();
             this.checkEditJDOrderDetails = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditJDSelectOrder = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditJDSelectProduct = new DevExpress.XtraEditors.CheckEdit();
@@ -352,6 +363,9 @@ namespace MES
             this.layoutControlItem35 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup14 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem36 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem42 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup15 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splitterItem4 = new DevExpress.XtraLayout.SplitterItem();
@@ -364,6 +378,12 @@ namespace MES
             this.simpleButtonMOSave = new DevExpress.XtraEditors.SimpleButton();
             this.lookUpEditMOProductFilter = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPROD_ID6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_MODEL5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_NM5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPROD_TYPE5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSUB_PROD_TYPE3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSITE_ID7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup27 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.splitterItem10 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlGroup29 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -561,6 +581,8 @@ namespace MES
             this.panelControlJobDispatch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditJDProductFilter.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControlJDOrderSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlJDOrderListing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jOBMSTBindingSource)).BeginInit();
@@ -586,6 +608,9 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem36)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem4)).BeginInit();
@@ -850,7 +875,7 @@ namespace MES
             this.gridControlBOM.MainView = this.gridViewProductListing;
             this.gridControlBOM.MenuManager = this.toolbarFormManager1;
             this.gridControlBOM.Name = "gridControlBOM";
-            this.gridControlBOM.Size = new System.Drawing.Size(1188, 441);
+            this.gridControlBOM.Size = new System.Drawing.Size(1192, 441);
             this.gridControlBOM.TabIndex = 6;
             this.gridControlBOM.UseEmbeddedNavigator = true;
             this.gridControlBOM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -2794,6 +2819,8 @@ namespace MES
             // 
             // layoutControl4
             // 
+            this.layoutControl4.Controls.Add(this.simpleButtonCancelOrder);
+            this.layoutControl4.Controls.Add(this.searchLookUpEditJDProductFilter);
             this.layoutControl4.Controls.Add(this.searchControlJDOrderSearch);
             this.layoutControl4.Controls.Add(this.searchControlJDProductSearch);
             this.layoutControl4.Controls.Add(this.imageListBoxControlJDJobStatus);
@@ -2807,11 +2834,95 @@ namespace MES
             this.layoutControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl4.Location = new System.Drawing.Point(2, 2);
             this.layoutControl4.Name = "layoutControl4";
-            this.layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1088, 216, 650, 400);
+            this.layoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(853, 309, 650, 400);
             this.layoutControl4.Root = this.layoutControlGroup12;
             this.layoutControl4.Size = new System.Drawing.Size(1211, 1282);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
+            // 
+            // simpleButtonCancelOrder
+            // 
+            this.simpleButtonCancelOrder.Enabled = false;
+            this.simpleButtonCancelOrder.Location = new System.Drawing.Point(1058, 387);
+            this.simpleButtonCancelOrder.Name = "simpleButtonCancelOrder";
+            this.simpleButtonCancelOrder.Size = new System.Drawing.Size(135, 22);
+            this.simpleButtonCancelOrder.StyleController = this.layoutControl4;
+            this.simpleButtonCancelOrder.TabIndex = 2;
+            this.simpleButtonCancelOrder.Text = "Cancel Order";
+            this.simpleButtonCancelOrder.Click += new System.EventHandler(this.simpleButtonCancelOrder_Click);
+            // 
+            // searchLookUpEditJDProductFilter
+            // 
+            this.searchLookUpEditJDProductFilter.EditValue = "Search product ID, name...";
+            this.searchLookUpEditJDProductFilter.Location = new System.Drawing.Point(850, 44);
+            this.searchLookUpEditJDProductFilter.MenuManager = this.toolbarFormManager1;
+            this.searchLookUpEditJDProductFilter.Name = "searchLookUpEditJDProductFilter";
+            this.searchLookUpEditJDProductFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEditJDProductFilter.Properties.DataSource = this.mMPRODMSTBindingSource;
+            this.searchLookUpEditJDProductFilter.Properties.DisplayMember = "PROD_ID";
+            this.searchLookUpEditJDProductFilter.Properties.NullText = "Search product ID, name...";
+            this.searchLookUpEditJDProductFilter.Properties.PopupView = this.gridView1;
+            this.searchLookUpEditJDProductFilter.Properties.ValueMember = "PROD_ID";
+            this.searchLookUpEditJDProductFilter.Size = new System.Drawing.Size(343, 20);
+            this.searchLookUpEditJDProductFilter.StyleController = this.layoutControl4;
+            this.searchLookUpEditJDProductFilter.TabIndex = 2;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPROD_ID5,
+            this.colPROD_MODEL4,
+            this.colPROD_NM4,
+            this.colPROD_TYPE4,
+            this.colSUB_PROD_TYPE2,
+            this.colSITE_ID6});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colPROD_ID5
+            // 
+            this.colPROD_ID5.FieldName = "PROD_ID";
+            this.colPROD_ID5.Name = "colPROD_ID5";
+            this.colPROD_ID5.Visible = true;
+            this.colPROD_ID5.VisibleIndex = 0;
+            // 
+            // colPROD_MODEL4
+            // 
+            this.colPROD_MODEL4.FieldName = "PROD_MODEL";
+            this.colPROD_MODEL4.Name = "colPROD_MODEL4";
+            this.colPROD_MODEL4.Visible = true;
+            this.colPROD_MODEL4.VisibleIndex = 1;
+            // 
+            // colPROD_NM4
+            // 
+            this.colPROD_NM4.FieldName = "PROD_NM";
+            this.colPROD_NM4.Name = "colPROD_NM4";
+            this.colPROD_NM4.Visible = true;
+            this.colPROD_NM4.VisibleIndex = 2;
+            // 
+            // colPROD_TYPE4
+            // 
+            this.colPROD_TYPE4.FieldName = "PROD_TYPE";
+            this.colPROD_TYPE4.Name = "colPROD_TYPE4";
+            this.colPROD_TYPE4.Visible = true;
+            this.colPROD_TYPE4.VisibleIndex = 3;
+            // 
+            // colSUB_PROD_TYPE2
+            // 
+            this.colSUB_PROD_TYPE2.FieldName = "SUB_PROD_TYPE";
+            this.colSUB_PROD_TYPE2.Name = "colSUB_PROD_TYPE2";
+            this.colSUB_PROD_TYPE2.Visible = true;
+            this.colSUB_PROD_TYPE2.VisibleIndex = 5;
+            // 
+            // colSITE_ID6
+            // 
+            this.colSITE_ID6.FieldName = "SITE_ID";
+            this.colSITE_ID6.Name = "colSITE_ID6";
+            this.colSITE_ID6.Visible = true;
+            this.colSITE_ID6.VisibleIndex = 4;
             // 
             // searchControlJDOrderSearch
             // 
@@ -2834,7 +2945,7 @@ namespace MES
             this.listBoxControlJDOrderListing.ItemHeight = 65;
             this.listBoxControlJDOrderListing.Location = new System.Drawing.Point(229, 97);
             this.listBoxControlJDOrderListing.Name = "listBoxControlJDOrderListing";
-            this.listBoxControlJDOrderListing.Size = new System.Drawing.Size(191, 289);
+            this.listBoxControlJDOrderListing.Size = new System.Drawing.Size(191, 307);
             this.listBoxControlJDOrderListing.StyleController = this.layoutControl4;
             this.listBoxControlJDOrderListing.TabIndex = 2;
             tableColumnDefinition1.Length.Value = 4D;
@@ -2914,7 +3025,7 @@ namespace MES
             this.listBoxControlJDProductListing.ItemHeight = 65;
             this.listBoxControlJDProductListing.Location = new System.Drawing.Point(23, 97);
             this.listBoxControlJDProductListing.Name = "listBoxControlJDProductListing";
-            this.listBoxControlJDProductListing.Size = new System.Drawing.Size(192, 289);
+            this.listBoxControlJDProductListing.Size = new System.Drawing.Size(192, 307);
             this.listBoxControlJDProductListing.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.listBoxControlJDProductListing.StyleController = this.layoutControl4;
             this.listBoxControlJDProductListing.TabIndex = 2;
@@ -2975,19 +3086,21 @@ namespace MES
             // 
             this.imageListBoxControlJDJobStatus.DataSource = this.jOBMSTBindingSource;
             this.imageListBoxControlJDJobStatus.ItemHeight = 84;
-            this.imageListBoxControlJDJobStatus.Location = new System.Drawing.Point(753, 44);
+            this.imageListBoxControlJDJobStatus.Location = new System.Drawing.Point(753, 68);
             this.imageListBoxControlJDJobStatus.Name = "imageListBoxControlJDJobStatus";
-            this.imageListBoxControlJDJobStatus.Size = new System.Drawing.Size(440, 347);
+            this.imageListBoxControlJDJobStatus.Size = new System.Drawing.Size(440, 315);
             this.imageListBoxControlJDJobStatus.StyleController = this.layoutControl4;
             this.imageListBoxControlJDJobStatus.TabIndex = 20;
-            tableColumnDefinition5.Length.Value = 146D;
-            tableColumnDefinition6.Length.Value = 145D;
-            tableColumnDefinition7.Length.Value = 126D;
-            tableColumnDefinition8.Length.Value = 19D;
+            tableColumnDefinition5.Length.Value = 135D;
+            tableColumnDefinition6.Length.Value = 133D;
+            tableColumnDefinition7.Length.Value = 73D;
+            tableColumnDefinition8.Length.Value = 80D;
+            tableColumnDefinition9.Length.Value = 15D;
             itemTemplateBase3.Columns.Add(tableColumnDefinition5);
             itemTemplateBase3.Columns.Add(tableColumnDefinition6);
             itemTemplateBase3.Columns.Add(tableColumnDefinition7);
             itemTemplateBase3.Columns.Add(tableColumnDefinition8);
+            itemTemplateBase3.Columns.Add(tableColumnDefinition9);
             templatedItemElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             templatedItemElement9.Appearance.Normal.Options.UseFont = true;
             templatedItemElement9.FieldName = "JOB_ID";
@@ -3021,20 +3134,20 @@ namespace MES
             templatedItemElement13.RowIndex = 2;
             templatedItemElement13.Text = "END_TIME";
             templatedItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            templatedItemElement14.ColumnIndex = 2;
+            templatedItemElement14.ColumnIndex = 3;
             templatedItemElement14.FieldName = "COMPLETE";
             templatedItemElement14.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement14.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             templatedItemElement14.RowIndex = 2;
             templatedItemElement14.Text = "COMPLETE";
-            templatedItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            templatedItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             templatedItemElement15.ColumnIndex = 3;
             templatedItemElement15.FieldName = "QTY";
             templatedItemElement15.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement15.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             templatedItemElement15.RowIndex = 1;
             templatedItemElement15.Text = "QTY";
-            templatedItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            templatedItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             templatedItemElement16.FieldName = "PROC_START_ID";
             templatedItemElement16.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement16.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
@@ -3055,7 +3168,7 @@ namespace MES
             templatedItemElement18.RowIndex = 1;
             templatedItemElement18.Text = "Qty:";
             templatedItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            templatedItemElement19.ColumnIndex = 3;
+            templatedItemElement19.ColumnIndex = 4;
             templatedItemElement19.FieldName = null;
             templatedItemElement19.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement19.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
@@ -3069,6 +3182,20 @@ namespace MES
             templatedItemElement20.RowIndex = 2;
             templatedItemElement20.Text = "Complete:";
             templatedItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement21.ColumnIndex = 3;
+            templatedItemElement21.FieldName = "DELAY";
+            templatedItemElement21.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement21.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement21.RowIndex = 3;
+            templatedItemElement21.Text = "DELAY";
+            templatedItemElement21.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement22.ColumnIndex = 2;
+            templatedItemElement22.FieldName = null;
+            templatedItemElement22.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement22.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement22.RowIndex = 3;
+            templatedItemElement22.Text = "Delay:";
+            templatedItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             itemTemplateBase3.Elements.Add(templatedItemElement9);
             itemTemplateBase3.Elements.Add(templatedItemElement10);
             itemTemplateBase3.Elements.Add(templatedItemElement11);
@@ -3081,6 +3208,8 @@ namespace MES
             itemTemplateBase3.Elements.Add(templatedItemElement18);
             itemTemplateBase3.Elements.Add(templatedItemElement19);
             itemTemplateBase3.Elements.Add(templatedItemElement20);
+            itemTemplateBase3.Elements.Add(templatedItemElement21);
+            itemTemplateBase3.Elements.Add(templatedItemElement22);
             itemTemplateBase3.Name = "template1";
             tableRowDefinition7.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
             tableRowDefinition7.Length.Value = 20D;
@@ -3096,29 +3225,27 @@ namespace MES
             itemTemplateBase3.Rows.Add(tableRowDefinition10);
             tableSpan5.ColumnIndex = 2;
             tableSpan5.ColumnSpan = 2;
-            tableSpan5.RowIndex = 1;
-            tableSpan6.ColumnIndex = 2;
             tableSpan6.ColumnSpan = 2;
             tableSpan7.ColumnSpan = 2;
-            tableSpan8.ColumnSpan = 2;
-            tableSpan8.RowIndex = 1;
+            tableSpan7.RowIndex = 1;
             itemTemplateBase3.Spans.Add(tableSpan5);
             itemTemplateBase3.Spans.Add(tableSpan6);
             itemTemplateBase3.Spans.Add(tableSpan7);
-            itemTemplateBase3.Spans.Add(tableSpan8);
             this.imageListBoxControlJDJobStatus.Templates.Add(itemTemplateBase3);
             this.imageListBoxControlJDJobStatus.ValueMember = "JOB_ID";
             // 
             // tableLayoutPanelJDOrderDetails
             // 
             this.tableLayoutPanelJDOrderDetails.ColumnCount = 2;
-            this.tableLayoutPanelJDOrderDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.36691F));
-            this.tableLayoutPanelJDOrderDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.63309F));
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.simpleButtonJDSaveOrder, 1, 8);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.simpleButtonJDCancelOrder, 0, 8);
+            this.tableLayoutPanelJDOrderDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanelJDOrderDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.simpleButtonJDCancelEdit, 0, 9);
+            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.simpleButtonJDSaveOrder, 1, 9);
             this.tableLayoutPanelJDOrderDetails.Location = new System.Drawing.Point(434, 73);
             this.tableLayoutPanelJDOrderDetails.Name = "tableLayoutPanelJDOrderDetails";
-            this.tableLayoutPanelJDOrderDetails.RowCount = 9;
+            this.tableLayoutPanelJDOrderDetails.RowCount = 10;
+            this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -3128,29 +3255,26 @@ namespace MES
             this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelJDOrderDetails.Size = new System.Drawing.Size(278, 313);
+            this.tableLayoutPanelJDOrderDetails.Size = new System.Drawing.Size(278, 331);
             this.tableLayoutPanelJDOrderDetails.TabIndex = 16;
+            // 
+            // simpleButtonJDCancelEdit
+            // 
+            this.simpleButtonJDCancelEdit.Location = new System.Drawing.Point(3, 273);
+            this.simpleButtonJDCancelEdit.Name = "simpleButtonJDCancelEdit";
+            this.simpleButtonJDCancelEdit.Size = new System.Drawing.Size(105, 23);
+            this.simpleButtonJDCancelEdit.TabIndex = 12;
+            this.simpleButtonJDCancelEdit.Text = "Cancel";
+            this.simpleButtonJDCancelEdit.Click += new System.EventHandler(this.simpleButtonJDCancelEdit_Click);
             // 
             // simpleButtonJDSaveOrder
             // 
-            this.simpleButtonJDSaveOrder.Location = new System.Drawing.Point(118, 243);
+            this.simpleButtonJDSaveOrder.Location = new System.Drawing.Point(114, 273);
             this.simpleButtonJDSaveOrder.Name = "simpleButtonJDSaveOrder";
             this.simpleButtonJDSaveOrder.Size = new System.Drawing.Size(110, 23);
             this.simpleButtonJDSaveOrder.TabIndex = 11;
             this.simpleButtonJDSaveOrder.Text = "Save Order";
-            // 
-            // simpleButtonJDCancelOrder
-            // 
-            this.simpleButtonJDCancelOrder.Location = new System.Drawing.Point(3, 243);
-            this.simpleButtonJDCancelOrder.Name = "simpleButtonJDCancelOrder";
-            this.simpleButtonJDCancelOrder.Size = new System.Drawing.Size(108, 23);
-            this.simpleButtonJDCancelOrder.TabIndex = 12;
-            this.simpleButtonJDCancelOrder.Text = "Cancel";
+            this.simpleButtonJDSaveOrder.Click += new System.EventHandler(this.simpleButtonJDSaveOrder_Click);
             // 
             // checkEditJDOrderDetails
             // 
@@ -3233,7 +3357,7 @@ namespace MES
             this.layoutControlGroup13.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup13.Name = "layoutControlGroup13";
             this.layoutControlGroup13.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 9, 9);
-            this.layoutControlGroup13.Size = new System.Drawing.Size(725, 400);
+            this.layoutControlGroup13.Size = new System.Drawing.Size(725, 418);
             this.layoutControlGroup13.Text = "Job Dispatch";
             // 
             // layoutControlGroup19
@@ -3245,7 +3369,7 @@ namespace MES
             this.layoutControlGroup19.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup19.Name = "layoutControlGroup19";
             this.layoutControlGroup19.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup19.Size = new System.Drawing.Size(206, 351);
+            this.layoutControlGroup19.Size = new System.Drawing.Size(206, 369);
             this.layoutControlGroup19.TextVisible = false;
             // 
             // layoutControlItem7
@@ -3262,7 +3386,7 @@ namespace MES
             this.layoutControlItem13.Control = this.listBoxControlJDProductListing;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(196, 293);
+            this.layoutControlItem13.Size = new System.Drawing.Size(196, 311);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
@@ -3284,7 +3408,7 @@ namespace MES
             this.layoutControlGroup20.Location = new System.Drawing.Point(206, 0);
             this.layoutControlGroup20.Name = "layoutControlGroup20";
             this.layoutControlGroup20.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup20.Size = new System.Drawing.Size(205, 351);
+            this.layoutControlGroup20.Size = new System.Drawing.Size(205, 369);
             this.layoutControlGroup20.TextVisible = false;
             // 
             // layoutControlItem10
@@ -3301,7 +3425,7 @@ namespace MES
             this.layoutControlItem34.Control = this.listBoxControlJDOrderListing;
             this.layoutControlItem34.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem34.Name = "layoutControlItem34";
-            this.layoutControlItem34.Size = new System.Drawing.Size(195, 293);
+            this.layoutControlItem34.Size = new System.Drawing.Size(195, 311);
             this.layoutControlItem34.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem34.TextVisible = false;
             // 
@@ -3322,7 +3446,7 @@ namespace MES
             this.layoutControlGroup31.Location = new System.Drawing.Point(411, 0);
             this.layoutControlGroup31.Name = "layoutControlGroup31";
             this.layoutControlGroup31.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlGroup31.Size = new System.Drawing.Size(292, 351);
+            this.layoutControlGroup31.Size = new System.Drawing.Size(292, 369);
             this.layoutControlGroup31.TextVisible = false;
             // 
             // layoutControlItem11
@@ -3339,7 +3463,7 @@ namespace MES
             this.layoutControlItem35.Control = this.tableLayoutPanelJDOrderDetails;
             this.layoutControlItem35.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem35.Name = "layoutControlItem35";
-            this.layoutControlItem35.Size = new System.Drawing.Size(282, 317);
+            this.layoutControlItem35.Size = new System.Drawing.Size(282, 335);
             this.layoutControlItem35.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem35.TextVisible = false;
             // 
@@ -3348,21 +3472,50 @@ namespace MES
             this.layoutControlGroup14.CustomizationFormText = "Job Status";
             this.layoutControlGroup14.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroup14.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem36});
+            this.layoutControlItem36,
+            this.layoutControlItem41,
+            this.layoutControlItem42,
+            this.emptySpaceItem3});
             this.layoutControlGroup14.Location = new System.Drawing.Point(735, 0);
             this.layoutControlGroup14.Name = "layoutControlGroup14";
             this.layoutControlGroup14.Padding = new DevExpress.XtraLayout.Utils.Padding(8, 8, 9, 9);
-            this.layoutControlGroup14.Size = new System.Drawing.Size(466, 400);
+            this.layoutControlGroup14.Size = new System.Drawing.Size(466, 418);
             this.layoutControlGroup14.Text = "Job Status";
             // 
             // layoutControlItem36
             // 
             this.layoutControlItem36.Control = this.imageListBoxControlJDJobStatus;
-            this.layoutControlItem36.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem36.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem36.Name = "layoutControlItem36";
-            this.layoutControlItem36.Size = new System.Drawing.Size(444, 351);
+            this.layoutControlItem36.Size = new System.Drawing.Size(444, 319);
             this.layoutControlItem36.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem36.TextVisible = false;
+            // 
+            // layoutControlItem41
+            // 
+            this.layoutControlItem41.Control = this.searchLookUpEditJDProductFilter;
+            this.layoutControlItem41.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem41.Name = "layoutControlItem41";
+            this.layoutControlItem41.Size = new System.Drawing.Size(444, 24);
+            this.layoutControlItem41.Text = "Select Product:";
+            this.layoutControlItem41.TextSize = new System.Drawing.Size(85, 14);
+            // 
+            // layoutControlItem42
+            // 
+            this.layoutControlItem42.Control = this.simpleButtonCancelOrder;
+            this.layoutControlItem42.Location = new System.Drawing.Point(305, 343);
+            this.layoutControlItem42.Name = "layoutControlItem42";
+            this.layoutControlItem42.Size = new System.Drawing.Size(139, 26);
+            this.layoutControlItem42.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem42.TextVisible = false;
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 343);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(305, 26);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup15
             // 
@@ -3370,9 +3523,9 @@ namespace MES
             this.layoutControlGroup15.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroup15.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.emptySpaceItem4});
-            this.layoutControlGroup15.Location = new System.Drawing.Point(0, 410);
+            this.layoutControlGroup15.Location = new System.Drawing.Point(0, 428);
             this.layoutControlGroup15.Name = "layoutControlGroup15";
-            this.layoutControlGroup15.Size = new System.Drawing.Size(1201, 844);
+            this.layoutControlGroup15.Size = new System.Drawing.Size(1201, 826);
             this.layoutControlGroup15.Text = "Actions";
             // 
             // emptySpaceItem4
@@ -3380,7 +3533,7 @@ namespace MES
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(1177, 795);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(1177, 777);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem4
@@ -3388,7 +3541,7 @@ namespace MES
             this.splitterItem4.AllowHotTrack = true;
             this.splitterItem4.Location = new System.Drawing.Point(725, 0);
             this.splitterItem4.Name = "splitterItem4";
-            this.splitterItem4.Size = new System.Drawing.Size(10, 400);
+            this.splitterItem4.Size = new System.Drawing.Size(10, 418);
             // 
             // layoutControlItem12
             // 
@@ -3402,7 +3555,7 @@ namespace MES
             // splitterItem3
             // 
             this.splitterItem3.AllowHotTrack = true;
-            this.splitterItem3.Location = new System.Drawing.Point(0, 400);
+            this.splitterItem3.Location = new System.Drawing.Point(0, 418);
             this.splitterItem3.Name = "splitterItem3";
             this.splitterItem3.Size = new System.Drawing.Size(1201, 10);
             // 
@@ -3487,10 +3640,59 @@ namespace MES
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPROD_ID6,
+            this.colPROD_MODEL5,
+            this.colPROD_NM5,
+            this.colPROD_TYPE5,
+            this.colSUB_PROD_TYPE3,
+            this.colSITE_ID7});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colPROD_ID6
+            // 
+            this.colPROD_ID6.FieldName = "PROD_ID";
+            this.colPROD_ID6.Name = "colPROD_ID6";
+            this.colPROD_ID6.Visible = true;
+            this.colPROD_ID6.VisibleIndex = 0;
+            // 
+            // colPROD_MODEL5
+            // 
+            this.colPROD_MODEL5.FieldName = "PROD_MODEL";
+            this.colPROD_MODEL5.Name = "colPROD_MODEL5";
+            this.colPROD_MODEL5.Visible = true;
+            this.colPROD_MODEL5.VisibleIndex = 1;
+            // 
+            // colPROD_NM5
+            // 
+            this.colPROD_NM5.FieldName = "PROD_NM";
+            this.colPROD_NM5.Name = "colPROD_NM5";
+            this.colPROD_NM5.Visible = true;
+            this.colPROD_NM5.VisibleIndex = 2;
+            // 
+            // colPROD_TYPE5
+            // 
+            this.colPROD_TYPE5.FieldName = "PROD_TYPE";
+            this.colPROD_TYPE5.Name = "colPROD_TYPE5";
+            this.colPROD_TYPE5.Visible = true;
+            this.colPROD_TYPE5.VisibleIndex = 3;
+            // 
+            // colSUB_PROD_TYPE3
+            // 
+            this.colSUB_PROD_TYPE3.FieldName = "SUB_PROD_TYPE";
+            this.colSUB_PROD_TYPE3.Name = "colSUB_PROD_TYPE3";
+            this.colSUB_PROD_TYPE3.Visible = true;
+            this.colSUB_PROD_TYPE3.VisibleIndex = 5;
+            // 
+            // colSITE_ID7
+            // 
+            this.colSITE_ID7.FieldName = "SITE_ID";
+            this.colSITE_ID7.Name = "colSITE_ID7";
+            this.colSITE_ID7.Visible = true;
+            this.colSITE_ID7.VisibleIndex = 4;
             // 
             // layoutControlGroup27
             // 
@@ -3622,7 +3824,7 @@ namespace MES
             this.tabNavigationPage2.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1228, 574);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1232, 579);
             // 
             // panelControlBOM
             // 
@@ -3632,7 +3834,7 @@ namespace MES
             this.panelControlBOM.Location = new System.Drawing.Point(0, 0);
             this.panelControlBOM.MinimumSize = new System.Drawing.Size(0, 1286);
             this.panelControlBOM.Name = "panelControlBOM";
-            this.panelControlBOM.Size = new System.Drawing.Size(1228, 1286);
+            this.panelControlBOM.Size = new System.Drawing.Size(1232, 1286);
             this.panelControlBOM.TabIndex = 0;
             // 
             // layoutControl5
@@ -3651,16 +3853,16 @@ namespace MES
             this.layoutControl5.Name = "layoutControl5";
             this.layoutControl5.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(565, 390, 650, 400);
             this.layoutControl5.Root = this.layoutControlGroup21;
-            this.layoutControl5.Size = new System.Drawing.Size(1224, 1282);
+            this.layoutControl5.Size = new System.Drawing.Size(1228, 1282);
             this.layoutControl5.TabIndex = 7;
             this.layoutControl5.Text = "layoutControl5";
             // 
             // simpleButtonBOMAddMaterial
             // 
-            this.simpleButtonBOMAddMaterial.Location = new System.Drawing.Point(688, 12);
+            this.simpleButtonBOMAddMaterial.Location = new System.Drawing.Point(689, 12);
             this.simpleButtonBOMAddMaterial.MaximumSize = new System.Drawing.Size(116, 0);
             this.simpleButtonBOMAddMaterial.Name = "simpleButtonBOMAddMaterial";
-            this.simpleButtonBOMAddMaterial.Size = new System.Drawing.Size(106, 22);
+            this.simpleButtonBOMAddMaterial.Size = new System.Drawing.Size(107, 22);
             this.simpleButtonBOMAddMaterial.StyleController = this.layoutControl5;
             this.simpleButtonBOMAddMaterial.TabIndex = 4;
             this.simpleButtonBOMAddMaterial.Text = "Add material";
@@ -3670,7 +3872,7 @@ namespace MES
             // 
             this.simpleButton2.Location = new System.Drawing.Point(12, 1248);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(1200, 22);
+            this.simpleButton2.Size = new System.Drawing.Size(1204, 22);
             this.simpleButton2.StyleController = this.layoutControl5;
             this.simpleButton2.TabIndex = 9;
             this.simpleButton2.Text = "simpleButton2";
@@ -3679,7 +3881,7 @@ namespace MES
             // 
             this.simpleButton1.Location = new System.Drawing.Point(12, 1222);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(1200, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(1204, 22);
             this.simpleButton1.StyleController = this.layoutControl5;
             this.simpleButton1.TabIndex = 8;
             this.simpleButton1.Text = "simpleButton1";
@@ -3712,7 +3914,7 @@ namespace MES
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1176, 266);
+            this.tablePanel1.Size = new System.Drawing.Size(1180, 266);
             this.tablePanel1.TabIndex = 7;
             // 
             // linkLabel1
@@ -3729,7 +3931,7 @@ namespace MES
             // 
             // simpleButtonBOMAddProduct
             // 
-            this.simpleButtonBOMAddProduct.Location = new System.Drawing.Point(561, 12);
+            this.simpleButtonBOMAddProduct.Location = new System.Drawing.Point(562, 12);
             this.simpleButtonBOMAddProduct.MaximumSize = new System.Drawing.Size(116, 0);
             this.simpleButtonBOMAddProduct.Name = "simpleButtonBOMAddProduct";
             this.simpleButtonBOMAddProduct.Size = new System.Drawing.Size(106, 22);
@@ -3747,7 +3949,7 @@ namespace MES
             this.searchControlBOM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControlBOM.Size = new System.Drawing.Size(295, 20);
+            this.searchControlBOM.Size = new System.Drawing.Size(296, 20);
             this.searchControlBOM.StyleController = this.layoutControl5;
             this.searchControlBOM.TabIndex = 2;
             // 
@@ -3767,7 +3969,7 @@ namespace MES
             // 
             // simpleButtonBOMSave
             // 
-            this.simpleButtonBOMSave.Location = new System.Drawing.Point(816, 12);
+            this.simpleButtonBOMSave.Location = new System.Drawing.Point(818, 12);
             this.simpleButtonBOMSave.MaximumSize = new System.Drawing.Size(116, 0);
             this.simpleButtonBOMSave.Name = "simpleButtonBOMSave";
             this.simpleButtonBOMSave.Size = new System.Drawing.Size(106, 22);
@@ -3795,7 +3997,7 @@ namespace MES
             this.layoutControlItem16,
             this.emptySpaceItem8});
             this.layoutControlGroup21.Name = "Root";
-            this.layoutControlGroup21.Size = new System.Drawing.Size(1224, 1282);
+            this.layoutControlGroup21.Size = new System.Drawing.Size(1228, 1282);
             this.layoutControlGroup21.TextVisible = false;
             // 
             // layoutControlGroup22
@@ -3810,7 +4012,7 @@ namespace MES
             this.layoutControlGroup22.Location = new System.Drawing.Point(0, 26);
             this.layoutControlGroup22.Name = "layoutControlGroup22";
             this.layoutControlGroup22.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup22.Size = new System.Drawing.Size(1204, 1184);
+            this.layoutControlGroup22.Size = new System.Drawing.Size(1208, 1184);
             this.layoutControlGroup22.Text = "Product Listing";
             // 
             // layoutControlItem23
@@ -3818,7 +4020,7 @@ namespace MES
             this.layoutControlItem23.Control = this.gridControlBOM;
             this.layoutControlItem23.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(1192, 445);
+            this.layoutControlItem23.Size = new System.Drawing.Size(1196, 445);
             this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem23.TextVisible = false;
             // 
@@ -3827,7 +4029,7 @@ namespace MES
             this.emptySpaceItem12.AllowHotTrack = false;
             this.emptySpaceItem12.Location = new System.Drawing.Point(0, 772);
             this.emptySpaceItem12.Name = "emptySpaceItem12";
-            this.emptySpaceItem12.Size = new System.Drawing.Size(1192, 375);
+            this.emptySpaceItem12.Size = new System.Drawing.Size(1196, 375);
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
             // splitterItem8
@@ -3835,7 +4037,7 @@ namespace MES
             this.splitterItem8.AllowHotTrack = true;
             this.splitterItem8.Location = new System.Drawing.Point(0, 445);
             this.splitterItem8.Name = "splitterItem8";
-            this.splitterItem8.Size = new System.Drawing.Size(1192, 10);
+            this.splitterItem8.Size = new System.Drawing.Size(1196, 10);
             // 
             // layoutControlGroup23
             // 
@@ -3849,7 +4051,7 @@ namespace MES
             this.layoutControlGroup23.Location = new System.Drawing.Point(0, 455);
             this.layoutControlGroup23.Name = "layoutControlGroup23";
             this.layoutControlGroup23.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlGroup23.Size = new System.Drawing.Size(1192, 317);
+            this.layoutControlGroup23.Size = new System.Drawing.Size(1196, 317);
             this.layoutControlGroup23.Text = "Actions";
             // 
             // layoutControlItem18
@@ -3857,7 +4059,7 @@ namespace MES
             this.layoutControlItem18.Control = this.tablePanel1;
             this.layoutControlItem18.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(1180, 270);
+            this.layoutControlItem18.Size = new System.Drawing.Size(1184, 270);
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
             // 
@@ -3866,7 +4068,7 @@ namespace MES
             this.splitterItem9.AllowHotTrack = true;
             this.splitterItem9.Location = new System.Drawing.Point(0, 270);
             this.splitterItem9.Name = "splitterItem9";
-            this.splitterItem9.Size = new System.Drawing.Size(1180, 10);
+            this.splitterItem9.Size = new System.Drawing.Size(1184, 10);
             // 
             // layoutControlItem15
             // 
@@ -3893,14 +4095,14 @@ namespace MES
             this.layoutControlItem17.Control = this.searchControlBOM;
             this.layoutControlItem17.Location = new System.Drawing.Point(233, 0);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(299, 26);
+            this.layoutControlItem17.Size = new System.Drawing.Size(300, 26);
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
             // 
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(532, 0);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(533, 0);
             this.emptySpaceItem10.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem10.MinSize = new System.Drawing.Size(10, 11);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
@@ -3911,7 +4113,7 @@ namespace MES
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.simpleButtonBOMAddProduct;
-            this.layoutControlItem8.Location = new System.Drawing.Point(549, 0);
+            this.layoutControlItem8.Location = new System.Drawing.Point(550, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(110, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -3922,7 +4124,7 @@ namespace MES
             this.layoutControlItem19.Control = this.simpleButton1;
             this.layoutControlItem19.Location = new System.Drawing.Point(0, 1210);
             this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(1204, 26);
+            this.layoutControlItem19.Size = new System.Drawing.Size(1208, 26);
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem19.TextVisible = false;
             // 
@@ -3931,23 +4133,23 @@ namespace MES
             this.layoutControlItem24.Control = this.simpleButton2;
             this.layoutControlItem24.Location = new System.Drawing.Point(0, 1236);
             this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(1204, 26);
+            this.layoutControlItem24.Size = new System.Drawing.Size(1208, 26);
             this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem24.TextVisible = false;
             // 
             // layoutControlItem25
             // 
             this.layoutControlItem25.Control = this.simpleButtonBOMAddMaterial;
-            this.layoutControlItem25.Location = new System.Drawing.Point(676, 0);
+            this.layoutControlItem25.Location = new System.Drawing.Point(677, 0);
             this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(110, 26);
+            this.layoutControlItem25.Size = new System.Drawing.Size(111, 26);
             this.layoutControlItem25.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem25.TextVisible = false;
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(659, 0);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(660, 0);
             this.emptySpaceItem7.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem7.MinSize = new System.Drawing.Size(10, 11);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
@@ -3958,15 +4160,15 @@ namespace MES
             // emptySpaceItem13
             // 
             this.emptySpaceItem13.AllowHotTrack = false;
-            this.emptySpaceItem13.Location = new System.Drawing.Point(914, 0);
+            this.emptySpaceItem13.Location = new System.Drawing.Point(916, 0);
             this.emptySpaceItem13.Name = "emptySpaceItem13";
-            this.emptySpaceItem13.Size = new System.Drawing.Size(290, 26);
+            this.emptySpaceItem13.Size = new System.Drawing.Size(292, 26);
             this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.simpleButtonBOMSave;
-            this.layoutControlItem16.Location = new System.Drawing.Point(804, 0);
+            this.layoutControlItem16.Location = new System.Drawing.Point(806, 0);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.Size = new System.Drawing.Size(110, 26);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
@@ -3975,7 +4177,7 @@ namespace MES
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(786, 0);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(788, 0);
             this.emptySpaceItem8.MaxSize = new System.Drawing.Size(20, 0);
             this.emptySpaceItem8.MinSize = new System.Drawing.Size(10, 11);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
@@ -4627,6 +4829,8 @@ namespace MES
             this.panelControlJobDispatch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditJDProductFilter.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControlJDOrderSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlJDOrderListing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jOBMSTBindingSource)).EndInit();
@@ -4652,6 +4856,9 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem36)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem4)).EndInit();
@@ -5111,7 +5318,7 @@ namespace MES
         private DevExpress.XtraEditors.SimpleButton simpleButtonJDSaveOrder;
         private DevExpress.XtraEditors.ImageListBoxControl imageListBoxControlJDJobStatus;
         private LayoutControlItem layoutControlItem36;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonJDCancelOrder;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonJDCancelEdit;
         private DevExpress.XtraEditors.SearchControl searchControlJDProductSearch;
         private LayoutControlItem layoutControlItem37;
         private DevExpress.XtraEditors.SearchControl searchControlJDOrderSearch;
@@ -5126,6 +5333,24 @@ namespace MES
         private DevExpress.XtraReports.ReportGeneration.ReportGenerator reportGenerator1;
         private System.Windows.Forms.Button button1;
         private LayoutControlItem layoutControlItem40;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonCancelOrder;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEditJDProductFilter;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private LayoutControlItem layoutControlItem41;
+        private LayoutControlItem layoutControlItem42;
+        private EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_ID5;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_MODEL4;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_NM4;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_TYPE4;
+        private DevExpress.XtraGrid.Columns.GridColumn colSUB_PROD_TYPE2;
+        private DevExpress.XtraGrid.Columns.GridColumn colSITE_ID6;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_ID6;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_MODEL5;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_NM5;
+        private DevExpress.XtraGrid.Columns.GridColumn colPROD_TYPE5;
+        private DevExpress.XtraGrid.Columns.GridColumn colSUB_PROD_TYPE3;
+        private DevExpress.XtraGrid.Columns.GridColumn colSITE_ID7;
     }
 }
 
