@@ -505,6 +505,29 @@ namespace MES
             {
                 // Add new entry
                 newRow = jOBMSTBindingSource.AddNew() as DataRowView;
+                newRow.BeginEdit();
+
+                // Auto-generate extra information for new entry
+                newRow["COMPLETE"] = 0;
+                newRow["DELAY"] = "00:00:00:00";
+
+                // Add product information for new entry
+                foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
+                {
+                    if (control is TextEdit)
+                    {
+                        TextEdit edit = control as TextEdit;
+                        string tag = edit.Tag as string;
+
+                        if (tag != null)
+                        {
+                            if (tag[0] == 'j')
+                                newRow[tag.Substring(1)] = edit.Text;
+                            else if(tag == "pPROD_ID") // extract only product ID
+                                newRow[tag.Substring(1)] = edit.Text;
+                        }
+                    }
+                }
             }
             else
             {
@@ -513,25 +536,26 @@ namespace MES
                 int index = jOBMSTBindingSource.Find("JOB_ID", job_id);
 
                 newRow = jOBMSTBindingSource.List[index] as DataRowView;
-            }
+                newRow.BeginEdit();
 
-            newRow.BeginEdit();
-
-            // TODO: Autogenerate required information (such as DURATION, DELAY, COMPLETE) when new entry is being created
-            foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
-            {
-                if (control is TextEdit)
+                foreach (Control control in tableLayoutPanelJDOrderDetails.Controls)
                 {
-                    TextEdit edit = control as TextEdit;
-                    string tag = edit.Tag as string;
-
-                    if (tag != null)
+                    if (control is TextEdit)
                     {
-                        if (tag[0] == 'j')
-                            newRow[tag.Substring(1)] = edit.Text;
+                        TextEdit edit = control as TextEdit;
+                        string tag = edit.Tag as string;
+
+                        if (tag != null)
+                        {
+                            if (tag[0] == 'j')
+                                newRow[tag.Substring(1)] = edit.Text;
+                        }
                     }
                 }
             }
+            
+            // Auto-generate common columns
+            newRow["DURATION"] = DateTime.Parse(newRow["END_TIME"] as string) - DateTime.Parse(newRow["START_TIME"] as string);
 
             newRow.EndEdit();
             jOB_MSTTableAdapter.Update(jOBMSTBindingSource.DataSource as Signes_MESDataSet);
