@@ -70,6 +70,31 @@ namespace MES
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan3 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan4 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase3 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition7 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition8 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement9 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement10 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement11 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement12 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement13 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement14 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement15 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement16 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement17 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement18 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement19 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement20 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition7 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition8 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition9 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition10 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan5 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan6 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan7 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan8 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             this.cardViewMaterialDetail = new DevExpress.XtraGrid.Views.Card.CardView();
             this.colMATERIAL_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMATERIAL_NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -306,17 +331,6 @@ namespace MES
             this.listBoxControlJDProductListing = new DevExpress.XtraEditors.ListBoxControl();
             this.imageListBoxControlJDJobStatus = new DevExpress.XtraEditors.ImageListBoxControl();
             this.tableLayoutPanelJDOrderDetails = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
-            this.tokenEdit1 = new DevExpress.XtraEditors.TokenEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.checkEdit4 = new DevExpress.XtraEditors.CheckEdit();
-            this.labelControlJD1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlJD2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlJD3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlJD4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlJD5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlJD6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlJD7 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButtonJDSaveOrder = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonJDCancelOrder = new DevExpress.XtraEditors.SimpleButton();
             this.checkEditJDOrderDetails = new DevExpress.XtraEditors.CheckEdit();
@@ -554,10 +568,6 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlJDProductListing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControlJDJobStatus)).BeginInit();
             this.tableLayoutPanelJDOrderDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tokenEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditJDOrderDetails.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditJDSelectOrder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditJDSelectProduct.Properties)).BeginInit();
@@ -2963,28 +2973,147 @@ namespace MES
             // 
             // imageListBoxControlJDJobStatus
             // 
+            this.imageListBoxControlJDJobStatus.DataSource = this.jOBMSTBindingSource;
+            this.imageListBoxControlJDJobStatus.ItemHeight = 84;
             this.imageListBoxControlJDJobStatus.Location = new System.Drawing.Point(753, 44);
             this.imageListBoxControlJDJobStatus.Name = "imageListBoxControlJDJobStatus";
             this.imageListBoxControlJDJobStatus.Size = new System.Drawing.Size(440, 347);
             this.imageListBoxControlJDJobStatus.StyleController = this.layoutControl4;
             this.imageListBoxControlJDJobStatus.TabIndex = 20;
+            tableColumnDefinition5.Length.Value = 146D;
+            tableColumnDefinition6.Length.Value = 145D;
+            tableColumnDefinition7.Length.Value = 126D;
+            tableColumnDefinition8.Length.Value = 19D;
+            itemTemplateBase3.Columns.Add(tableColumnDefinition5);
+            itemTemplateBase3.Columns.Add(tableColumnDefinition6);
+            itemTemplateBase3.Columns.Add(tableColumnDefinition7);
+            itemTemplateBase3.Columns.Add(tableColumnDefinition8);
+            templatedItemElement9.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            templatedItemElement9.Appearance.Normal.Options.UseFont = true;
+            templatedItemElement9.FieldName = "JOB_ID";
+            templatedItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement9.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
+            templatedItemElement9.Text = "JOB_ID";
+            templatedItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement10.FieldName = "JOB_NM";
+            templatedItemElement10.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement10.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement10.RowIndex = 1;
+            templatedItemElement10.Text = "JOB_NM";
+            templatedItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement11.ColumnIndex = 2;
+            templatedItemElement11.FieldName = "PROD_ID";
+            templatedItemElement11.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement11.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement11.Text = "PROD_ID";
+            templatedItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement12.FieldName = "START_TIME";
+            templatedItemElement12.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement12.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement12.RowIndex = 2;
+            templatedItemElement12.Text = "START_TIME";
+            templatedItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement13.ColumnIndex = 1;
+            templatedItemElement13.FieldName = "END_TIME";
+            templatedItemElement13.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement13.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement13.RowIndex = 2;
+            templatedItemElement13.Text = "END_TIME";
+            templatedItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement14.ColumnIndex = 2;
+            templatedItemElement14.FieldName = "COMPLETE";
+            templatedItemElement14.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement14.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement14.RowIndex = 2;
+            templatedItemElement14.Text = "COMPLETE";
+            templatedItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            templatedItemElement15.ColumnIndex = 3;
+            templatedItemElement15.FieldName = "QTY";
+            templatedItemElement15.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement15.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement15.RowIndex = 1;
+            templatedItemElement15.Text = "QTY";
+            templatedItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            templatedItemElement16.FieldName = "PROC_START_ID";
+            templatedItemElement16.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement16.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement16.RowIndex = 3;
+            templatedItemElement16.Text = "PROC_START_ID";
+            templatedItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement17.ColumnIndex = 1;
+            templatedItemElement17.FieldName = "PROC_END_ID";
+            templatedItemElement17.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement17.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement17.RowIndex = 3;
+            templatedItemElement17.Text = "PROC_END_ID";
+            templatedItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement18.ColumnIndex = 2;
+            templatedItemElement18.FieldName = null;
+            templatedItemElement18.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement18.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement18.RowIndex = 1;
+            templatedItemElement18.Text = "Qty:";
+            templatedItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement19.ColumnIndex = 3;
+            templatedItemElement19.FieldName = null;
+            templatedItemElement19.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement19.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement19.RowIndex = 2;
+            templatedItemElement19.Text = "%";
+            templatedItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            templatedItemElement20.ColumnIndex = 2;
+            templatedItemElement20.FieldName = null;
+            templatedItemElement20.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement20.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement20.RowIndex = 2;
+            templatedItemElement20.Text = "Complete:";
+            templatedItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            itemTemplateBase3.Elements.Add(templatedItemElement9);
+            itemTemplateBase3.Elements.Add(templatedItemElement10);
+            itemTemplateBase3.Elements.Add(templatedItemElement11);
+            itemTemplateBase3.Elements.Add(templatedItemElement12);
+            itemTemplateBase3.Elements.Add(templatedItemElement13);
+            itemTemplateBase3.Elements.Add(templatedItemElement14);
+            itemTemplateBase3.Elements.Add(templatedItemElement15);
+            itemTemplateBase3.Elements.Add(templatedItemElement16);
+            itemTemplateBase3.Elements.Add(templatedItemElement17);
+            itemTemplateBase3.Elements.Add(templatedItemElement18);
+            itemTemplateBase3.Elements.Add(templatedItemElement19);
+            itemTemplateBase3.Elements.Add(templatedItemElement20);
+            itemTemplateBase3.Name = "template1";
+            tableRowDefinition7.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
+            tableRowDefinition7.Length.Value = 20D;
+            tableRowDefinition8.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
+            tableRowDefinition8.Length.Value = 20D;
+            tableRowDefinition9.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
+            tableRowDefinition9.Length.Value = 20D;
+            tableRowDefinition10.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
+            tableRowDefinition10.Length.Value = 20D;
+            itemTemplateBase3.Rows.Add(tableRowDefinition7);
+            itemTemplateBase3.Rows.Add(tableRowDefinition8);
+            itemTemplateBase3.Rows.Add(tableRowDefinition9);
+            itemTemplateBase3.Rows.Add(tableRowDefinition10);
+            tableSpan5.ColumnIndex = 2;
+            tableSpan5.ColumnSpan = 2;
+            tableSpan5.RowIndex = 1;
+            tableSpan6.ColumnIndex = 2;
+            tableSpan6.ColumnSpan = 2;
+            tableSpan7.ColumnSpan = 2;
+            tableSpan8.ColumnSpan = 2;
+            tableSpan8.RowIndex = 1;
+            itemTemplateBase3.Spans.Add(tableSpan5);
+            itemTemplateBase3.Spans.Add(tableSpan6);
+            itemTemplateBase3.Spans.Add(tableSpan7);
+            itemTemplateBase3.Spans.Add(tableSpan8);
+            this.imageListBoxControlJDJobStatus.Templates.Add(itemTemplateBase3);
+            this.imageListBoxControlJDJobStatus.ValueMember = "JOB_ID";
             // 
             // tableLayoutPanelJDOrderDetails
             // 
             this.tableLayoutPanelJDOrderDetails.ColumnCount = 2;
             this.tableLayoutPanelJDOrderDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.36691F));
             this.tableLayoutPanelJDOrderDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.63309F));
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.buttonEdit1, 1, 0);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.tokenEdit1, 1, 1);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.textEdit1, 1, 2);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.checkEdit4, 1, 3);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.labelControlJD1, 0, 0);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.labelControlJD2, 0, 1);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.labelControlJD3, 0, 2);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.labelControlJD4, 0, 3);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.labelControlJD5, 0, 4);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.labelControlJD6, 0, 5);
-            this.tableLayoutPanelJDOrderDetails.Controls.Add(this.labelControlJD7, 0, 6);
             this.tableLayoutPanelJDOrderDetails.Controls.Add(this.simpleButtonJDSaveOrder, 1, 8);
             this.tableLayoutPanelJDOrderDetails.Controls.Add(this.simpleButtonJDCancelOrder, 0, 8);
             this.tableLayoutPanelJDOrderDetails.Location = new System.Drawing.Point(434, 73);
@@ -3006,99 +3135,6 @@ namespace MES
             this.tableLayoutPanelJDOrderDetails.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelJDOrderDetails.Size = new System.Drawing.Size(278, 313);
             this.tableLayoutPanelJDOrderDetails.TabIndex = 16;
-            // 
-            // buttonEdit1
-            // 
-            this.buttonEdit1.Location = new System.Drawing.Point(118, 3);
-            this.buttonEdit1.MenuManager = this.toolbarFormManager1;
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit1.Size = new System.Drawing.Size(100, 20);
-            this.buttonEdit1.TabIndex = 1;
-            // 
-            // tokenEdit1
-            // 
-            this.tokenEdit1.Location = new System.Drawing.Point(118, 33);
-            this.tokenEdit1.MenuManager = this.toolbarFormManager1;
-            this.tokenEdit1.Name = "tokenEdit1";
-            this.tokenEdit1.Properties.Separators.AddRange(new string[] {
-            ","});
-            this.tokenEdit1.Size = new System.Drawing.Size(75, 20);
-            this.tokenEdit1.TabIndex = 3;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(118, 63);
-            this.textEdit1.MenuManager = this.toolbarFormManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 0;
-            // 
-            // checkEdit4
-            // 
-            this.checkEdit4.Location = new System.Drawing.Point(118, 93);
-            this.checkEdit4.MenuManager = this.toolbarFormManager1;
-            this.checkEdit4.Name = "checkEdit4";
-            this.checkEdit4.Properties.Caption = "checkEdit4";
-            this.checkEdit4.Size = new System.Drawing.Size(75, 20);
-            this.checkEdit4.TabIndex = 2;
-            // 
-            // labelControlJD1
-            // 
-            this.labelControlJD1.Location = new System.Drawing.Point(3, 3);
-            this.labelControlJD1.Name = "labelControlJD1";
-            this.labelControlJD1.Size = new System.Drawing.Size(59, 14);
-            this.labelControlJD1.TabIndex = 4;
-            this.labelControlJD1.Text = "Product ID";
-            // 
-            // labelControlJD2
-            // 
-            this.labelControlJD2.Location = new System.Drawing.Point(3, 33);
-            this.labelControlJD2.Name = "labelControlJD2";
-            this.labelControlJD2.Size = new System.Drawing.Size(32, 14);
-            this.labelControlJD2.TabIndex = 5;
-            this.labelControlJD2.Text = "Model";
-            // 
-            // labelControlJD3
-            // 
-            this.labelControlJD3.Location = new System.Drawing.Point(3, 63);
-            this.labelControlJD3.Name = "labelControlJD3";
-            this.labelControlJD3.Size = new System.Drawing.Size(31, 14);
-            this.labelControlJD3.TabIndex = 6;
-            this.labelControlJD3.Text = "Name";
-            // 
-            // labelControlJD4
-            // 
-            this.labelControlJD4.Location = new System.Drawing.Point(3, 93);
-            this.labelControlJD4.Name = "labelControlJD4";
-            this.labelControlJD4.Size = new System.Drawing.Size(47, 14);
-            this.labelControlJD4.TabIndex = 7;
-            this.labelControlJD4.Text = "Order ID";
-            // 
-            // labelControlJD5
-            // 
-            this.labelControlJD5.Location = new System.Drawing.Point(3, 123);
-            this.labelControlJD5.Name = "labelControlJD5";
-            this.labelControlJD5.Size = new System.Drawing.Size(61, 14);
-            this.labelControlJD5.TabIndex = 8;
-            this.labelControlJD5.Text = "Order Date";
-            // 
-            // labelControlJD6
-            // 
-            this.labelControlJD6.Location = new System.Drawing.Point(3, 153);
-            this.labelControlJD6.Name = "labelControlJD6";
-            this.labelControlJD6.Size = new System.Drawing.Size(62, 14);
-            this.labelControlJD6.TabIndex = 10;
-            this.labelControlJD6.Text = "Order Time";
-            // 
-            // labelControlJD7
-            // 
-            this.labelControlJD7.Location = new System.Drawing.Point(3, 183);
-            this.labelControlJD7.Name = "labelControlJD7";
-            this.labelControlJD7.Size = new System.Drawing.Size(47, 14);
-            this.labelControlJD7.TabIndex = 9;
-            this.labelControlJD7.Text = "Quantity";
             // 
             // simpleButtonJDSaveOrder
             // 
@@ -3126,6 +3162,7 @@ namespace MES
             this.checkEditJDOrderDetails.Properties.ImageOptions.SvgImageChecked = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("checkEditJDOrderDetails.Properties.ImageOptions.SvgImageChecked")));
             this.checkEditJDOrderDetails.Properties.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.checkEditJDOrderDetails.Properties.ImageOptions.SvgImageUnchecked = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("checkEditJDOrderDetails.Properties.ImageOptions.SvgImageUnchecked")));
+            this.checkEditJDOrderDetails.Properties.ReadOnly = true;
             this.checkEditJDOrderDetails.Size = new System.Drawing.Size(278, 20);
             this.checkEditJDOrderDetails.StyleController = this.layoutControl4;
             this.checkEditJDOrderDetails.TabIndex = 2;
@@ -4597,11 +4634,6 @@ namespace MES
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlJDProductListing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControlJDJobStatus)).EndInit();
             this.tableLayoutPanelJDOrderDetails.ResumeLayout(false);
-            this.tableLayoutPanelJDOrderDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tokenEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditJDOrderDetails.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditJDSelectOrder.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditJDSelectProduct.Properties)).EndInit();
@@ -5062,10 +5094,6 @@ namespace MES
         private DevExpress.XtraGrid.Columns.GridColumn colCREATE_USER_ID4;
         private DevExpress.XtraGrid.Columns.GridColumn colUPDATE_DATE4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelJDOrderDetails;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
-        private DevExpress.XtraEditors.CheckEdit checkEdit4;
-        private DevExpress.XtraEditors.TokenEdit tokenEdit1;
         private DevExpress.XtraEditors.ListBoxControl listBoxControlJDOrderListing;
         private DevExpress.XtraEditors.ListBoxControl listBoxControlJDProductListing;
         private DevExpress.XtraEditors.CheckEdit checkEditJDOrderDetails;
@@ -5080,13 +5108,6 @@ namespace MES
         private LayoutControlGroup layoutControlGroup19;
         private LayoutControlGroup layoutControlGroup20;
         private LayoutControlGroup layoutControlGroup31;
-        private DevExpress.XtraEditors.LabelControl labelControlJD1;
-        private DevExpress.XtraEditors.LabelControl labelControlJD2;
-        private DevExpress.XtraEditors.LabelControl labelControlJD3;
-        private DevExpress.XtraEditors.LabelControl labelControlJD4;
-        private DevExpress.XtraEditors.LabelControl labelControlJD5;
-        private DevExpress.XtraEditors.LabelControl labelControlJD6;
-        private DevExpress.XtraEditors.LabelControl labelControlJD7;
         private DevExpress.XtraEditors.SimpleButton simpleButtonJDSaveOrder;
         private DevExpress.XtraEditors.ImageListBoxControl imageListBoxControlJDJobStatus;
         private LayoutControlItem layoutControlItem36;

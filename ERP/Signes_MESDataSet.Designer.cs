@@ -15380,7 +15380,10 @@ FROM     MATERIAL_MST";
             this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  MM_PROC_MST.*\r\nFROM     MM_PROC_MST";
+            this._commandCollection[0].CommandText = "SELECT  PROC_ID, SITE_ID, PROD_ID, PROC_VER, PROC_NM, PROC_TYPE, START_TIME, END_" +
+                "TIME, DURATION, DELAY, COMPLETE, DEL_YN, REASON_CODE, DESCR, CREATE_USER_ID, \r\n " +
+                "              CREATE_DATE, UPDATE_USER_ID, UPDATE_DATE\r\nFROM     MM_PROC_MST\r\nOR" +
+                "DER BY PROC_ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

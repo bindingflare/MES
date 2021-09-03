@@ -1361,6 +1361,19 @@ namespace Edcore.GanttChart
             }   
         }
 
+        public void Clear()
+        {
+            m_registerSet.Clear();
+            m_RootTasks.Clear();
+            m_MembersOfGroup.Clear();
+            m_dependantsOfPrecedentMap.Clear();
+            m_resourcesOfTaskMap.Clear();
+            m_partsOfSplitTaskMap.Clear();
+            m_splitTaskOfPartMap.Clear();
+            m_groupOfMemberMap.Clear();
+            m_taskIndicesMap.Clear();
+        }
+
         /// <summary>
         /// Detach the specified task from ProjectManager.Tasks (i.e. remove from its parent group, or if not it goes not have a parent group, unregister from root task status).
         /// The specified task will remain registered in ProjectManager.

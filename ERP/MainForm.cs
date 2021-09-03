@@ -40,16 +40,7 @@ namespace MES
         private DevExpress.XtraGrid.Views.Card.CardView cardViewProductListing;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutViewProductListing;
 
-        private int _SplitterX;
-        private int _ScrollFix = 0;
-        private bool _IsPanning = false;
         private bool _SearchMode = false;
-        private int _ListY;
-        private float _ChartY;
-        private Task m_SelectedTask;
-        private DataColumn m_SelectedTaskColumn;
-        private bool _IsSearchScroll = false;
-        private bool comboListingPopupActive = false;
 
         public MainForm()
         {
@@ -615,22 +606,6 @@ namespace MES
         {
             ganttChartProductionMonitor.Viewport.Y = treeListPMChartTreeList.TopVisibleNodeIndex * ganttChartProductionMonitor.BarSpacing;
         }
-
-        private void m_TaskList_Collapsing(object sender, NodeEventArgs e)
-        {
-            if (_SearchMode)
-            {
-                //e.Canceled = true;
-            }
-        }
-
-        private void m_TaskList_Expanding(object sender, NodeEventArgs e)
-        {
-            if (_SearchMode)
-            {
-                //e. = true;
-            }
-        }
         #endregion
         
         #endregion
@@ -743,9 +718,14 @@ namespace MES
             }
             else if(page == "Production Monitor")
             {
+                m_Manager.Clear();
                 loadTasks();
+
+                treeListPMChartTreeList.BeginUpdate();
+                treeListPMChartTreeList.DataSource = null;
                 treeListPMChartTreeList.DataSource = GetTasks();
                 treeListPMChartTreeList.ExpandAll();
+                treeListPMChartTreeList.EndUpdate();
             }
         }
 
