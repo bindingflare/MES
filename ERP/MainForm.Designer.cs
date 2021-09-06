@@ -326,7 +326,7 @@ namespace MES
             this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panelControlJobDispatch = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButtonCancelOrder = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonJDCancelOrder = new DevExpress.XtraEditors.SimpleButton();
             this.searchLookUpEditJDProductFilter = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPROD_ID5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -2819,7 +2819,7 @@ namespace MES
             // 
             // layoutControl4
             // 
-            this.layoutControl4.Controls.Add(this.simpleButtonCancelOrder);
+            this.layoutControl4.Controls.Add(this.simpleButtonJDCancelOrder);
             this.layoutControl4.Controls.Add(this.searchLookUpEditJDProductFilter);
             this.layoutControl4.Controls.Add(this.searchControlJDOrderSearch);
             this.layoutControl4.Controls.Add(this.searchControlJDProductSearch);
@@ -2840,16 +2840,16 @@ namespace MES
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
             // 
-            // simpleButtonCancelOrder
+            // simpleButtonJDCancelOrder
             // 
-            this.simpleButtonCancelOrder.Enabled = false;
-            this.simpleButtonCancelOrder.Location = new System.Drawing.Point(1058, 387);
-            this.simpleButtonCancelOrder.Name = "simpleButtonCancelOrder";
-            this.simpleButtonCancelOrder.Size = new System.Drawing.Size(135, 22);
-            this.simpleButtonCancelOrder.StyleController = this.layoutControl4;
-            this.simpleButtonCancelOrder.TabIndex = 2;
-            this.simpleButtonCancelOrder.Text = "Cancel Order";
-            this.simpleButtonCancelOrder.Click += new System.EventHandler(this.simpleButtonCancelOrder_Click);
+            this.simpleButtonJDCancelOrder.Enabled = false;
+            this.simpleButtonJDCancelOrder.Location = new System.Drawing.Point(1058, 387);
+            this.simpleButtonJDCancelOrder.Name = "simpleButtonJDCancelOrder";
+            this.simpleButtonJDCancelOrder.Size = new System.Drawing.Size(135, 22);
+            this.simpleButtonJDCancelOrder.StyleController = this.layoutControl4;
+            this.simpleButtonJDCancelOrder.TabIndex = 2;
+            this.simpleButtonJDCancelOrder.Text = "Cancel Order";
+            this.simpleButtonJDCancelOrder.Click += new System.EventHandler(this.simpleButtonJDCancelOrder_Click);
             // 
             // searchLookUpEditJDProductFilter
             // 
@@ -3502,7 +3502,7 @@ namespace MES
             // 
             // layoutControlItem42
             // 
-            this.layoutControlItem42.Control = this.simpleButtonCancelOrder;
+            this.layoutControlItem42.Control = this.simpleButtonJDCancelOrder;
             this.layoutControlItem42.Location = new System.Drawing.Point(305, 343);
             this.layoutControlItem42.Name = "layoutControlItem42";
             this.layoutControlItem42.Size = new System.Drawing.Size(139, 26);
@@ -3942,6 +3942,7 @@ namespace MES
             // 
             // searchControlBOM
             // 
+            this.searchControlBOM.Client = this.gridControlBOM;
             this.searchControlBOM.Location = new System.Drawing.Point(245, 12);
             this.searchControlBOM.MenuManager = this.toolbarFormManager1;
             this.searchControlBOM.MinimumSize = new System.Drawing.Size(290, 0);
@@ -3949,6 +3950,8 @@ namespace MES
             this.searchControlBOM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
+            this.searchControlBOM.Properties.Client = this.gridControlBOM;
+            this.searchControlBOM.Properties.FindDelay = 250;
             this.searchControlBOM.Size = new System.Drawing.Size(296, 20);
             this.searchControlBOM.StyleController = this.layoutControl5;
             this.searchControlBOM.TabIndex = 2;
@@ -4731,7 +4734,7 @@ namespace MES
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("MainForm.IconOptions.SvgImage")));
             this.Name = "MainForm";
-            this.Text = "SigneS MES";
+            this.Text = " ";
             this.ToolbarFormControl = this.toolbarFormControl1;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cardViewMaterialDetail)).EndInit();
@@ -5333,7 +5336,7 @@ namespace MES
         private DevExpress.XtraReports.ReportGeneration.ReportGenerator reportGenerator1;
         private System.Windows.Forms.Button button1;
         private LayoutControlItem layoutControlItem40;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonCancelOrder;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonJDCancelOrder;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEditJDProductFilter;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private LayoutControlItem layoutControlItem41;

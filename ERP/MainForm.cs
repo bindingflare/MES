@@ -120,12 +120,10 @@ namespace MES
             //gChartTreeList.BeforeExpand += new NodeEventHandler(m_TaskList_Expanding);
             //gChartTreeList.BeforeCollapse += new NodeEventHandler(m_TaskList_Collapsing);
 
-            // BOM events
-            searchControlBOM.EditValueChanged += SearchControlBOM_Enter;
-
             // Job Dispatch events
             listBoxControlJDOrderListing.SelectedIndexChanged += ListBoxControlJDOrderListing_SelectedIndexChanged;
             listBoxControlJDProductListing.SelectedIndexChanged += ListBoxControlJDSelectProduct_SelectedIndexChanged;
+            imageListBoxControlJDJobStatus.SelectedIndexChanged += ImageListBoxControlJDJobStatus_SelectedIndexChanged;
 
             // Initialize other elements
             AfterInitialization();
@@ -221,7 +219,7 @@ namespace MES
 
             // Job Disptach product search
             searchLookUpEditJDProductFilter.EditValue = null;
-            searchLookUpEditJDProductFilter.EditValueChanged += SearchLookUpEditJDProductFilter_EditValueChanged;
+            //searchLookUpEditJDProductFilter.EditValueChanged += SearchLookUpEditJDProductFilter_EditValueChanged;
         }
 
         private void LayoutHelper_AfterPopup(object sender, DetailEventArgs e)
@@ -256,24 +254,6 @@ namespace MES
         #endregion
 
         #region BOM
-
-        private void SearchControlBOM_Enter(object sender, EventArgs e)
-        {
-            GridView view = gridViewProductListing;
-            GridColumn col = view.Columns["PROD_ID"];
-            string text = searchControlBOM.Text;
-            
-            if(text.Length != 0)
-            {
-                view.BeginUpdate();
-
-                //col.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-                view.ActiveFilter.Remove(col);
-                view.ActiveFilter.Add(col, new ColumnFilterInfo("Contains([PROD_ID], '" + text + "')"));
-                
-                view.EndUpdate();
-            }
-        }
 
         private void simpleButtonBOMSave_Click(object sender, EventArgs e)
         {
@@ -486,9 +466,30 @@ namespace MES
             }
         }
 
-        private void simpleButtonCancelOrder_Click(object sender, EventArgs e)
+        private void simpleButtonJDCancelOrder_Click(object sender, EventArgs e)
         {
             // Delete order from DB
+            string order_id = imageListBoxControlJDJobStatus.SelectedValue as string;
+
+            JOB_MSTRow target = signes_MESDataSet.JOB_MST.FindByJOB_ID(order_id);
+            target.Delete();
+            
+            //jOB_MSTTableAdapter.Fill(signes_MESDataSet.JOB_MST);
+            jOB_MSTTableAdapter.Update(signes_MESDataSet.JOB_MST);
+
+            // Reset edit selection
+            simpleButtonJDCancelEdit_Click(sender, e);
+        }
+        private void ImageListBoxControlJDJobStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (imageListBoxControlJDJobStatus.SelectedIndex != -1)
+            {
+                simpleButtonJDCancelOrder.Enabled = true;
+            }
+            else
+            {
+                simpleButtonJDCancelOrder.Enabled = false;
+            }
         }
 
         private void simpleButtonJDCancelEdit_Click(object sender, EventArgs e)
